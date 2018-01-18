@@ -17,7 +17,7 @@ public class Person {
     private String lastName;
     private String firstName;
     private Date birthDate;
-    private ArrayList<Skill> skillList;
+    private HashMap<String,Skill> skillList;
     private ArrayList<Mission> onMissions;
     
     public Person(int id,String ln, String fn, Date bd){
@@ -26,4 +26,45 @@ public class Person {
         this.firstName = fn;
         this.birthDate = bd;
     }
+    
+    public void addMission(Mission m){
+        this.onMissions.add(m);
+    }
+    
+    public void addSkill(Skill s){
+        this.skillList.put(s.getId(), s);
+    }
+
+    public int getId() {
+        return idPerson;
+    }
+
+    public void setId(int idPerson) {
+        this.idPerson = idPerson;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
 }

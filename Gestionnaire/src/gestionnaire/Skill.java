@@ -13,14 +13,38 @@ import java.util.*;
  * Cette classe représente une compétence.
  */
 public class Skill {
-    private int idSkill;
+    private String idSkill; // Les id des compétences sont de type texte dans le CSV
     private String skillNameFr;
     private String skillNameEn;
 
-public Skill(int id,String nEn, String nFr){
+public Skill(String id,String nEn, String nFr){
     this.idSkill = id;
     this.skillNameEn = nEn;
     this.skillNameFr = nFr;
 }
+
+    public String getId(){
+        return this.idSkill;
+    }
+
+    public void setId(String idSkill) {
+        this.idSkill = idSkill;
+    }
+
+    public String getSkillNameFr() {
+        return skillNameFr;
+    }
+
+    public void setSkillNameFr(String skillNameFr) {
+        this.skillNameFr = skillNameFr;
+    }
+
+    public String getSkillNameEn() {
+        return skillNameEn;
+    }
+
+    public void setSkillNameEn(String skillNameEn) {
+        this.skillNameEn = skillNameEn;
+    }
 
 }
