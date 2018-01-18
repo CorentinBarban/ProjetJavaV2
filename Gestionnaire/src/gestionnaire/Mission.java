@@ -35,6 +35,10 @@ public class Mission {
     public void addPerson(Person p){
         this.personOnMission.put(p.getId(), p);
     }
+    
+    public void skillCheck(){
+        // Cette classe doit vérifier si les skills apportés par les personnes présentes sur la mission remplissent les besoins. Si c'est le cas, alors le type de la mission passe à "plannifié".
+    }
 
     public String getMissionName() {
         return missionName;
