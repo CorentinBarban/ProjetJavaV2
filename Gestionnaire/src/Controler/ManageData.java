@@ -7,7 +7,8 @@ package Controler;
 
 /**
  *
- * @author maths
+ * @author Mathieu Stivanin
+ * Classe permettant le la lecture et l'écriture d'un fichier CSV afin de manipuler les données présentes à l'intérieur.
  */
 public interface ManageData {
     
