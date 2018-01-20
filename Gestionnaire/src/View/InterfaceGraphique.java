@@ -23,7 +23,7 @@ public class InterfaceGraphique extends JFrame {
     }
     
     public JLabel panneauDeContenu() {
-    return null;
+        return null;
     }
     
 }
