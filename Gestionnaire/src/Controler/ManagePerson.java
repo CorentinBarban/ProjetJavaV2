@@ -5,46 +5,38 @@
  */
 package Controler;
 
+import com.opencsv.CSVReader;
+import org.apache.commons.lang3.*;
 import java.io.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author Mathieu Stivanin
- * Classe permettant de vérifier le bon déroulement des méthodes de Person.
+ * @author Mathieu Stivanin Classe permettant de vérifier le bon déroulement des
+ * méthodes de Person.
  */
 public class ManagePerson implements ManageData {
 
     @Override
     public void readData() {
-        String csvFile = "projectJava/liste_personnel.csv";
-        BufferedReader br = null;
-        String line = "";
-        String cvsSplitBy = ";";
 
         try {
+            CSVReader reader = new CSVReader(new FileReader("liste_personnel.csv"));
 
-            br = new BufferedReader(new FileReader(csvFile));
-            while ((line = br.readLine()) != null) {
+            //Read all rows at once
+            List<String[]> allRows = reader.readAll();
 
-                // use comma as separator
-                String[] test = line.split(cvsSplitBy);
-
-                System.out.println("Test [nom= " + test[1] + " , prenom=" + test[2] + "]");
-
+            //Read CSV line by line and use the string array as you want
+            for(String[] row : allRows) {
+                System.out.println(Arrays.toString(row));
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -52,5 +44,5 @@ public class ManagePerson implements ManageData {
     public void writeData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
