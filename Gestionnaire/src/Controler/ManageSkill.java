@@ -6,6 +6,9 @@
 package Controler;
 
 import Model.Company;
+import Model.Skill;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  *
@@ -13,10 +16,30 @@ import Model.Company;
  * Classe permettant de vérifier le bon déroulement des méthodes de Skill.
  */
 public class ManageSkill implements ManageData {
-
+    
+    private static final String CSV_FILE_PATH = "liste_personnel.csv";
+    
+    /**
+     * @autor corentin
+     * @param c passage de la Company en parametre
+     */
     @Override
-    public void readData(Company c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void readData(Company c){
+        String csvFile = CSV_FILE_PATH;
+        String line = "\r";
+        String cvsSplitBy = ";";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                // use comma as separator
+                String[] country = line.split(cvsSplitBy);
+                Skill myskill = new Skill(country[0],country[1],country[2]);
+                c.addSkill(myskill);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
