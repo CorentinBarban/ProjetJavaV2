@@ -6,12 +6,14 @@
 package Controler;
 
 import Model.*;
-
+import java.util.ArrayList;
 /**
  *
  * @author maths
  */
 public class Company {
+    
+    private ArrayList<Skill> listeSkill = new ArrayList();
     
     public void addMission(Mission m){
         
@@ -22,6 +24,6 @@ public class Company {
     }
     
     public void addSkill(Skill s){
-        
+        listeSkill.add(s);
     }
 }
