@@ -5,7 +5,7 @@
  */
 package Controler;
 
-import Model.*;
+import Model.Company;
 import java.text.ParseException;
 
 /**
@@ -16,8 +16,11 @@ import java.text.ParseException;
 public class Tests {
     
     public static void main (String[] args) throws ParseException{
-        Mission m1 = new Mission("Mission test 1", "06/02/2018", 4);
-        ManagePerson mp = new ManagePerson();
-        //mp.readData();
+        Company myCompany = new Company();
+        //Mission m1 = new Mission("Mission test 1", "06/02/2018", 4);
+        //ManagePerson mp = new ManagePerson();
+        ManageData mySkill = new ManageSkill();
+        mySkill.readData(myCompany);
+        myCompany.displaySkills();
     }
 }
