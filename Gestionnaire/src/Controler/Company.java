@@ -7,6 +7,7 @@ package Controler;
 
 import Model.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  *
  * @author maths
@@ -14,13 +15,16 @@ import java.util.ArrayList;
 public class Company {
     
     private ArrayList<Skill> listeSkill = new ArrayList();
+    private HashMap<Integer,Person> listePerson = new HashMap();
+    private ArrayList<Mission> listeMission = new ArrayList();
+    
     
     public void addMission(Mission m){
-        
+        listeMission.add(m);
     }
     
     public void addPerson(Person p){
-        
+        listePerson.put(p.getId(), p);
     }
     
     public void addSkill(Skill s){
