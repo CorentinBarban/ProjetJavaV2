@@ -17,7 +17,7 @@ import java.io.FileReader;
  */
 public class ManageSkill implements ManageData {
     
-    private static final String CSV_FILE_PATH = "liste_personnel.csv";
+    private static final String CSV_FILE_PATH = "liste_competences.csv";
     
     /**
      * @autor corentin
