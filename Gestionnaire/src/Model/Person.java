@@ -14,10 +14,11 @@ import java.util.*;
  * Cette classe représente une personne.
  */
 public class Person {
+    
     private int idPerson;
-    private String lastName;
     private String firstName;
-    private Date birthDate;
+    private String lastName;
+    private Date dateOfHire;
     private HashMap<String,Skill> skillList;
     private ArrayList<Mission> onMissions;
     
@@ -26,7 +27,7 @@ public class Person {
      * @param id représente son identifiant
      * @param ln représente son nom
      * @param fn représente son prénom
-     * @param bd représente sa date de naissance, au format jj/mm/aaaa
+     * @param bd représente ssa date d'entrée dans l'entreprise, au format jj/mm/aaaa
      * @throws ParseException afin de retourner une exception si erreur lors du formatage du texte en date
      */
     public Person(int id,String ln, String fn, String bd) throws ParseException{
@@ -35,8 +36,8 @@ public class Person {
         this.firstName = fn;
         
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date bDate = formatter.parse(bd); // Conversion du texte en date selon le format vu au dessus
-        this.birthDate = bDate;
+        Date hDate = formatter.parse(bd); // Conversion du texte en date selon le format vu au dessus
+        this.dateOfHire = hDate;
     }
     
     /**
@@ -104,22 +105,10 @@ public class Person {
     }
 
     /**
-     * Getter de date de naissance
-     * @return birthDate
+     * Getter de date d'entrée
+     * @return dateOfHire
      */
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getDateOfHire() {
+        return dateOfHire;
     }
-
-    /**
-     * Setter de date de naissance
-     * @param birthDate représente la nouvelle date de naissance
-     * @throws ParseException
-     */
-    public void setBirthDate(String birthDate) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date bDate = formatter.parse(birthDate); // Conversion du texte en date selon le format vu au dessus
-        this.birthDate = bDate;
-    }
-
 }
