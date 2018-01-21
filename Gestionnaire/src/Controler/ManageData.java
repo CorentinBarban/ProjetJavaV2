@@ -5,6 +5,8 @@
  */
 package Controler;
 
+import Model.Company;
+
 /**
  *
  * @author Mathieu Stivanin
@@ -12,7 +14,7 @@ package Controler;
  */
 public interface ManageData {
     
-    public void readData();
+    public void readData(Company c);
     
     public void writeData();
 }

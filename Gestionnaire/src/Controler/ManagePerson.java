@@ -5,8 +5,8 @@
  */
 package Controler;
 
-import com.opencsv.CSVReader;
-import org.apache.commons.lang3.*;
+import Model.Company;
+import Model.Skill;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
@@ -19,24 +19,25 @@ import java.util.logging.Logger;
  * méthodes de Person.
  */
 public class ManagePerson implements ManageData {
+    
+    private static final String CSV_FILE_PATH = "liste_personnel.csv";
 
     @Override
-    public void readData() {
+    public void readData(Company c){
+        String csvFile = CSV_FILE_PATH;
+        String line = "\r";
+        String cvsSplitBy = ";";
 
-        try {
-            CSVReader reader = new CSVReader(new FileReader("liste_personnel.csv"));
-
-            //Read all rows at once
-            List<String[]> allRows = reader.readAll();
-
-            //Read CSV line by line and use the string array as you want
-            for(String[] row : allRows) {
-                System.out.println(Arrays.toString(row));
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                // use comma as separator
+                String[] country = line.split(cvsSplitBy);
+                Skill myskill = new Skill(country[0],country[1],country[2]);
+                c.addSkill(myskill);
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

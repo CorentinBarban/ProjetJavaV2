@@ -5,6 +5,7 @@
  */
 package Controler;
 
+import Model.Company;
 import java.text.*;
 import java.util.*;
 import java.io.*;
@@ -35,7 +36,7 @@ public class ManageMission implements ManageData {
     }
     
     @Override
-    public void readData() {
+    public void readData(Company c) {
         
     }
 

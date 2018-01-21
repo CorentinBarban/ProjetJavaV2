@@ -5,6 +5,8 @@
  */
 package Controler;
 
+import Model.Company;
+
 /**
  *
  * @author Mathieu Stivanin
@@ -13,7 +15,7 @@ package Controler;
 public class ManageSkill implements ManageData {
 
     @Override
-    public void readData() {
+    public void readData(Company c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
