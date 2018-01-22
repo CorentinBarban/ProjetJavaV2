@@ -138,6 +138,11 @@ public class Mission {
     public void setMissionType(int i) {
         this.missionType = this.tabTypes[i];
     }
+
+    /**
+     * Affichage de la mission selon ses attributs
+     * @return
+     */
     @Override
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");

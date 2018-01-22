@@ -78,6 +78,10 @@ public class Skill {
         this.skillNameEn = skillNameEn;
     }
 
+    /**
+     * Méthode d'affichaged de la compétence selon ses attributs
+     * @return
+     */
     @Override
     public String toString() {
         return "Skill{" + "idSkill=" + idSkill + ", skillNameFr=" + skillNameFr + ", skillNameEn=" + skillNameEn + '}';

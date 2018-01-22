@@ -112,6 +112,10 @@ public class Person {
         return dateOfHire;
     }
     
+    /**
+     * Affichage de la personne selon ses attibuts
+     * @return
+     */
     @Override
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
