@@ -5,8 +5,6 @@
  */
 package Model;
 
-import Controler.ManageSkill;
-
 
 /**
  *
@@ -18,7 +16,7 @@ public class Skill {
     private String idSkill; // Les id des compétences sont de type texte dans le CSV
     private String skillNameFr;
     private String skillNameEn;
-    private ManageSkill manager = new ManageSkill();
+    
 
     /**
      * Constructeur d'une compétence
@@ -82,7 +80,7 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Skill{" + "idSkill=" + idSkill + ", skillNameFr=" + skillNameFr + ", skillNameEn=" + skillNameEn + ", manager=" + manager + '}';
+        return "Skill{" + "idSkill=" + idSkill + ", skillNameFr=" + skillNameFr + ", skillNameEn=" + skillNameEn + '}';
     }
 
     
