@@ -32,8 +32,8 @@ public class ManageSkill implements ManageData {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             while ((line = br.readLine()) != null) {
                 // use comma as separator
-                String[] country = line.split(cvsSplitBy);
-                Skill myskill = new Skill(country[0],country[1],country[2]);
+                String[] row = line.split(cvsSplitBy);
+                Skill myskill = new Skill(row[0],row[1],row[2]);
                 c.addSkill(myskill);
             }
 
