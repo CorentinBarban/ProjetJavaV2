@@ -17,9 +17,9 @@ import java.util.Set;
  */
 public class Company {
     
-    private final ArrayList<Skill> listeSkill = new ArrayList();
-    private final HashMap<Integer,Person> listePerson = new HashMap();
-    private final ArrayList<Mission> listeMission = new ArrayList();
+    public final HashMap<String,Skill> listeSkill = new HashMap();
+    public final HashMap<String,Person> listePerson = new HashMap();
+    public final ArrayList<Mission> listeMission = new ArrayList();
     
     /**
      * Ajout de mission dans la liste de l'entreprise
@@ -42,14 +42,15 @@ public class Company {
      * @param s représente la compétence à ajouter
      */
     public void addSkill(Skill s){
-        listeSkill.add(s);
+        listeSkill.put(s.getId(), s);
     }
     
     /**
      * Méthode permettant de remplir la liste des compétences
      */
     public void displaySkills(){
-        Iterator<Skill> skillIterator = listeSkill.iterator();
+        
+        Iterator skillIterator = listeSkill.entrySet().iterator();
         while (skillIterator.hasNext()) {
             System.out.println(skillIterator.next().toString());
 	}

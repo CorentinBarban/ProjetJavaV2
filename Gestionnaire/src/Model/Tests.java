@@ -17,18 +17,22 @@ public class Tests {
     
     public static void main (String[] args) throws ParseException{
         Company myCompany = new Company();
-        ManageData mySkill = new ManageSkill();
-        /*mySkill.readData(myCompany);
-        myCompany.displaySkills();
-        */
+        
+        //Recharger les personnes en premier
         ManageData mPerson = new ManagePerson();
         mPerson.readData(myCompany);
-        myCompany.displayPerson();
-        /*
-        ManageData mMission = new ManageMission();
-        mMission.readData(myCompany);
-        myCompany.displayMissions();
-        */
+        //myCompany.displayPerson();
         
+        //Recharger les competences et les redistribuer correctement
+        ManageData mySkill = new ManageSkill();
+        mySkill.readData(myCompany);
+        //myCompany.displaySkills();
+
+        // Réafecter tous les projets aux bonnes personnes
+        /*ManageData mMission = new ManageMission();
+        mMission.readData(myCompany);
+        myCompany.displayMissions();*/
+        myCompany.displayPerson();
+
     }
 }

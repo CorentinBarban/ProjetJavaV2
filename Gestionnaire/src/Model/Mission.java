@@ -18,7 +18,7 @@ public class Mission {
     private int idMission;
     private String missionName;
     private HashMap<String,Skill> requiredSkills; // Si besoin de 3x la compétence blablabla, la mettre trois fois dans la map.
-    private HashMap<Integer,Person> personOnMission;
+    private HashMap<String,Person> personOnMission;
     private Date startDate;
     private int missionDuration;
     private String[] tabTypes =  {"enPreparation", "plannifiee", "enCours"};
