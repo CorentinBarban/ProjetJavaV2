@@ -50,4 +50,11 @@ public class Company {
         }
     }
     
+    public void displayMissions(){
+        Iterator<Mission> missionIterator = listeMission.iterator();
+        while (missionIterator.hasNext()) {
+            System.out.println(missionIterator.next().toString());
+	}
+    }
+    
 }

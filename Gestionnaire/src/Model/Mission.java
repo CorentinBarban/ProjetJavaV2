@@ -15,6 +15,7 @@ import Controler.*;
  * Cette classe représente une mission.
  */
 public class Mission {
+    private int idMission;
     private String missionName;
     private HashMap<String,Skill> requiredSkills; // Si besoin de 3x la compétence blablabla, la mettre trois fois dans la map.
     private HashMap<Integer,Person> personOnMission;
@@ -26,16 +27,26 @@ public class Mission {
     
     /**
      * Constructeur d'une mission
+     * @param id représente l'id de la mission
      * @param n représente le nom de la mission
      * @param sd représente la date de début de la mission
      * @param md représente la durée de la mission
      * @throws ParseException 
      */
-    public Mission(String n, String sd, int md) throws ParseException{
+    public Mission(int id,String n, String sd, int md) throws ParseException{
+        this.idMission = id;
         this.missionName = n;
         this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
         this.missionDuration = md;
         this.missionType = this.tabTypes[0]; // Lorsqu'une mission est créée, son statut est "en préparation"
+    }
+
+    /**
+     * Getter de l'identifiant de la mission
+     * @return idMission
+     */
+    public int getIdMission() {
+        return idMission;
     }
     
     /**
@@ -127,5 +138,10 @@ public class Mission {
     public void setMissionType(int i) {
         this.missionType = this.tabTypes[i];
     }
-    
+    @Override
+    public String toString() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String DateOfHire = formatter.format(this.startDate);
+        return "Mision{" + "idMission=" + idMission + ", missionName=" + missionName + ", startDate=" + startDate + ", misisonDuration="+ missionDuration+ '}';
+    }
 }

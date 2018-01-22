@@ -6,6 +6,8 @@
 package Controler;
 
 import Model.Company;
+import Model.Mission;
+import Model.Skill;
 import java.text.*;
 import java.util.*;
 import java.io.*;
@@ -16,6 +18,9 @@ import java.io.*;
  * Classe permettant de vérifier le bon déroulement des méthodes de Mission.
  */
 public class ManageMission implements ManageData {
+    
+        private static final String CSV_FILE_PATH = "liste_missions.csv";
+
     
     public ManageMission() {
     }
@@ -37,7 +42,21 @@ public class ManageMission implements ManageData {
     
     @Override
     public void readData(Company c) {
-        
+        String csvFile = CSV_FILE_PATH;
+        String line = "\r";
+        String cvsSplitBy = ";";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                // use comma as separator
+                String[] row = line.split(cvsSplitBy);
+                Mission mMission = new Mission(Integer.parseInt(row[0]),row[1],row[2],Integer.parseInt(row[3]));
+                c.addMission(mMission);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
