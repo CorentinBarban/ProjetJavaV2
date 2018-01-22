@@ -5,7 +5,8 @@
  */
 package Model;
 
-import java.util.*;
+import Controler.ManageSkill;
+
 
 /**
  *
@@ -13,9 +14,11 @@ import java.util.*;
  * Cette classe représente une compétence.
  */
 public class Skill {
+    
     private String idSkill; // Les id des compétences sont de type texte dans le CSV
     private String skillNameFr;
     private String skillNameEn;
+    private ManageSkill manager = new ManageSkill();
 
     /**
      * Constructeur d'une compétence
@@ -24,9 +27,9 @@ public class Skill {
      * @param nFr représente le nom de la compétence en français
      */
     public Skill(String id,String nEn, String nFr){
-    this.idSkill = id;
-    this.skillNameEn = nEn;
-    this.skillNameFr = nFr;
+        this.idSkill = id;
+        this.skillNameEn = nEn;
+        this.skillNameFr = nFr;
 }
 
     /**
@@ -77,4 +80,10 @@ public class Skill {
         this.skillNameEn = skillNameEn;
     }
 
+    @Override
+    public String toString() {
+        return "Skill{" + "idSkill=" + idSkill + ", skillNameFr=" + skillNameFr + ", skillNameEn=" + skillNameEn + ", manager=" + manager + '}';
+    }
+
+    
 }

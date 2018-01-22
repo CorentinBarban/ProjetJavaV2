@@ -8,15 +8,16 @@ package Model;
 import Model.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 /**
  *
  * @author maths
  */
 public class Company {
     
-    private ArrayList<Skill> listeSkill = new ArrayList();
-    private HashMap<Integer,Person> listePerson = new HashMap();
-    private ArrayList<Mission> listeMission = new ArrayList();
+    private final ArrayList<Skill> listeSkill = new ArrayList();
+    private final HashMap<Integer,Person> listePerson = new HashMap();
+    private final ArrayList<Mission> listeMission = new ArrayList();
     
     
     public void addMission(Mission m){
@@ -30,4 +31,12 @@ public class Company {
     public void addSkill(Skill s){
         listeSkill.add(s);
     }
+    
+    public void displaySkills(){
+        Iterator<Skill> skillIterator = listeSkill.iterator();
+        while (skillIterator.hasNext()) {
+            System.out.println(skillIterator.next().toString());
+	}
+    }
+    
 }

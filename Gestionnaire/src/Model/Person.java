@@ -27,7 +27,7 @@ public class Person {
      * @param id représente son identifiant
      * @param ln représente son nom
      * @param fn représente son prénom
-     * @param bd représente ssa date d'entrée dans l'entreprise, au format jj/mm/aaaa
+     * @param bd représente sa date d'entrée dans l'entreprise, au format jj/mm/aaaa
      * @throws ParseException afin de retourner une exception si erreur lors du formatage du texte en date
      */
     public Person(int id,String ln, String fn, String bd) throws ParseException{
