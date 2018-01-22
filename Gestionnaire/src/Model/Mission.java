@@ -141,7 +141,7 @@ public class Mission {
     @Override
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String DateOfHire = formatter.format(this.startDate);
-        return "Mision{" + "idMission=" + idMission + ", missionName=" + missionName + ", startDate=" + startDate + ", misisonDuration="+ missionDuration+ '}';
+        String StartDate = formatter.format(this.startDate);
+        return "Mision{" + "idMission=" + idMission + ", missionName=" + missionName + ", startDate=" + StartDate + ", missionDuration="+ missionDuration+ '}';
     }
 }

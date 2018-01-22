@@ -19,12 +19,16 @@ public class Tests {
         Company myCompany = new Company();
         //Mission m1 = new Mission("Mission test 1", "06/02/2018", 4);
         //ManagePerson mp = new ManagePerson();
-        ManageData mySkill = new ManageSkill();
+        /*ManageData mySkill = new ManageSkill();
         mySkill.readData(myCompany);
         myCompany.displaySkills();
         
         ManageData mPerson = new ManagePerson();
         mPerson.readData(myCompany);
-        myCompany.displayPerson();
+        myCompany.displayPerson();*/
+        
+        ManageData mMission = new ManageMission();
+        mMission.readData(myCompany);
+        myCompany.displayMissions();
     }
 }
