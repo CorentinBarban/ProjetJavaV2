@@ -9,6 +9,8 @@ import Model.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 /**
  *
  * @author maths
@@ -37,6 +39,15 @@ public class Company {
         while (skillIterator.hasNext()) {
             System.out.println(skillIterator.next().toString());
 	}
+    }
+    
+    public void displayPerson(){
+        Set entrySet = listePerson.entrySet();
+        Iterator it = entrySet.iterator();
+        while (it.hasNext()) {
+            Map.Entry me = (Map.Entry)it.next();
+            System.out.println(me.getValue().toString());
+        }
     }
     
 }

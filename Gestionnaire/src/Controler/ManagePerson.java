@@ -6,6 +6,7 @@
 package Controler;
 
 import Model.Company;
+import Model.Person;
 import Model.Skill;
 import java.io.*;
 import java.util.Arrays;
@@ -32,8 +33,8 @@ public class ManagePerson implements ManageData {
             while ((line = br.readLine()) != null) {
                 // use comma as separator
                 String[] row = line.split(cvsSplitBy);
-                Skill myskill = new Skill(row[0],row[1],row[2]);
-                c.addSkill(myskill);
+                Person person = new Person(Integer.parseInt(row[3]),row[1],row[0],row[2]);
+                c.addPerson(person);
             }
 
         } catch (Exception e) {

@@ -111,4 +111,12 @@ public class Person {
     public Date getDateOfHire() {
         return dateOfHire;
     }
+    
+    @Override
+    public String toString() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String DateOfHire = formatter.format(this.dateOfHire);
+
+        return "Person{" + "idPerson=" + idPerson + ", lastName=" + lastName + ", firstName=" + firstName + ", date of hire="+ DateOfHire+ '}';
+    }
 }
