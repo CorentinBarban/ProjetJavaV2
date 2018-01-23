@@ -29,10 +29,10 @@ public class Tests {
         //myCompany.displaySkills();
 
         // Réafecter tous les projets aux bonnes personnes
-        /*ManageData mMission = new ManageMission();
+        ManageData mMission = new ManageMission();
         mMission.readData(myCompany);
-        myCompany.displayMissions();*/
-        myCompany.displayPerson();
+        myCompany.displayMissions();
+        //myCompany.displayPerson();
 
     }
 }

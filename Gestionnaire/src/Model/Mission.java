@@ -39,8 +39,11 @@ public class Mission {
         this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
         this.missionDuration = md;
         this.missionType = this.tabTypes[0]; // Lorsqu'une mission est créée, son statut est "en préparation"
+        personOnMission= new HashMap();
+        requiredSkills = new HashMap();
     }
-
+    
+    
     /**
      * Getter de l'identifiant de la mission
      * @return idMission
@@ -139,6 +142,7 @@ public class Mission {
         this.missionType = this.tabTypes[i];
     }
 
+
     /**
      * Affichage de la mission selon ses attributs
      * @return
@@ -147,6 +151,6 @@ public class Mission {
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
-        return "Mision{" + "idMission=" + idMission + ", missionName=" + missionName + ", startDate=" + StartDate + ", missionDuration="+ missionDuration+ '}';
+        return "Mission{" + "idMission=" + idMission + ", missionName=" + missionName + ", requiredSkills=" + requiredSkills + ", personOnMission=" + personOnMission + ", startDate=" + StartDate + ", missionDuration=" + missionDuration + ", tabTypes=" + tabTypes + ", missionType=" + missionType + '}';
     }
 }
