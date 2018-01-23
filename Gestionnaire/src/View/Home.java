@@ -11,6 +11,7 @@ import Controler.ManagePerson;
 import Controler.ManageSkill;
 import Model.Company;
 import java.awt.*;
+import javax.swing.JFrame;
 
 /**
  *
@@ -45,6 +46,7 @@ public class Home extends javax.swing.JFrame {
         cardMission = new javax.swing.JPanel();
         viewAddPerson = new javax.swing.JPanel();
         EnteteAddPerson = new javax.swing.JPanel();
+        labelAddPerson = new javax.swing.JLabel();
         corpAddPerson = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +58,7 @@ public class Home extends javax.swing.JFrame {
         nameApplication.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         nameApplication.setForeground(java.awt.Color.white);
         nameApplication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameApplication.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\play-outlined-button-of-two-triangles.png")); // NOI18N
         nameApplication.setText("Gestionnaire");
 
         javax.swing.GroupLayout EnteteLayout = new javax.swing.GroupLayout(Entete);
@@ -66,7 +69,7 @@ public class Home extends javax.swing.JFrame {
         );
         EnteteLayout.setVerticalGroup(
             EnteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(nameApplication, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+            .addComponent(nameApplication, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         Corps.setBackground(java.awt.Color.white);
@@ -74,6 +77,9 @@ public class Home extends javax.swing.JFrame {
         Cards.setBackground(java.awt.Color.white);
 
         cardPerson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardPersonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cardPersonMouseEntered(evt);
             }
@@ -147,13 +153,13 @@ public class Home extends javax.swing.JFrame {
         CardsLayout.setHorizontalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CardsLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
+                .addContainerGap(114, Short.MAX_VALUE)
                 .addComponent(cardPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91)
                 .addComponent(cardSkill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(82, 82, 82)
                 .addComponent(cardMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         CardsLayout.setVerticalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,15 +202,21 @@ public class Home extends javax.swing.JFrame {
 
         EnteteAddPerson.setBackground(new java.awt.Color(45, 118, 232));
 
+        labelAddPerson.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
+        labelAddPerson.setForeground(java.awt.Color.white);
+        labelAddPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelAddPerson.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\play-outlined-button-of-two-triangles.png")); // NOI18N
+        labelAddPerson.setText("Ajouter une personne");
+
         javax.swing.GroupLayout EnteteAddPersonLayout = new javax.swing.GroupLayout(EnteteAddPerson);
         EnteteAddPerson.setLayout(EnteteAddPersonLayout);
         EnteteAddPersonLayout.setHorizontalGroup(
             EnteteAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addComponent(labelAddPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         EnteteAddPersonLayout.setVerticalGroup(
             EnteteAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 117, Short.MAX_VALUE)
+            .addComponent(labelAddPerson, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
         );
 
         corpAddPerson.setBackground(java.awt.Color.white);
@@ -213,7 +225,7 @@ public class Home extends javax.swing.JFrame {
         corpAddPerson.setLayout(corpAddPersonLayout);
         corpAddPersonLayout.setHorizontalGroup(
             corpAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         corpAddPersonLayout.setVerticalGroup(
             corpAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,6 +289,12 @@ public class Home extends javax.swing.JFrame {
         evt.getComponent().setBackground(new Color(224,224,224));
     }//GEN-LAST:event_cardMissionMouseExited
 
+    private void cardPersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPersonMouseClicked
+        this.setContentPane(viewAddPerson);
+        this.invalidate();
+        this.validate();    
+    }//GEN-LAST:event_cardPersonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -339,6 +357,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel cardSkill;
     private javax.swing.JPanel corpAddPerson;
     private javax.swing.JLabel imageCardPerson;
+    private javax.swing.JLabel labelAddPerson;
     private javax.swing.JLabel nameApplication;
     private javax.swing.JPanel viewAddPerson;
     // End of variables declaration//GEN-END:variables
