@@ -19,7 +19,6 @@ public class Person {
     private String lastName;
     private Date dateOfHire;
     private HashMap<String,Skill> skillList;
-    private ArrayList<Mission> onMissions;
 
     /**
      * Constructeur d'une personne.
@@ -41,17 +40,8 @@ public class Person {
         Date hDate = formatter.parse(bd); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
         skillList=new HashMap();
-        onMissions = new ArrayList();
     }
 
-    /**
-     * Assignation de la personne à une/des mission(s)
-     *
-     * @param m représente la mission
-     */
-    public void addMission(Mission m) {
-        this.onMissions.add(m);
-    }
 
     /**
      * Assignation de compétence(s) à la personne
@@ -66,7 +56,6 @@ public class Person {
         }
         
     }
-
     /**
      * Getter de l'identifiant
      *

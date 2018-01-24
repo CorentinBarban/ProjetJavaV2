@@ -48,6 +48,10 @@ public class Home extends javax.swing.JFrame {
         EnteteAddPerson = new javax.swing.JPanel();
         labelAddPerson = new javax.swing.JLabel();
         corpAddPerson = new javax.swing.JPanel();
+        addAllinput = new javax.swing.JPanel();
+        allButtons = new javax.swing.JPanel();
+        jPanelReturn = new javax.swing.JPanel();
+        jLabelReturn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -153,13 +157,13 @@ public class Home extends javax.swing.JFrame {
         CardsLayout.setHorizontalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CardsLayout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(cardPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(cardSkill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
+                .addGap(131, 131, 131)
                 .addComponent(cardMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
         CardsLayout.setVerticalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +216,7 @@ public class Home extends javax.swing.JFrame {
         EnteteAddPerson.setLayout(EnteteAddPersonLayout);
         EnteteAddPersonLayout.setHorizontalGroup(
             EnteteAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelAddPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(labelAddPerson, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         EnteteAddPersonLayout.setVerticalGroup(
             EnteteAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,15 +225,88 @@ public class Home extends javax.swing.JFrame {
 
         corpAddPerson.setBackground(java.awt.Color.white);
 
+        addAllinput.setBackground(java.awt.Color.white);
+
+        javax.swing.GroupLayout addAllinputLayout = new javax.swing.GroupLayout(addAllinput);
+        addAllinput.setLayout(addAllinputLayout);
+        addAllinputLayout.setHorizontalGroup(
+            addAllinputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        addAllinputLayout.setVerticalGroup(
+            addAllinputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 303, Short.MAX_VALUE)
+        );
+
+        allButtons.setBackground(java.awt.Color.white);
+
+        jPanelReturn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelReturnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelReturnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelReturnMouseExited(evt);
+            }
+        });
+
+        jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\Return_50px.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanelReturnLayout = new javax.swing.GroupLayout(jPanelReturn);
+        jPanelReturn.setLayout(jPanelReturnLayout);
+        jPanelReturnLayout.setHorizontalGroup(
+            jPanelReturnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelReturnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelReturn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelReturnLayout.setVerticalGroup(
+            jPanelReturnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelReturnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelReturn)
+                .addGap(25, 25, 25))
+        );
+
+        javax.swing.GroupLayout allButtonsLayout = new javax.swing.GroupLayout(allButtons);
+        allButtons.setLayout(allButtonsLayout);
+        allButtonsLayout.setHorizontalGroup(
+            allButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(allButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        allButtonsLayout.setVerticalGroup(
+            allButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, allButtonsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout corpAddPersonLayout = new javax.swing.GroupLayout(corpAddPerson);
         corpAddPerson.setLayout(corpAddPersonLayout);
         corpAddPersonLayout.setHorizontalGroup(
             corpAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, corpAddPersonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(corpAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addAllinput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(allButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         corpAddPersonLayout.setVerticalGroup(
             corpAddPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGroup(corpAddPersonLayout.createSequentialGroup()
+                .addComponent(addAllinput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(allButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout viewAddPersonLayout = new javax.swing.GroupLayout(viewAddPerson);
@@ -253,7 +330,9 @@ public class Home extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ViewPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(viewAddPerson, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(viewAddPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,6 +373,20 @@ public class Home extends javax.swing.JFrame {
         this.invalidate();
         this.validate();    
     }//GEN-LAST:event_cardPersonMouseClicked
+
+    private void jPanelReturnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelReturnMouseEntered
+        evt.getComponent().setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_jPanelReturnMouseEntered
+
+    private void jPanelReturnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelReturnMouseExited
+       evt.getComponent().setBackground(new Color(224,224,224));
+    }//GEN-LAST:event_jPanelReturnMouseExited
+
+    private void jPanelReturnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelReturnMouseClicked
+        this.setContentPane(ViewPrincipal);
+        this.invalidate();
+        this.validate(); 
+    }//GEN-LAST:event_jPanelReturnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -352,11 +445,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel Entete;
     private javax.swing.JPanel EnteteAddPerson;
     private javax.swing.JPanel ViewPrincipal;
+    private javax.swing.JPanel addAllinput;
+    private javax.swing.JPanel allButtons;
     private javax.swing.JPanel cardMission;
     private javax.swing.JPanel cardPerson;
     private javax.swing.JPanel cardSkill;
     private javax.swing.JPanel corpAddPerson;
     private javax.swing.JLabel imageCardPerson;
+    private javax.swing.JLabel jLabelReturn;
+    private javax.swing.JPanel jPanelReturn;
     private javax.swing.JLabel labelAddPerson;
     private javax.swing.JLabel nameApplication;
     private javax.swing.JPanel viewAddPerson;
