@@ -10,7 +10,10 @@ import Model.Person;
 import Model.Skill;
 import java.io.*;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -43,8 +46,21 @@ public class ManagePerson implements ManageData {
     }
 
     @Override
-    public void writeData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void writeData(Company c) {
+        try {
+            FileWriter writer = new FileWriter(CSV_FILE_PATH);
+            Set entrySet = c.listePerson.entrySet();
+            Iterator it = entrySet.iterator();
+            while (it.hasNext()) {
+                Map.Entry me = (Map.Entry)it.next();
+                writer.append(me.getValue().toString());
+                writer.append(",");
+                it.remove();
+            }
+            writer.flush();
+            writer.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
 }

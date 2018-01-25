@@ -62,7 +62,7 @@ public class ManageMission implements ManageData {
     }
 
     @Override
-    public void writeData() {
+    public void writeData(Company c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

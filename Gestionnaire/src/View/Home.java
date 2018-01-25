@@ -62,14 +62,13 @@ public class Home extends javax.swing.JFrame {
         nameApplication.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         nameApplication.setForeground(java.awt.Color.white);
         nameApplication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nameApplication.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\play-outlined-button-of-two-triangles.png")); // NOI18N
         nameApplication.setText("Gestionnaire");
 
         javax.swing.GroupLayout EnteteLayout = new javax.swing.GroupLayout(Entete);
         Entete.setLayout(EnteteLayout);
         EnteteLayout.setHorizontalGroup(
             EnteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(nameApplication, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(nameApplication, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         EnteteLayout.setVerticalGroup(
             EnteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +92,6 @@ public class Home extends javax.swing.JFrame {
         });
 
         imageCardPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageCardPerson.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\icons8-ajouter-un-utilisateur-homme-50.png")); // NOI18N
 
         javax.swing.GroupLayout cardPersonLayout = new javax.swing.GroupLayout(cardPerson);
         cardPerson.setLayout(cardPersonLayout);
@@ -209,7 +207,6 @@ public class Home extends javax.swing.JFrame {
         labelAddPerson.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         labelAddPerson.setForeground(java.awt.Color.white);
         labelAddPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelAddPerson.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\play-outlined-button-of-two-triangles.png")); // NOI18N
         labelAddPerson.setText("Ajouter une personne");
 
         javax.swing.GroupLayout EnteteAddPersonLayout = new javax.swing.GroupLayout(EnteteAddPerson);
@@ -253,7 +250,6 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\corentin\\Desktop\\ProjetJava\\projectJava\\Gestionnaire\\Interface\\Return_50px.png")); // NOI18N
 
         javax.swing.GroupLayout jPanelReturnLayout = new javax.swing.GroupLayout(jPanelReturn);
         jPanelReturn.setLayout(jPanelReturnLayout);
@@ -267,7 +263,7 @@ public class Home extends javax.swing.JFrame {
         jPanelReturnLayout.setVerticalGroup(
             jPanelReturnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelReturnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jLabelReturn)
                 .addGap(25, 25, 25))
         );
@@ -285,7 +281,7 @@ public class Home extends javax.swing.JFrame {
             allButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, allButtonsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 

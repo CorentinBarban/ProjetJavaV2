@@ -16,5 +16,5 @@ public interface ManageData {
     
     public void readData(Company c);
     
-    public void writeData();
+    public void writeData(Company c);
 }
