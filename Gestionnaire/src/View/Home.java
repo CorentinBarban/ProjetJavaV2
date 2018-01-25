@@ -92,6 +92,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         imageCardPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageCardPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/icons8-ajouter-un-utilisateur-homme-50.png"))); // NOI18N
 
         javax.swing.GroupLayout cardPersonLayout = new javax.swing.GroupLayout(cardPerson);
         cardPerson.setLayout(cardPersonLayout);
