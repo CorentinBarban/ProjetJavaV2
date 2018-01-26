@@ -6,17 +6,9 @@
 package Controler;
 
 import Model.Company;
-import Model.Person;
 import Model.Skill;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author Mathieu Stivanin
