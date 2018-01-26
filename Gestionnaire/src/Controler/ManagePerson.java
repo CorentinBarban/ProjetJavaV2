@@ -54,7 +54,7 @@ public class ManagePerson implements ManageData {
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();
                 writer.append(me.getValue().toString());
-                writer.append(",");
+                //writer.append(",");
                 it.remove();
             }
             writer.flush();

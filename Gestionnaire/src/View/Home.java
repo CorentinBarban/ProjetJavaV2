@@ -431,6 +431,8 @@ public class Home extends javax.swing.JFrame {
                 mMission.readData(myCompany);
                 myCompany.displayMissions();
                 //myCompany.displayPerson();
+                
+                
             }
         });
     }

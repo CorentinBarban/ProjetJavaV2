@@ -31,13 +31,13 @@ public class Person {
      * @throws ParseException afin de retourner une exception si erreur lors du
      * formatage du texte en date
      */
-    public Person(int id, String ln, String fn, String bd) throws ParseException {
+    public Person(int id, String ln, String fn, String hd) throws ParseException {
         this.idPerson = id;
         this.lastName = ln;
         this.firstName = fn;
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date hDate = formatter.parse(bd); // Conversion du texte en date selon le format vu au dessus
+        Date hDate = formatter.parse(hd); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
         skillList=new HashMap();
     }
@@ -124,13 +124,20 @@ public class Person {
      *
      * @return
      */
-    @Override
-
-    public String toString() {
+    
+    
+    /* public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String DateOfHire = formatter.format(this.dateOfHire);
 
         return "Person{" + "idPerson=" + idPerson + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfHire=" + DateOfHire + ", skillList=" + skillList + '}';
+    } */
+    @Override
+    public String toString(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String DateOfHire = formatter.format(this.dateOfHire);
+
+        return firstName+";"+lastName+";"+DateOfHire+";"+idPerson+"\n";
     }
 
 }
