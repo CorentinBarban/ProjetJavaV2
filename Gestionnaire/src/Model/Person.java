@@ -137,7 +137,11 @@ public class Person {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String DateOfHire = formatter.format(this.dateOfHire);
 
-        return firstName+";"+lastName+";"+DateOfHire+";"+idPerson+"\n";
+        return firstName+";"+lastName+";"+DateOfHire+";"+idPerson+"\r";
+    }
+
+    public HashMap<String, Skill> getSkillList() {
+        return skillList;
     }
 
 }

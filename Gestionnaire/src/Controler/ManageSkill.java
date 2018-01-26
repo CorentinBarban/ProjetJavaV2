@@ -10,7 +10,13 @@ import Model.Person;
 import Model.Skill;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Map.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Mathieu Stivanin
@@ -64,7 +70,30 @@ public class ManageSkill implements ManageData {
 
     @Override
     public void writeData(Company c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*
+        
+         /!\ POSSIBLE AJOUT FUTUR
+        
+        try {
+            FileWriter writer = new FileWriter(CSV_FILE_PATH_SKILL);
+            FileWriter writer2 = new FileWriter(CSV_FILE_PATH_SKILLTOPERSON);
+            Set entrySet = c.listeSkill.entrySet();
+            Set entrySet2 = c.listePerson.entrySet();
+            Iterator it = entrySet.iterator();
+            Iterator it2 = entrySet2.iterator();
+            
+            while (it.hasNext()) {
+                Map.Entry me = (Map.Entry)it.next();
+                writer.append(me.getValue().toString());
+                it.remove();
+            }
+            
+            writer.flush();
+            writer2.flush();
+            writer.close();
+            writer2.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
+        }   */
     }
-    
 }

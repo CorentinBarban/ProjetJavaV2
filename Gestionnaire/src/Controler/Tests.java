@@ -17,13 +17,13 @@ public class Tests {
     public static void main (String[] args) throws ParseException{
         Company c1 = new Company();
         ManageData mp = new ManagePerson();
-        Person p = new Person(99, "Test", "Write","06/09/1997");
+        Person p = new Person(98, "Test2", "Write","06/09/1996");
         
         mp.readData(c1);
         c1.displayPerson();
-        //c1.addPerson(p);
-        //c1.displayPerson();
-        //mp.writeData(c1);
+        c1.addPerson(p);
+        c1.displayPerson();
+        mp.writeData(c1);
     }
             
 }

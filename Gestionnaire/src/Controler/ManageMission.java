@@ -11,6 +11,8 @@ import Model.Skill;
 import java.text.*;
 import java.util.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -63,7 +65,19 @@ public class ManageMission implements ManageData {
 
     @Override
     public void writeData(Company c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            FileWriter writer = new FileWriter(CSV_FILE_PATH);
+            Iterator it = c.listeMission.iterator();
+            while (it.hasNext()) {
+                Map.Entry me = (Map.Entry)it.next();
+                writer.append(me.getValue().toString());
+                //writer.append(",");
+                it.remove();
+            }
+            writer.flush();
+            writer.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ManagePerson.class.getName()).log(Level.SEVERE, null, ex);
+        }    
     }
-
 }

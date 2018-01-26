@@ -84,7 +84,7 @@ public class Skill {
      */
     @Override
     public String toString() {
-        return "Skill{" + "idSkill=" + idSkill + ", skillNameFr=" + skillNameFr + ", skillNameEn=" + skillNameEn + '}';
+        return idSkill+";"+skillNameEn+";"+skillNameFr+"\r";
     }
 
     
