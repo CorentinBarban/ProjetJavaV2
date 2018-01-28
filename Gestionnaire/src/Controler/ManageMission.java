@@ -6,6 +6,7 @@
 package Controler;
 
 import Model.Company;
+import static Model.Company.listePerson;
 import Model.Mission;
 import Model.Skill;
 import java.text.*;
@@ -51,7 +52,7 @@ public class ManageMission implements ManageData {
                 Mission mMission = new Mission(Integer.parseInt(row[0]), row[1], row[2], Integer.parseInt(row[3]));
                 for (int i = 3; i < row.length; i++) {
                     //System.out.println(c.listePerson.get(row[i]));
-                    mMission.addPerson(c.listePerson.get(row[i]));
+                    mMission.addPerson(listePerson.get(row[i]));
                 }
                 c.addMission(mMission);
 

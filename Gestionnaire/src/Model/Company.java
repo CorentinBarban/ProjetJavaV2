@@ -15,9 +15,10 @@ import java.util.Set;
  * @author Mathieu Stivanin
  */
 public class Company {
-    
+
+   
     public final HashMap<String,Skill> listeSkill = new HashMap();
-    public final HashMap<String,Person> listePerson = new HashMap();
+    public static final HashMap<String,Person> listePerson = new HashMap();
     public final ArrayList<Mission> listeMission = new ArrayList();
     
     /**
