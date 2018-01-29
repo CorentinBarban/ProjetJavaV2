@@ -324,7 +324,10 @@ public class Home extends javax.swing.JFrame {
             model.addElement(listePerson.get(me.getKey()));
 
         }
+        jListPerson.setCellRenderer(new personRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListPerson.setSelectionBackground(java.awt.Color.white);
+        jListPerson.setValueIsAdjusting(true);
         jScrollPane1.setViewportView(jListPerson);
 
         javax.swing.GroupLayout jPanelListPersonLayout = new javax.swing.GroupLayout(jPanelListPerson);
@@ -1147,6 +1150,7 @@ public class Home extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Home().setVisible(true);
+                
             }
         });
     }
