@@ -62,7 +62,7 @@ public class Person {
      * @return idPerson
      */
     public String getId() {
-        return ""+idPerson;
+        return ""+idPerson; // Nécessité de convertir en string pour comparer
     }
 
     /**

@@ -67,14 +67,6 @@ public class Mission {
     public void addPerson(Person p){
         this.personOnMission.put(p.getId(), p);
     }
-    
-    /**
-     * Permet de déterminer les personnes à recommander pour cette mission.
-     * @return
-     */
-    public ArrayList<String> recommandation(){ // Cette classe permet d'afficher les personnes recommandées par le logiciel pour telle mission.
-        return null;
-    }
 
     /**
      * Getter du nom de la mission
