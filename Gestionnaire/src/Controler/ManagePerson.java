@@ -6,12 +6,10 @@
 package Controler;
 
 import Model.Company;
+import static Model.Company.listePerson;
 import Model.Person;
-import Model.Skill;
 import java.io.*;
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -49,7 +47,7 @@ public class ManagePerson implements ManageData {
     public void writeData(Company c) {
         try {
             FileWriter writer = new FileWriter(CSV_FILE_PATH);
-            Set entrySet = c.listePerson.entrySet();
+            Set entrySet = listePerson.entrySet();
             Iterator it = entrySet.iterator();
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();

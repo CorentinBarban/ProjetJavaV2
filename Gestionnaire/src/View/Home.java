@@ -11,6 +11,7 @@ import Controler.ManagePerson;
 import Controler.ManageSkill;
 import Model.Company;
 import static Model.Company.listePerson;
+import Model.Person;
 import java.awt.*;
 import java.util.Iterator;
 import java.util.Map;
@@ -29,9 +30,9 @@ public class Home extends javax.swing.JFrame {
      * Creates new form Home
      */
     public Home() {
-
-        initComponents();
         loadData();
+        initComponents();
+        
     }
 
     /**
@@ -61,7 +62,7 @@ public class Home extends javax.swing.JFrame {
         jPanelGoAddPerson = new javax.swing.JPanel();
         jLabelAdd = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        DefaultListModel<String> model = new DefaultListModel();
+        DefaultListModel<Person> model = new DefaultListModel();
         jListPerson = new javax.swing.JList<>();
         jPanelCardInformation = new javax.swing.JPanel();
         jTextFieldName = new javax.swing.JTextField();
@@ -320,7 +321,7 @@ public class Home extends javax.swing.JFrame {
         Iterator it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry me = (Map.Entry)it.next();
-            model.addElement(listePerson.get(me).getLastName());
+            model.addElement(listePerson.get(me.getKey()));
 
         }
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -344,7 +345,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListPersonLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jPanelGoAddPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1146,24 +1147,6 @@ public class Home extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Home().setVisible(true);
-
-                /*Company myCompany = new Company();
-                //Recharger les personnes en premier
-                ManageData mPerson = new ManagePerson();
-                mPerson.readData(myCompany);
-                myCompany.displayPerson();
-
-                //Recharger les competences et les redistribuer correctement
-                ManageData mySkill = new ManageSkill();
-                mySkill.readData(myCompany);
-                //myCompany.displaySkills();
-
-                // Réafecter tous les projets aux bonnes personnes
-                ManageData mMission = new ManageMission();
-                mMission.readData(myCompany);
-                //myCompany.displayMissions();
-                //myCompany.displayPerson();
-                 */
             }
         });
     }
@@ -1212,7 +1195,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSurname;
     private javax.swing.JLabel jLabelSurname1;
     private javax.swing.JList<String> jListMission;
-    private javax.swing.JList<String> jListPerson;
+    private javax.swing.JList<Person> jListPerson;
     private javax.swing.JList<String> jListRequirements;
     private javax.swing.JList<String> jListSkill;
     private javax.swing.JPanel jPanelCardInformation;

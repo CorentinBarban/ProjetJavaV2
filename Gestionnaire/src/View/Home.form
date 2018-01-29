@@ -375,7 +375,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="230" max="-2" attributes="0"/>
-                              <EmptySpace pref="35" max="32767" attributes="0"/>
+                              <EmptySpace pref="42" max="32767" attributes="0"/>
                               <Component id="jPanelGoAddPerson" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -430,10 +430,10 @@
                             <Property name="selectionMode" type="int" value="0"/>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;String&gt; model = new DefaultListModel();"/>
-                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jListPerson.setModel(model);&#xa;Set entrySet = listePerson.entrySet();&#xa;Iterator it = entrySet.iterator();&#xa;while (it.hasNext()) {&#xa;    Map.Entry me = (Map.Entry)it.next();&#xa;    model.addElement(listePerson.get(me).getLastName());&#xa;    &#xa;}"/>
+                            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Person&gt; model = new DefaultListModel();"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jListPerson.setModel(model);&#xa;Set entrySet = listePerson.entrySet();&#xa;Iterator it = entrySet.iterator();&#xa;while (it.hasNext()) {&#xa;    Map.Entry me = (Map.Entry)it.next();&#xa;    model.addElement(listePerson.get(me.getKey()));&#xa;    &#xa;}"/>
                             <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Home_jListPerson"/>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Person&gt;"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
