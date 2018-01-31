@@ -138,7 +138,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="171" max="32767" attributes="0"/>
+                              <EmptySpace pref="168" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="cardMission" max="32767" attributes="0"/>
                                   <Component id="cardPerson" max="32767" attributes="0"/>
@@ -161,6 +161,9 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="cardMission">
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cardMissionMouseClicked"/>
+                      </Events>
 
                       <Layout>
                         <DimensionLayout dim="0">

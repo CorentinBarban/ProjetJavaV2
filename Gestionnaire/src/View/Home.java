@@ -85,6 +85,12 @@ public class Home extends javax.swing.JFrame {
 
         Cards.setBackground(java.awt.Color.white);
 
+        cardMission.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardMissionMouseClicked(evt);
+            }
+        });
+
         imageCardMission.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         imageCardMission.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imageCardMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/icons8-tâche-filled-50.png"))); // NOI18N
@@ -148,7 +154,7 @@ public class Home extends javax.swing.JFrame {
         CardsLayout.setHorizontalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CardsLayout.createSequentialGroup()
-                .addContainerGap(171, Short.MAX_VALUE)
+                .addContainerGap(168, Short.MAX_VALUE)
                 .addGroup(CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cardMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cardPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -236,6 +242,13 @@ public class Home extends javax.swing.JFrame {
         parentPanel.repaint();
         parentPanel.revalidate();
     }//GEN-LAST:event_cardPersonMouseClicked
+
+    private void cardMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardMissionMouseClicked
+        parentPanel.removeAll();
+        parentPanel.add(new ViewAllMission());
+        parentPanel.repaint();
+        parentPanel.revalidate();
+    }//GEN-LAST:event_cardMissionMouseClicked
 
     private void loadData() {
         Company myCompany = new Company();
