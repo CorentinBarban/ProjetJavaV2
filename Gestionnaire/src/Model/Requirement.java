@@ -14,11 +14,10 @@ import java.util.HashMap;
 public class Requirement {
     private int idRequirement;
     private HashMap<String,Skill> requiredSkill;
-    private int nbPersonRequiredSkill;
+    private HashMap<String,Integer> nbPersonRequiredSkill;
     
-    public Requirement(int id, int nbRequired){
+    public Requirement(int id){
         this.idRequirement = id;
-        this.nbPersonRequiredSkill = nbRequired;
     }
     
     public void addRequiredSkill(Skill s){
@@ -33,12 +32,20 @@ public class Requirement {
         this.idRequirement = idRequirement;
     }
 
-    public int getNbPersonRequiredSkill() {
-        return nbPersonRequiredSkill;
+    public void setNbPersonRequiredSkill(int nbPerson, String idSkill ) {
+        nbPersonRequiredSkill.put(idSkill, nbPerson);
     }
 
-    public void setNbPersonRequiredSkill(int nbPersonRequiredSkill) {
-        this.nbPersonRequiredSkill = nbPersonRequiredSkill;
+    public int getNbPersonRequiredSkill(String idSkill) {
+        return nbPersonRequiredSkill.get(idSkill);
+    }
+    
+    public String toString(){ // To string servant à l'écriture dans le CSV
+        return idRequirement + ";";
+    }
+    
+    public String affichage(){ // To string traditionnel
+        
     }
     
 }
