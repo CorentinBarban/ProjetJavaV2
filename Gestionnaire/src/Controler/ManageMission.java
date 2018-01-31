@@ -37,7 +37,7 @@ public class ManageMission implements ManageData {
     }
     
     public boolean checkNbPersonRequiredSkill(HashMap<String,Person> listPerson, HashMap<String,Skill> listSkills){
-        int cpt = 0;
+        /*int cpt = 0;
         for (int i=0; i<listSkills.size();i++){
             for (int j=0; j<listPerson.size();j++){
                 if(listPerson.get(j).getSkillList().containsKey(listSkills.get(i).getId())){
@@ -49,7 +49,18 @@ public class ManageMission implements ManageData {
             return true;
         } else {
             return false;
+        }*/
+        HashMap<String,String> res = new HashMap<String,String>();
+        for (int i=0; i<listPerson.size();i++){
+            HashMap<String,Skill> map  = listPerson.get(i).getSkillList();
+            for (int j=0; j<listSkills.size();j++){
+                if(map.containsKey(listSkills.get(j).getId())){
+                    res.put(listPerson.get(i).getId(), listSkills.get(j).getId());  
+            }
         }
+    }
+    return true;
+
     }
 
     public void skillCheck() {  // Cette classe doit vérifier si les compétences apportées par les personnes présentes sur la mission remplissent les besoins. Si c'est le cas, alors le type de la mission passe à "plannifié".
