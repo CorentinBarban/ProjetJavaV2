@@ -45,7 +45,7 @@ public class Requirement {
     }
     
     public String affichage(){ // To string traditionnel
-        
+        return "Requirement "+ idRequirement;
     }
     
 }
