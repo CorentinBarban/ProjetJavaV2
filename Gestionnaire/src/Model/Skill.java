@@ -79,7 +79,7 @@ public class Skill {
     }
 
     /**
-     * Méthode d'affichaged de la compétence selon ses attributs
+     * Méthode d'affichage de la compétence selon ses attributs
      * @return
      */
     @Override

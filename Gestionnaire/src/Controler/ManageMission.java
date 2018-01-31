@@ -8,6 +8,7 @@ package Controler;
 import Model.Company;
 import static Model.Company.listePerson;
 import Model.Mission;
+import Model.Person;
 import Model.Skill;
 import java.text.*;
 import java.util.*;
@@ -32,6 +33,22 @@ public class ManageMission implements ManageData {
             throw new ParseException("La date entrée ne doit pas être inférieur à la date d'aujourd'hui.", 1);
         } else {
             return newDate;
+        }
+    }
+    
+    public boolean checkNbPersonRequiredSkill(HashMap<String,Person> listPerson, HashMap<String,Skill> listSkills){
+        int cpt = 0;
+        for (int i=0; i<listSkills.size();i++){
+            for (int j=0; j<listPerson.size();j++){
+                if(listPerson.get(j).getSkillList().containsKey(listSkills.get(i).getId())){
+                    cpt +=1;
+                }
+            }
+        }
+        if(cpt == listSkills.size()){ // Pas bon, car si plusieurs personnes possèdent la compétence, le compteur sera supérieur au nb de skills.
+            return true;
+        } else {
+            return false;
         }
     }
 

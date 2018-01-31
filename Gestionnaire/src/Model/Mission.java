@@ -17,7 +17,8 @@ import Controler.*;
 public class Mission {
     private int idMission;
     private String missionName;
-    private HashMap<String,Skill> requiredSkills; // Si besoin de 3x la compétence blablabla, la mettre trois fois dans la map.
+    private int nbTotalPerson;
+    private HashMap<Integer,Requirement> requirements;
     private HashMap<String,Person> personOnMission;
     private Date startDate;
     private int missionDuration;
@@ -40,7 +41,7 @@ public class Mission {
         this.missionDuration = md;
         this.missionType = this.tabTypes[0]; // Lorsqu'une mission est créée, son statut est "en préparation"
         personOnMission= new HashMap();
-        requiredSkills = new HashMap();
+        requirements = new HashMap();
     }
     
     
@@ -56,8 +57,8 @@ public class Mission {
      * Ajout de compétences requises pour la mission
      * @param s représente la compétence à ajouter
      */
-    public void addSkill(Skill s){
-        this.requiredSkills.put(s.getId(), s);
+    public void addRequirement(Requirement r){
+        this.requirements.put(r.getIdRequirement(), r);
     }
     
     /**
@@ -133,6 +134,14 @@ public class Mission {
     public void setMissionType(int i) {
         this.missionType = this.tabTypes[i];
     }
+    
+    public int getNbTotalPerson() {
+        return nbTotalPerson;
+    }
+
+    public void setNbTotalPerson(int nbTotalPerson) {
+        this.nbTotalPerson = nbTotalPerson;
+    }
 
 
     /**
@@ -143,6 +152,7 @@ public class Mission {
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
-        return "Mission{" + "idMission=" + idMission + ", missionName=" + missionName + ", requiredSkills=" + requiredSkills + ", personOnMission=" + personOnMission + ", startDate=" + StartDate + ", missionDuration=" + missionDuration + ", tabTypes=" + tabTypes + ", missionType=" + missionType + '}';
+        //TODO boucle de parcours pour affichage
+        return idMission + ", "+ missionName + ", "+ requirements + ", "+ personOnMission + ", "+ StartDate + ", "+ missionDuration + ", "+tabTypes + ", "+ missionType;
     }
 }
