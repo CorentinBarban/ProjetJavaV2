@@ -29,7 +29,11 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    ViewAllMission vallm;
+    ViewAllPerson vallp ;
     public Home() {
+        vallm = new ViewAllMission();
+        vallp = new ViewAllPerson();
         loadData();
         initComponents();
         
@@ -238,14 +242,14 @@ public class Home extends javax.swing.JFrame {
 
     private void cardPersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPersonMouseClicked
         parentPanel.removeAll();
-        parentPanel.add(new ViewAllPerson());
+        parentPanel.add(vallp);
         parentPanel.repaint();
         parentPanel.revalidate();
     }//GEN-LAST:event_cardPersonMouseClicked
 
     private void cardMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardMissionMouseClicked
         parentPanel.removeAll();
-        parentPanel.add(new ViewAllMission());
+        parentPanel.add(vallm);
         parentPanel.repaint();
         parentPanel.revalidate();
     }//GEN-LAST:event_cardMissionMouseClicked
@@ -316,7 +320,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel imageCardMission;
     private javax.swing.JLabel imageCardPerson;
     private javax.swing.JLabel nameApplication;
-    private javax.swing.JPanel parentPanel;
+    protected javax.swing.JPanel parentPanel;
     // End of variables declaration//GEN-END:variables
 
 }

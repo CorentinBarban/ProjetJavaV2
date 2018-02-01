@@ -13,15 +13,15 @@ import java.util.HashMap;
  */
 public class Requirement {
     private int idRequirement;
-    private HashMap<String,Skill> requiredSkill;
+    private Skill requiredSkill;
     private HashMap<String,Integer> nbPersonRequiredSkill;
     
     public Requirement(int id){
         this.idRequirement = id;
     }
     
-    public void addRequiredSkill(Skill s){
-        this.requiredSkill.put(s.getId(), s);
+    public Skill getRequiredSkill(){
+        return this.requiredSkill;
     }
 
     public int getIdRequirement() {

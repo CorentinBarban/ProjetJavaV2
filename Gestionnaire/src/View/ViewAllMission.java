@@ -14,7 +14,9 @@ public class ViewAllMission extends javax.swing.JPanel {
     /**
      * Creates new form ViewAllMission
      */
+    ViewAddPerson vaddm;
     public ViewAllMission() {
+        vaddm = new ViewAddPerson();
         initComponents();
     }
 
@@ -49,6 +51,9 @@ public class ViewAllMission extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         jListRequirements = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
+
+        setMinimumSize(new java.awt.Dimension(850, 700));
+        setPreferredSize(new java.awt.Dimension(850, 700));
 
         viewAllMission.setBackground(java.awt.Color.white);
 
@@ -116,7 +121,7 @@ public class ViewAllMission extends javax.swing.JPanel {
             jPanelListMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListMissionLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                .addComponent(jScrollPane3)
                 .addGap(13, 13, 13)
                 .addComponent(jPanelGoAddMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -149,7 +154,7 @@ public class ViewAllMission extends javax.swing.JPanel {
                 .addGroup(jPanelCardInformationMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jFormattedTextFieldDate2)
                     .addComponent(jFormattedTextFieldDate1)
-                    .addComponent(jTextFieldName1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                    .addComponent(jTextFieldName1, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jTextFieldSurname1))
                 .addContainerGap())
         );
@@ -195,7 +200,7 @@ public class ViewAllMission extends javax.swing.JPanel {
             jPanelRequirementsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRequirementsLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
                 .addGap(74, 74, 74))
         );
 
@@ -255,26 +260,24 @@ public class ViewAllMission extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 733, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(viewAllMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(viewAllMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(viewAllMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(viewAllMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelGoAddMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelGoAddMissionMouseClicked
-        // TODO add your handling code here:
+        
+        parentPanel.removeAll();
+        parentPanel.add(vallm);
+        parentPanel.repaint();
+        parentPanel.revalidate();
     }//GEN-LAST:event_jPanelGoAddMissionMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

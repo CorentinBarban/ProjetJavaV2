@@ -27,15 +27,11 @@ public class personRenderer extends JLabel implements ListCellRenderer<Person> {
         setText(person.getFirstName()+" "+person.getLastName());
         if (isSelected) {
             setBackground(Color.LIGHT_GRAY);
-            setForeground(Color.BLACK);
-            
-            
+            setForeground(Color.BLACK);            
         } else {
             setBackground(Color.WHITE);
             setForeground(Color.BLACK);
         }
         return this;
-    }
-    
-    
+    }    
 }

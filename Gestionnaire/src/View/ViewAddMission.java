@@ -42,6 +42,8 @@ public class ViewAddMission extends javax.swing.JPanel {
         jButtonAnnuler = new javax.swing.JButton();
         jButtonAjouter = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(850, 700));
+
         viewAddMission.setBackground(java.awt.Color.white);
         viewAddMission.setPreferredSize(new java.awt.Dimension(788, 554));
 
@@ -57,7 +59,7 @@ public class ViewAddMission extends javax.swing.JPanel {
         EnteteAddMission.setLayout(EnteteAddMissionLayout);
         EnteteAddMissionLayout.setHorizontalGroup(
             EnteteAddMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelAddMission, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+            .addComponent(labelAddMission, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         EnteteAddMissionLayout.setVerticalGroup(
             EnteteAddMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,7 +106,7 @@ public class ViewAddMission extends javax.swing.JPanel {
                 .addGroup(jPanelUpLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelMissionStartDate)
                     .addComponent(jTextFieldMissionStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelUpRightLayout = new javax.swing.GroupLayout(jPanelUpRight);
@@ -198,21 +200,15 @@ public class ViewAddMission extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 788, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(viewAddMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(viewAddMission, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(viewAddMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(viewAddMission, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
