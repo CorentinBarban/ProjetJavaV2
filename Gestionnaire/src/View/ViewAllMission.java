@@ -14,9 +14,9 @@ public class ViewAllMission extends javax.swing.JPanel {
     /**
      * Creates new form ViewAllMission
      */
-    ViewAddPerson vaddm;
+    ViewAddMission vaddm;
     public ViewAllMission() {
-        vaddm = new ViewAddPerson();
+        vaddm = new ViewAddMission();
         initComponents();
     }
 
@@ -50,7 +50,7 @@ public class ViewAllMission extends javax.swing.JPanel {
         jPanelRequirements = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jListRequirements = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        jButtonReturnHome = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(850, 700));
         setPreferredSize(new java.awt.Dimension(850, 700));
@@ -204,10 +204,15 @@ public class ViewAllMission extends javax.swing.JPanel {
                 .addGap(74, 74, 74))
         );
 
-        jButton1.setText("< Retour");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonReturnHome.setText("< Retour");
+        jButtonReturnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonReturnHomeMouseClicked(evt);
+            }
+        });
+        jButtonReturnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonReturnHomeActionPerformed(evt);
             }
         });
 
@@ -225,14 +230,14 @@ public class ViewAllMission extends javax.swing.JPanel {
                         .addGap(22, 22, 22)
                         .addComponent(jPanelRequirements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(corpsAllMissionLayout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jButtonReturnHome)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         corpsAllMissionLayout.setVerticalGroup(
             corpsAllMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(corpsAllMissionLayout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(jButtonReturnHome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(corpsAllMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelRequirements, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -273,22 +278,26 @@ public class ViewAllMission extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelGoAddMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelGoAddMissionMouseClicked
-        
+        /*
         parentPanel.removeAll();
         parentPanel.add(vallm);
         parentPanel.repaint();
-        parentPanel.revalidate();
+        parentPanel.revalidate();*/
     }//GEN-LAST:event_jPanelGoAddMissionMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonReturnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReturnHomeActionPerformed
+
+    }//GEN-LAST:event_jButtonReturnHomeActionPerformed
+
+    private void jButtonReturnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonReturnHomeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonReturnHomeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel EnteteAllMission;
     private javax.swing.JPanel corpsAllMission;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonReturnHome;
     private javax.swing.JFormattedTextField jFormattedTextFieldDate1;
     private javax.swing.JFormattedTextField jFormattedTextFieldDate2;
     private javax.swing.JLabel jLabelAddMission;
