@@ -32,9 +32,9 @@ public class Home extends javax.swing.JFrame {
     ViewAllMission vallm;
     ViewAllPerson vallp ;
     public Home() {
+        loadData();
         vallm = new ViewAllMission();
         vallp = new ViewAllPerson();
-        loadData();
         initComponents();
         
     }
@@ -93,6 +93,12 @@ public class Home extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cardMissionMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cardMissionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cardMissionMouseExited(evt);
+            }
         });
 
         imageCardMission.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -106,16 +112,16 @@ public class Home extends javax.swing.JFrame {
         cardMissionLayout.setHorizontalGroup(
             cardMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardMissionLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(63, 63, 63)
                 .addComponent(imageCardMission, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         cardMissionLayout.setVerticalGroup(
             cardMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMissionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(cardMissionLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(imageCardMission, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cardPerson.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,7 +149,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(cardPersonLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(imageCardPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         cardPersonLayout.setVerticalGroup(
             cardPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,21 +163,21 @@ public class Home extends javax.swing.JFrame {
         Cards.setLayout(CardsLayout);
         CardsLayout.setHorizontalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CardsLayout.createSequentialGroup()
-                .addContainerGap(168, Short.MAX_VALUE)
-                .addGroup(CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cardMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cardPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(174, Short.MAX_VALUE))
+            .addGroup(CardsLayout.createSequentialGroup()
+                .addContainerGap(170, Short.MAX_VALUE)
+                .addGroup(CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cardPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         CardsLayout.setVerticalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CardsLayout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addGap(75, 75, 75)
                 .addComponent(cardMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(74, 74, 74)
                 .addComponent(cardPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout CorpsLayout = new javax.swing.GroupLayout(Corps);
@@ -320,7 +326,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel imageCardMission;
     private javax.swing.JLabel imageCardPerson;
     private javax.swing.JLabel nameApplication;
-    protected javax.swing.JPanel parentPanel;
+    private javax.swing.JPanel parentPanel;
     // End of variables declaration//GEN-END:variables
 
 }
