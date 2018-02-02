@@ -100,7 +100,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/View/Images/play-outlined-button-of-two-triangles.png"/>
+                      <Image iconType="3" name="/GUI/Images/play-outlined-button-of-two-triangles.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Gestionnaire"/>
                   </Properties>
@@ -195,7 +195,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/View/Images/icons8-t&#xe2;che-filled-50.png"/>
+                              <Image iconType="3" name="/GUI/Images/icons8-t&#xe2;che-filled-50.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Gestion des missions"/>
                             <Property name="iconTextGap" type="int" value="8"/>
@@ -238,7 +238,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/View/Images/Contact_50px.png"/>
+                              <Image iconType="3" name="/GUI/Images/Contact_50px.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Gestion du personnel"/>
                             <Property name="iconTextGap" type="int" value="8"/>

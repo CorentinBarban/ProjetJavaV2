@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package GUI;
 
 /**
  *
@@ -52,7 +52,7 @@ public class ViewAddMission extends javax.swing.JPanel {
         labelAddMission.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         labelAddMission.setForeground(java.awt.Color.white);
         labelAddMission.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelAddMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
+        labelAddMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
         labelAddMission.setText("Ajouter une mission");
 
         javax.swing.GroupLayout EnteteAddMissionLayout = new javax.swing.GroupLayout(EnteteAddMission);

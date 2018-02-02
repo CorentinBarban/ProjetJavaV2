@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controler;
+package Management;
 
-import Model.Company;
-import static Model.Company.listePerson;
-import Model.Person;
+import API.Company;
+import static API.Company.listePerson;
+import API.Person;
 import java.io.*;
 import java.util.Iterator;
 import java.util.Map;

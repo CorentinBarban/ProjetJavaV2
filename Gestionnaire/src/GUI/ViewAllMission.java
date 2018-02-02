@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package GUI;
 
 /**
  *
@@ -62,7 +62,7 @@ public class ViewAllMission extends javax.swing.JPanel {
         labelAllMission.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         labelAllMission.setForeground(java.awt.Color.white);
         labelAllMission.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelAllMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
+        labelAllMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
         labelAllMission.setText("Gestion des missions");
 
         javax.swing.GroupLayout EnteteAllMissionLayout = new javax.swing.GroupLayout(EnteteAllMission);
@@ -85,7 +85,7 @@ public class ViewAllMission extends javax.swing.JPanel {
         });
 
         jLabelAddMission.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAddMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/icons8-plus-50.png"))); // NOI18N
+        jLabelAddMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/icons8-plus-50.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelGoAddMissionLayout = new javax.swing.GroupLayout(jPanelGoAddMission);
         jPanelGoAddMission.setLayout(jPanelGoAddMissionLayout);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package GUI;
 
 import java.awt.Color;
 
@@ -55,7 +55,7 @@ public class ViewAddPerson extends javax.swing.JPanel {
         labelAddPerson.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         labelAddPerson.setForeground(java.awt.Color.white);
         labelAddPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelAddPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
+        labelAddPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
         labelAddPerson.setText("Ajouter une personne");
 
         javax.swing.GroupLayout EnteteAddPersonLayout = new javax.swing.GroupLayout(EnteteAddPerson);

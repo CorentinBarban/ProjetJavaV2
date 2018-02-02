@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controler;
+package Management;
 
-import Model.Company;
-import static Model.Company.listePerson;
-import Model.Mission;
-import Model.Person;
-import Model.Requirement;
-import Model.Skill;
+import API.Company;
+import static API.Company.listePerson;
+import API.Mission;
+import API.Person;
+import API.Requirement;
+import API.Skill;
 import java.text.*;
 import java.util.*;
 import java.io.*;

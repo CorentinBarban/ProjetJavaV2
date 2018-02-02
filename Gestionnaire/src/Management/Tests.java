@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controler;
+package Management;
 
-import Model.Company;
-import Model.Person;
+import API.Company;
+import API.Person;
 import java.text.ParseException;
 
 /**

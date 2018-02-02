@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package GUI;
 
-import Controler.ManageData;
-import Controler.ManageMission;
-import Controler.ManagePerson;
-import Controler.ManageSkill;
-import Model.Company;
-import static Model.Company.listePerson;
-import Model.Person;
+import Management.ManageData;
+import Management.ManageMission;
+import Management.ManagePerson;
+import Management.ManageSkill;
+import API.Company;
+import static API.Company.listePerson;
+import API.Person;
 import java.awt.*;
 import java.util.Iterator;
 import java.util.Map;
@@ -71,7 +71,7 @@ public class Home extends javax.swing.JFrame {
         nameApplication.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         nameApplication.setForeground(java.awt.Color.white);
         nameApplication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nameApplication.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
+        nameApplication.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
         nameApplication.setText("Gestionnaire");
 
         javax.swing.GroupLayout EnteteLayout = new javax.swing.GroupLayout(Entete);
@@ -103,7 +103,7 @@ public class Home extends javax.swing.JFrame {
 
         imageCardMission.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         imageCardMission.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageCardMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/icons8-tâche-filled-50.png"))); // NOI18N
+        imageCardMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/icons8-tâche-filled-50.png"))); // NOI18N
         imageCardMission.setText("Gestion des missions");
         imageCardMission.setIconTextGap(8);
 
@@ -138,7 +138,7 @@ public class Home extends javax.swing.JFrame {
 
         imageCardPerson.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         imageCardPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageCardPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Contact_50px.png"))); // NOI18N
+        imageCardPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/Contact_50px.png"))); // NOI18N
         imageCardPerson.setText("Gestion du personnel");
         imageCardPerson.setIconTextGap(8);
 

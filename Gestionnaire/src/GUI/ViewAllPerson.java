@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package GUI;
 
-import static Model.Company.listePerson;
-import Model.Person;
+import static API.Company.listePerson;
+import API.Person;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -65,7 +65,7 @@ public class ViewAllPerson extends javax.swing.JPanel {
         labelAllPerson.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         labelAllPerson.setForeground(java.awt.Color.white);
         labelAllPerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelAllPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
+        labelAllPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
         labelAllPerson.setText("Gestion du personnel");
 
         javax.swing.GroupLayout EnteteAllPersonLayout = new javax.swing.GroupLayout(EnteteAllPerson);
@@ -88,7 +88,7 @@ public class ViewAllPerson extends javax.swing.JPanel {
         });
 
         jLabelAdd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/icons8-plus-50.png"))); // NOI18N
+        jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/icons8-plus-50.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelGoAddPersonLayout = new javax.swing.GroupLayout(jPanelGoAddPerson);
         jPanelGoAddPerson.setLayout(jPanelGoAddPersonLayout);
