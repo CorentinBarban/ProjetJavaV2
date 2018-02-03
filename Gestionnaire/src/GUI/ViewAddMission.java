@@ -14,7 +14,7 @@ public class ViewAddMission extends javax.swing.JPanel {
     /**
      * Creates new form ViewAddMission
      */
-    public ViewAddMission() {
+    ViewAddMission(MyFrame aThis) {
         initComponents();
     }
 

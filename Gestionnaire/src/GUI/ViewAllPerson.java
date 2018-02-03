@@ -17,12 +17,13 @@ import javax.swing.DefaultListModel;
  * @author corentin
  */
 public class ViewAllPerson extends javax.swing.JPanel {
-
+    private MyFrame mf;
     /**
      * Creates new form ViewAllPerson
      */
-    public ViewAllPerson() {
-        initComponents();
+    ViewAllPerson(MyFrame mf) {
+        this.mf=mf;
+        initComponents(); 
     }
 
     /**

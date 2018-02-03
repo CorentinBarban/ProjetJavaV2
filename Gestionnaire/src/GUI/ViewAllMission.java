@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author corentin
@@ -15,10 +17,10 @@ public class ViewAllMission extends javax.swing.JPanel {
      * Creates new form ViewAllMission
      */
     ViewAddMission vaddm;
-    public ViewAllMission() {
-        vaddm = new ViewAddMission();
+    public ViewAllMission(MyFrame myJframe) {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

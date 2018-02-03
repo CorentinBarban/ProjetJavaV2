@@ -16,7 +16,7 @@ public class ViewAddPerson extends javax.swing.JPanel {
     /**
      * Creates new form ViewAddPerson
      */
-    public ViewAddPerson() {
+    ViewAddPerson(MyFrame aThis) {
         initComponents();
     }
 
