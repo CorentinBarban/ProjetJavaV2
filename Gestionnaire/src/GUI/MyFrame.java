@@ -5,6 +5,16 @@
  */
 package GUI;
 
+import API.Company;
+import Management.ManageData;
+import Management.ManageMission;
+import Management.ManagePerson;
+import Management.ManageSkill;
+import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+
 /**
  *
  * @author corentin
@@ -20,7 +30,9 @@ public class MyFrame extends javax.swing.JFrame {
      * Creates new form MyFrame
      */
     public MyFrame() {
+        loadData();
         initComponents();
+        resizeFrame();
         vaddm = new ViewAddMission(this);
         vallm = new ViewAllMission(this);
         vaddp = new ViewAddPerson(this);
@@ -41,14 +53,39 @@ public class MyFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(430, 500));
-        setPreferredSize(new java.awt.Dimension(430, 500));
+        setMinimumSize(null);
+        setPreferredSize(null);
         setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void resizeFrame(){
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = ge.getDefaultScreenDevice();
+        Rectangle rect = defaultScreen.getDefaultConfiguration().getBounds();
+        this.setMinimumSize(new Dimension((int)(rect.width)*1/3,500));
+    }
+    private void loadData() {
+        Company myCompany = new Company();
+        //Recharger les personnes en premier
+        ManageData mPerson = new ManagePerson();
+        mPerson.readData(myCompany);
+        myCompany.displayPerson();
+
+        //Recharger les competences et les redistribuer correctement
+        ManageData mySkill = new ManageSkill();
+        mySkill.readData(myCompany);
+        //myCompany.displaySkills();
+
+        // Réafecter tous les projets aux bonnes personnes
+        ManageData mMission = new ManageMission();
+        mMission.readData(myCompany);
+        //myCompany.displayMissions();
+        //myCompany.displayPerson();
+
+    }
     /**
      * @param args the command line arguments
      */

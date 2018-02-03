@@ -6,6 +6,7 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
@@ -45,10 +46,10 @@ public class ViewHome extends javax.swing.JPanel {
         cardPerson = new javax.swing.JPanel();
         imageCardPerson = new javax.swing.JLabel();
         Entete = new javax.swing.JPanel();
-        nameApplication3 = new javax.swing.JLabel();
+        nameApplication = new javax.swing.JLabel();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(430, 500));
-        setPreferredSize(new java.awt.Dimension(430, 500));
 
         ViewPrincipalHome.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -57,14 +58,14 @@ public class ViewHome extends javax.swing.JPanel {
         Cards.setBackground(java.awt.Color.white);
 
         cardMission.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cardMissionMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cardMissionMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cardMissionMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                cardMissionMouseReleased(evt);
             }
         });
 
@@ -91,14 +92,14 @@ public class ViewHome extends javax.swing.JPanel {
         );
 
         cardPerson.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cardPersonMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cardPersonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cardPersonMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                cardPersonMouseReleased(evt);
             }
         });
 
@@ -139,11 +140,11 @@ public class ViewHome extends javax.swing.JPanel {
         CardsLayout.setVerticalGroup(
             CardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CardsLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(cardMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(cardMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(51, 51, 51)
-                .addComponent(cardPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(cardPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout CorpsLayout = new javax.swing.GroupLayout(Corps);
@@ -155,8 +156,9 @@ public class ViewHome extends javax.swing.JPanel {
         CorpsLayout.setVerticalGroup(
             CorpsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CorpsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Cards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout ViewPrincipalHomeLayout = new javax.swing.GroupLayout(ViewPrincipalHome);
@@ -175,23 +177,23 @@ public class ViewHome extends javax.swing.JPanel {
 
         Entete.setBackground(new java.awt.Color(45, 118, 232));
 
-        nameApplication3.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
-        nameApplication3.setForeground(java.awt.Color.white);
-        nameApplication3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nameApplication3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
-        nameApplication3.setText("Gestionnaire");
+        nameApplication.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
+        nameApplication.setForeground(java.awt.Color.white);
+        nameApplication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameApplication.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/play-outlined-button-of-two-triangles.png"))); // NOI18N
+        nameApplication.setText("Gestionnaire");
 
         javax.swing.GroupLayout EnteteLayout = new javax.swing.GroupLayout(Entete);
         Entete.setLayout(EnteteLayout);
         EnteteLayout.setHorizontalGroup(
             EnteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EnteteLayout.createSequentialGroup()
-                .addComponent(nameApplication3, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nameApplication, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
         EnteteLayout.setVerticalGroup(
             EnteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(nameApplication3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(nameApplication, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -207,34 +209,20 @@ public class ViewHome extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Entete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Entete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(ViewPrincipalHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(3, 3, 3))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cardMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardMissionMouseClicked
-
-    }//GEN-LAST:event_cardMissionMouseClicked
-
     private void cardMissionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardMissionMouseEntered
-        // TODO add your handling code here:
+        evt.getComponent().setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_cardMissionMouseEntered
 
     private void cardMissionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardMissionMouseExited
-        // TODO add your handling code here:
+        evt.getComponent().setBackground(new Color(224, 224, 224));
     }//GEN-LAST:event_cardMissionMouseExited
-
-    private void cardPersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPersonMouseClicked
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice defaultScreen = ge.getDefaultScreenDevice();
-        Rectangle rect = defaultScreen.getDefaultConfiguration().getBounds();
-        int x = (int) rect.getMaxX() - this.getWidth();
-        int y = 0;
-        mySecondFrame.setLocation(x,y);
-        mySecondFrame.setVisible(true);
-    }//GEN-LAST:event_cardPersonMouseClicked
 
     private void cardPersonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPersonMouseEntered
         evt.getComponent().setBackground(Color.LIGHT_GRAY);
@@ -243,6 +231,41 @@ public class ViewHome extends javax.swing.JPanel {
     private void cardPersonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPersonMouseExited
         evt.getComponent().setBackground(new Color(224, 224, 224));
     }//GEN-LAST:event_cardPersonMouseExited
+
+    private void cardMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardMissionMouseReleased
+         //Decoupage de l'écran en deux parties   
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = ge.getDefaultScreenDevice();
+        Rectangle rect = defaultScreen.getDefaultConfiguration().getBounds();
+        mySecondFrame.setMinimumSize(new Dimension((int)(rect.width)*2/3,700));
+        int x = (int) rect.getMaxX() - mySecondFrame.getWidth();
+        int y = 0;
+        //On position la nouvelle fenetre en haut à droite
+        mySecondFrame.setLocation(x,y);
+        // On supprime la vue ViewAllPerson si il est visible
+        if(homeFrame.vallp.isVisible()){
+            mySecondFrame.remove(homeFrame.vallp);
+        }
+        mySecondFrame.add(homeFrame.vallm);
+        mySecondFrame.repaint();
+        mySecondFrame.setVisible(true);
+    }//GEN-LAST:event_cardMissionMouseReleased
+
+    private void cardPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPersonMouseReleased
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            GraphicsDevice defaultScreen = ge.getDefaultScreenDevice();
+            Rectangle rect = defaultScreen.getDefaultConfiguration().getBounds();
+            mySecondFrame.setMinimumSize(new Dimension((int)(rect.width)*2/3,700));
+            int x = (int) rect.getMaxX() - mySecondFrame.getWidth();
+            int y = 0;
+            mySecondFrame.setLocation(x,y);
+            if(homeFrame.vallp.isVisible()){
+                mySecondFrame.remove(homeFrame.vallm);
+            }
+            mySecondFrame.add(homeFrame.vallp);
+            mySecondFrame.repaint();
+            mySecondFrame.setVisible(true);
+    }//GEN-LAST:event_cardPersonMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -254,6 +277,6 @@ public class ViewHome extends javax.swing.JPanel {
     private javax.swing.JPanel cardPerson;
     private javax.swing.JLabel imageCardMission;
     private javax.swing.JLabel imageCardPerson;
-    private javax.swing.JLabel nameApplication3;
+    private javax.swing.JLabel nameApplication;
     // End of variables declaration//GEN-END:variables
 }
