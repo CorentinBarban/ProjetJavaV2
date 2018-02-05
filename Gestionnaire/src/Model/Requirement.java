@@ -5,7 +5,9 @@
  */
 package Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -14,10 +16,15 @@ import java.util.HashMap;
 public class Requirement {
     private int idRequirement;
     private Skill requiredSkill;
+    private final int nbTotalPerson;
+    private String description;
+    private final List<Person> personnes = new ArrayList<>();
+    
     private HashMap<String,Integer> nbPersonRequiredSkill;
     
-    public Requirement(int id){
-        this.idRequirement = id;
+    public Requirement(int idRequirement, int nbTotalPerson){
+        this.idRequirement = idRequirement;
+        this.nbTotalPerson = nbTotalPerson;
     }
     
     public Skill getRequiredSkill(){
