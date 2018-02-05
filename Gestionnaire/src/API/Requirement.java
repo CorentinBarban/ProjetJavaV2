@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package API;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,15 +16,14 @@ import java.util.List;
 public class Requirement {
     private int idRequirement;
     private Skill requiredSkill;
-    private final int nbTotalPerson;
+    private final int nbTotalPerson = 0;
     private String description;
     private final List<Person> personnes = new ArrayList<>();
     
     private HashMap<String,Integer> nbPersonRequiredSkill;
     
-    public Requirement(int idRequirement, int nbTotalPerson){
-        this.idRequirement = idRequirement;
-        this.nbTotalPerson = nbTotalPerson;
+    public Requirement(int id){
+        this.idRequirement = id;
     }
     
     public Skill getRequiredSkill(){
