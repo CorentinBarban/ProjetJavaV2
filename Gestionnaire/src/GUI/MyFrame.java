@@ -14,33 +14,26 @@ import java.awt.Dimension;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import javax.swing.JFrame;
 
 /**
  *
- * @author corentin
+ * @author MathieuSTIVANIN
  */
 public class MyFrame extends javax.swing.JFrame {
-    
-    ViewAddMission vaddm;
-    ViewAllMission vallm;
-    ViewAddPerson vaddp;
-    ViewAllPerson vallp;
-    ViewHome vh;
+
+    ViewHome vhn;
     /**
-     * Creates new form MyFrame
+     * Creates new form MyFrameNew
      */
     public MyFrame() {
         loadData();
         initComponents();
-        resizeFrame();
-        vaddm = new ViewAddMission(this);
-        vallm = new ViewAllMission(this);
-        vaddp = new ViewAddPerson(this);
-        vallp = new ViewAllPerson(this);
-        vh = new ViewHome(this);
-        this.add(vh);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        vhn = new ViewHome(this);
+        this.add(vhn);
         this.repaint();
-        this.revalidate();
+        this.revalidate();    
     }
 
     /**
@@ -53,20 +46,12 @@ public class MyFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(null);
-        setPreferredSize(null);
-        setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resizeFrame(){
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice defaultScreen = ge.getDefaultScreenDevice();
-        Rectangle rect = defaultScreen.getDefaultConfiguration().getBounds();
-        this.setMinimumSize(new Dimension((int)(rect.width)*1/3,500));
-    }
+    
     private void loadData() {
         Company myCompany = new Company();
         //Recharger les personnes en premier
@@ -86,6 +71,7 @@ public class MyFrame extends javax.swing.JFrame {
         //myCompany.displayPerson();
 
     }
+ 
     /**
      * @param args the command line arguments
      */
@@ -112,15 +98,16 @@ public class MyFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MyFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MyFrame().setVisible(true);
+
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
