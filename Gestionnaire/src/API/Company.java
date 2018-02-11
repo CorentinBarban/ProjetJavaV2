@@ -19,21 +19,21 @@ public class Company {
    
     public final HashMap<String,Skill> listeSkill ;
     public final HashMap<String,Person> listePerson;
-    public final ArrayList<Mission> listeMission;
+    public final HashMap<Integer,Mission> listeMission;
     public String companyName;
     
     public Company(String companyName){
         this.companyName  =companyName;
         this.listeSkill   = new HashMap();
         this.listePerson  = new HashMap();
-        this.listeMission = new ArrayList();
+        this.listeMission = new HashMap();
     }
     /**
      * Ajout de mission dans la liste de l'entreprise
      * @param m représente la mission à ajouter
      */
     public void addMission(Mission m){
-        listeMission.add(m);
+        listeMission.put(listeMission.size()+1, m);
     }
     
     /**
@@ -79,9 +79,11 @@ public class Company {
      * Méthode permettant de remplir la liste des missions
      */
     public void displayMissions(){
-        Iterator<Mission> missionIterator = listeMission.iterator();
-        while (missionIterator.hasNext()) {
-            System.out.println(missionIterator.next().toString());
+        Set entrySet = listeMission.entrySet();
+        Iterator it = entrySet.iterator();
+        while (it.hasNext()) {
+            Map.Entry me = (Map.Entry)it.next();
+            System.out.println(me.getValue().toString());
 	}
     }
     

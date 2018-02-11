@@ -47,6 +47,8 @@ public class MyFrame extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Arès");
+        setMinimumSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(new java.awt.CardLayout());
 
         jMenu1.setText("File");
@@ -66,7 +68,7 @@ public class MyFrame extends javax.swing.JFrame {
         //Recharger les personnes en premier
         ManageData mPerson = new ManagePerson();
         mPerson.readData(myCompany);
-        myCompany.displayPerson();
+        //myCompany.displayPerson();
 
         //Recharger les competences et les redistribuer correctement
         ManageData mySkill = new ManageSkill();
@@ -76,7 +78,7 @@ public class MyFrame extends javax.swing.JFrame {
         // Réafecter tous les projets aux bonnes personnes
         ManageData mMission = new ManageMission();
         mMission.readData(myCompany);
-        //myCompany.displayMissions();
+        myCompany.displayMissions();
         //myCompany.displayPerson();
 
     }

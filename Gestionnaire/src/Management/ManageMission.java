@@ -73,7 +73,8 @@ public class ManageMission implements ManageData {
     public void writeData(Company c) {
         try {
             FileWriter writer = new FileWriter(CSV_FILE_PATH);
-            Iterator it = c.listeMission.iterator();
+            Set entrySet = c.listePerson.entrySet();
+            Iterator it = entrySet.iterator();
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();
                 writer.append(me.getValue().toString());
