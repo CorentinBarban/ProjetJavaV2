@@ -10,10 +10,6 @@ import Management.ManageData;
 import Management.ManageMission;
 import Management.ManagePerson;
 import Management.ManageSkill;
-import java.awt.Dimension;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
 import javax.swing.JFrame;
 
 /**
@@ -23,6 +19,7 @@ import javax.swing.JFrame;
 public class MyFrame extends javax.swing.JFrame {
 
     ViewHome vhn;
+    Company myCompany;
     /**
      * Creates new form MyFrameNew
      */
@@ -30,7 +27,7 @@ public class MyFrame extends javax.swing.JFrame {
         loadData();
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        vhn = new ViewHome(this);
+        vhn = new ViewHome(this,myCompany);
         this.add(vhn);
         this.repaint();
         this.revalidate();    
@@ -65,7 +62,7 @@ public class MyFrame extends javax.swing.JFrame {
 
     
     private void loadData() {
-        Company myCompany = new Company();
+        this.myCompany = new Company("Arès");
         //Recharger les personnes en premier
         ManageData mPerson = new ManagePerson();
         mPerson.readData(myCompany);

@@ -17,10 +17,17 @@ import java.util.Set;
 public class Company {
 
    
-    public final HashMap<String,Skill> listeSkill = new HashMap();
-    public static final HashMap<String,Person> listePerson = new HashMap();
-    public final ArrayList<Mission> listeMission = new ArrayList();
+    public final HashMap<String,Skill> listeSkill ;
+    public final HashMap<String,Person> listePerson;
+    public final ArrayList<Mission> listeMission;
+    public String companyName;
     
+    public Company(String companyName){
+        this.companyName  =companyName;
+        this.listeSkill   = new HashMap();
+        this.listePerson  = new HashMap();
+        this.listeMission = new ArrayList();
+    }
     /**
      * Ajout de mission dans la liste de l'entreprise
      * @param m représente la mission à ajouter

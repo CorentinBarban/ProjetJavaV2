@@ -49,7 +49,7 @@ public class ManageSkill implements ManageData {
                 String[] row = line.split(cvsSplitBy);
                 for(int i=1; i<row.length;i++){
                     //System.out.println(c.listeSkill.get(row[i]));
-                    Company.listePerson.get(row[0]).addSkill(c.listeSkill.get(row[i]));
+                    c.listePerson.get(row[0]).addSkill(c.listeSkill.get(row[i]));
                 }
                 
             }

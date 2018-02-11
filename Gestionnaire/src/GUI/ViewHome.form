@@ -61,7 +61,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Person&gt; model = new DefaultListModel();"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jListPerson.setCellRenderer(new personRenderer());&#xa;Set entrySet = listePerson.entrySet();&#xa;Iterator it = entrySet.iterator();&#xa;while (it.hasNext()){&#xa;    Map.Entry me =(Map.Entry)it.next();&#xa;    model.addElement(listePerson.get(me.getKey()));&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jListPerson.setCellRenderer(new personRenderer());&#xa;Set entrySet = myCompany.listePerson.entrySet();&#xa;Iterator it = entrySet.iterator();&#xa;while (it.hasNext()){&#xa;    Map.Entry me =(Map.Entry)it.next();&#xa;    model.addElement(myCompany.listePerson.get(me.getKey()));&#xa;}"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Person&gt;"/>
           </AuxValues>
         </Component>

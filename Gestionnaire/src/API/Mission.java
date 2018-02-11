@@ -40,8 +40,8 @@ public class Mission {
         this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
         this.missionDuration = md;
         this.missionType = this.tabTypes[0]; // Lorsqu'une mission est créée, son statut est "en préparation"
-        personOnMission= new HashMap();
-        requirements = new HashMap();
+        this.personOnMission= new HashMap();
+        this.requirements = new HashMap();
     }
     
     
@@ -55,7 +55,7 @@ public class Mission {
     
     /**
      * Ajout de compétences requises pour la mission
-     * @param s représente la compétence à ajouter
+     * @param r représente la compétence à ajouter
      */
     public void addRequirement(Requirement r){
         this.requirements.put(r.getIdRequirement(), r);

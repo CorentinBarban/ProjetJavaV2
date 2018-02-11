@@ -15,7 +15,7 @@ import java.text.ParseException;
  */
 public class Tests {
     public static void main (String[] args) throws ParseException{
-        Company c1 = new Company();
+        Company c1 = new Company("Arès");
         ManageData mp = new ManagePerson();
         Person p = new Person(98, "Test2", "Write","06/09/1996");
         

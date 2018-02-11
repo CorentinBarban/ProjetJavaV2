@@ -5,8 +5,7 @@
  */
 package GUI;
 
-import static API.Company.listePerson;
-import API.Person;
+import API.*;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -18,13 +17,15 @@ import javax.swing.DefaultListModel;
  */
 public class ViewHome extends javax.swing.JPanel {
         private final MyFrame homeFrame;
-    
+        private Company myCompany;
     /**
      * Creates new form ViewHomeNew
      * @param homeFrame
+     * @param myCompany
      */
-    public ViewHome(MyFrame homeFrame) {
-        this.homeFrame=homeFrame;
+    public ViewHome(MyFrame homeFrame,Company myCompany) {
+        this.homeFrame = homeFrame;
+        this.myCompany = myCompany;
         initComponents();
     }
     
@@ -48,11 +49,11 @@ public class ViewHome extends javax.swing.JPanel {
 
         jListPerson.setModel(model);
         jListPerson.setCellRenderer(new personRenderer());
-        Set entrySet = listePerson.entrySet();
+        Set entrySet = myCompany.listePerson.entrySet();
         Iterator it = entrySet.iterator();
         while (it.hasNext()){
             Map.Entry me =(Map.Entry)it.next();
-            model.addElement(listePerson.get(me.getKey()));
+            model.addElement(myCompany.listePerson.get(me.getKey()));
         }
         jScrollPerson.setViewportView(jListPerson);
 

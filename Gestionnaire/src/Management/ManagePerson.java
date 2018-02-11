@@ -6,7 +6,6 @@
 package Management;
 
 import API.Company;
-import static API.Company.listePerson;
 import API.Person;
 import java.io.*;
 import java.util.Iterator;
@@ -47,7 +46,7 @@ public class ManagePerson implements ManageData {
     public void writeData(Company c) {
         try {
             FileWriter writer = new FileWriter(CSV_FILE_PATH);
-            Set entrySet = listePerson.entrySet();
+            Set entrySet = c.listePerson.entrySet();
             Iterator it = entrySet.iterator();
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();

@@ -15,15 +15,15 @@ import java.util.List;
  */
 public class Requirement {
     private int idRequirement;
-    private Skill requiredSkill;
-    private final int nbTotalPerson = 0;
     private String description;
-    private final List<Person> personnes = new ArrayList<>();
+    private final int nbPersonRequiredSkill;
+    private Skill requiredSkill;
+    private final List<Person> listPersonnes = new ArrayList<>();
     
-    private HashMap<String,Integer> nbPersonRequiredSkill;
     
-    public Requirement(int id){
+    public Requirement(int id, int nbTotalPerson){
         this.idRequirement = id;
+        this.nbPersonRequiredSkill=nbTotalPerson;   
     }
     
     public Skill getRequiredSkill(){
@@ -37,15 +37,17 @@ public class Requirement {
     public void setIdRequirement(int idRequirement) {
         this.idRequirement = idRequirement;
     }
-
-    public void setNbPersonRequiredSkill(int nbPerson, String idSkill ) {
-        nbPersonRequiredSkill.put(idSkill, nbPerson);
-    }
-
-    public int getNbPersonRequiredSkill(String idSkill) {
-        return nbPersonRequiredSkill.get(idSkill);
+    
+    public void addPerson(Person p) throws Exception{
+        if(this.listPersonnes.size() < nbPersonRequiredSkill ){
+            this.listPersonnes.add(p);
+        }else{
+            throw new Exception("Le nombre de personnes maximal est déjà atteint");
+        }
+        
     }
     
+    @Override
     public String toString(){ // To string servant à l'écriture dans le CSV
         return idRequirement + ";";
     }
