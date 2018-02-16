@@ -18,6 +18,8 @@ import javax.swing.DefaultListModel;
 public class ViewHome extends javax.swing.JPanel {
         private final MyFrame homeFrame;
         private Company myCompany;
+        private AddPerson ap;
+        private AddMission am;
     /**
      * Creates new form ViewHomeNew
      * @param homeFrame
@@ -26,6 +28,8 @@ public class ViewHome extends javax.swing.JPanel {
     public ViewHome(MyFrame homeFrame,Company myCompany) {
         this.homeFrame = homeFrame;
         this.myCompany = myCompany;
+        this.ap = new AddPerson(myCompany);
+        this.am = new AddMission();
         initComponents();
     }
     
@@ -49,9 +53,9 @@ public class ViewHome extends javax.swing.JPanel {
         jListMission = new javax.swing.JList<>();
         jLabelPerson = new javax.swing.JLabel();
         jLabelMission = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jButtonAddMission = new javax.swing.JButton();
+        jButtonAddPerson = new javax.swing.JButton();
+        jPanelCenter = new javax.swing.JPanel();
 
         setBackground(java.awt.Color.white);
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -83,7 +87,7 @@ public class ViewHome extends javax.swing.JPanel {
         jPanelLeft.setBackground(java.awt.Color.white);
 
         jListPerson.setModel(modelPerson);
-        jListPerson.setCellRenderer(new PersonRenderer());
+        jListPerson.setCellRenderer(new GUI.PersonRenderer());
         Set entrySet = myCompany.listePerson.entrySet();
         Iterator it = entrySet.iterator();
         while (it.hasNext()) {
@@ -97,7 +101,7 @@ public class ViewHome extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jListPerson);
 
         jListMission.setModel(modelMission);
-        jListMission.setCellRenderer(new MissionRenderer());
+        jListMission.setCellRenderer(new GUI.MissionRenderer());
         Set entrySetMission = myCompany.listeMission.entrySet();
         Iterator itMission = entrySetMission.iterator();
         while (itMission.hasNext()) {
@@ -113,9 +117,19 @@ public class ViewHome extends javax.swing.JPanel {
         jLabelMission.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabelMission.setText("Missions");
 
-        jButton1.setText("Ajouter Mission");
+        jButtonAddMission.setText("Ajouter Mission");
+        jButtonAddMission.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddMissionActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Ajouter Personne");
+        jButtonAddPerson.setText("Ajouter Personne");
+        jButtonAddPerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddPersonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLeftLayout = new javax.swing.GroupLayout(jPanelLeft);
         jPanelLeft.setLayout(jPanelLeftLayout);
@@ -136,10 +150,10 @@ public class ViewHome extends javax.swing.JPanel {
                 .addGroup(jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLeftLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jButton1))
+                        .addComponent(jButtonAddMission))
                     .addGroup(jPanelLeftLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jButton2)))
+                        .addComponent(jButtonAddPerson)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanelLeftLayout.setVerticalGroup(
@@ -149,28 +163,18 @@ public class ViewHome extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(jButtonAddPerson)
                 .addGap(10, 10, 10)
                 .addComponent(jLabelMission)
                 .addGap(5, 5, 5)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jButtonAddMission)
                 .addGap(10, 10, 10))
         );
 
-        jPanel1.setBackground(java.awt.Color.white);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jPanelCenter.setBackground(java.awt.Color.white);
+        jPanelCenter.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -181,27 +185,41 @@ public class ViewHome extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanelCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanelLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonAddPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddPersonActionPerformed
+        jPanelCenter.removeAll();
+        jPanelCenter.add(ap);
+        jPanelCenter.repaint();
+        jPanelCenter.revalidate();
+    }//GEN-LAST:event_jButtonAddPersonActionPerformed
+
+    private void jButtonAddMissionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddMissionActionPerformed
+       jPanelCenter.removeAll();
+        jPanelCenter.add(am);
+        jPanelCenter.repaint();
+        jPanelCenter.revalidate();
+    }//GEN-LAST:event_jButtonAddMissionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonAddMission;
+    private javax.swing.JButton jButtonAddPerson;
     private javax.swing.JLabel jLabelMission;
     private javax.swing.JLabel jLabelPerson;
     private javax.swing.JList<Mission> jListMission;
     private javax.swing.JList<Person> jListPerson;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelCenter;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelLeft;
     private javax.swing.JScrollPane jScrollPane1;
