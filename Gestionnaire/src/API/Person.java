@@ -134,10 +134,15 @@ public class Person {
     } */
     @Override
     public String toString(){
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        /*SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String DateOfHire = formatter.format(this.dateOfHire);
 
-        return firstName+";"+lastName+";"+DateOfHire+";"+idPerson+"\r";
+        return firstName+";"+lastName+";"+DateOfHire+";"+idPerson+"\r";*/
+        // TEST POUR ECRITURE SOUS FORMAT XML
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String DateOfHire = formatter.format(this.dateOfHire);
+        String message="<person>\n     <id>"+idPerson+"</id>\n     <lastName>"+lastName+"</lastName>\n     <firstName>"+firstName+"</firstName>\n     <dateOfHire>"+DateOfHire+"</dateOfHire>\n</person>\n";
+        return message;
     }
 
     public HashMap<String, Skill> getSkillList() {

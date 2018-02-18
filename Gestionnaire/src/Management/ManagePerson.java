@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 public class ManagePerson implements ManageData {
     
     private static final String CSV_FILE_PATH = "liste_personnel.csv";
+    private static final String CSV_FILE_PATH2 = "liste_personnel.ares";
 
     @Override
     public void readData(Company c){
@@ -45,13 +46,13 @@ public class ManagePerson implements ManageData {
     @Override
     public void writeData(Company c) {
         try {
-            FileWriter writer = new FileWriter(CSV_FILE_PATH);
+            FileWriter writer = new FileWriter(CSV_FILE_PATH2);
             Set entrySet = c.listePerson.entrySet();
             Iterator it = entrySet.iterator();
+            writer.append("<?xml version=\"1.0\"?>\n<!DOCTYPE person SYSTEM \"person.ares\">\n");
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();
                 writer.append(me.getValue().toString());
-                //writer.append(",");
                 it.remove();
             }
             writer.flush();

@@ -30,7 +30,8 @@ public class MyFrame extends javax.swing.JFrame {
         vhn = new ViewHome(this,myCompany);
         this.add(vhn);
         this.repaint();
-        this.revalidate();    
+        this.revalidate();
+        
     }
 
     /**
