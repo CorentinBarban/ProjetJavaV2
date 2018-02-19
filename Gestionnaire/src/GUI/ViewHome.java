@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /**
  *
@@ -19,6 +20,7 @@ public class ViewHome extends javax.swing.JPanel {
         private final MyFrame homeFrame;
         private Company myCompany;
         private AddPerson ap;
+        private ViewPerson vePerson;
         private AddMission am;
     /**
      * Creates new form ViewHomeNew
@@ -51,8 +53,6 @@ public class ViewHome extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         DefaultListModel<Mission> modelMission = new DefaultListModel();
         jListMission = new javax.swing.JList<>();
-        jLabelPerson = new javax.swing.JLabel();
-        jLabelMission = new javax.swing.JLabel();
         jButtonAddMission = new javax.swing.JButton();
         jButtonAddPerson = new javax.swing.JButton();
         jPanelCenter = new javax.swing.JPanel();
@@ -72,9 +72,9 @@ public class ViewHome extends javax.swing.JPanel {
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(nameApplication, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,6 +85,9 @@ public class ViewHome extends javax.swing.JPanel {
         );
 
         jPanelLeft.setBackground(java.awt.Color.white);
+
+        jScrollPane1.setBackground(java.awt.Color.white);
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Personnes"));
 
         jListPerson.setModel(modelPerson);
         jListPerson.setCellRenderer(new GUI.PersonRenderer());
@@ -98,7 +101,18 @@ public class ViewHome extends javax.swing.JPanel {
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListPerson.setSelectionBackground(java.awt.Color.white);
         jListPerson.setValueIsAdjusting(true);
+        jListPerson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListPersonMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jListPersonMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(jListPerson);
+
+        jScrollPane2.setBackground(java.awt.Color.white);
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Missions"));
 
         jListMission.setModel(modelMission);
         jListMission.setCellRenderer(new GUI.MissionRenderer());
@@ -110,12 +124,6 @@ public class ViewHome extends javax.swing.JPanel {
 
         }
         jScrollPane2.setViewportView(jListMission);
-
-        jLabelPerson.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabelPerson.setText("Personnes");
-
-        jLabelMission.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabelMission.setText("Missions");
 
         jButtonAddMission.setText("Ajouter Mission");
         jButtonAddMission.addActionListener(new java.awt.event.ActionListener() {
@@ -138,36 +146,26 @@ public class ViewHome extends javax.swing.JPanel {
             .addGroup(jPanelLeftLayout.createSequentialGroup()
                 .addGroup(jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLeftLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelMission)
-                            .addComponent(jLabelPerson)))
-                    .addGroup(jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanelLeftLayout.createSequentialGroup()
-                .addGroup(jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelLeftLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jButtonAddMission))
                     .addGroup(jPanelLeftLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButtonAddPerson)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelLeftLayout.createSequentialGroup()
+                .addGroup(jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelLeftLayout.setVerticalGroup(
             jPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLeftLayout.createSequentialGroup()
-                .addComponent(jLabelPerson)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonAddPerson)
-                .addGap(10, 10, 10)
-                .addComponent(jLabelMission)
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonAddMission)
                 .addGap(10, 10, 10))
@@ -182,7 +180,7 @@ public class ViewHome extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanelLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelCenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -211,12 +209,32 @@ public class ViewHome extends javax.swing.JPanel {
         jPanelCenter.revalidate();
     }//GEN-LAST:event_jButtonAddMissionActionPerformed
 
+    private void jListPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonMouseReleased
+        JList<Person> theListPerson = (JList)evt.getSource();
+        int index = theListPerson.locationToIndex(evt.getPoint());
+        Person personSelected = theListPerson.getModel().getElementAt(index);
+        this.vePerson = new ViewPerson(personSelected);
+        jPanelCenter.removeAll();
+        jPanelCenter.add(vePerson);
+        jPanelCenter.repaint();
+        jPanelCenter.revalidate();
+    }//GEN-LAST:event_jListPersonMouseReleased
+
+    private void jListPersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonMouseClicked
+        /* JList<Person> theListPerson = (JList)evt.getSource();
+        int index = theListPerson.locationToIndex(evt.getPoint());
+        Person personSelected = theListPerson.getModel().getElementAt(index);
+        this.vePerson = new ViewPerson(personSelected);
+        jPanelCenter.removeAll();
+        jPanelCenter.add(vePerson);
+        jPanelCenter.repaint();
+        jPanelCenter.revalidate();*/
+    }//GEN-LAST:event_jListPersonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddMission;
     private javax.swing.JButton jButtonAddPerson;
-    private javax.swing.JLabel jLabelMission;
-    private javax.swing.JLabel jLabelPerson;
     private javax.swing.JList<Mission> jListMission;
     private javax.swing.JList<Person> jListPerson;
     private javax.swing.JPanel jPanelCenter;
