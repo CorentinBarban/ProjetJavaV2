@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE person SYSTEM "C:\Users\MathieuSTIVANIN\Desktop\XML Tests\person.ares">
+<!DOCTYPE person SYSTEM "person.ares">
 <person>
      <id>44</id>
      <lastName>Campolo</lastName>

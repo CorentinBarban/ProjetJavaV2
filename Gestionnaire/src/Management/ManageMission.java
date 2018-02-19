@@ -23,6 +23,7 @@ import java.util.logging.Logger;
 public class ManageMission implements ManageData {
 
     private static final String CSV_FILE_PATH = "liste_missions.csv";
+    private static final String CSV_FILE_PATH2 = "liste_missions.ares";
 
     public Date dateCheck(String d) throws ParseException { // Cette classe doit vérifier si la date de départ assignée lors de la création d'une mission est valide.
         Date today = Calendar.getInstance().getTime(); // Stockage de la date d'ajd
@@ -55,10 +56,9 @@ public class ManageMission implements ManageData {
                 // use comma as separator
                 String[] row = line.split(cvsSplitBy);
                 Mission mMission = new Mission(Integer.parseInt(row[0]), row[1], row[2], Integer.parseInt(row[3]));
-                for (int i = 3; i < row.length; i++) {
-                    //System.out.println(c.listePerson.get(row[i]));
-                    mMission.addPerson(c.listePerson.get(row[i]));
-                }
+                /*for (int i = 3; i < row.length; i++) {
+                    mMission.addPerson(c.listePerson.get(row[i]));      Il sert à quoi ce bout de code ?
+                }*/
                 c.addMission(mMission);
 
             }
@@ -72,9 +72,11 @@ public class ManageMission implements ManageData {
     @Override
     public void writeData(Company c) {
         try {
-            FileWriter writer = new FileWriter(CSV_FILE_PATH);
-            Set entrySet = c.listePerson.entrySet();
+            FileWriter writer = new FileWriter(CSV_FILE_PATH2);
+            Set entrySet = c.listeMission.entrySet();
             Iterator it = entrySet.iterator();
+            writer.append("<?xml version=\"1.0\"?>\n<!DOCTYPE mission SYSTEM \"mission.ares\">\n");
+
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();
                 writer.append(me.getValue().toString());

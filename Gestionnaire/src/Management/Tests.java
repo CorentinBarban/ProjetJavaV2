@@ -6,6 +6,7 @@
 package Management;
 
 import API.Company;
+import API.Mission;
 import API.Person;
 import java.text.ParseException;
 
@@ -19,11 +20,14 @@ public class Tests {
         ManageData mp = new ManagePerson();
         Person p = new Person(98, "Test2", "Write","06/09/1996");
         
+        ManageData mm = new ManageMission();
+        Mission m = new Mission(99, "Test de mission", "19/08/2018", 15);
+        
         mp.readData(c1);
-        c1.displayPerson();
-        c1.addPerson(p);
-        c1.displayPerson();
         mp.writeData(c1);
+        
+        mm.readData(c1);
+        mm.writeData(c1);
     }
             
 }

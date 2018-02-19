@@ -44,7 +44,6 @@ public class Mission {
         this.requirements = new HashMap();
     }
     
-    
     /**
      * Getter de l'identifiant de la mission
      * @return idMission
@@ -153,6 +152,8 @@ public class Mission {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
         //TODO boucle de parcours pour affichage
-        return idMission + ", "+ missionName + ", "+ requirements + ", "+ personOnMission + ", "+ StartDate + ", "+ missionDuration + ", "+tabTypes + ", "+ missionType;
+        String message="<mission>\n     <id>"+idMission+"</id>\n     <name>"+missionName+"</name>\n     <startDate>"+StartDate+"</startDate>\n     <duration>"+missionDuration+"</duration>\n</mission>\n";
+        return message;
+        //return idMission + ", "+ missionName + ", "+ requirements + ", "+ personOnMission + ", "+ StartDate + ", "+ missionDuration + ", "+tabTypes + ", "+ missionType;
     }
 }
