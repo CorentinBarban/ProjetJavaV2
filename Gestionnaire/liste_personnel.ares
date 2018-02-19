@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE person SYSTEM "person.ares">
+<list>
 <person>
      <id>44</id>
      <lastName>Campolo</lastName>
@@ -312,3 +313,4 @@
      <firstName>Hosea</firstName>
      <dateOfHire>24/09/2013</dateOfHire>
 </person>
+</list>

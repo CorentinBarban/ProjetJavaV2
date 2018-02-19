@@ -24,10 +24,8 @@ public class Tests {
         Mission m = new Mission(99, "Test de mission", "19/08/2018", 15);
         
         mp.readData(c1);
+        System.out.println(c1.listePerson);
         mp.writeData(c1);
-        
-        mm.readData(c1);
-        mm.writeData(c1);
     }
             
 }
