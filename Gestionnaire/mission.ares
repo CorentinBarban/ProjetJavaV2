@@ -1,0 +1,5 @@
+<!ELEMENT mission (id,name,nbTotalPerson,startDate,duration)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT dateOfHire (#PCDATA)>
