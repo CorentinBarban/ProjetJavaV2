@@ -1,5 +1,0 @@
-<!ELEMENT person (id,lastName, firstName, dateOfHire,skills+)>
-<!ELEMENT id (#PCDATA)>
-<!ELEMENT lastName (#PCDATA)>
-<!ELEMENT firstName (#PCDATA)>
-<!ELEMENT dateOfHire (#PCDATA)>
