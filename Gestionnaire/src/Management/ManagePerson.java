@@ -54,7 +54,7 @@ public class ManagePerson implements ManageData {
          File inputFile = new File(ARES_FILE_PATH);
          SAXParserFactory factory = SAXParserFactory.newInstance();
          SAXParser saxParser = factory.newSAXParser();
-         PersonHandler userhandler = new PersonHandler(c);
+         XMLPersonHandler userhandler = new XMLPersonHandler(c);
          saxParser.parse(inputFile, userhandler);     
       } catch (Exception e) {
          e.printStackTrace();

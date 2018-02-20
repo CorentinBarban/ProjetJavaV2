@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE mission SYSTEM "mission.ares">
+<list>
 <mission>
      <id>1</id>
      <name>Recherche de sujet</name>
@@ -36,3 +37,4 @@
      <startDate>12/08/2018</startDate>
      <duration>31</duration>
 </mission>
+</list>

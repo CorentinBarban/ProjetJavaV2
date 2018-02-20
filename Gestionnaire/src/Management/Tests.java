@@ -18,14 +18,12 @@ public class Tests {
     public static void main (String[] args) throws ParseException{
         Company c1 = new Company("Arès");
         ManageData mp = new ManagePerson();
-        Person p = new Person(98, "Test2", "Write","06/09/1996");
         
         ManageData mm = new ManageMission();
-        Mission m = new Mission(99, "Test de mission", "19/08/2018", 15);
         
-        mp.readData(c1);
-        System.out.println(c1.listePerson);
-        mp.writeData(c1);
+        mm.readData(c1);
+        System.out.println(c1.listeMission);
+        mm.writeData(c1);
     }
             
 }

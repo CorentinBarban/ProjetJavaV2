@@ -11,7 +11,7 @@ package Management;
  */
 
 import API.Company;
-import API.Person;
+import API.Mission;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,20 +19,20 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class PersonHandler extends DefaultHandler {
+public class XMLMissionHandler extends DefaultHandler {
 
-   boolean bFirstName = false;
-   boolean bLastName = false;
+   boolean bDuration = false;
+   boolean bName = false;
    boolean bId = false;
    boolean bDate = false;
    
    String id;
-   String fName;
-   String lName;
-   String date;
+   String name;
+   String duration;
+   String startDate;
    Company c;
    
-   public PersonHandler(Company c){
+   public XMLMissionHandler(Company c){
        this.c = c;
    }
 
@@ -43,25 +43,25 @@ public class PersonHandler extends DefaultHandler {
 
       if (qName.equalsIgnoreCase("id")) {
           bId = true;
-      } else if (qName.equalsIgnoreCase("firstName")) {
-         bFirstName = true;
-      } else if (qName.equalsIgnoreCase("lastName")) {
-         bLastName = true;
-      } else if (qName.equalsIgnoreCase("dateOfHire")) {
+      } else if (qName.equalsIgnoreCase("name")) {
+         bName = true;
+      } else if (qName.equalsIgnoreCase("startDate")) {
          bDate = true;
+      } else if (qName.equalsIgnoreCase("duration")) {
+         bDuration = true;
       }
    }
 
    @Override
    public void endElement(String uri, 
    String localName, String qName) throws SAXException {
-      if (qName.equalsIgnoreCase("person")) {
+      if (qName.equalsIgnoreCase("mission")) {
          try {
-           Person p = new Person(Integer.parseInt(id), lName, fName, date);
-           c.addPerson(p);
+           Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration));
+           c.addMission(m);
            
        } catch (ParseException ex) {
-           Logger.getLogger(PersonHandler.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(XMLPersonHandler.class.getName()).log(Level.SEVERE, null, ex);
        }
       }
    }
@@ -72,14 +72,14 @@ public class PersonHandler extends DefaultHandler {
        if (bId) {
         id = new String(ch, start, length);
         bId = false;
-      } else if (bFirstName) {
-        fName = new String(ch, start, length);
-        bFirstName = false;
-      } else if (bLastName) {
-        lName = new String(ch, start, length);
-        bLastName = false;
+      } else if (bName) {
+        name = new String(ch, start, length);
+        bName = false;
       } else if (bDate) {
-        date = new String(ch, start, length);
+        startDate = new String(ch, start, length);
+        bDate = false;
+      } else if (bDuration) {
+        duration = new String(ch, start, length);
         bDate = false;
       }
    }

@@ -14,6 +14,8 @@ import java.util.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 /**
  *
@@ -23,7 +25,7 @@ import java.util.logging.Logger;
 public class ManageMission implements ManageData {
 
     private static final String CSV_FILE_PATH = "liste_missions.csv";
-    private static final String CSV_FILE_PATH2 = "liste_missions.ares";
+    private static final String ARES_FILE_PATH = "liste_missions.ares";
 
     public Date dateCheck(String d) throws ParseException { // Cette classe doit vérifier si la date de départ assignée lors de la création d'une mission est valide.
         Date today = Calendar.getInstance().getTime(); // Stockage de la date d'ajd
@@ -44,7 +46,7 @@ public class ManageMission implements ManageData {
     public void skillCheck() {  // Cette classe doit vérifier si les compétences apportées par les personnes présentes sur la mission remplissent les besoins. Si c'est le cas, alors le type de la mission passe à "plannifié".
 
     }
-
+    /* LECTURE CSV SAVE
     @Override
     public void readData(Company c) {
         String csvFile = CSV_FILE_PATH;
@@ -56,9 +58,9 @@ public class ManageMission implements ManageData {
                 // use comma as separator
                 String[] row = line.split(cvsSplitBy);
                 Mission mMission = new Mission(Integer.parseInt(row[0]), row[1], row[2], Integer.parseInt(row[3]));
-                /*for (int i = 3; i < row.length; i++) {
+                for (int i = 3; i < row.length; i++) {
                     mMission.addPerson(c.listePerson.get(row[i]));      Il sert à quoi ce bout de code ?
-                }*/
+                }
                 c.addMission(mMission);
 
             }
@@ -67,15 +69,29 @@ public class ManageMission implements ManageData {
             e.printStackTrace();
         }
 
+    }*/
+    
+    // LECTURE ARES
+    @Override
+    public void readData(Company c){
+        try {
+         File inputFile = new File(ARES_FILE_PATH);
+         SAXParserFactory factory = SAXParserFactory.newInstance();
+         SAXParser saxParser = factory.newSAXParser();
+         XMLMissionHandler userhandler = new XMLMissionHandler(c);
+         saxParser.parse(inputFile, userhandler);     
+      } catch (Exception e) {
+         e.printStackTrace();
+      }    
     }
 
     @Override
     public void writeData(Company c) {
         try {
-            FileWriter writer = new FileWriter(CSV_FILE_PATH2);
+            FileWriter writer = new FileWriter(ARES_FILE_PATH);
             Set entrySet = c.listeMission.entrySet();
             Iterator it = entrySet.iterator();
-            writer.append("<?xml version=\"1.0\"?>\n<!DOCTYPE mission SYSTEM \"mission.ares\">\n");
+            writer.append("<?xml version=\"1.0\"?>\n<!DOCTYPE mission SYSTEM \"mission.ares\">\n<list>\n");
 
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();
@@ -83,6 +99,7 @@ public class ManageMission implements ManageData {
                 //writer.append(",");
                 it.remove();
             }
+            writer.append("</list>");
             writer.flush();
             writer.close();
         } catch (IOException ex) {
