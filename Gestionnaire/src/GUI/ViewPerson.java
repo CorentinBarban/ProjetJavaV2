@@ -53,12 +53,15 @@ public class ViewPerson extends javax.swing.JPanel {
 
         jPanel1.setBackground(java.awt.Color.white);
 
+        jFormattedTextFieldDatePerson.setEditable(false);
         jFormattedTextFieldDatePerson.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
         jFormattedTextFieldDatePerson.setValue(pSelected.getDateOfHire());
 
         jTextFieldNomPerson.setText(pSelected.getFirstName());
+        jTextFieldNomPerson.setEditable(false);
 
         jTextFieldPrenomPerson.setText(pSelected.getLastName());
+        jTextFieldPrenomPerson.setEditable(false);
 
         jLabelDateEPerson.setText("Date d'embauche :");
 

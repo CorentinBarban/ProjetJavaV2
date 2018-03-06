@@ -25,6 +25,7 @@ public class ManagePerson implements ManageData {
     
     private static final String CSV_FILE_PATH = "liste_personnel.csv";
     private static final String ARES_FILE_PATH = "liste_personnel.ares";
+    
 
     // LECTURE CSV SAVE
     /*
@@ -55,7 +56,8 @@ public class ManagePerson implements ManageData {
          SAXParserFactory factory = SAXParserFactory.newInstance();
          SAXParser saxParser = factory.newSAXParser();
          XMLPersonHandler userhandler = new XMLPersonHandler(c);
-         saxParser.parse(inputFile, userhandler);     
+         saxParser.parse(inputFile, userhandler);
+         
       } catch (Exception e) {
          e.printStackTrace();
       }    
