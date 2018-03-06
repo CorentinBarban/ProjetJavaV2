@@ -8,6 +8,8 @@ package API;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Map;
+import java.util.Iterator;
 
 /**
  * @author Mathieu Stivanin Cette classe représente une personne.
@@ -139,11 +141,13 @@ public class Person {
         String DateOfHire = formatter.format(this.dateOfHire);
         String message="<person>\n     <id>"+idPerson+"</id>\n     <lastName>"+lastName+"</lastName>\n     <firstName>"+firstName+"</firstName>\n     <dateOfHire>"+DateOfHire+"</dateOfHire>\n     <skills_list>\n";
        
-        Iterator skillIterator = skillList.entrySet().iterator();
+       Iterator skillIterator = skillList.entrySet().iterator();
+        
         while (skillIterator.hasNext()) {
-            message += skillIterator.next().toString();
+            Map.Entry mapEntry = (Map.Entry) skillIterator.next();
+            message = message + mapEntry.getValue();
 	}
-        message += "</skills_list>\n</person>\n";
+        message = message + "</skills_list>\n</person>\n";
         return message;
     }
 
