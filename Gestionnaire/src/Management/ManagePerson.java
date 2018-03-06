@@ -59,7 +59,6 @@ public class ManagePerson implements ManageData {
          saxParser.parse(inputFile, userhandler);
          
       } catch (Exception e) {
-         //e.getMessage();
          e.printStackTrace();
       }    
     }
