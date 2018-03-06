@@ -134,14 +134,16 @@ public class Person {
     } */
     @Override
     public String toString(){
-        /*SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String DateOfHire = formatter.format(this.dateOfHire);
 
-        return firstName+";"+lastName+";"+DateOfHire+";"+idPerson+"\r";*/
-        // TEST POUR ECRITURE SOUS FORMAT XML
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String DateOfHire = formatter.format(this.dateOfHire);
-        String message="<person>\n     <id>"+idPerson+"</id>\n     <lastName>"+lastName+"</lastName>\n     <firstName>"+firstName+"</firstName>\n     <dateOfHire>"+DateOfHire+"</dateOfHire>\n</person>\n";
+        String message="<person>\n     <id>"+idPerson+"</id>\n     <lastName>"+lastName+"</lastName>\n     <firstName>"+firstName+"</firstName>\n     <dateOfHire>"+DateOfHire+"</dateOfHire>\n     <skills_list>";
+       
+        Iterator skillIterator = skillList.entrySet().iterator();
+        while (skillIterator.hasNext()) {
+            message += skillIterator.next().toString();
+	}
+        message += "</skills_list>\n</person>\n";
         return message;
     }
 
