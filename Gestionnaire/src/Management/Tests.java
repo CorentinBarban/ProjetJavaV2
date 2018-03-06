@@ -23,8 +23,7 @@ public class Tests {
         
         mp.readData(c1);
         ms.readData(c1);
-        System.out.println(c1.listePerson.get("1").getSkillList().get("C.3."));
-        mp.writeData(c1);
+        //mp.writeData(c1);
              
     }
             

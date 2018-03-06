@@ -137,7 +137,7 @@ public class Person {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String DateOfHire = formatter.format(this.dateOfHire);
-        String message="<person>\n     <id>"+idPerson+"</id>\n     <lastName>"+lastName+"</lastName>\n     <firstName>"+firstName+"</firstName>\n     <dateOfHire>"+DateOfHire+"</dateOfHire>\n     <skills_list>";
+        String message="<person>\n     <id>"+idPerson+"</id>\n     <lastName>"+lastName+"</lastName>\n     <firstName>"+firstName+"</firstName>\n     <dateOfHire>"+DateOfHire+"</dateOfHire>\n     <skills_list>\n";
        
         Iterator skillIterator = skillList.entrySet().iterator();
         while (skillIterator.hasNext()) {

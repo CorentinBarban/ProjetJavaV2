@@ -64,13 +64,10 @@ public class ManageSkill implements ManageData {
                     //System.out.println(c.listeSkill.get(row[i]));
                     c.listePerson.get(row[0]).addSkill(c.listeSkill.get(row[i]));
                 }
-                
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
     /*
     

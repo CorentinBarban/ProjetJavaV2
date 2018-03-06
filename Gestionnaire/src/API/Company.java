@@ -17,7 +17,7 @@ import java.util.Set;
 public class Company {
 
    
-    public final HashMap<Integer,Skill> listeSkill ;
+    public final HashMap<String,Skill> listeSkill ;
     public final HashMap<String,Person> listePerson;
     public final HashMap<Integer,Mission> listeMission;
     public String companyName;
@@ -49,7 +49,7 @@ public class Company {
      * @param s représente la compétence à ajouter
      */
     public void addSkill(Skill s){
-        listeSkill.put(this.listeSkill.size()+1, s);
+        listeSkill.put(s.getId(), s);
     }
     
     /**
