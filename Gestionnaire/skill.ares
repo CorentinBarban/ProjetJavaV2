@@ -1,4 +1,4 @@
 <!ELEMENT skill (id,nameFR,nameEN)>
-<!ELEMENT id (#PCDATA)>
+<!ELEMENT idSkill (#PCDATA)>
 <!ELEMENT nameFR (#PCDATA)>
 <!ELEMENT nameEN (#PCDATA)>
