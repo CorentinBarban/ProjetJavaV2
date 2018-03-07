@@ -30,9 +30,9 @@ public class ViewHome extends javax.swing.JPanel {
     public ViewHome(MyFrame homeFrame,Company myCompany) {
         this.homeFrame = homeFrame;
         this.myCompany = myCompany;
-        this.ap = new AddPerson(myCompany);
-        this.am = new AddMission();
         initComponents();
+        this.ap = new AddPerson(myCompany,jListPerson);
+        this.am = new AddMission();
     }
     
     /**
@@ -235,8 +235,8 @@ public class ViewHome extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddMission;
     private javax.swing.JButton jButtonAddPerson;
-    private javax.swing.JList<Mission> jListMission;
-    private javax.swing.JList<Person> jListPerson;
+    public javax.swing.JList<Mission> jListMission;
+    public javax.swing.JList<Person> jListPerson;
     private javax.swing.JPanel jPanelCenter;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelLeft;

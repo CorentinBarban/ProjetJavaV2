@@ -23,7 +23,7 @@ public class Tests {
         
         mp.readData(c1);
         ms.readData(c1);
-        //mp.writeData(c1);
+        mp.writeData(c1);
              
     }
             

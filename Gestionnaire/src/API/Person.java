@@ -5,8 +5,10 @@
  */
 package API;
 
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.*;
 import java.util.Map;
 import java.util.Iterator;
@@ -44,6 +46,20 @@ public class Person {
         skillList=new HashMap();
     }
 
+    /**
+     * Constructeur d'une personne.
+     *
+     */
+    public Person(){
+        this.idPerson = 0;
+        this.lastName = "";
+        this.firstName = "";
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date hDate = new Date(); // Conversion du texte en date selon le format vu au dessus
+        this.dateOfHire = hDate;
+        skillList=new HashMap();
+    }
 
     /**
      * Assignation de compétence(s) à la personne
@@ -121,6 +137,13 @@ public class Person {
         return dateOfHire;
     }
 
+    public void setDateOfHire(String dateOfHire) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date hDate = formatter.parse(dateOfHire);
+        this.dateOfHire = hDate;
+    }
+    
+    
     /**
      * Affichage de la personne selon ses attibuts
      *

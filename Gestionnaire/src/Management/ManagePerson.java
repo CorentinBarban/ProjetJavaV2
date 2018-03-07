@@ -62,6 +62,9 @@ public class ManagePerson implements ManageData {
          e.printStackTrace();
       }    
     }
+    
+    
+    
     @Override
     public void writeData(Company c) {
         try {

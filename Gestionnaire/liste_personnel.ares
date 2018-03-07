@@ -233,6 +233,14 @@
 </skills_list>
 </person>
 <person>
+     <id>53</id>
+     <lastName>Corentin</lastName>
+     <firstName>Barban</firstName>
+     <dateOfHire>06/09/1996</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
      <id>10</id>
      <lastName>Sanburn</lastName>
      <firstName>Lamar</firstName>
@@ -259,6 +267,14 @@
 </skills_list>
 </person>
 <person>
+     <id>54</id>
+     <lastName>Mathieu</lastName>
+     <firstName>Stivanin</firstName>
+     <dateOfHire>15/12/1998</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
      <id>11</id>
      <lastName>Arnaiz</lastName>
      <firstName>Lindsey</firstName>
@@ -281,6 +297,14 @@
      <lastName>Test</lastName>
      <firstName>Write</firstName>
      <dateOfHire>06/09/1997</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
+     <id>55</id>
+     <lastName>cqsscq</lastName>
+     <firstName>cqscq</firstName>
+     <dateOfHire>05/05/0005</dateOfHire>
      <skills_list>
 </skills_list>
 </person>
@@ -320,6 +344,14 @@
      <nameEn>Information Security Management</nameEn>
      <nameFr> Gestion de la sécurité de l’information </nameFr>
      </skill>
+</skills_list>
+</person>
+<person>
+     <id>56</id>
+     <lastName>bdfbfdd<qs</lastName>
+     <firstName>qscqbfbd</firstName>
+     <dateOfHire>06/06/0006</dateOfHire>
+     <skills_list>
 </skills_list>
 </person>
 <person>

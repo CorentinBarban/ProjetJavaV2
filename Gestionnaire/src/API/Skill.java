@@ -84,7 +84,7 @@ public class Skill {
      */
     @Override
     public String toString() {
-        String message="    <skill>\n     <id>"+idSkill+"</id>\n     <nameEn>"+ skillNameEn+"</nameEn>\n     <nameFr>"+skillNameFr+"</nameFr>\n     </skill>\n";
+        String message="    <skill>\n     <idSkill>"+idSkill+"</idSkill>\n     <nameEn>"+ skillNameEn+"</nameEn>\n     <nameFr>"+skillNameFr+"</nameFr>\n     </skill>\n";
         return message;        
     }
 

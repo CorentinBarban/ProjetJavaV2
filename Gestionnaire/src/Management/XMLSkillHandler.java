@@ -39,7 +39,7 @@ public class XMLSkillHandler extends DefaultHandler {
    public void startElement(String uri, 
    String localName, String qName, Attributes attributes) throws SAXException {
 
-      if (qName.equalsIgnoreCase("id")) {
+      if (qName.equalsIgnoreCase("idSkill")) {
           bId = true;
       } else if (qName.equalsIgnoreCase("nameEn")) {
          bNameEn = true;

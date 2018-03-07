@@ -169,6 +169,7 @@
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Person&gt; modelPerson = new DefaultListModel();"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jListPerson.setCellRenderer(new GUI.PersonRenderer());&#xa;Set entrySet = myCompany.listePerson.entrySet();&#xa;Iterator it = entrySet.iterator();&#xa;while (it.hasNext()) {&#xa;    Map.Entry me = (Map.Entry)it.next();&#xa;    modelPerson.addElement(myCompany.listePerson.get(me.getKey()));&#xa;    &#xa;}&#xa;jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);&#xa;jListPerson.setSelectionBackground(java.awt.Color.white);&#xa;jListPerson.setValueIsAdjusting(true);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Person&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -200,6 +201,7 @@
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Mission&gt; modelMission = new DefaultListModel();"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jListMission.setCellRenderer(new GUI.MissionRenderer());&#xa;Set entrySetMission = myCompany.listeMission.entrySet();&#xa;Iterator itMission = entrySetMission.iterator();&#xa;while (itMission.hasNext()) {&#xa;    Map.Entry meMission = (Map.Entry)itMission.next();&#xa;    modelMission.addElement(myCompany.listeMission.get(meMission.getKey()));&#xa;    &#xa;}"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Mission&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
           </SubComponents>
