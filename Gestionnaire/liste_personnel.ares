@@ -301,14 +301,6 @@
 </skills_list>
 </person>
 <person>
-     <id>55</id>
-     <lastName>cqsscq</lastName>
-     <firstName>cqscq</firstName>
-     <dateOfHire>05/05/0005</dateOfHire>
-     <skills_list>
-</skills_list>
-</person>
-<person>
      <id>12</id>
      <lastName>Shumer</lastName>
      <firstName>Lyman</firstName>
@@ -344,14 +336,6 @@
      <nameEn>Information Security Management</nameEn>
      <nameFr> Gestion de la sécurité de l’information </nameFr>
      </skill>
-</skills_list>
-</person>
-<person>
-     <id>56</id>
-     <lastName>bdfbfdd</lastName>
-     <firstName>qscqbfbd</firstName>
-     <dateOfHire>06/06/2006</dateOfHire>
-     <skills_list>
 </skills_list>
 </person>
 <person>

@@ -5,7 +5,6 @@
  */
 package GUI;
 
-
 import API.Company;
 import API.Person;
 import API.Skill;
@@ -19,19 +18,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.ListModel;
+
 /**
  *
  * @author corentin
  */
 public class AddPerson extends javax.swing.JPanel {
-       private Company myCompany;
-       private final JList<Person> myJlistPerson;
+
+    private Company myCompany;
+    private final JList<Person> myJlistPerson;
+
     /**
      * Creates new form addPerson
+     *
      * @param myCompany
      */
-    public AddPerson(Company myCompany,JList<Person> myJlistPerson) {
-        this.myCompany=myCompany;
+    public AddPerson(Company myCompany, JList<Person> myJlistPerson) {
+        this.myCompany = myCompany;
         initComponents();
         this.myJlistPerson = myJlistPerson;
     }
@@ -120,17 +124,12 @@ public class AddPerson extends javax.swing.JPanel {
         jPanelRight.setBackground(java.awt.Color.white);
 
         jListMyskill.setModel(modelMySkill);
+        jListMyskill.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListMyskill.setCellRenderer(new SkillRenderer());
-        Set entrySet = myCompany.listeSkill.entrySet();
-        Iterator it = entrySet.iterator();
-        while (it.hasNext()) {
-            Map.Entry me = (Map.Entry)it.next();
-            modelMySkill.addElement(myCompany.listeSkill.get(me.getKey()));
-
-        }
         jScrollPane1.setViewportView(jListMyskill);
 
         jListAvailableSkill.setModel(modelSkillAvailable);
+        jListAvailableSkill.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(jListAvailableSkill);
         jListAvailableSkill.setCellRenderer(new SkillRenderer());
 
@@ -143,8 +142,18 @@ public class AddPerson extends javax.swing.JPanel {
         }
 
         jButtonShiftLeft.setText("<<");
+        jButtonShiftLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonShiftLeftActionPerformed(evt);
+            }
+        });
 
         jButtonShiftRight.setText(">>");
+        jButtonShiftRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonShiftRightActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelRightLayout = new javax.swing.GroupLayout(jPanelRight);
         jPanelRight.setLayout(jPanelRightLayout);
@@ -166,8 +175,7 @@ public class AddPerson extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1))
-                .addGap(0, 0, 0))
+                    .addComponent(jScrollPane1)))
             .addGroup(jPanelRightLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonShiftLeft)
@@ -228,19 +236,41 @@ public class AddPerson extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAddPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddPersonActionPerformed
-    Person p = new Person();
-    p.setFirstName(jTextFieldNomPerson.getText());
-    p.setLastName(jTextFieldPrenomPerson.getText());
-    p.setId(myCompany.listePerson.size()+1);
-    try {
-        p.setDateOfHire(jFormattedTextFieldDatePerson.getText());
-    } catch (ParseException ex) {
-        Logger.getLogger(AddPerson.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    myCompany.addPerson(p);
-     ManageData mPerson = new ManagePerson();
-     mPerson.writeData(myCompany);
+        Person p = new Person();
+        DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListMyskill.getModel();
+        p.setFirstName(jTextFieldNomPerson.getText());
+        p.setLastName(jTextFieldPrenomPerson.getText());
+        p.setId(myCompany.listePerson.size() + 1);
+        try {
+            p.setDateOfHire(jFormattedTextFieldDatePerson.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(AddPerson.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        for(int i=0;i< modelMySkill.getSize();i++){
+            p.addSkill(modelMySkill.getElementAt(i));
+        }
+        myCompany.addPerson(p);
+        ManageData mPerson = new ManagePerson();
+        mPerson.writeData(myCompany);
+        DefaultListModel<Person> mymodel = (DefaultListModel<Person>) myJlistPerson.getModel();
+        mymodel.addElement(p);
     }//GEN-LAST:event_jButtonAddPersonActionPerformed
+
+    private void jButtonShiftLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftLeftActionPerformed
+        DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListMyskill.getModel();
+        DefaultListModel<Skill> modelAvailableSkill = (DefaultListModel<Skill>) jListAvailableSkill.getModel();
+        modelMySkill.addElement(jListAvailableSkill.getSelectedValue());
+        modelAvailableSkill.remove(jListAvailableSkill.getSelectedIndex());
+        //jListAvailableSkill.getSelectedValue();
+    }//GEN-LAST:event_jButtonShiftLeftActionPerformed
+
+    private void jButtonShiftRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftRightActionPerformed
+        DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListMyskill.getModel();
+        DefaultListModel<Skill> modelAvailableSkill = (DefaultListModel<Skill>) jListAvailableSkill.getModel();
+        modelAvailableSkill.addElement(jListMyskill.getSelectedValue());
+        modelMySkill.remove(jListMyskill.getSelectedIndex());
+    }//GEN-LAST:event_jButtonShiftRightActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -76,12 +76,12 @@ public class MyFrame extends javax.swing.JFrame {
         //myCompany.displayPerson();
 
 
-        myCompany.displaySkills();
+        //myCompany.displaySkills();
 
         // Réafecter tous les projets aux bonnes personnes
         ManageData mMission = new ManageMission();
         mMission.readData(myCompany);
-        myCompany.displayMissions();
+        //myCompany.displayMissions();
         //myCompany.displayPerson();
 
     }

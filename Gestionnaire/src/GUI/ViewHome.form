@@ -85,7 +85,7 @@
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Gestionnaire"/>
+            <Property name="text" type="java.lang.String" value="Ar&#xe9;s"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -162,7 +162,6 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListPersonMouseClicked"/>
                 <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListPersonMouseReleased"/>
               </Events>
               <AuxValues>

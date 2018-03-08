@@ -169,7 +169,6 @@
                       <Component id="jScrollPane2" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -194,10 +193,11 @@
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="modelMySkill" type="code"/>
                 </Property>
+                <Property name="selectionMode" type="int" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Skill&gt; modelMySkill = new DefaultListModel();"/>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jListMyskill.setCellRenderer(new SkillRenderer());&#xa;Set entrySet = myCompany.listeSkill.entrySet();&#xa;Iterator it = entrySet.iterator();&#xa;while (it.hasNext()) {&#xa;    Map.Entry me = (Map.Entry)it.next();&#xa;    modelMySkill.addElement(myCompany.listeSkill.get(me.getKey()));&#xa;    &#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jListMyskill.setCellRenderer(new SkillRenderer());"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Skill&gt;"/>
               </AuxValues>
             </Component>
@@ -215,6 +215,7 @@
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="modelSkillAvailable" type="code"/>
                 </Property>
+                <Property name="selectionMode" type="int" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jListAvailableSkill.setCellRenderer(new SkillRenderer());&#xa;&#xa;Set entrySetSAvailble = myCompany.listeSkill.entrySet();&#xa;Iterator it2 = entrySetSAvailble.iterator();&#xa;while (it2.hasNext()) {&#xa;    Map.Entry me2 = (Map.Entry)it2.next();&#xa;    modelSkillAvailable.addElement(myCompany.listeSkill.get(me2.getKey()));&#xa;    &#xa;}"/>
@@ -228,11 +229,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShiftLeftActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonShiftRight">
           <Properties>
             <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShiftRightActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

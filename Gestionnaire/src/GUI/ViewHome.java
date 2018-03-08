@@ -65,7 +65,7 @@ public class ViewHome extends javax.swing.JPanel {
         nameApplication.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         nameApplication.setForeground(java.awt.Color.white);
         nameApplication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nameApplication.setText("Gestionnaire");
+        nameApplication.setText("Arés");
 
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
@@ -102,9 +102,6 @@ public class ViewHome extends javax.swing.JPanel {
         jListPerson.setSelectionBackground(java.awt.Color.white);
         jListPerson.setValueIsAdjusting(true);
         jListPerson.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListPersonMouseClicked(evt);
-            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jListPersonMouseReleased(evt);
             }
@@ -213,23 +210,12 @@ public class ViewHome extends javax.swing.JPanel {
         JList<Person> theListPerson = (JList)evt.getSource();
         int index = theListPerson.locationToIndex(evt.getPoint());
         Person personSelected = theListPerson.getModel().getElementAt(index);
-        this.vePerson = new ViewPerson(personSelected);
+        this.vePerson = new ViewPerson(myCompany,personSelected,theListPerson);
         jPanelCenter.removeAll();
         jPanelCenter.add(vePerson);
         jPanelCenter.repaint();
         jPanelCenter.revalidate();
     }//GEN-LAST:event_jListPersonMouseReleased
-
-    private void jListPersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonMouseClicked
-        /* JList<Person> theListPerson = (JList)evt.getSource();
-        int index = theListPerson.locationToIndex(evt.getPoint());
-        Person personSelected = theListPerson.getModel().getElementAt(index);
-        this.vePerson = new ViewPerson(personSelected);
-        jPanelCenter.removeAll();
-        jPanelCenter.add(vePerson);
-        jPanelCenter.repaint();
-        jPanelCenter.revalidate();*/
-    }//GEN-LAST:event_jListPersonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
