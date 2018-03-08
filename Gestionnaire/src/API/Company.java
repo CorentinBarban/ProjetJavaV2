@@ -63,6 +63,8 @@ public class Company {
 	}
     }
     
+    
+    
     /**
      * Méthode permettant de remplir la liste des personnes
      */

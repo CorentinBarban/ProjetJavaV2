@@ -66,15 +66,17 @@ public class MyFrame extends javax.swing.JFrame {
     
     private void loadData() {
         this.myCompany = new Company("Arès");
+        //Recharger les competences 
+        ManageData mySkill = new ManageSkill();
+        mySkill.readData(myCompany);
+        
         //Recharger les personnes en premier
         ManageData mPerson = new ManagePerson();
         mPerson.readData(myCompany);
         //myCompany.displayPerson();
 
-        //Recharger les competences et les redistribuer correctement
-        ManageData mySkill = new ManageSkill();
-        mySkill.readData(myCompany);
-        //myCompany.displaySkills();
+
+        myCompany.displaySkills();
 
         // Réafecter tous les projets aux bonnes personnes
         ManageData mMission = new ManageMission();

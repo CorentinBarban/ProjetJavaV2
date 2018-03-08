@@ -5,14 +5,16 @@
  */
 package Management;
 
-/**
+/** 
  *
  * @author MathieuSTIVANIN
  */
 
 import API.Company;
 import API.Person;
+import API.Skill;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xml.sax.Attributes;
@@ -25,11 +27,14 @@ public class XMLPersonHandler extends DefaultHandler {
    boolean bLastName = false;
    boolean bId = false;
    boolean bDate = false;
+   boolean bSkill = false;
    
    String id;
    String fName;
    String lName;
    String date;
+   String idSkill;
+   ArrayList <String> listIdSkills = new ArrayList<>();
    Company c;
    
    public XMLPersonHandler(Company c){
@@ -49,6 +54,8 @@ public class XMLPersonHandler extends DefaultHandler {
          bLastName = true;
       } else if (qName.equalsIgnoreCase("dateOfHire")) {
          bDate = true;
+      } else if (qName.equalsIgnoreCase("idSkill")) {
+         bSkill = true;
       }
    }
 
@@ -59,10 +66,13 @@ public class XMLPersonHandler extends DefaultHandler {
          try {
            Person p = new Person(Integer.parseInt(id), lName, fName, date);
            c.addPerson(p);
-           
-       } catch (ParseException ex) {
+           for (int i=0; i<listIdSkills.size();i++){
+                p.addSkill(c.listeSkill.get(listIdSkills.get(i)));
+           }
+           listIdSkills.removeAll(listIdSkills);
+         } catch (ParseException ex) {
            Logger.getLogger(XMLPersonHandler.class.getName()).log(Level.SEVERE, null, ex);
-       }
+         }
       }
    }
 
@@ -81,6 +91,10 @@ public class XMLPersonHandler extends DefaultHandler {
       } else if (bDate) {
         date = new String(ch, start, length);
         bDate = false;
+      } else if (bSkill) {
+        idSkill = new String(ch, start, length);
+        bSkill = false;
+        listIdSkills.add(idSkill);
       }
    }
 }

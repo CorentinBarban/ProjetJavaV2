@@ -52,7 +52,7 @@ public class XMLSkillHandler extends DefaultHandler {
    public void endElement(String uri, 
    String localName, String qName) throws SAXException {
       if (qName.equalsIgnoreCase("skill")) {
-          Skill s = new Skill(id, nameFr, nameEn);
+          Skill s = new Skill(id, nameEn, nameFr);
           c.addSkill(s);
       }
    }

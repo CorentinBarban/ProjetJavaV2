@@ -35,6 +35,8 @@ public class ManageSkill implements ManageData {
      * @autor corentin
      * @param c passage de la Company en parametre
      */
+    
+    /* CSV SAVE
     @Override
     public void readData(Company c){
         // Creation de toutes les competences 
@@ -69,8 +71,8 @@ public class ManageSkill implements ManageData {
             e.printStackTrace();
         }
     }
-    /*
     
+    */
     // LECTURE ARES
     @Override
     public void readData(Company c){
@@ -84,7 +86,7 @@ public class ManageSkill implements ManageData {
          e.printStackTrace();
       }
     }
-*/
+
     @Override
     public void writeData(Company c) {
           /*
