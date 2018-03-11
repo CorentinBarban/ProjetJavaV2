@@ -15,6 +15,11 @@ import java.util.*;
  * Cette classe représente une mission.
  */
 public class Mission {
+    
+    public enum Etat {
+        enPreparation, plannifiee, 
+    }
+    
     private int idMission;
     private String missionName;
     private int nbTotalPerson;
@@ -22,8 +27,7 @@ public class Mission {
     private HashMap<String,Person> personOnMission;
     private Date startDate;
     private int missionDuration;
-    private String[] tabTypes =  {"enPreparation", "plannifiee", "enCours"};
-    private String missionType;
+    private Etat etat;
     private ManageMission manager = new ManageMission(); // Création d'un objet ManageMission permettant d'utiliser les méthodes de vérification de cette dernière. 
     
     /**
@@ -39,9 +43,18 @@ public class Mission {
         this.missionName = n;
         this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
         this.missionDuration = md;
-        this.missionType = this.tabTypes[0]; // Lorsqu'une mission est créée, son statut est "en préparation"
+        this.etat = Etat.enPreparation; // Lorsqu'une mission est créée, son statut est "en préparation"
         this.personOnMission= new HashMap();
         this.requirements = new HashMap();
+    }
+
+    
+    /**
+     * Getter de l'état de la mission
+     * @return etat
+     */
+    public Etat getEtat() {
+        return etat;
     }
     
     /**
@@ -118,26 +131,19 @@ public class Mission {
         this.missionDuration = missionDuration;
     }
 
-    /**
-     * Getter de l'avancement de la mission
-     * @return missionType
-     */
-    public String getMissionType() {
-        return missionType;
-    }
-
-    /**
-     * Setter de l'avancement de la mission
-     * @param i l'indice du tableau contenant l'avancement désiré
-     */
-    public void setMissionType(int i) {
-        this.missionType = this.tabTypes[i];
-    }
     
+    /**
+     * Getter nombre de personnes sur la mission
+     * @return nbTotalPerson
+     */
     public int getNbTotalPerson() {
         return nbTotalPerson;
     }
-
+    
+    /**
+     * Setter nombre de personnes sur la mission
+     * @param nbTotalPerson
+     */
     public void setNbTotalPerson(int nbTotalPerson) {
         this.nbTotalPerson = nbTotalPerson;
     }
