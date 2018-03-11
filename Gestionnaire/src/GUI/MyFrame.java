@@ -52,10 +52,10 @@ public class MyFrame extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(700, 600));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jMenu1.setText("File");
+        jMenu1.setText("Fichier");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Edition");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
