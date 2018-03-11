@@ -65,7 +65,7 @@ public class ViewHome extends javax.swing.JPanel {
         nameApplication.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         nameApplication.setForeground(java.awt.Color.white);
         nameApplication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nameApplication.setText("Arés");
+        nameApplication.setText("Arès");
 
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
