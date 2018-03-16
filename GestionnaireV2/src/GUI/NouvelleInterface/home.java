@@ -28,6 +28,8 @@ public class home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHeader = new javax.swing.JPanel();
+        jLabelTitle = new javax.swing.JLabel();
+        jPanelContainer = new javax.swing.JPanel();
         jPanelMenuLeft = new javax.swing.JPanel();
         jPanelMenuPerson = new javax.swing.JPanel();
         jLabelPerson = new javax.swing.JLabel();
@@ -35,7 +37,6 @@ public class home extends javax.swing.JFrame {
         jLabelMission = new javax.swing.JLabel();
         jPanelLogo = new javax.swing.JPanel();
         jLabelLogo = new javax.swing.JLabel();
-        jPanelContainer = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -45,15 +46,30 @@ public class home extends javax.swing.JFrame {
 
         jPanelHeader.setBackground(new java.awt.Color(252, 252, 252));
 
+        jLabelTitle.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabelTitle.setText("Accueil");
+
+        jPanelContainer.setBackground(new java.awt.Color(242, 242, 242));
+        jPanelContainer.setLayout(new java.awt.CardLayout());
+
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jPanelContainer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelHeaderLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabelTitle)
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 107, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabelTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jPanelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanelMenuLeft.setBackground(new java.awt.Color(51, 51, 51));
@@ -61,10 +77,20 @@ public class home extends javax.swing.JFrame {
         jPanelMenuPerson.setBackground(new java.awt.Color(51, 51, 51));
         jPanelMenuPerson.setForeground(new java.awt.Color(255, 255, 255));
         jPanelMenuPerson.setToolTipText("");
+        jPanelMenuPerson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jPanelMenuPersonMouseReleased(evt);
+            }
+        });
 
         jLabelPerson.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelPerson.setForeground(new java.awt.Color(204, 204, 204));
         jLabelPerson.setText("Personnes");
+        jLabelPerson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelPersonMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelMenuPersonLayout = new javax.swing.GroupLayout(jPanelMenuPerson);
         jPanelMenuPerson.setLayout(jPanelMenuPersonLayout);
@@ -85,10 +111,20 @@ public class home extends javax.swing.JFrame {
 
         jPanelMenuMission.setBackground(new java.awt.Color(51, 51, 51));
         jPanelMenuMission.setForeground(new java.awt.Color(102, 102, 102));
+        jPanelMenuMission.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jPanelMenuMissionMouseReleased(evt);
+            }
+        });
 
         jLabelMission.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelMission.setForeground(new java.awt.Color(204, 204, 204));
         jLabelMission.setText("Missions");
+        jLabelMission.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelMissionMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelMenuMissionLayout = new javax.swing.GroupLayout(jPanelMenuMission);
         jPanelMenuMission.setLayout(jPanelMenuMissionLayout);
@@ -148,9 +184,6 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanelContainer.setBackground(new java.awt.Color(242, 242, 242));
-        jPanelContainer.setLayout(new java.awt.CardLayout());
-
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -166,23 +199,50 @@ public class home extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabelPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPersonMouseReleased
+        jPanelContainer.removeAll();
+        jPanelContainer.add(new PersonList());
+        jPanelContainer.repaint();
+        jPanelContainer.revalidate();
+        jLabelTitle.setText("Liste des Personnes");
+    }//GEN-LAST:event_jLabelPersonMouseReleased
+
+    private void jPanelMenuPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMenuPersonMouseReleased
+        jPanelContainer.removeAll();
+        jPanelContainer.add(new PersonList());
+        jPanelContainer.repaint();
+        jPanelContainer.revalidate();
+        jLabelTitle.setText("Liste des Personnes");
+    }//GEN-LAST:event_jPanelMenuPersonMouseReleased
+
+    private void jLabelMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMissionMouseReleased
+        jPanelContainer.removeAll();
+        jPanelContainer.add(new MissionList());
+        jPanelContainer.repaint();
+        jPanelContainer.revalidate();
+        jLabelTitle.setText("Liste des Missions");
+    }//GEN-LAST:event_jLabelMissionMouseReleased
+
+    private void jPanelMenuMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMenuMissionMouseReleased
+        jPanelContainer.removeAll();
+        jPanelContainer.add(new MissionList());
+        jPanelContainer.repaint();
+        jPanelContainer.revalidate();
+        jLabelTitle.setText("Liste des Missions");
+    }//GEN-LAST:event_jPanelMenuMissionMouseReleased
 
     /**
      * @param args the command line arguments
@@ -224,6 +284,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMission;
     private javax.swing.JLabel jLabelPerson;
+    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
