@@ -1,5 +1,0 @@
-<!ELEMENT mission (id,name,startDate,duration)>
-<!ELEMENT id (#PCDATA)>
-<!ELEMENT name (#PCDATA)>
-<!ELEMENT startDate (#PCDATA)>
-<!ELEMENT duration (#PCDATA)>
