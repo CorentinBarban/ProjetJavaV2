@@ -5,17 +5,26 @@
  */
 package GUI.NouvelleInterface;
 
+import API.Company;
+import Management.ManageData;
+import Management.ManageMission;
+import Management.ManagePerson;
+import Management.ManageSkill;
+import javax.swing.JFrame;
+
 /**
  *
  * @author MathieuSTIVANIN
  */
 public class home extends javax.swing.JFrame {
-
+    Company myCompany;
     /**
      * Creates new form myFrame
      */
     public home() {
+        loadData();
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -65,11 +74,11 @@ public class home extends javax.swing.JFrame {
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addComponent(jLabelTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(jPanelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         jPanelMenuLeft.setBackground(new java.awt.Color(51, 51, 51));
@@ -147,6 +156,11 @@ public class home extends javax.swing.JFrame {
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/logoPetitTaille.png"))); // NOI18N
         jLabelLogo.setToolTipText("");
+        jLabelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelLogoMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLogoLayout = new javax.swing.GroupLayout(jPanelLogo);
         jPanelLogo.setLayout(jPanelLogoLayout);
@@ -181,7 +195,7 @@ public class home extends javax.swing.JFrame {
                 .addComponent(jPanelMenuPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelMenuMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -203,9 +217,7 @@ public class home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -244,6 +256,36 @@ public class home extends javax.swing.JFrame {
         jLabelTitle.setText("Liste des Missions");
     }//GEN-LAST:event_jPanelMenuMissionMouseReleased
 
+    private void jLabelLogoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogoMouseReleased
+        jPanelContainer.removeAll();
+        jPanelContainer.repaint();
+        jPanelContainer.revalidate();
+        jLabelTitle.setText("Accueil");
+    }//GEN-LAST:event_jLabelLogoMouseReleased
+    
+    
+    private void loadData() {
+        this.myCompany = new Company("Arès");
+        //Recharger les competences 
+        ManageData mySkill = new ManageSkill();
+        mySkill.readData(myCompany);
+        
+        //Recharger les personnes en premier
+        ManageData mPerson = new ManagePerson();
+        mPerson.readData(myCompany);
+        //myCompany.displayPerson();
+
+
+        //myCompany.displaySkills();
+
+        // Réafecter tous les projets aux bonnes personnes
+        ManageData mMission = new ManageMission();
+        mMission.readData(myCompany);
+        //myCompany.displayMissions();
+        //myCompany.displayPerson();
+
+    }
+    
     /**
      * @param args the command line arguments
      */
