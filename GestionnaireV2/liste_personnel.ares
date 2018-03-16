@@ -1,0 +1,1556 @@
+<?xml version="1.0"?>
+<!DOCTYPE person SYSTEM "person.ares">
+<list>
+<person>
+     <id>44</id>
+     <lastName>Campolo</lastName>
+     <firstName>Edmund</firstName>
+     <dateOfHire>03/01/2014</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>45</id>
+     <lastName>Muckler</lastName>
+     <firstName>Cedrick</firstName>
+     <dateOfHire>24/01/2014</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.3.</idSkill>
+     <nameEn>Risk Management</nameEn>
+     <nameFr>Gestion des risques</nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.4.</idSkill>
+     <nameEn>Problem Management</nameEn>
+     <nameFr>Gestion des problèmes </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>46</id>
+     <lastName>Ed</lastName>
+     <firstName>Hassan</firstName>
+     <dateOfHire>18/02/2015</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.6.</idSkill>
+     <nameEn>Channel Management</nameEn>
+     <nameFr>Gestion des canaux de vente </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>47</id>
+     <lastName>Gerrish</lastName>
+     <firstName>Luigi</firstName>
+     <dateOfHire>09/03/2015</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.2.</idSkill>
+     <nameEn>ICT Quality Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la qualité informatique  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.3.</idSkill>
+     <nameEn>Education and Training Provision</nameEn>
+     <nameFr>Prestation de services de formation  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.4.</idSkill>
+     <nameEn>Purchasing</nameEn>
+     <nameFr>Achats</nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>48</id>
+     <lastName>Defrancisco</lastName>
+     <firstName>Greg</firstName>
+     <dateOfHire>10/03/2015</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.7.</idSkill>
+     <nameEn>Business Change Management</nameEn>
+     <nameFr>Gestion des changements métier </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>49</id>
+     <lastName>Novinger</lastName>
+     <firstName>August</firstName>
+     <dateOfHire>20/04/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.10.</idSkill>
+     <nameEn>Information and Knowledge Management</nameEn>
+     <nameFr>Gestion de l’information de la connaissance </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.2.</idSkill>
+     <nameEn>ICT Quality Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la qualité informatique  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.4.</idSkill>
+     <nameEn>Purchasing</nameEn>
+     <nameFr>Achats</nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.9.</idSkill>
+     <nameEn>IT Governance</nameEn>
+     <nameFr> Gouvernance informatique </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>50</id>
+     <lastName>Roosa</lastName>
+     <firstName>Carmelo</firstName>
+     <dateOfHire>16/11/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.4.</idSkill>
+     <nameEn>Solution Deployment</nameEn>
+     <nameFr>Déploiement de la solution </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.8.</idSkill>
+     <nameEn>Sustainable Development</nameEn>
+     <nameFr>Développement durable</nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.8.</idSkill>
+     <nameEn>Contract Management</nameEn>
+     <nameFr>Gestion des contrats </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>53</id>
+     <lastName>Corentin</lastName>
+     <firstName>Barban</firstName>
+     <dateOfHire>06/09/1996</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
+     <id>10</id>
+     <lastName>Sanburn</lastName>
+     <firstName>Lamar</firstName>
+     <dateOfHire>19/12/2012</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>98</id>
+     <lastName>Test2</lastName>
+     <firstName>Write</firstName>
+     <dateOfHire>06/09/1996</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
+     <id>54</id>
+     <lastName>Mathieu</lastName>
+     <firstName>Stivanin</firstName>
+     <dateOfHire>15/12/1998</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
+     <id>11</id>
+     <lastName>Arnaiz</lastName>
+     <firstName>Lindsey</firstName>
+     <dateOfHire>27/12/2012</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.4.</idSkill>
+     <nameEn>Relationship Management</nameEn>
+     <nameFr>Gestion de la relation client </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.8.</idSkill>
+     <nameEn>Contract Management</nameEn>
+     <nameFr>Gestion des contrats </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>99</id>
+     <lastName>Test</lastName>
+     <firstName>Write</firstName>
+     <dateOfHire>06/09/1997</dateOfHire>
+     <skills_list>
+</skills_list>
+</person>
+<person>
+     <id>12</id>
+     <lastName>Shumer</lastName>
+     <firstName>Lyman</firstName>
+     <dateOfHire>29/04/2013</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.7.</idSkill>
+     <nameEn>Business Change Management</nameEn>
+     <nameFr>Gestion des changements métier </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>13</id>
+     <lastName>Abrahamson</lastName>
+     <firstName>Santo</firstName>
+     <dateOfHire>10/06/2013</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>C.3.</idSkill>
+     <nameEn>Service Delivery</nameEn>
+     <nameFr>Livraison de Services </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>14</id>
+     <lastName>Besmer</lastName>
+     <firstName>Bernardo</firstName>
+     <dateOfHire>26/05/2014</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.7.</idSkill>
+     <nameEn>Business Change Management</nameEn>
+     <nameFr>Gestion des changements métier </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.4.</idSkill>
+     <nameEn>Relationship Management</nameEn>
+     <nameFr>Gestion de la relation client </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.8.</idSkill>
+     <nameEn>Sustainable Development</nameEn>
+     <nameFr>Développement durable</nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>15</id>
+     <lastName>Ery</lastName>
+     <firstName>Millard</firstName>
+     <dateOfHire>11/09/2014</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.8.</idSkill>
+     <nameEn>Contract Management</nameEn>
+     <nameFr>Gestion des contrats </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>16</id>
+     <lastName>Nau</lastName>
+     <firstName>Oren</firstName>
+     <dateOfHire>13/11/2014</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.1.</idSkill>
+     <nameEn>IS and Business Strategy Alignment</nameEn>
+     <nameFr>Informatique et alignement stratégique métier  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.4.</idSkill>
+     <nameEn>Problem Management</nameEn>
+     <nameFr>Gestion des problèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.8.</idSkill>
+     <nameEn>Contract Management</nameEn>
+     <nameFr>Gestion des contrats </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>17</id>
+     <lastName>Grgurich</lastName>
+     <firstName>Normand</firstName>
+     <dateOfHire>01/12/2014</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.1.</idSkill>
+     <nameEn>Information Security Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la sécurité de l’information </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.4.</idSkill>
+     <nameEn>Purchasing</nameEn>
+     <nameFr>Achats</nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>18</id>
+     <lastName>Hannett</lastName>
+     <firstName>Milton</firstName>
+     <dateOfHire>14/04/2015</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.2.</idSkill>
+     <nameEn>Project and Portfolio Management</nameEn>
+     <nameFr>Gestion de projets et du portefeuille de projets </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.2.</idSkill>
+     <nameEn>ICT Quality Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la qualité informatique  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.6.</idSkill>
+     <nameEn>Channel Management</nameEn>
+     <nameFr>Gestion des canaux de vente </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>19</id>
+     <lastName>Stobierski</lastName>
+     <firstName>Pete</firstName>
+     <dateOfHire>12/01/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.4.</idSkill>
+     <nameEn>Problem Management</nameEn>
+     <nameFr>Gestion des problèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>1</id>
+     <lastName>Galasso</lastName>
+     <firstName>Ollie</firstName>
+     <dateOfHire>13/03/2006</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.3.</idSkill>
+     <nameEn>Service Delivery</nameEn>
+     <nameFr>Livraison de Services </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>2</id>
+     <lastName>Seastrunk</lastName>
+     <firstName>Jon</firstName>
+     <dateOfHire>12/01/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.4.</idSkill>
+     <nameEn>Relationship Management</nameEn>
+     <nameFr>Gestion de la relation client </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.10.</idSkill>
+     <nameEn>Information and Knowledge Management</nameEn>
+     <nameFr>Gestion de l’information de la connaissance </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>3</id>
+     <lastName>Luat</lastName>
+     <firstName>Ted</firstName>
+     <dateOfHire>17/07/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.7.</idSkill>
+     <nameEn>Business Change Management</nameEn>
+     <nameFr>Gestion des changements métier </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.2.</idSkill>
+     <nameEn>Service Level Management</nameEn>
+     <nameFr>Gestion des niveaux de service  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.7.</idSkill>
+     <nameEn>Technology Watching</nameEn>
+     <nameFr>Veille technologique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.9.</idSkill>
+     <nameEn>IT Governance</nameEn>
+     <nameFr> Gouvernance informatique </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>4</id>
+     <lastName>Quaife</lastName>
+     <firstName>Myron</firstName>
+     <dateOfHire>28/09/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.7.</idSkill>
+     <nameEn>Technology Watching</nameEn>
+     <nameFr>Veille technologique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.6.</idSkill>
+     <nameEn>Channel Management</nameEn>
+     <nameFr>Gestion des canaux de vente </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.7.</idSkill>
+     <nameEn>Sales Management</nameEn>
+     <nameFr>Gestion des ventes  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>5</id>
+     <lastName>Syres</lastName>
+     <firstName>Hollis</firstName>
+     <dateOfHire>22/10/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.4.</idSkill>
+     <nameEn>Relationship Management</nameEn>
+     <nameFr>Gestion de la relation client </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>6</id>
+     <lastName>Tebeest</lastName>
+     <firstName>Norbert</firstName>
+     <dateOfHire>05/12/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.9.</idSkill>
+     <nameEn>IT Governance</nameEn>
+     <nameFr> Gouvernance informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.8.</idSkill>
+     <nameEn>Contract Management</nameEn>
+     <nameFr>Gestion des contrats </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>7</id>
+     <lastName>Callum</lastName>
+     <firstName>Alvaro</firstName>
+     <dateOfHire>19/11/2010</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.1.</idSkill>
+     <nameEn>IS and Business Strategy Alignment</nameEn>
+     <nameFr>Informatique et alignement stratégique métier  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.2.</idSkill>
+     <nameEn>Project and Portfolio Management</nameEn>
+     <nameFr>Gestion de projets et du portefeuille de projets </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.2.</idSkill>
+     <nameEn>Service Level Management</nameEn>
+     <nameFr>Gestion des niveaux de service  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.3.</idSkill>
+     <nameEn>Service Delivery</nameEn>
+     <nameFr>Livraison de Services </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>8</id>
+     <lastName>Ferrill</lastName>
+     <firstName>Emanuel</firstName>
+     <dateOfHire>06/01/2012</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.4.</idSkill>
+     <nameEn>Solution Deployment</nameEn>
+     <nameFr>Déploiement de la solution </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.1.</idSkill>
+     <nameEn>Information Security Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la sécurité de l’information </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.3.</idSkill>
+     <nameEn>Education and Training Provision</nameEn>
+     <nameFr>Prestation de services de formation  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.4.</idSkill>
+     <nameEn>Purchasing</nameEn>
+     <nameFr>Achats</nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>9</id>
+     <lastName>Aufmuth</lastName>
+     <firstName>Brandon</firstName>
+     <dateOfHire>31/07/2012</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.1.</idSkill>
+     <nameEn>IS and Business Strategy Alignment</nameEn>
+     <nameFr>Informatique et alignement stratégique métier  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>20</id>
+     <lastName>Pommier</lastName>
+     <firstName>Wilbur</firstName>
+     <dateOfHire>22/01/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.4.</idSkill>
+     <nameEn>Solution Deployment</nameEn>
+     <nameFr>Déploiement de la solution </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>21</id>
+     <lastName>Objio</lastName>
+     <firstName>Kelvin</firstName>
+     <dateOfHire>26/01/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.6.</idSkill>
+     <nameEn>Channel Management</nameEn>
+     <nameFr>Gestion des canaux de vente </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.9.</idSkill>
+     <nameEn>IT Governance</nameEn>
+     <nameFr> Gouvernance informatique </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>22</id>
+     <lastName>Petermeier</lastName>
+     <firstName>Shannon</firstName>
+     <dateOfHire>08/02/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.4.</idSkill>
+     <nameEn>Purchasing</nameEn>
+     <nameFr>Achats</nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.8.</idSkill>
+     <nameEn>Sustainable Development</nameEn>
+     <nameFr>Développement durable</nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.7.</idSkill>
+     <nameEn>Sales Management</nameEn>
+     <nameFr>Gestion des ventes  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>23</id>
+     <lastName>Eveler</lastName>
+     <firstName>Darrick</firstName>
+     <dateOfHire>13/07/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.2.</idSkill>
+     <nameEn>Project and Portfolio Management</nameEn>
+     <nameFr>Gestion de projets et du portefeuille de projets </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.3.</idSkill>
+     <nameEn>Service Delivery</nameEn>
+     <nameFr>Livraison de Services </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>24</id>
+     <lastName>Natwick</lastName>
+     <firstName>Adolph</firstName>
+     <dateOfHire>29/08/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.3.</idSkill>
+     <nameEn>Service Delivery</nameEn>
+     <nameFr>Livraison de Services </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.2.</idSkill>
+     <nameEn>ICT Quality Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la qualité informatique  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>25</id>
+     <lastName>Elsbree</lastName>
+     <firstName>Jamey</firstName>
+     <dateOfHire>04/10/2016</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.6.</idSkill>
+     <nameEn>ICT Quality Management</nameEn>
+     <nameFr>Gestion de la qualité informatique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.1.</idSkill>
+     <nameEn>IS and Business Strategy Alignment</nameEn>
+     <nameFr>Informatique et alignement stratégique métier  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.3.</idSkill>
+     <nameEn>Education and Training Provision</nameEn>
+     <nameFr>Prestation de services de formation  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>26</id>
+     <lastName>Seaburn</lastName>
+     <firstName>Efren</firstName>
+     <dateOfHire>28/09/2006</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.7.</idSkill>
+     <nameEn>Business Change Management</nameEn>
+     <nameFr>Gestion des changements métier </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.1.</idSkill>
+     <nameEn>IS and Business Strategy Alignment</nameEn>
+     <nameFr>Informatique et alignement stratégique métier  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>27</id>
+     <lastName>Tulipano</lastName>
+     <firstName>Antonio</firstName>
+     <dateOfHire>15/02/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.5.</idSkill>
+     <nameEn>Process Improvement</nameEn>
+     <nameFr>Amélioration des processus </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.7.</idSkill>
+     <nameEn>Sales Management</nameEn>
+     <nameFr>Gestion des ventes  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>28</id>
+     <lastName>Schachte</lastName>
+     <firstName>Stuart</firstName>
+     <dateOfHire>15/03/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>29</id>
+     <lastName>Ebach</lastName>
+     <firstName>Winford</firstName>
+     <dateOfHire>23/04/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.8.</idSkill>
+     <nameEn>Sustainable Development</nameEn>
+     <nameFr>Développement durable</nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.6.</idSkill>
+     <nameEn>Channel Management</nameEn>
+     <nameFr>Gestion des canaux de vente </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>30</id>
+     <lastName>Melen</lastName>
+     <firstName>Augustus</firstName>
+     <dateOfHire>23/07/2007</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.2.</idSkill>
+     <nameEn>Project and Portfolio Management</nameEn>
+     <nameFr>Gestion de projets et du portefeuille de projets </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.2.</idSkill>
+     <nameEn>ICT Quality Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la qualité informatique  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>31</id>
+     <lastName>Pratte</lastName>
+     <firstName>Mauricio</firstName>
+     <dateOfHire>01/01/2008</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.4.</idSkill>
+     <nameEn>Relationship Management</nameEn>
+     <nameFr>Gestion de la relation client </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.3.</idSkill>
+     <nameEn>Risk Management</nameEn>
+     <nameFr>Gestion des risques</nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.2.</idSkill>
+     <nameEn>ICT Quality Strategy Development</nameEn>
+     <nameFr>Développement de la stratégie pour la qualité informatique  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.4.</idSkill>
+     <nameEn>Purchasing</nameEn>
+     <nameFr>Achats</nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>32</id>
+     <lastName>Budak</lastName>
+     <firstName>Cornelius</firstName>
+     <dateOfHire>24/06/2009</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>B.4.</idSkill>
+     <nameEn>Solution Deployment</nameEn>
+     <nameFr>Déploiement de la solution </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.6.</idSkill>
+     <nameEn>Channel Management</nameEn>
+     <nameFr>Gestion des canaux de vente </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>33</id>
+     <lastName>Riesenberger</lastName>
+     <firstName>Chung</firstName>
+     <dateOfHire>16/12/2009</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.2.</idSkill>
+     <nameEn>Service Level Management</nameEn>
+     <nameFr>Gestion des niveaux de service  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.3.</idSkill>
+     <nameEn>Service Delivery</nameEn>
+     <nameFr>Livraison de Services </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>34</id>
+     <lastName>Supnet</lastName>
+     <firstName>Stanton</firstName>
+     <dateOfHire>03/03/2010</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.3.</idSkill>
+     <nameEn>Education and Training Provision</nameEn>
+     <nameFr>Prestation de services de formation  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>35</id>
+     <lastName>Martie</lastName>
+     <firstName>Ryan</firstName>
+     <dateOfHire>11/03/2010</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.2.</idSkill>
+     <nameEn>Project and Portfolio Management</nameEn>
+     <nameFr>Gestion de projets et du portefeuille de projets </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>36</id>
+     <lastName>McManaman</lastName>
+     <firstName>Korey</firstName>
+     <dateOfHire>17/11/2010</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.2.</idSkill>
+     <nameEn>Service Level Management</nameEn>
+     <nameFr>Gestion des niveaux de service  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>37</id>
+     <lastName>Kroening</lastName>
+     <firstName>Ian</firstName>
+     <dateOfHire>26/01/2011</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>B.2.</idSkill>
+     <nameEn>Systems Integration</nameEn>
+     <nameFr> Intégration des systèmes </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.10.</idSkill>
+     <nameEn>Information and Knowledge Management</nameEn>
+     <nameFr>Gestion de l’information de la connaissance </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.5.</idSkill>
+     <nameEn>Architecture Design</nameEn>
+     <nameFr>Conception de l’architecture </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.7.</idSkill>
+     <nameEn>Technology Watching</nameEn>
+     <nameFr>Veille technologique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.9.</idSkill>
+     <nameEn>IT Governance</nameEn>
+     <nameFr> Gouvernance informatique </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>38</id>
+     <lastName>Saalwaechter</lastName>
+     <firstName>Leif</firstName>
+     <dateOfHire>11/02/2011</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>A.3.</idSkill>
+     <nameEn>Business Plan Development</nameEn>
+     <nameFr>Développement du plan d’activités </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.10.</idSkill>
+     <nameEn>Information and Knowledge Management</nameEn>
+     <nameFr>Gestion de l’information de la connaissance </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>39</id>
+     <lastName>Sanner</lastName>
+     <firstName>Ahmed</firstName>
+     <dateOfHire>14/09/2011</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.4.</idSkill>
+     <nameEn>Relationship Management</nameEn>
+     <nameFr>Gestion de la relation client </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.2.</idSkill>
+     <nameEn>Project and Portfolio Management</nameEn>
+     <nameFr>Gestion de projets et du portefeuille de projets </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.1.</idSkill>
+     <nameEn>Design and Development</nameEn>
+     <nameFr>Conception et développement </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.4.</idSkill>
+     <nameEn>Product or Project Planning</nameEn>
+     <nameFr>Planification des produits ou des projets</nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.3.</idSkill>
+     <nameEn>Testing</nameEn>
+     <nameFr>Tests </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.7.</idSkill>
+     <nameEn>Technology Watching</nameEn>
+     <nameFr>Veille technologique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.5.</idSkill>
+     <nameEn>Sales Proposal Development</nameEn>
+     <nameFr>Développement des propositions </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>40</id>
+     <lastName>Bromer</lastName>
+     <firstName>Mervin</firstName>
+     <dateOfHire>20/09/2012</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.1.</idSkill>
+     <nameEn>Forecast Development</nameEn>
+     <nameFr>Développement prévisionnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.4.</idSkill>
+     <nameEn>Solution Deployment</nameEn>
+     <nameFr>Déploiement de la solution </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.3.</idSkill>
+     <nameEn>Education and Training Provision</nameEn>
+     <nameFr>Prestation de services de formation  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>41</id>
+     <lastName>Viehweg</lastName>
+     <firstName>Ty</firstName>
+     <dateOfHire>23/10/2012</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>D.9.</idSkill>
+     <nameEn>Personnel Development</nameEn>
+     <nameFr>Développement du personnel </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.7.</idSkill>
+     <nameEn>Technology Watching</nameEn>
+     <nameFr>Veille technologique </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.3.</idSkill>
+     <nameEn>Education and Training Provision</nameEn>
+     <nameFr>Prestation de services de formation  </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>42</id>
+     <lastName>Jaro</lastName>
+     <firstName>Victor</firstName>
+     <dateOfHire>22/08/2013</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.3.</idSkill>
+     <nameEn>Risk Management</nameEn>
+     <nameFr>Gestion des risques</nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.1.</idSkill>
+     <nameEn>User Support</nameEn>
+     <nameFr>Support utilisateur  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.4.</idSkill>
+     <nameEn>Solution Deployment</nameEn>
+     <nameFr>Déploiement de la solution </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.6.</idSkill>
+     <nameEn>Application Design</nameEn>
+     <nameFr>Conception des applications </nameFr>
+     </skill>
+    <skill>
+     <idSkill>B.5.</idSkill>
+     <nameEn>Documentation Production</nameEn>
+     <nameFr>Production de la documentation </nameFr>
+     </skill>
+    <skill>
+     <idSkill>A.8.</idSkill>
+     <nameEn>Sustainable Development</nameEn>
+     <nameFr>Développement durable</nameFr>
+     </skill>
+    <skill>
+     <idSkill>E.8.</idSkill>
+     <nameEn>Information Security Management</nameEn>
+     <nameFr> Gestion de la sécurité de l’information </nameFr>
+     </skill>
+</skills_list>
+</person>
+<person>
+     <id>43</id>
+     <lastName>Cumings</lastName>
+     <firstName>Hosea</firstName>
+     <dateOfHire>24/09/2013</dateOfHire>
+     <skills_list>
+    <skill>
+     <idSkill>E.7.</idSkill>
+     <nameEn>Business Change Management</nameEn>
+     <nameFr>Gestion des changements métier </nameFr>
+     </skill>
+    <skill>
+     <idSkill>C.2.</idSkill>
+     <nameEn>Change Support</nameEn>
+     <nameFr>Support des changements  </nameFr>
+     </skill>
+    <skill>
+     <idSkill>D.7.</idSkill>
+     <nameEn>Sales Management</nameEn>
+     <nameFr>Gestion des ventes  </nameFr>
+     </skill>
+</skills_list>
+</person>
+</list>

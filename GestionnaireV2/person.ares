@@ -1,0 +1,10 @@
+<!ELEMENT person (id,lastName, firstName, dateOfHire)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT dateOfHire (#PCDATA)>
+<!ELEMENT skills_list (skill*)>
+<!ELEMENT skill (idSkill,nameEn,nameFr)>
+<!ELEMENT idSkill (#PCDATA)>
+<!ELEMENT nameEn (#PCDATA)>
+<!ELEMENT nameFr (#PCDATA)>
