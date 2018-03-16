@@ -29,7 +29,7 @@ public class MissionList extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(242, 242, 242));
+        setBackground(new java.awt.Color(246, 246, 246));
 
         jLabel1.setText("Mission Liste");
 
