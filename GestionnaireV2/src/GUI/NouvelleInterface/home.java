@@ -96,6 +96,8 @@ public class home extends javax.swing.JFrame {
 
         jLabelPerson.setFont(new java.awt.Font("Roboto", 0, 19));
         jLabelPerson.setForeground(new java.awt.Color(153, 156, 163));
+        jLabelPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/person_icon.png"))); // NOI18N
+        jLabelPerson.setIconTextGap(15);
         jLabelPerson.setText("Personnes");
         jLabelPerson.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -108,7 +110,7 @@ public class home extends javax.swing.JFrame {
         jPanelMenuPersonLayout.setHorizontalGroup(
             jPanelMenuPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuPersonLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(50, 50, 50)
                 .addComponent(jLabelPerson)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -131,6 +133,8 @@ public class home extends javax.swing.JFrame {
 
         jLabelMission.setFont(new java.awt.Font("Roboto", 0, 19));
         jLabelMission.setForeground(new java.awt.Color(153, 156, 163));
+        jLabelMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/mission_icon.png"))); // NOI18N
+        jLabelMission.setIconTextGap(15);
         jLabelMission.setText("Missions");
         jLabelMission.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -142,17 +146,17 @@ public class home extends javax.swing.JFrame {
         jPanelMenuMission.setLayout(jPanelMenuMissionLayout);
         jPanelMenuMissionLayout.setHorizontalGroup(
             jPanelMenuMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMenuMissionLayout.createSequentialGroup()
-                .addGap(83, 83, 83)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuMissionLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
                 .addComponent(jLabelMission)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(64, 64, 64))
         );
         jPanelMenuMissionLayout.setVerticalGroup(
             jPanelMenuMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuMissionLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+            .addGroup(jPanelMenuMissionLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addComponent(jLabelMission)
-                .addGap(31, 31, 31))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jPanelLogo.setBackground(new java.awt.Color(49, 51, 66));
@@ -169,10 +173,10 @@ public class home extends javax.swing.JFrame {
         jPanelLogo.setLayout(jPanelLogoLayout);
         jPanelLogoLayout.setHorizontalGroup(
             jPanelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLogoLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLogoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(64, 64, 64))
         );
         jPanelLogoLayout.setVerticalGroup(
             jPanelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,6 +249,10 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Personnes");
+        jPanelMenuPerson.setBackground(new java.awt.Color(30, 32, 44));
+        jLabelPerson.setForeground(new java.awt.Color(254,254,254));
+        jPanelMenuMission.setBackground(new java.awt.Color(49,51,66));
+        jLabelMission.setForeground(new java.awt.Color(153, 156, 163));
     }//GEN-LAST:event_jPanelMenuPersonMouseReleased
 
     private void jLabelMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMissionMouseReleased
@@ -265,6 +273,10 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Missions");
+        jPanelMenuMission.setBackground(new java.awt.Color(30, 32, 44));
+        jLabelMission.setForeground(new java.awt.Color(254,254,254));
+        jPanelMenuPerson.setBackground(new java.awt.Color(49,51,66));
+        jLabelPerson.setForeground(new java.awt.Color(153, 156, 163));
     }//GEN-LAST:event_jPanelMenuMissionMouseReleased
 
     private void jLabelLogoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogoMouseReleased
