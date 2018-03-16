@@ -30,7 +30,7 @@ public class MissionList extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableMission = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(242, 242, 242));
+        setBackground(new java.awt.Color(246, 246, 246));
 
         jTableMission.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
