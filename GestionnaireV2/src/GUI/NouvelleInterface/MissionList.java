@@ -47,6 +47,8 @@ public class MissionList extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(246, 246, 246));
 
+        jScrollPane1.setWheelScrollingEnabled(false);
+
         MissionTableModel modelMission = new MissionTableModel(MissionList);
         jTableMission.setModel(modelMission);
         jTableMission.setAutoCreateRowSorter(true);
