@@ -25,7 +25,6 @@ public class MissionTableModel extends AbstractTableModel {
         this.missionList = missionList;
     }
     
-    
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
@@ -66,3 +65,4 @@ public class MissionTableModel extends AbstractTableModel {
         return null;
     }
 }
+ 

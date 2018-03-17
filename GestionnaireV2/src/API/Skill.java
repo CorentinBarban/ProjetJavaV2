@@ -14,7 +14,7 @@ package API;
 public class Skill {
     
     private String idSkill; // Les id des compétences sont de type texte dans le CSV
-    private String skillNameFr;
+    public String skillNameFr;
     private String skillNameEn;
     
 
