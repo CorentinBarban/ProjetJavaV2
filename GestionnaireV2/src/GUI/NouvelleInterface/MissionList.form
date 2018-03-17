@@ -52,6 +52,9 @@
               <Connection code="modelMission" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableMissionMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="List&lt;Mission&gt; MissionList = new ArrayList&lt;Mission&gt;(myCompany.listeMission.values());"/>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTableMission.setAutoCreateRowSorter(true);&#xa;ProgressCellRenderer pcr = new ProgressCellRenderer();&#xa;TableColumnModel tcm = jTableMission.getColumnModel();&#xa;tcm.getColumn(4).setCellRenderer(pcr);"/>

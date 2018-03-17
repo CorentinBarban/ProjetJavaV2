@@ -7,6 +7,7 @@ package GUI.NouvelleInterface;
 
 import API.Company;
 import API.Mission;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.RowSorter;
@@ -19,6 +20,8 @@ import static jdk.nashorn.internal.objects.NativeArray.map;
  * @author corentin
  */
 public class MissionList extends javax.swing.JPanel {
+
+   
 
     /**
      * Creates new form MissionList
@@ -50,6 +53,11 @@ public class MissionList extends javax.swing.JPanel {
         ProgressCellRenderer pcr = new ProgressCellRenderer();
         TableColumnModel tcm = jTableMission.getColumnModel();
         tcm.getColumn(4).setCellRenderer(pcr);
+        jTableMission.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMissionMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableMission);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -69,6 +77,14 @@ public class MissionList extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTableMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMissionMouseClicked
+        MissionTableModel model = (MissionTableModel)jTableMission.getModel();
+        int row = jTableMission.getSelectedRow();
+        int col = jTableMission.columnAtPoint(evt.getPoint());
+        
+        Mission missionSelected = model.missionList.get(row);
+    }//GEN-LAST:event_jTableMissionMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

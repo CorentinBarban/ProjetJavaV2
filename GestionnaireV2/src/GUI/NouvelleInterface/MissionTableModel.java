@@ -12,19 +12,20 @@ import javax.swing.table.AbstractTableModel;
  */
 public class MissionTableModel extends AbstractTableModel {
 
-    private final List<Mission> missionList;
+    public final List<Mission> missionList;
 
     private final String[] columnNames = new String[]{
         "Id", "Nom", "Date de début", "Durée", "Avancement", "Details"
     };
     private final Class[] columnClass = new Class[]{
-        Integer.class, String.class, Date.class, Integer.class, Etat.class,String.class
+        Integer.class, String.class, String.class, Integer.class, Etat.class,String.class
     };
 
     public MissionTableModel(List<Mission> missionList) {
         this.missionList = missionList;
     }
-
+    
+    
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
