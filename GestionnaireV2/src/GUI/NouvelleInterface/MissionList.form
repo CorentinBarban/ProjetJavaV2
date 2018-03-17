@@ -48,15 +48,15 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="jTableMission">
           <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
-              </Table>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="modelMission" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="List&lt;Mission&gt; MissionList = new ArrayList&lt;Mission&gt;(myCompany.listeMission.values());"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTableMission.setAutoCreateRowSorter(true);&#xa;ProgressCellRenderer pcr = new ProgressCellRenderer();&#xa;TableColumnModel tcm = jTableMission.getColumnModel();&#xa;tcm.getColumn(4).setCellRenderer(pcr);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="MissionTableModel modelMission = new MissionTableModel(MissionList);"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

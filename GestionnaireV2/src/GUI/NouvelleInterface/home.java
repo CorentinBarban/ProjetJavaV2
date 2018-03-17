@@ -257,7 +257,7 @@ public class home extends javax.swing.JFrame {
 
     private void jLabelMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMissionMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new MissionList());
+        jPanelContainer.add(new MissionList(myCompany));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Missions");
@@ -269,7 +269,7 @@ public class home extends javax.swing.JFrame {
 
     private void jPanelMenuMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMenuMissionMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new MissionList());
+        jPanelContainer.add(new MissionList(myCompany));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Missions");

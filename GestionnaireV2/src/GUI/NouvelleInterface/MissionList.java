@@ -5,6 +5,15 @@
  */
 package GUI.NouvelleInterface;
 
+import API.Company;
+import API.Mission;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableRowSorter;
+import static jdk.nashorn.internal.objects.NativeArray.map;
+
 /**
  *
  * @author corentin
@@ -14,7 +23,9 @@ public class MissionList extends javax.swing.JPanel {
     /**
      * Creates new form MissionList
      */
-    public MissionList() {
+    Company myCompany;
+    public MissionList(Company myCompany) {
+        this.myCompany=myCompany;
         initComponents();
     }
 
@@ -28,21 +39,17 @@ public class MissionList extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
+        List<Mission> MissionList = new ArrayList<Mission>(myCompany.listeMission.values());
         jTableMission = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
-        jTableMission.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        MissionTableModel modelMission = new MissionTableModel(MissionList);
+        jTableMission.setModel(modelMission);
+        jTableMission.setAutoCreateRowSorter(true);
+        ProgressCellRenderer pcr = new ProgressCellRenderer();
+        TableColumnModel tcm = jTableMission.getColumnModel();
+        tcm.getColumn(4).setCellRenderer(pcr);
         jScrollPane1.setViewportView(jTableMission);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

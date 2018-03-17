@@ -17,7 +17,7 @@ import java.util.*;
 public class Mission {
     
     public enum Etat {
-        enPreparation, plannifiee, 
+        enPreparation, plannifiee, enCours
     }
     
     private int idMission;
