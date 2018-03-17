@@ -21,10 +21,9 @@ public class Tests {
         ManageData mm = new ManageMission();
         ManageData ms = new ManageSkill();
         
-        mp.readData(c1);
-        ms.readData(c1);
-        mp.writeData(c1);
-             
+        mm.readData(c1);
+        System.out.println(c1.listeMission);
+        mm.writeData(c1);
     }
             
 }

@@ -1,5 +1,6 @@
-<!ELEMENT mission (id,name,startDate,duration)>
+<!ELEMENT mission (id,name,startDate,duration,state)>
 <!ELEMENT id (#PCDATA)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT startDate (#PCDATA)>
 <!ELEMENT duration (#PCDATA)>
+<!ELEMENT state (#PCDATA)>

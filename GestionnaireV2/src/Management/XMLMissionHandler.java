@@ -12,6 +12,7 @@ package Management;
 
 import API.Company;
 import API.Mission;
+import API.Mission.Etat;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,11 +26,13 @@ public class XMLMissionHandler extends DefaultHandler {
    boolean bName = false;
    boolean bId = false;
    boolean bDate = false;
+   boolean bState = false;
    
    String id;
    String name;
    String duration;
    String startDate;
+   Etat state;
    Company c;
    
    public XMLMissionHandler(Company c){
@@ -49,6 +52,8 @@ public class XMLMissionHandler extends DefaultHandler {
          bDate = true;
       } else if (qName.equalsIgnoreCase("duration")) {
          bDuration = true;
+      } else if (qName.equalsIgnoreCase("state")) {
+         bState = true;
       }
    }
 
@@ -81,6 +86,9 @@ public class XMLMissionHandler extends DefaultHandler {
       } else if (bDuration) {
         duration = new String(ch, start, length);
         bDate = false;
+      } else if (bState) {
+        state = Etat.valueOf(new String(ch, start, length));
+        bState = false;
       }
    }
 }

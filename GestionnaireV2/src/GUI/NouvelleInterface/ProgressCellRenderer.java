@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JProgressBar;
 import javax.swing.JTable;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.table.TableCellRenderer;
 
