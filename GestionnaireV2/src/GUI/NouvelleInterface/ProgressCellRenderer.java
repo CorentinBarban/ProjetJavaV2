@@ -10,8 +10,10 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JProgressBar;
 import javax.swing.JTable;
-import javax.swing.UIDefaults;
+import javax.swing.Painter;
 import javax.swing.UIManager;
+import javax.swing.plaf.basic.BasicProgressBarUI;
+
 import javax.swing.table.TableCellRenderer;
 
 /**
@@ -21,11 +23,14 @@ import javax.swing.table.TableCellRenderer;
 class ProgressCellRenderer extends JProgressBar implements TableCellRenderer {
 
     ProgressCellRenderer() {
-
         super(JProgressBar.HORIZONTAL);
         setBorderPainted(false);
         setStringPainted(true);
 
+        setUI(new BasicProgressBarUI() {
+            protected Color getSelectionBackground() { return Color.black; }
+            protected Color getSelectionForeground() { return Color.black; }
+        });
     }
 
     @Override
@@ -34,18 +39,22 @@ class ProgressCellRenderer extends JProgressBar implements TableCellRenderer {
         switch ((Etat) value) {
             case enPreparation:
                 setValue(25);
-                UIManager.put("nimbusOrange", new Color(255, 153, 0));
-                break;
-            case enCours:
-                setValue(50);
-                UIManager.put("nimbusOrange", new Color(255, 153, 0));
+                setForeground(new Color(255,102,102));
+                setBackground(Color.white);
                 break;
             case plannifiee:
+                setValue(50);
+                setForeground(new Color(255,255,153));
+                setBackground(Color.white);
+                break;
+            case enCours:
                 setValue(75);
-                UIManager.put("nimbusOrange", new Color(51, 153, 51));
+                setForeground(new Color(229,255,204));
+                setBackground(Color.white);
+                break;
+            default:
                 break;
         }
         return this;
     }
-
 }
