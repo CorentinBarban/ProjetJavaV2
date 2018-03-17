@@ -158,7 +158,7 @@ public class Mission {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
         //TODO boucle de parcours pour affichage
-        String message="<mission>\n     <id>"+idMission+"</id>\n     <name>"+missionName+"</name>\n     <startDate>"+StartDate+"</startDate>\n     <duration>"+missionDuration+"</duration>\n</mission>\n";
+        String message="<mission>\n     <id>"+idMission+"</id>\n     <name>"+missionName+"</name>\n     <startDate>"+StartDate+"</startDate>\n     <duration>"+missionDuration+"</duration>\n     <state>"+etat.toString()+"</state>\n</mission>\n";
         return message;
         //return idMission + ", "+ missionName + ", "+ requirements + ", "+ personOnMission + ", "+ StartDate + ", "+ missionDuration + ", "+tabTypes + ", "+ missionType;
     }

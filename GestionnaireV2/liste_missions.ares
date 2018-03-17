@@ -4,37 +4,43 @@
 <mission>
      <id>1</id>
      <name>Recherche de sujet</name>
-     <startDate>13/03/2018</startDate>
+     <startDate>13/09/2018</startDate>
      <duration>15</duration>
+     <state>enPreparation</state>
 </mission>
 <mission>
      <id>2</id>
      <name>Ecrire la documentation</name>
      <startDate>12/08/2018</startDate>
      <duration>3</duration>
+     <state>enPreparation</state>
 </mission>
 <mission>
      <id>3</id>
      <name>Test d'integration</name>
      <startDate>12/08/2018</startDate>
      <duration>3</duration>
+     <state>enPreparation</state>
 </mission>
 <mission>
      <id>4</id>
      <name>Schéma UML</name>
      <startDate>12/08/2018</startDate>
      <duration>8</duration>
+     <state>enPreparation</state>
 </mission>
 <mission>
      <id>5</id>
      <name>Recherche de projet innovant</name>
      <startDate>12/08/2018</startDate>
      <duration>20</duration>
+     <state>enPreparation</state>
 </mission>
 <mission>
      <id>6</id>
      <name>Réalisation du cahier des charges</name>
      <startDate>12/08/2018</startDate>
      <duration>31</duration>
+     <state>enPreparation</state>
 </mission>
 </list>
