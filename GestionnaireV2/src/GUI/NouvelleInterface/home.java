@@ -59,28 +59,25 @@ public class home extends javax.swing.JFrame {
         jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
         jLabelTitle.setText("Accueil");
 
-        jPanelContainer.setBackground(new java.awt.Color(246, 246, 246));
-        jPanelContainer.setLayout(new java.awt.CardLayout());
-
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelContainer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(jLabelTitle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabelTitle)
-                .addGap(33, 33, 33)
-                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
+
+        jPanelContainer.setBackground(new java.awt.Color(246, 246, 246));
+        jPanelContainer.setLayout(new java.awt.CardLayout());
 
         jPanelMenuLeft.setBackground(new java.awt.Color(49, 51, 66));
 
@@ -202,7 +199,7 @@ public class home extends javax.swing.JFrame {
                 .addComponent(jPanelMenuPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanelMenuMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -220,12 +217,17 @@ public class home extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
         );
 
         pack();
@@ -257,7 +259,7 @@ public class home extends javax.swing.JFrame {
 
     private void jLabelMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMissionMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new MissionList(myCompany));
+        jPanelContainer.add(new MissionList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Missions");
@@ -269,7 +271,7 @@ public class home extends javax.swing.JFrame {
 
     private void jPanelMenuMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMenuMissionMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new MissionList(myCompany));
+        jPanelContainer.add(new MissionList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Missions");
@@ -353,7 +355,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanelContainer;
+    protected javax.swing.JPanel jPanelContainer;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelLogo;
     private javax.swing.JPanel jPanelMenuLeft;

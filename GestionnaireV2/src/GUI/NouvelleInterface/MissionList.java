@@ -29,7 +29,9 @@ public class MissionList extends javax.swing.JPanel {
      * Creates new form MissionList
      */
     Company myCompany;
-    public MissionList(Company myCompany) {
+    home myFrame;
+    public MissionList(Company myCompany,home myFrame) {
+        this.myFrame=myFrame;
         this.myCompany=myCompany;
         initComponents();
     }
@@ -87,8 +89,17 @@ public class MissionList extends javax.swing.JPanel {
         int row = jTableMission.getSelectedRow();
         int col = jTableMission.columnAtPoint(evt.getPoint());
         
-        Mission missionSelected = model.missionList.get(row);
-        System.out.println(missionSelected.toString());
+        
+        if(col == 5) { //Click sur Details 
+             Mission missionSelected = model.missionList.get(row);
+             MissionDetail md = new MissionDetail(missionSelected);
+             myFrame.jPanelContainer.removeAll();
+             myFrame.jPanelContainer.add(md);
+             myFrame.repaint();
+             myFrame.revalidate();
+             System.out.println(missionSelected.toString());
+        }
+        
     }//GEN-LAST:event_jTableMissionMouseClicked
 
 
