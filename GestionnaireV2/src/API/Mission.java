@@ -57,6 +57,10 @@ public class Mission {
         return etat;
     }
     
+    public void setEtat(Etat e){
+        this.etat = e;
+    }
+    
     /**
      * Getter de l'identifiant de la mission
      * @return idMission
