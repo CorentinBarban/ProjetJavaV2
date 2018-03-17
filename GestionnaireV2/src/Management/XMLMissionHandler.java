@@ -62,10 +62,12 @@ public class XMLMissionHandler extends DefaultHandler {
    String localName, String qName) throws SAXException {
       if (qName.equalsIgnoreCase("mission")) {
          try {
+             
            Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration));
            c.addMission(m);
            
        } catch (ParseException ex) {
+           
            Logger.getLogger(XMLPersonHandler.class.getName()).log(Level.SEVERE, null, ex);
        }
       }
@@ -85,7 +87,7 @@ public class XMLMissionHandler extends DefaultHandler {
         bDate = false;
       } else if (bDuration) {
         duration = new String(ch, start, length);
-        bDate = false;
+        bDuration = false;
       } else if (bState) {
         state = Etat.valueOf(new String(ch, start, length));
         bState = false;
