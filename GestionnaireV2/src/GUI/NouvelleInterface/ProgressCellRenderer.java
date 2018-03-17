@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JProgressBar;
 import javax.swing.JTable;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 import javax.swing.table.TableCellRenderer;
 
 /**
@@ -23,8 +25,7 @@ class ProgressCellRenderer extends JProgressBar implements TableCellRenderer {
         super(JProgressBar.HORIZONTAL);
         setBorderPainted(false);
         setStringPainted(true);
-        setBackground(Color.red);
-        setForeground(Color.BLUE);
+
     }
 
     @Override
@@ -33,14 +34,18 @@ class ProgressCellRenderer extends JProgressBar implements TableCellRenderer {
         switch ((Etat) value) {
             case enPreparation:
                 setValue(25);
+                UIManager.put("nimbusOrange", new Color(255, 153, 0));
                 break;
             case enCours:
                 setValue(50);
+                UIManager.put("nimbusOrange", new Color(255, 153, 0));
                 break;
             case plannifiee:
                 setValue(75);
+                UIManager.put("nimbusOrange", new Color(51, 153, 51));
                 break;
         }
         return this;
     }
+
 }
