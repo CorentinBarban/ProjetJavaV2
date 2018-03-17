@@ -5,6 +5,10 @@
  */
 package GUI.NouvelleInterface;
 
+import API.Company;
+import API.Person;
+import java.util.ArrayList;
+
 /**
  *
  * @author corentin
@@ -14,7 +18,9 @@ public class PersonList extends javax.swing.JPanel {
     /**
      * Creates new form PersonList
      */
-    public PersonList() {
+    Company myCompany;
+    public PersonList(Company myCompany) {
+        this.myCompany=myCompany;
         initComponents();
     }
 
@@ -27,21 +33,39 @@ public class PersonList extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ArrayList<Person> PersonList = new ArrayList<Person>(myCompany.listePerson.values());
+        jTablePerson = new javax.swing.JTable();
+
         setBackground(new java.awt.Color(246, 246, 246));
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(452, 402));
+
+        PersonTableModel modelPerson = new PersonTableModel(PersonList);
+        jTablePerson.setModel(modelPerson);
+        jScrollPane1.setViewportView(jTablePerson);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTablePerson;
     // End of variables declaration//GEN-END:variables
 }

@@ -233,7 +233,7 @@ public class home extends javax.swing.JFrame {
 
     private void jLabelPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPersonMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new PersonList());
+        jPanelContainer.add(new PersonList(myCompany));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Personnes");
@@ -245,7 +245,7 @@ public class home extends javax.swing.JFrame {
 
     private void jPanelMenuPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMenuPersonMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new PersonList());
+        jPanelContainer.add(new PersonList(myCompany));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jLabelTitle.setText("Liste des Personnes");

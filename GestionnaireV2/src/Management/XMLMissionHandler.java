@@ -64,6 +64,7 @@ public class XMLMissionHandler extends DefaultHandler {
          try {
              
            Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration),state);
+           m.setEtat(state);
            c.addMission(m);
            
        } catch (ParseException ex) {
