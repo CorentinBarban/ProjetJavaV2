@@ -6,7 +6,13 @@
 package GUI.NouvelleInterface;
 
 import API.Mission;
+import API.Person;
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import javax.swing.DefaultListModel;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 
@@ -87,7 +93,9 @@ public class MissionDetail extends javax.swing.JPanel {
         jTextFieldNbPersonSkill = new javax.swing.JTextField();
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListPerson = new javax.swing.JList();
+        DefaultListModel<Person> modelPerson = new DefaultListModel();
+        HashMap<String,Person> personList = myMission.getPersonOnMission();
+        jListPerson = new javax.swing.JList<Person>();
         jComboBoxSkill = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(246, 246, 246));
@@ -191,7 +199,16 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelPerson.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelPerson.setText("Personnes Attribuées");
 
+        jListPerson.setModel(modelPerson);
+        jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Set entrySet = personList.entrySet();
+        Iterator it = entrySet.iterator();
+        while (it.hasNext()) {
+            Map.Entry me = (Map.Entry)it.next();
+            modelPerson.addElement(personList.get(me.getKey()));
+
+        }
         jScrollPane1.setViewportView(jListPerson);
 
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
@@ -286,7 +303,7 @@ public class MissionDetail extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelSkill;
     private javax.swing.JLabel jLabelStateMission;
     private javax.swing.JLabel jLabelnbPeronSkill;
-    private javax.swing.JList jListPerson;
+    private javax.swing.JList<Person> jListPerson;
     private javax.swing.JPanel jPanelContainerMission;
     private javax.swing.JPanel jPanelLeftDetail;
     private javax.swing.JPanel jPanelRightDetail;

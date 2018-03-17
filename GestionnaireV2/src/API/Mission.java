@@ -152,6 +152,15 @@ public class Mission {
         this.nbTotalPerson = nbTotalPerson;
     }
 
+    public HashMap<Integer, Requirement> getRequirements() {
+        return requirements;
+    }
+
+    public HashMap<String, Person> getPersonOnMission() {
+        return personOnMission;
+    }
+    
+    
 
     /**
      * Affichage de la mission selon ses attributs
