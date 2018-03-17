@@ -31,7 +31,7 @@ public class MissionDetail extends javax.swing.JPanel {
         this.myMission = myMission;
         initComponents();
         jTextFieldNameMission.setText(myMission.getMissionName());
-        jTextFieldDateMission.setText(""+myMission.getStartDate());
+        jFormattedTextFieldFireDate.setValue(myMission.getStartDate());
         jTextFieldDurationMission.setText(""+myMission.getMissionDuration());
         jTextFieldNbPersonMission.setText(""+myMission.getNbTotalPerson());
         jTextFieldStateMission.setText(""+myMission.getEtat());
@@ -80,12 +80,12 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelNbPersonMission = new javax.swing.JLabel();
         jLabelStateMission = new javax.swing.JLabel();
         jTextFieldNameMission = new javax.swing.JTextField();
-        jTextFieldDateMission = new javax.swing.JTextField();
         jTextFieldDurationMission = new javax.swing.JTextField();
         jTextFieldNbPersonMission = new javax.swing.JTextField();
         jTextFieldStateMission = new javax.swing.JTextField();
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabelProgression = new javax.swing.JLabel();
+        jFormattedTextFieldFireDate = new javax.swing.JFormattedTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jPanelRightDetail = new javax.swing.JPanel();
         jLabelSkill = new javax.swing.JLabel();
@@ -124,6 +124,8 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelProgression.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelProgression.setText("Avancement :");
 
+        jFormattedTextFieldFireDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
+
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
         jPanelLeftDetailLayout.setHorizontalGroup(
@@ -145,10 +147,10 @@ public class MissionDetail extends javax.swing.JPanel {
                         .addGap(10, 10, 10)
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldNameMission)
-                            .addComponent(jTextFieldDateMission)
                             .addComponent(jTextFieldDurationMission)
                             .addComponent(jTextFieldStateMission)
-                            .addComponent(jTextFieldNbPersonMission))))
+                            .addComponent(jTextFieldNbPersonMission)
+                            .addComponent(jFormattedTextFieldFireDate))))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -158,11 +160,11 @@ public class MissionDetail extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNameMission)
                     .addComponent(jTextFieldNameMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFireDateMission)
-                    .addComponent(jTextFieldDateMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDurationMission)
                     .addComponent(jTextFieldDurationMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -294,6 +296,7 @@ public class MissionDetail extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jComboBoxSkill;
+    private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
     private javax.swing.JLabel jLabelNameMission;
@@ -310,7 +313,6 @@ public class MissionDetail extends javax.swing.JPanel {
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextFieldDateMission;
     private javax.swing.JTextField jTextFieldDurationMission;
     private javax.swing.JTextField jTextFieldNameMission;
     private javax.swing.JTextField jTextFieldNbPersonMission;
