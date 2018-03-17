@@ -63,7 +63,7 @@ public class XMLMissionHandler extends DefaultHandler {
       if (qName.equalsIgnoreCase("mission")) {
          try {
              
-           Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration));
+           Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration),state);
            c.addMission(m);
            
        } catch (ParseException ex) {

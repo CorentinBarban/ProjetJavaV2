@@ -38,12 +38,12 @@ public class Mission {
      * @param md représente la durée de la mission
      * @throws ParseException 
      */
-    public Mission(int id,String n, String sd, int md) throws ParseException{
+    public Mission(int id,String n, String sd, int md, Etat state) throws ParseException{
         this.idMission = id;
         this.missionName = n;
         this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
         this.missionDuration = md;
-        this.etat = Etat.enPreparation; // Lorsqu'une mission est créée, son statut est "en préparation"
+        this.etat = state; // Lorsqu'une mission est créée, son statut est "en préparation"
         this.personOnMission= new HashMap();
         this.requirements = new HashMap();
     }
