@@ -66,7 +66,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="List&lt;Mission&gt; MissionList = new ArrayList&lt;Mission&gt;(myCompany.listeMission.values());"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTableMission.setAutoCreateRowSorter(true);&#xa;ProgressCellRenderer pcr = new ProgressCellRenderer();&#xa;TableColumnModel tcm = jTableMission.getColumnModel();&#xa;tcm.getColumn(4).setCellRenderer(pcr);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTableMission.setAutoCreateRowSorter(true);&#xa;ProgressCellRenderer pcr = new ProgressCellRenderer();&#xa;TableColumnModel tcm = jTableMission.getColumnModel();&#xa;tcm.getColumn(3).setCellRenderer(pcr);"/>
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="MissionTableModel modelMission = new MissionTableModel(MissionList);"/>
           </AuxValues>
         </Component>

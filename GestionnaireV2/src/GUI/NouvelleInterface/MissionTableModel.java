@@ -15,10 +15,10 @@ public class MissionTableModel extends AbstractTableModel {
     public final List<Mission> missionList;
 
     private final String[] columnNames = new String[]{
-        "Id", "Nom", "Date de début", "Durée", "Avancement", "Details"
+        "Nom", "Date de début", "Durée", "Avancement", "Details"
     };
     private final Class[] columnClass = new Class[]{
-        Integer.class, String.class, Date.class, Integer.class, Etat.class,String.class
+       String.class, Date.class, Integer.class, Etat.class,String.class
     };
 
     public MissionTableModel(List<Mission> missionList) {
@@ -49,17 +49,15 @@ public class MissionTableModel extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         Mission row = missionList.get(rowIndex);
         if (0 == columnIndex) {
-            return row.getIdMission();
-        } else if (1 == columnIndex) {
             return row.getMissionName();
-        } else if (2 == columnIndex) {
+        } else if (1 == columnIndex) {
             return row.getStartDate();
-        } else if (3 == columnIndex) {
+        } else if (2 == columnIndex) {
             return row.getMissionDuration();
-        } else if (4 == columnIndex) {
+        } else if (3 == columnIndex) {
             return row.getEtat();
         }
-        else if (5 == columnIndex) {
+        else if (4 == columnIndex) {
             return "Détails";
         }
         return null;

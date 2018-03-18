@@ -7,15 +7,9 @@ package GUI.NouvelleInterface;
 
 import API.Company;
 import API.Mission;
-import java.awt.Color;
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.RowSorter;
-import javax.swing.UIManager;
 import javax.swing.table.TableColumnModel;
-import javax.swing.table.TableRowSorter;
-import static jdk.nashorn.internal.objects.NativeArray.map;
 
 /**
  *
@@ -58,7 +52,7 @@ public class MissionList extends javax.swing.JPanel {
         jTableMission.setAutoCreateRowSorter(true);
         ProgressCellRenderer pcr = new ProgressCellRenderer();
         TableColumnModel tcm = jTableMission.getColumnModel();
-        tcm.getColumn(4).setCellRenderer(pcr);
+        tcm.getColumn(3).setCellRenderer(pcr);
         jTableMission.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableMissionMouseClicked(evt);
@@ -90,7 +84,7 @@ public class MissionList extends javax.swing.JPanel {
         int col = jTableMission.columnAtPoint(evt.getPoint());
         
         
-        if(col == 5) { //Click sur Details 
+        if(col == 4) { //Click sur Details 
              Mission missionSelected = model.missionList.get(row);
              MissionDetail md = new MissionDetail(missionSelected);
              myFrame.jPanelContainer.removeAll();
