@@ -43,6 +43,7 @@ public class PersonList extends javax.swing.JPanel {
 
         PersonTableModel modelPerson = new PersonTableModel(PersonList);
         jTablePerson.setModel(modelPerson);
+        jTablePerson.setAutoCreateRowSorter(true);
         jScrollPane1.setViewportView(jTablePerson);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
