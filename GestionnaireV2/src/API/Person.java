@@ -30,7 +30,7 @@ public class Person {
      * @param id représente son identifiant
      * @param ln représente son nom
      * @param fn représente son prénom
-     * @param bd représente sa date d'entrée dans l'entreprise, au format
+     * @param hd représente sa date d'entrée dans l'entreprise, au format
      * jj/mm/aaaa
      * @throws ParseException afin de retourner une exception si erreur lors du
      * formatage du texte en date
@@ -147,16 +147,9 @@ public class Person {
     /**
      * Affichage de la personne selon ses attibuts
      *
-     * @return
+     * @return Retourne sous le format XML une personne
      */
-    
-    
-    /* public String toString() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String DateOfHire = formatter.format(this.dateOfHire);
 
-        return "Person{" + "idPerson=" + idPerson + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfHire=" + DateOfHire + ", skillList=" + skillList + '}';
-    } */
     @Override
     public String toString(){
 

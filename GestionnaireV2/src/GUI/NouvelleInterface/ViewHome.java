@@ -16,6 +16,7 @@ public class ViewHome extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewHome
+     * @param homeFrame Interface principale
      */
     public ViewHome(home homeFrame) {
         this.homeFrame = homeFrame;

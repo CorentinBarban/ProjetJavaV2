@@ -14,7 +14,15 @@ import API.Company;
  */
 public interface ManageData {
     
+    /**
+     * Lire les données de l'entreprise
+     * @param c Company 
+     */
     public void readData(Company c);
     
+    /**
+     * Ecrire les données pour une entreprise
+     * @param c Company
+     */
     public void writeData(Company c);
 }

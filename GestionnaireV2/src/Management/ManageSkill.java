@@ -31,8 +31,9 @@ public class ManageSkill implements ManageData {
     private static final String ARES_FILE_PATH = "liste_competences.ares";
     private static final String CSV_FILE_PATH_SKILLTOPERSON = "competences_personnel.csv";
     private static final String ARES_FILE_PATH_SKILLTOPERSON = "competences_personnel.ares";
+    
     /**
-     * @autor corentin
+     * @author corentin
      * @param c passage de la Company en parametre
      */
     

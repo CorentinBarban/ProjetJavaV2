@@ -14,7 +14,7 @@ package API;
 public class Skill {
     
     private String idSkill; // Les id des compétences sont de type texte dans le CSV
-    public String skillNameFr;
+    private String skillNameFr;
     private String skillNameEn;
     
 
@@ -80,7 +80,7 @@ public class Skill {
 
     /**
      * Méthode d'affichage de la compétence selon ses attributs
-     * @return
+     * @return Retourne sous le format XML une compétence
      */
     @Override
     public String toString() {

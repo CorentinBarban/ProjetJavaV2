@@ -11,82 +11,96 @@ import java.util.*;
 
 /**
  *
- * @author Mathieu Stivanin
- * Cette classe représente une mission.
+ * @author Mathieu Stivanin Cette classe représente une mission.
  */
 public class Mission {
-    
+
+    /**
+     * Enumeration des différents état de la mission
+     */
     public enum Etat {
+
         enPreparation, plannifiee, enCours
     }
-    
+
     private int idMission;
     private String missionName;
     private int nbTotalPerson;
-    private HashMap<Integer,Requirement> requirements;
-    private HashMap<String,Person> personOnMission;
+    private HashMap<Integer, Requirement> requirements;
+    private HashMap<String, Person> personOnMission;
     private Date startDate;
     private int missionDuration;
     private Etat etat;
     private ManageMission manager = new ManageMission(); // Création d'un objet ManageMission permettant d'utiliser les méthodes de vérification de cette dernière. 
-    
+
     /**
      * Constructeur d'une mission
+     *
      * @param id représente l'id de la mission
      * @param n représente le nom de la mission
      * @param sd représente la date de début de la mission
      * @param md représente la durée de la mission
-     * @throws ParseException 
+     * @param state represente l'état de la mission
+     * @throws ParseException Erreur sur le format de la date
      */
-    public Mission(int id,String n, String sd, int md, Etat state) throws ParseException{
+    public Mission(int id, String n, String sd, int md, Etat state) throws ParseException {
         this.idMission = id;
         this.missionName = n;
         this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
         this.missionDuration = md;
-        this.etat = state; // Lorsqu'une mission est créée, son statut est "en préparation"
-        this.personOnMission= new HashMap();
+        this.etat = state;
+        this.personOnMission = new HashMap();
         this.requirements = new HashMap();
     }
 
-    
     /**
      * Getter de l'état de la mission
+     *
      * @return etat
      */
     public Etat getEtat() {
         return etat;
     }
-    
-    public void setEtat(Etat e){
+
+    /**
+     * Change l'etat de la mission
+     *
+     * @param e Etat de la mission
+     */
+    public void setEtat(Etat e) {
         this.etat = e;
     }
-    
+
     /**
      * Getter de l'identifiant de la mission
+     *
      * @return idMission
      */
     public int getIdMission() {
         return idMission;
     }
-    
+
     /**
      * Ajout de compétences requises pour la mission
+     *
      * @param r représente la compétence à ajouter
      */
-    public void addRequirement(Requirement r){
+    public void addRequirement(Requirement r) {
         this.requirements.put(r.getIdRequirement(), r);
     }
-    
+
     /**
      * Ajout du nombre de personnes requises pour que la mission débute
+     *
      * @param p représente la personne à ajouter.
      */
-    public void addPerson(Person p){
+    public void addPerson(Person p) {
         this.personOnMission.put(p.getId(), p);
     }
 
     /**
      * Getter du nom de la mission
+     *
      * @return missionName
      */
     public String getMissionName() {
@@ -95,6 +109,7 @@ public class Mission {
 
     /**
      * Setter du nom de la mission
+     *
      * @param missionName représente le nouveau nom de la mission
      */
     public void setMissionName(String missionName) {
@@ -103,6 +118,7 @@ public class Mission {
 
     /**
      * Getter de la date de début de la mission
+     *
      * @return startDate
      */
     public Date getStartDate() {
@@ -111,16 +127,19 @@ public class Mission {
 
     /**
      * Setter de la date de début de la mission
+     *
      * @param startDate représente la nouvelle date de début de la mission
-     * @throws ParseException
+     * @throws ParseException La date n'est pas sous le bon format
      */
-    public void setStartDate(String startDate)throws ParseException {
+    public void setStartDate(String startDate) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date sDate = formatter.parse(startDate);// Conversion du texte en date selon le format vu au dessus
         this.startDate = sDate;
     }
+
     /**
      * Getter de la durée de la mission
+     *
      * @return missionDuration
      */
     public int getMissionDuration() {
@@ -129,24 +148,26 @@ public class Mission {
 
     /**
      * Setter de la durée de la mission
+     *
      * @param missionDuration représente la nouvelle durée de la mission
      */
     public void setMissionDuration(int missionDuration) {
         this.missionDuration = missionDuration;
     }
 
-    
     /**
      * Getter nombre de personnes sur la mission
+     *
      * @return nbTotalPerson
      */
     public int getNbTotalPerson() {
         return nbTotalPerson;
     }
-    
+
     /**
      * Setter nombre de personnes sur la mission
-     * @param nbTotalPerson
+     *
+     * @param nbTotalPerson nb total de personne sur la mission
      */
     public void setNbTotalPerson(int nbTotalPerson) {
         this.nbTotalPerson = nbTotalPerson;
@@ -159,19 +180,18 @@ public class Mission {
     public HashMap<String, Person> getPersonOnMission() {
         return personOnMission;
     }
-    
-    
 
     /**
      * Affichage de la mission selon ses attributs
-     * @return
+     *
+     * @return Retourn sous le format XML la mission
      */
     @Override
     public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
         //TODO boucle de parcours pour affichage
-        String message="<mission>\n     <id>"+idMission+"</id>\n     <name>"+missionName+"</name>\n     <startDate>"+StartDate+"</startDate>\n     <duration>"+missionDuration+"</duration>\n     <state>"+etat.toString()+"</state>\n</mission>\n";
+        String message = "<mission>\n     <id>" + idMission + "</id>\n     <name>" + missionName + "</name>\n     <startDate>" + StartDate + "</startDate>\n     <duration>" + missionDuration + "</duration>\n     <state>" + etat.toString() + "</state>\n</mission>\n";
         return message;
         //return idMission + ", "+ missionName + ", "+ requirements + ", "+ personOnMission + ", "+ StartDate + ", "+ missionDuration + ", "+tabTypes + ", "+ missionType;
     }

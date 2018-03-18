@@ -32,7 +32,8 @@ public class AddPerson extends javax.swing.JPanel {
     /**
      * Creates new form addPerson
      *
-     * @param myCompany
+     * @param myCompany Compagnie
+     * @param myJlistPerson Liste des personnes
      */
     public AddPerson(Company myCompany, JList<Person> myJlistPerson) {
         this.myCompany = myCompany;

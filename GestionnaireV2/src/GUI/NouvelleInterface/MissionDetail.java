@@ -7,11 +7,14 @@ package GUI.NouvelleInterface;
 
 import API.Mission;
 import API.Person;
+import API.Requirement;
+import API.Skill;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicProgressBarUI;
@@ -96,7 +99,8 @@ public class MissionDetail extends javax.swing.JPanel {
         DefaultListModel<Person> modelPerson = new DefaultListModel();
         HashMap<String,Person> personList = myMission.getPersonOnMission();
         jListPerson = new javax.swing.JList<Person>();
-        jComboBoxSkill = new javax.swing.JComboBox();
+        DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
+        jComboBoxSkill = new javax.swing.JComboBox<Skill>();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -213,6 +217,19 @@ public class MissionDetail extends javax.swing.JPanel {
         }
         jScrollPane1.setViewportView(jListPerson);
 
+        jComboBoxSkill.setModel(skillModel);
+        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
+
+        HashMap<Integer,Requirement> mySkillList= myMission.getRequirements();
+
+        Set entrySetSkill = mySkillList.entrySet();
+        Iterator itSkill = entrySetSkill.iterator();
+        while (itSkill.hasNext()) {
+            Map.Entry me = (Map.Entry)it.next();
+            Skill myskill = mySkillList.get(me.getKey()).getRequiredSkill();
+            skillModel.addElement(myskill);
+        }
+
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
         jPanelRightDetailLayout.setHorizontalGroup(
@@ -295,7 +312,7 @@ public class MissionDetail extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBoxSkill;
+    private javax.swing.JComboBox<Skill> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
