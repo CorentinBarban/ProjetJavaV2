@@ -17,7 +17,7 @@ public class Requirement {
     private int idRequirement;
     private String description;
     private final int nbPersonRequiredSkill;
-    private Skill requiredSkill ;
+    private Skill requiredSkill;
     private final List<Person> listPersonnes = new ArrayList<>();
     
     /**
@@ -25,9 +25,10 @@ public class Requirement {
      * @param id ID du besoin
      * @param nbTotalPerson nombre total de personnes sur le besoin
      */
-    public Requirement(int id, int nbTotalPerson){
+    public Requirement(int id, int nbTotalPerson, Skill skill){
         this.idRequirement = id;
-        this.nbPersonRequiredSkill=nbTotalPerson;   
+        this.nbPersonRequiredSkill=nbTotalPerson;
+        this.requiredSkill = skill;
     }
     
     /**
@@ -74,9 +75,6 @@ public class Requirement {
     public String toString(){ // To string servant à l'écriture dans le CSV
         return idRequirement + ";";
     }
-    
-    public String affichage(){ // To string traditionnel
-        return "Requirement "+ idRequirement;
-    }
+
     
 }

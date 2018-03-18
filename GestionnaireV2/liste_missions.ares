@@ -7,6 +7,15 @@
      <startDate>13/09/2018</startDate>
      <duration>15</duration>
      <state>enPreparation</state>
+     <persons_list>
+          <idPerson>44</idPerson>
+          <idPerson>13</idPerson>
+          <idPerson>20</idPerson>
+     </persons_list>
+	 <requirements_list>
+          <idRequirement>1</idRequirement>
+          <idRequirement>2</idRequirement>
+     </requirements_list>
 </mission>
 <mission>
      <id>2</id>
@@ -14,6 +23,15 @@
      <startDate>12/08/2018</startDate>
      <duration>3</duration>
      <state>enCours</state>
+     <persons_list>
+          <idPerson>13</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>20</idPerson>
+     </persons_list>
+	 <requirements_list>
+          <idRequirement>1</idRequirement>
+          <idRequirement>2</idRequirement>
+     </requirements_list>
 </mission>
 <mission>
      <id>3</id>
@@ -21,6 +39,15 @@
      <startDate>12/08/2018</startDate>
      <duration>3</duration>
      <state>plannifiee</state>
+     <persons_list>
+          <idPerson>13</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>20</idPerson>
+     </persons_list>
+	 <requirements_list>
+          <idRequirement>1</idRequirement>
+          <idRequirement>2</idRequirement>
+     </requirements_list>
 </mission>
 <mission>
      <id>4</id>
@@ -28,6 +55,15 @@
      <startDate>12/08/2018</startDate>
      <duration>8</duration>
      <state>enPreparation</state>
+     <persons_list>
+          <idPerson>13</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>20</idPerson>
+     </persons_list>
+	 <requirements_list>
+          <idRequirement>1</idRequirement>
+          <idRequirement>2</idRequirement>
+     </requirements_list>
 </mission>
 <mission>
      <id>5</id>
@@ -35,6 +71,15 @@
      <startDate>12/08/2018</startDate>
      <duration>20</duration>
      <state>enPreparation</state>
+     <persons_list>
+          <idPerson>13</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>20</idPerson>
+     </persons_list>
+	 <requirements_list>
+          <idRequirement>1</idRequirement>
+          <idRequirement>2</idRequirement>
+     </requirements_list>
 </mission>
 <mission>
      <id>6</id>
@@ -42,5 +87,14 @@
      <startDate>12/08/2018</startDate>
      <duration>31</duration>
      <state>enPreparation</state>
+     <persons_list>
+          <idPerson>13</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>20</idPerson>
+     </persons_list>
+	 <requirements_list>
+          <idRequirement>1</idRequirement>
+          <idRequirement>2</idRequirement>
+     </requirements_list>
 </mission>
 </list>

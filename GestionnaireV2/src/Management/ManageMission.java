@@ -26,17 +26,6 @@ public class ManageMission implements ManageData {
 
     private static final String CSV_FILE_PATH = "liste_missions.csv";
     private static final String ARES_FILE_PATH = "liste_missions.ares";
-
-    public Date dateCheck(String d) throws ParseException { // Cette classe doit vérifier si la date de départ assignée lors de la création d'une mission est valide.
-        Date today = Calendar.getInstance().getTime(); // Stockage de la date d'ajd
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date newDate = formatter.parse(d); // Conversion du texte passé en param en date selon le format vu au dessus
-        if (newDate.before(today)) { // Si la date entrée est inférieure à la date d'ajd
-            throw new ParseException("La date entrée ne doit pas être inférieur à la date d'aujourd'hui.", 1);
-        } else {
-            return newDate;
-        }
-    }
     
     public boolean checkNbPersonRequiredSkill(Requirement r){
        Skill s = r.getRequiredSkill();
@@ -96,7 +85,6 @@ public class ManageMission implements ManageData {
             while (it.hasNext()) {
                 Map.Entry me = (Map.Entry)it.next();
                 writer.append(me.getValue().toString());
-                //writer.append(",");
                 it.remove();
             }
             writer.append("</list>");

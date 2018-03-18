@@ -23,10 +23,8 @@ public class Tests {
         
         ms.readData(c1);
         mp.readData(c1);
-        System.out.println(c1.listePerson);
-        mp.writeData(c1);
-        mp.readData(c1);
-        System.out.println(c1.listePerson);
+        mm.readData(c1);
+        System.out.println(c1.listeMission);
     }
             
 }

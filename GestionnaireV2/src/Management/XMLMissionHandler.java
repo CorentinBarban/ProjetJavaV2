@@ -14,6 +14,7 @@ import API.Company;
 import API.Mission;
 import API.Mission.Etat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xml.sax.Attributes;
@@ -27,12 +28,18 @@ public class XMLMissionHandler extends DefaultHandler {
    boolean bId = false;
    boolean bDate = false;
    boolean bState = false;
+   boolean bPerson = false;
+   boolean bReq = false;
    
    String id;
    String name;
    String duration;
    String startDate;
    Etat state;
+   String idPerson;
+   ArrayList <String> listIdPersons = new ArrayList<>();
+   ArrayList <Integer> listIdRequirements = new ArrayList<>();
+
    Company c;
    
    public XMLMissionHandler(Company c){
@@ -54,6 +61,10 @@ public class XMLMissionHandler extends DefaultHandler {
          bDuration = true;
       } else if (qName.equalsIgnoreCase("state")) {
          bState = true;
+      } else if (qName.equalsIgnoreCase("idPerson")) {
+         bPerson = true;
+      } else if (qName.equalsIgnoreCase("idRequirement")) {
+         bReq = true;
       }
    }
 
@@ -62,10 +73,18 @@ public class XMLMissionHandler extends DefaultHandler {
    String localName, String qName) throws SAXException {
       if (qName.equalsIgnoreCase("mission")) {
          try {
-             
            Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration),state);
            m.setEtat(state);
            c.addMission(m);
+           for (int i=0; i<listIdPersons.size();i++){
+                m.addPerson(c.listePerson.get(listIdPersons.get(i)));
+           }
+           listIdPersons.removeAll(listIdPersons);
+           
+           /*for (int i=0; i<listIdRequirements.size();i++){
+               m.addRequirement((listIdRequirements.get(i))); // Besoin de retrouver le req via son ID
+           }
+           listIdRequirements.removeAll(listIdRequirements);*/
            
        } catch (ParseException ex) {
            
@@ -92,6 +111,10 @@ public class XMLMissionHandler extends DefaultHandler {
       } else if (bState) {
         state = Etat.valueOf(new String(ch, start, length));
         bState = false;
+      } else if (bPerson) {
+        idPerson = new String(ch, start, length);
+        bPerson = false;
+        listIdPersons.add(idPerson);
       }
    }
 }

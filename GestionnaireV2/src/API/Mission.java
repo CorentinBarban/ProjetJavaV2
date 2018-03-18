@@ -46,7 +46,9 @@ public class Mission {
     public Mission(int id, String n, String sd, int md, Etat state) throws ParseException {
         this.idMission = id;
         this.missionName = n;
-        this.startDate = manager.dateCheck(sd); //Appel  de la méthode dateCheck qui vérifie si la date est bonne
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date sDate = formatter.parse(sd);// Conversion du texte en date selon le format vu au dessus
+        this.startDate = sDate;
         this.missionDuration = md;
         this.etat = state;
         this.personOnMission = new HashMap();
@@ -191,8 +193,25 @@ public class Mission {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
         //TODO boucle de parcours pour affichage
-        String message = "<mission>\n     <id>" + idMission + "</id>\n     <name>" + missionName + "</name>\n     <startDate>" + StartDate + "</startDate>\n     <duration>" + missionDuration + "</duration>\n     <state>" + etat.toString() + "</state>\n</mission>\n";
+        String message = "<mission>\n     <id>" + idMission + "</id>\n     <name>" + missionName + "</name>\n     <startDate>" + StartDate + "</startDate>\n     <duration>" + missionDuration + "</duration>\n     <state>" + etat.toString() + "</state>\n     <persons_list>\n";
+        
+        Iterator personIterator = personOnMission.entrySet().iterator();
+        
+        while (personIterator.hasNext()) {
+            Map.Entry mapEntry = (Map.Entry) personIterator.next();
+            message = message + "          <idPerson>"+mapEntry.getKey() + "</idPerson>\n";
+	}
+        message = message + "     </persons_list>\n     </requirements_list>\n";
+        
+        Iterator reqIterator = requirements.entrySet().iterator();
+        
+        while (reqIterator.hasNext()) {
+            Map.Entry mapEntry = (Map.Entry) reqIterator.next();
+            Requirement r = requirements.get(mapEntry.getKey());
+            message = message + "          <idSkill>"+r.getRequiredSkill().getId()+ "</idSkill>\n";
+	}
+        message = message + "     </requirements_list>\n</mission>\n";
+        
         return message;
-        //return idMission + ", "+ missionName + ", "+ requirements + ", "+ personOnMission + ", "+ StartDate + ", "+ missionDuration + ", "+tabTypes + ", "+ missionType;
     }
 }
