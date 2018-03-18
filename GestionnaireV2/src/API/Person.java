@@ -161,9 +161,9 @@ public class Person {
         
         while (skillIterator.hasNext()) {
             Map.Entry mapEntry = (Map.Entry) skillIterator.next();
-            message = message + mapEntry.getValue();
+            message = message + "          <idSkill>"+mapEntry.getKey() + "</idSkill>\n";
 	}
-        message = message + "</skills_list>\n</person>\n";
+        message = message + "     </skills_list>\n</person>\n";
         return message;
     }
 
