@@ -17,7 +17,9 @@ import API.Requirement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xml.sax.Attributes;
@@ -96,14 +98,23 @@ public class XMLMissionHandler extends DefaultHandler {
            
            for (int i=0; i<listIdRequirements.size();i++){
               Requirement r = new Requirement(listIdRequirements.get(i), listIdPersonsReq.size(), c.listeSkill.get(listIdSkillsReq.get(i)));
-             for(int y=0; y<listIdPersonsReq.size(); y++){
-                  try {
-                      r.addPerson(c.listePerson.get(listIdPersonsReq.get(listIdRequirements.get(i))));
-                      System.out.println(listIdPersonsReq);
-                  } catch (Exception ex) {
-                      Logger.getLogger(XMLMissionHandler.class.getName()).log(Level.SEVERE, null, ex);
-                  }
+            
+              Iterator reqIterator = listIdPersonsReq.entrySet().iterator();
+              while (reqIterator.hasNext()) {
+                Map.Entry mapEntry = (Map.Entry) reqIterator.next();
+                 //r.addPerson(c.listePerson.get(listIdPersonsReq.get(mapEntry.getKey())));
+                 
+                 /*for (Map.Entry<String, List<String>> entry : listIdPersonsReq.entrySet()) {
+                    String key = entry.getKey();
+                    List<String> values = entry.getValue();
+                    System.out.println("Key = " + key);
+                    System.out.println("Values = " + values + "n");
+                 }*/
+
+                   System.out.println(listIdPersonsReq.get(listIdRequirements.get(i)));
+                 //System.out.println(mapEntry.getKey()+ "," +mapEntry.getValue());
               }
+              
               m.addRequirement(r);
            }
            listIdRequirements.removeAll(listIdRequirements);
