@@ -238,6 +238,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jListPerson);
 
+        jComboBoxSkill.setMaximumRowCount(20);
         jComboBoxSkill.setModel(skillModel);
         jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
 

@@ -35,7 +35,13 @@ public class SkillRenderer extends JLabel implements ListCellRenderer<Skill> {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
+        if (isSelected) {
+            setBackground(Color.LIGHT_GRAY);
+            setForeground(Color.BLACK);            
+        } else {
+            setBackground(Color.WHITE);
+            setForeground(Color.BLACK);
+        }
         return this;
     }
 }

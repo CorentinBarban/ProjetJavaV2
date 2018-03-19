@@ -371,6 +371,7 @@
             </Container>
             <Component class="javax.swing.JComboBox" name="jComboBoxSkill">
               <Properties>
+                <Property name="maximumRowCount" type="int" value="20"/>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="skillModel" type="code"/>
                 </Property>
