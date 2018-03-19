@@ -48,6 +48,7 @@ public class XMLMissionHandler extends DefaultHandler {
     String idSkillReq;
     String idPersonReq;
     String nbTotal;
+    HashMap<String, List<String>> listNbTotal = new HashMap();
     ArrayList<String> listIdPersons = new ArrayList<>();
     ArrayList<Integer> listIdRequirements = new ArrayList<>();
     HashMap<String, List<String>> listIdPersonsReq = new HashMap();
@@ -99,7 +100,7 @@ public class XMLMissionHandler extends DefaultHandler {
                 listIdPersons.removeAll(listIdPersons);
                 int i =0;
                 for (Map.Entry element : listIdPersonsReq.entrySet()) {
-                    Requirement r = new Requirement(Integer.parseInt(""+element.getKey()), Integer.parseInt(nbTotal) , c.listeSkill.get(listIdSkillsReq.get(i)));
+                    Requirement r = new Requirement(Integer.parseInt(""+element.getKey()), Integer.parseInt(listNbTotal.get(element.getKey()).get(0)) , c.listeSkill.get(listIdSkillsReq.get(i)));
                     List current = listIdPersonsReq.get(element.getKey());
                     for (int y = 0; y < current.size(); y++) {
                         r.addPerson(c.listePerson.get(current.get(y)));
@@ -109,7 +110,7 @@ public class XMLMissionHandler extends DefaultHandler {
                 }
                 listIdRequirements.clear();
                 listIdPersonsReq.clear();
-
+                listNbTotal.clear();
             } catch (ParseException ex) {
                 Logger.getLogger(XMLPersonHandler.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
@@ -145,6 +146,7 @@ public class XMLMissionHandler extends DefaultHandler {
             bReq = false;
             listIdRequirements.add(Integer.parseInt(idReq));
             listIdPersonsReq.put(idReq, new ArrayList());
+            listNbTotal.put(idReq, new ArrayList());
         } else if (bSkillReq) {
             idSkillReq = new String(ch, start, length);
             bSkillReq = false;
@@ -156,6 +158,7 @@ public class XMLMissionHandler extends DefaultHandler {
         } else if (bNb) {
             nbTotal = new String(ch, start, length);
             bNb = false;
+            listNbTotal.get(idReq).add(nbTotal);
         }
     }
 }
