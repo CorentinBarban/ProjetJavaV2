@@ -176,11 +176,11 @@ public class Mission {
     }
 
     public HashMap<Integer, Requirement> getRequirements() {
-        return requirements;
+        return this.requirements;
     }
 
     public HashMap<String, Person> getPersonOnMission() {
-        return personOnMission;
+        return this.personOnMission;
     }
 
     /**
