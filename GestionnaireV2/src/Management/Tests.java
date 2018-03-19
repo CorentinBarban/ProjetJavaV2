@@ -24,7 +24,7 @@ public class Tests {
         ms.readData(c1);
         mp.readData(c1);
         mm.readData(c1);
-        //System.out.println(c1.listeMission);
+        System.out.println(c1.listeMission);
     }
             
 }
