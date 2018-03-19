@@ -16,6 +16,7 @@ import API.Mission.Etat;
 import API.Requirement;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xml.sax.Attributes;
@@ -45,7 +46,7 @@ public class XMLMissionHandler extends DefaultHandler {
    String idPersonReq;
    ArrayList <String> listIdPersons = new ArrayList<>();
    ArrayList <Integer> listIdRequirements = new ArrayList<>();
-   ArrayList <String> listIdPersonsReq = new ArrayList<>();
+   HashMap <String,String> listIdPersonsReq = new HashMap();
    ArrayList <String> listIdSkillsReq = new ArrayList<>();
    Company c;
    
@@ -94,10 +95,10 @@ public class XMLMissionHandler extends DefaultHandler {
            
            for (int i=0; i<listIdRequirements.size();i++){
               Requirement r = new Requirement(listIdRequirements.get(i), listIdPersonsReq.size(), c.listeSkill.get(listIdSkillsReq.get(i)));
-              for(int y=0; y<listIdPersonsReq.size(); y++){
+             for(int y=0; y<listIdPersonsReq.size(); y++){
                   try {
-                      r.addPerson(c.listePerson.get(listIdPersonsReq.get(y)));
-                      
+                      r.addPerson(c.listePerson.get(listIdPersonsReq.get(listIdRequirements.get(i))));
+                      System.out.println(listIdPersonsReq);
                   } catch (Exception ex) {
                       Logger.getLogger(XMLMissionHandler.class.getName()).log(Level.SEVERE, null, ex);
                   }
@@ -105,7 +106,7 @@ public class XMLMissionHandler extends DefaultHandler {
               m.addRequirement(r);
            }
            listIdRequirements.removeAll(listIdRequirements);
-           listIdPersonsReq.removeAll(listIdPersonsReq);
+           listIdPersonsReq.clear();
 
        } catch (ParseException ex) {
            
@@ -147,7 +148,7 @@ public class XMLMissionHandler extends DefaultHandler {
       } else if (bPersonReq) {
         idPersonReq = new String(ch, start, length);
         bPersonReq = false;
-        listIdPersonsReq.add(idPersonReq);
+        listIdPersonsReq.put(idReq,idPersonReq);
       }
    }
 }

@@ -16,14 +16,14 @@
      </persons_list>
 	 <requirements_list>
              <requirement>
-                <idRequirement>1</idRequirement>
+                <idRequirement>3</idRequirement>
                 <idSkillReq>E.6.</idSkillReq>
                 <idPersonReq>44</idPersonReq>
                 <idPersonReq>1</idPersonReq>
                 <idPersonReq>20</idPersonReq>
              </requirement>
              <requirement>
-          <idRequirement>2</idRequirement>
+          <idRequirement>4</idRequirement>
                 <idSkillReq>A.4.</idSkillReq>
                 <idPersonReq>1</idPersonReq>
                 <idPersonReq>24</idPersonReq>
