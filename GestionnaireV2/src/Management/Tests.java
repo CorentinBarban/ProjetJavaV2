@@ -25,6 +25,7 @@ public class Tests {
         mp.readData(c1);
         mm.readData(c1);
         System.out.println(c1.listeMission);
+        mm.writeData(c1);
     }
             
 }

@@ -214,7 +214,7 @@ public class Mission {
                 message = message + "          <idPersonReq>"+r.getListPersonnes().get(i).getId()+ "</idPersonReq>\n";
             }
 	}
-        message = message + "          <requirement>\n     </requirements_list>\n</mission>\n";
+        message = message + "          </requirement>\n     </requirements_list>\n</mission>\n";
         
         return message;
     }

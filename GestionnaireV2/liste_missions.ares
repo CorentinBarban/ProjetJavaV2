@@ -4,31 +4,29 @@
 <mission>
      <id>1</id>
      <name>Recherche de sujet</name>
-     <startDate>1/09/2018</startDate>
+     <startDate>01/09/2018</startDate>
      <duration>15</duration>
      <state>enPreparation</state>
      <persons_list>
           <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>20</idPerson>
           <idPerson>12</idPerson>
           <idPerson>24</idPerson>
+          <idPerson>20</idPerson>
      </persons_list>
-	 <requirements_list>
-             <requirement>
-                <idRequirement>3</idRequirement>
-                <idSkillReq>E.6.</idSkillReq>
-                <idPersonReq>44</idPersonReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>20</idPersonReq>
-             </requirement>
-             <requirement>
-          <idRequirement>4</idRequirement>
-                <idSkillReq>A.4.</idSkillReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>24</idPersonReq>
-                <idPersonReq>12</idPersonReq>
-             </requirement>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>20</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
      </requirements_list>
 </mission>
 <mission>
@@ -40,25 +38,23 @@
      <persons_list>
           <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>20</idPerson>
           <idPerson>12</idPerson>
           <idPerson>24</idPerson>
+          <idPerson>20</idPerson>
      </persons_list>
-	 <requirements_list>
+     <requirements_list>
           <requirement>
-                <idRequirement>1</idRequirement>
-                <idSkillReq>E.6.</idSkillReq>
-                <idPersonReq>44</idPersonReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>20</idPersonReq>
-             </requirement>
-             <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>20</idPersonReq>
           <idRequirement>2</idRequirement>
-                <idSkillReq>A.4.</idSkillReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>24</idPersonReq>
-                <idPersonReq>12</idPersonReq>
-             </requirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
      </requirements_list>
 </mission>
 <mission>
@@ -70,25 +66,23 @@
      <persons_list>
           <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>20</idPerson>
           <idPerson>12</idPerson>
           <idPerson>24</idPerson>
+          <idPerson>20</idPerson>
      </persons_list>
-	 <requirements_list>
+     <requirements_list>
           <requirement>
-                <idRequirement>1</idRequirement>
-                <idSkillReq>E.6.</idSkillReq>
-                <idPersonReq>44</idPersonReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>20</idPersonReq>
-             </requirement>
-             <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>20</idPersonReq>
           <idRequirement>2</idRequirement>
-                <idSkillReq>A.4.</idSkillReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>24</idPersonReq>
-                <idPersonReq>12</idPersonReq>
-             </requirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
      </requirements_list>
 </mission>
 <mission>
@@ -100,25 +94,23 @@
      <persons_list>
           <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>20</idPerson>
           <idPerson>12</idPerson>
           <idPerson>24</idPerson>
+          <idPerson>20</idPerson>
      </persons_list>
-	 <requirements_list>
+     <requirements_list>
           <requirement>
-                <idRequirement>1</idRequirement>
-                <idSkillReq>E.6.</idSkillReq>
-                <idPersonReq>44</idPersonReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>20</idPersonReq>
-             </requirement>
-             <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>20</idPersonReq>
           <idRequirement>2</idRequirement>
-                <idSkillReq>A.4.</idSkillReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>24</idPersonReq>
-                <idPersonReq>12</idPersonReq>
-             </requirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
      </requirements_list>
 </mission>
 <mission>
@@ -130,25 +122,23 @@
      <persons_list>
           <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>20</idPerson>
           <idPerson>12</idPerson>
           <idPerson>24</idPerson>
+          <idPerson>20</idPerson>
      </persons_list>
-	 <requirements_list>
-         <requirement>
-                <idRequirement>1</idRequirement>
-                <idSkillReq>E.6.</idSkillReq>
-                <idPersonReq>44</idPersonReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>20</idPersonReq>
-             </requirement>
-             <requirement>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>20</idPersonReq>
           <idRequirement>2</idRequirement>
-                <idSkillReq>A.4.</idSkillReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>24</idPersonReq>
-                <idPersonReq>12</idPersonReq>
-             </requirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
      </requirements_list>
 </mission>
 <mission>
@@ -160,25 +150,23 @@
      <persons_list>
           <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>20</idPerson>
           <idPerson>12</idPerson>
           <idPerson>24</idPerson>
+          <idPerson>20</idPerson>
      </persons_list>
-	 <requirements_list>
+     <requirements_list>
           <requirement>
-                <idRequirement>1</idRequirement>
-                <idSkillReq>E.6.</idSkillReq>
-                <idPersonReq>44</idPersonReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>20</idPersonReq>
-             </requirement>
-             <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>20</idPersonReq>
           <idRequirement>2</idRequirement>
-                <idSkillReqReq>A.4.</idSkillReqReq>
-                <idPersonReq>1</idPersonReq>
-                <idPersonReq>24</idPersonReq>
-                <idPersonReq>12</idPersonReq>
-             </requirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <idPersonReq>1</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
      </requirements_list>
 </mission>
 </list>
