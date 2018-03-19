@@ -224,8 +224,10 @@ public class MissionDetail extends javax.swing.JPanel {
 
         Set entrySetSkill = mySkillList.entrySet();
         Iterator itSkill = entrySetSkill.iterator();
+
         while (itSkill.hasNext()) {
-            Map.Entry me = (Map.Entry)it.next();
+
+            Map.Entry me = (Map.Entry)itSkill.next();
             Skill myskill = mySkillList.get(me.getKey()).getRequiredSkill();
             skillModel.addElement(myskill);
         }
