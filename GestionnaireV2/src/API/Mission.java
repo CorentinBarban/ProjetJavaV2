@@ -201,16 +201,20 @@ public class Mission {
             Map.Entry mapEntry = (Map.Entry) personIterator.next();
             message = message + "          <idPerson>"+mapEntry.getKey() + "</idPerson>\n";
 	}
-        message = message + "     </persons_list>\n     </requirements_list>\n";
+        message = message + "     </persons_list>\n     <requirements_list>\n          <requirement>\n";
         
         Iterator reqIterator = requirements.entrySet().iterator();
         
         while (reqIterator.hasNext()) {
             Map.Entry mapEntry = (Map.Entry) reqIterator.next();
             Requirement r = requirements.get(mapEntry.getKey());
-            message = message + "          <idSkill>"+r.getRequiredSkill().getId()+ "</idSkill>\n";
+            message = message + "          <idRequirement>"+r.getIdRequirement()+ "</idRequirement>\n";
+            message = message + "          <idSkillReq>"+r.getRequiredSkill().getId()+ "</idSkillReq>\n";
+            for(int i=0; i<r.getListPersonnes().size(); i++){
+                message = message + "          <idPersonReq>"+r.getListPersonnes().get(i).getId()+ "</idPersonReq>\n";
+            }
 	}
-        message = message + "     </requirements_list>\n</mission>\n";
+        message = message + "          <requirement>\n     </requirements_list>\n</mission>\n";
         
         return message;
     }

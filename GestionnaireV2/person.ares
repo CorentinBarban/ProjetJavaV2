@@ -4,7 +4,5 @@
 <!ELEMENT firstName (#PCDATA)>
 <!ELEMENT dateOfHire (#PCDATA)>
 <!ELEMENT skills_list (skill*)>
-<!ELEMENT skill (idSkill,nameEn,nameFr)>
+<!ELEMENT skill (idSkill)>
 <!ELEMENT idSkill (#PCDATA)>
-<!ELEMENT nameEn (#PCDATA)>
-<!ELEMENT nameFr (#PCDATA)>

@@ -13,6 +13,7 @@ package Management;
 import API.Company;
 import API.Mission;
 import API.Mission.Etat;
+import API.Requirement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -30,6 +31,8 @@ public class XMLMissionHandler extends DefaultHandler {
    boolean bState = false;
    boolean bPerson = false;
    boolean bReq = false;
+   boolean bSkillReq = false;
+   boolean bPersonReq = false;
    
    String id;
    String name;
@@ -37,9 +40,13 @@ public class XMLMissionHandler extends DefaultHandler {
    String startDate;
    Etat state;
    String idPerson;
+   String idReq;
+   String idSkillReq;
+   String idPersonReq;
    ArrayList <String> listIdPersons = new ArrayList<>();
    ArrayList <Integer> listIdRequirements = new ArrayList<>();
-
+   ArrayList <String> listIdPersonsReq = new ArrayList<>();
+   ArrayList <String> listIdSkillsReq = new ArrayList<>();
    Company c;
    
    public XMLMissionHandler(Company c){
@@ -65,6 +72,10 @@ public class XMLMissionHandler extends DefaultHandler {
          bPerson = true;
       } else if (qName.equalsIgnoreCase("idRequirement")) {
          bReq = true;
+      } else if (qName.equalsIgnoreCase("idPersonReq")) {
+         bPersonReq = true;
+      } else if (qName.equalsIgnoreCase("idSkillReq")) {
+         bSkillReq = true;
       }
    }
 
@@ -81,11 +92,22 @@ public class XMLMissionHandler extends DefaultHandler {
            }
            listIdPersons.removeAll(listIdPersons);
            
-           /*for (int i=0; i<listIdRequirements.size();i++){
-               m.addRequirement((listIdRequirements.get(i))); // Besoin de retrouver le req via son ID
+           for (int i=0; i<listIdRequirements.size();i++){
+              Requirement r = new Requirement(listIdRequirements.get(i), listIdPersonsReq.size(), c.listeSkill.get(listIdSkillsReq.get(i)));
+              for(int y=0; y<listIdPersonsReq.size(); y++){
+                  try {
+                      r.addPerson(c.listePerson.get(listIdPersonsReq.get(y)));
+                      //System.out.println("Suppression "+listIdSkillsReq.get(i)+" "+y+ " : "+listIdPersonsReq.get(y));
+                      listIdPersonsReq.remove(y);
+                  } catch (Exception ex) {
+                      Logger.getLogger(XMLMissionHandler.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+              }
+              m.addRequirement(r);
            }
-           listIdRequirements.removeAll(listIdRequirements);*/
-           
+           listIdRequirements.removeAll(listIdRequirements);
+           listIdPersonsReq.removeAll(listIdPersonsReq);
+
        } catch (ParseException ex) {
            
            Logger.getLogger(XMLPersonHandler.class.getName()).log(Level.SEVERE, null, ex);
@@ -115,6 +137,18 @@ public class XMLMissionHandler extends DefaultHandler {
         idPerson = new String(ch, start, length);
         bPerson = false;
         listIdPersons.add(idPerson);
+      } else if (bReq) {
+        idReq = new String(ch, start, length);
+        bReq = false;
+        listIdRequirements.add(Integer.parseInt(idReq));        
+      } else if (bSkillReq) {
+        idSkillReq = new String(ch, start, length);
+        bSkillReq = false;
+        listIdSkillsReq.add(idSkillReq);
+      } else if (bPersonReq) {
+        idPersonReq = new String(ch, start, length);
+        bPersonReq = false;
+        listIdPersonsReq.add(idPersonReq);
       }
    }
 }

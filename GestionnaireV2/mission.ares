@@ -4,3 +4,11 @@
 <!ELEMENT startDate (#PCDATA)>
 <!ELEMENT duration (#PCDATA)>
 <!ELEMENT state (#PCDATA)>
+<!ELEMENT persons_list (person*)>
+<!ELEMENT person (idPerson)>
+<!ELEMENT idPerson (#PCDATA)>
+<!ELEMENT requirements_list (requirement*)>
+<!ELEMENT requirement (idRequirement, idSkillReq, idPersonReq)>
+<!ELEMENT idRequirement (#PCDATA)>
+<!ELEMENT idSkillReq (#PCDATA)>
+<!ELEMENT idPersonReq (#PCDATA)>

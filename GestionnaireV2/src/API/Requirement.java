@@ -54,6 +54,10 @@ public class Requirement {
     public void setIdRequirement(int idRequirement) {
         this.idRequirement = idRequirement;
     }
+
+    public List<Person> getListPersonnes() {
+        return listPersonnes;
+    }
     
     /**
      * Ajout une personne à un besoin
