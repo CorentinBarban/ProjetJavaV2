@@ -12,6 +12,7 @@ import API.Skill;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
@@ -96,8 +97,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jTextFieldNbPersonSkill = new javax.swing.JTextField();
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        DefaultListModel<Person> modelPerson = new DefaultListModel();
-        HashMap<String,Person> personList = myMission.getPersonOnMission();
+        int elt = 0;
         jListPerson = new javax.swing.JList<Person>();
         DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
         jComboBoxSkill = new javax.swing.JComboBox<Skill>();
@@ -125,9 +125,18 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelStateMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelStateMission.setText("Etat de la mission :");
 
+        jTextFieldNameMission.setEditable(false);
+
+        jTextFieldDurationMission.setEditable(false);
+
+        jTextFieldNbPersonMission.setEditable(false);
+
+        jTextFieldStateMission.setEditable(false);
+
         jLabelProgression.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelProgression.setText("Avancement :");
 
+        jFormattedTextFieldFireDate.setEditable(false);
         jFormattedTextFieldFireDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
 
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
@@ -200,21 +209,33 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelSkill.setText("Compétences");
 
         jLabelnbPeronSkill.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelnbPeronSkill.setText("<html>\n<p>Nombre de Personne </p>\n<p>     possédant la  </p>\n<p>compétence requise </p>\n</html>");
+        jLabelnbPeronSkill.setText("<html> <p>Nombre de Personne </p> <p>     requises </p></html>");
+
+        HashMap<Integer, Requirement> requirementsListNb = myMission.getRequirements();
+        Requirement requirement = requirementsListNb.get(1);
+        jTextFieldNbPersonSkill.setText(""+requirement.getNbTotalPersonnes());
+        jTextFieldNbPersonSkill.setEditable(false);
 
         jLabelPerson.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelPerson.setText("Personnes Attribuées");
 
+        //Creation du model personne
+        DefaultListModel<Person> modelPerson = new DefaultListModel();
+
+        // Recuperer les personnes sur un besoins
+        HashMap<Integer, Requirement> requirementsList = myMission.getRequirements();
+        Requirement requirementSelected = requirementsList.get(elt+1);
+
+        List<Person> personList = requirementSelected.getListPersonnes();
         jListPerson.setModel(modelPerson);
         jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Set entrySet = personList.entrySet();
-        Iterator it = entrySet.iterator();
-        while (it.hasNext()) {
-            Map.Entry me = (Map.Entry)it.next();
-            modelPerson.addElement(personList.get(me.getKey()));
 
+        Iterator it = personList.iterator();
+        for (Person personList1 : personList) {
+            modelPerson.addElement(personList1);
         }
+        jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jListPerson);
 
         jComboBoxSkill.setModel(skillModel);
@@ -231,6 +252,11 @@ public class MissionDetail extends javax.swing.JPanel {
             Skill myskill = mySkillList.get(me.getKey()).getRequiredSkill();
             skillModel.addElement(myskill);
         }
+        jComboBoxSkill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSkillActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
@@ -311,6 +337,32 @@ public class MissionDetail extends javax.swing.JPanel {
                 .addGap(54, 54, 54))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBoxSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSkillActionPerformed
+        //Recuperer l'id de l'element selectioné
+        int elt = jComboBoxSkill.getSelectedIndex();
+        //Creation du model personne
+        DefaultListModel<Person> modelPerson = new DefaultListModel();
+        // Recuperer les personnes sur un besoins
+        HashMap<Integer, Requirement> requirementsList = myMission.getRequirements();
+
+        Requirement requirementSelected = requirementsList.get(elt+1);
+
+        List<Person> personList = requirementSelected.getListPersonnes();
+        int nbPerson = requirementSelected.getNbTotalPersonnes();
+        jTextFieldNbPersonSkill.setText(""+nbPerson);
+        jListPerson.setModel(modelPerson);
+        jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());
+        jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        Iterator it = personList.iterator();
+
+        for (Person personList1 : personList) {
+            modelPerson.addElement(personList1);
+        }
+
+        jScrollPane1.setViewportView(jListPerson);
+    }//GEN-LAST:event_jComboBoxSkillActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

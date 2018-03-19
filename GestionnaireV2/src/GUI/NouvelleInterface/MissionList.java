@@ -91,7 +91,6 @@ public class MissionList extends javax.swing.JPanel {
              myFrame.jPanelContainer.add(md);
              myFrame.repaint();
              myFrame.revalidate();
-             System.out.println(missionSelected.toString());
         }
         
     }//GEN-LAST:event_jTableMissionMouseClicked

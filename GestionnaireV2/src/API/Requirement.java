@@ -59,10 +59,21 @@ public class Requirement {
         return listPersonnes;
     }
     
+    /**
+     *
+     * @return nbTotalPerson Le nombre maximum de personne sur le besoin
+     */
     public int getNbTotalPersonnes(){
         return nbTotalPerson;
     }
     
+    /**
+     *
+     * @return Le nombre de personne actuel sur le besoin
+     */
+    public int getNbPersonnes(){
+        return listPersonnes.size();
+    }
     /**
      * Ajout une personne à un besoin
      * Le nombre de personne ne doit pas depasser le nombre total de personne
