@@ -17,6 +17,7 @@ import API.Requirement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xml.sax.Attributes;
@@ -46,7 +47,7 @@ public class XMLMissionHandler extends DefaultHandler {
    String idPersonReq;
    ArrayList <String> listIdPersons = new ArrayList<>();
    ArrayList <Integer> listIdRequirements = new ArrayList<>();
-   HashMap <String,String> listIdPersonsReq = new HashMap();
+   HashMap <String,List<String>> listIdPersonsReq = new HashMap();
    ArrayList <String> listIdSkillsReq = new ArrayList<>();
    Company c;
    
@@ -140,15 +141,16 @@ public class XMLMissionHandler extends DefaultHandler {
       } else if (bReq) {
         idReq = new String(ch, start, length);
         bReq = false;
-        listIdRequirements.add(Integer.parseInt(idReq));        
+        listIdRequirements.add(Integer.parseInt(idReq));
+        listIdPersonsReq.put(idReq,new ArrayList());
       } else if (bSkillReq) {
         idSkillReq = new String(ch, start, length);
         bSkillReq = false;
-        listIdSkillsReq.add(idSkillReq);
+        listIdSkillsReq.add(idSkillReq); 
       } else if (bPersonReq) {
         idPersonReq = new String(ch, start, length);
         bPersonReq = false;
-        listIdPersonsReq.put(idReq,idPersonReq);
+        listIdPersonsReq.get(idReq).add(idPersonReq);
       }
    }
 }
