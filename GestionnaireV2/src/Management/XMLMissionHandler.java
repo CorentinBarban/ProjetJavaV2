@@ -80,43 +80,7 @@ public class XMLMissionHandler extends DefaultHandler {
             bSkillReq = true;
         }
     }
-   @Override
-   public void endElement(String uri, 
-   String localName, String qName) throws SAXException {
-      if (qName.equalsIgnoreCase("mission")) {
-         try {
-           Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration),state);
-           m.setEtat(state);
-           c.addMission(m);
-           for (int i=0; i<listIdPersons.size();i++){
-                m.addPerson(c.listePerson.get(listIdPersons.get(i)));
-           }
-           listIdPersons.removeAll(listIdPersons);
-           
-           for (int i=0; i<listIdRequirements.size();i++){
-              Requirement r = new Requirement(listIdRequirements.get(i), listIdPersonsReq.size(), c.listeSkill.get(listIdSkillsReq.get(i)));
-            
-              Iterator reqIterator = listIdPersonsReq.entrySet().iterator();
-              while (reqIterator.hasNext()) {
-                Map.Entry mapEntry = (Map.Entry) reqIterator.next();
-                 //r.addPerson(c.listePerson.get(listIdPersonsReq.get(mapEntry.getKey())));
-                 
-                 /*for (Map.Entry<String, List<String>> entry : listIdPersonsReq.entrySet()) {
-                    String key = entry.getKey();
-                    List<String> values = entry.getValue();
-                    System.out.println("Key = " + key);
-                    System.out.println("Values = " + values + "n");
-                 }*/
-
-                   System.out.println(listIdPersonsReq.get(listIdRequirements.get(i)));
-                 //System.out.println(mapEntry.getKey()+ "," +mapEntry.getValue());
-              }
-              
-              m.addRequirement(r);
-           }
-           listIdRequirements.removeAll(listIdRequirements);
-           listIdPersonsReq.clear();
-
+   
     @Override
     public void endElement(String uri,
             String localName, String qName) throws SAXException {
