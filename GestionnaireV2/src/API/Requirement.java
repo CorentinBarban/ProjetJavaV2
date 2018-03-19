@@ -16,7 +16,7 @@ import java.util.List;
 public class Requirement {
     private int idRequirement;
     private String description;
-    private final int nbPersonRequiredSkill;
+    private final int nbTotalPerson;
     private Skill requiredSkill;
     private final List<Person> listPersonnes = new ArrayList<>();
     
@@ -27,7 +27,7 @@ public class Requirement {
      */
     public Requirement(int id, int nbTotalPerson, Skill skill){
         this.idRequirement = id;
-        this.nbPersonRequiredSkill=nbTotalPerson;
+        this.nbTotalPerson=nbTotalPerson;
         this.requiredSkill = skill;
     }
     
@@ -59,6 +59,10 @@ public class Requirement {
         return listPersonnes;
     }
     
+    public int getNbTotalPersonnes(){
+        return nbTotalPerson;
+    }
+    
     /**
      * Ajout une personne à un besoin
      * Le nombre de personne ne doit pas depasser le nombre total de personne
@@ -66,7 +70,7 @@ public class Requirement {
      * @throws Exception Out of bounds
      */
     public void addPerson(Person p) throws Exception{
-        if(this.listPersonnes.size() < nbPersonRequiredSkill ){
+        if(this.listPersonnes.size() < nbTotalPerson ){
             this.listPersonnes.add(p);
             
         }else{

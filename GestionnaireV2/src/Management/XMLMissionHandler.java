@@ -36,6 +36,7 @@ public class XMLMissionHandler extends DefaultHandler {
     boolean bReq = false;
     boolean bSkillReq = false;
     boolean bPersonReq = false;
+    boolean bNb = false;
 
     String id;
     String name;
@@ -46,6 +47,7 @@ public class XMLMissionHandler extends DefaultHandler {
     String idReq;
     String idSkillReq;
     String idPersonReq;
+    String nbTotal;
     ArrayList<String> listIdPersons = new ArrayList<>();
     ArrayList<Integer> listIdRequirements = new ArrayList<>();
     HashMap<String, List<String>> listIdPersonsReq = new HashMap();
@@ -78,6 +80,8 @@ public class XMLMissionHandler extends DefaultHandler {
             bPersonReq = true;
         } else if (qName.equalsIgnoreCase("idSkillReq")) {
             bSkillReq = true;
+        } else if (qName.equalsIgnoreCase("nbPersonTotal")) {
+            bNb = true;
         }
     }
    
@@ -95,7 +99,7 @@ public class XMLMissionHandler extends DefaultHandler {
                 listIdPersons.removeAll(listIdPersons);
                 int i =0;
                 for (Map.Entry element : listIdPersonsReq.entrySet()) {
-                    Requirement r = new Requirement(Integer.parseInt(""+element.getKey()), getSizeHashMap(listIdPersonsReq), c.listeSkill.get(listIdSkillsReq.get(i)));
+                    Requirement r = new Requirement(Integer.parseInt(""+element.getKey()), Integer.parseInt(nbTotal) , c.listeSkill.get(listIdSkillsReq.get(i)));
                     List current = listIdPersonsReq.get(element.getKey());
                     for (int y = 0; y < current.size(); y++) {
                         r.addPerson(c.listePerson.get(current.get(y)));
@@ -149,18 +153,9 @@ public class XMLMissionHandler extends DefaultHandler {
             idPersonReq = new String(ch, start, length);
             bPersonReq = false;
             listIdPersonsReq.get(idReq).add(idPersonReq);
+        } else if (bNb) {
+            nbTotal = new String(ch, start, length);
+            bNb = false;
         }
-    }
-    
-    public int getSizeHashMap(HashMap<String, List<String>> HashMaplistIdPersonsReq) {
-        int size = 0;
-        for (Map.Entry element : listIdPersonsReq.entrySet()) {
-            System.out.println(element.getKey() + " = " + element.getValue());
-            List current = listIdPersonsReq.get(element.getKey());
-            for (int y = 0; y < current.size(); y++) {
-                size++;
-            }
-        }
-        return size;
     }
 }

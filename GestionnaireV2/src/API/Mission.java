@@ -210,6 +210,7 @@ public class Mission {
             Requirement r = requirements.get(mapEntry.getKey());
             message = message + "          <idRequirement>"+r.getIdRequirement()+ "</idRequirement>\n";
             message = message + "          <idSkillReq>"+r.getRequiredSkill().getId()+ "</idSkillReq>\n";
+            message = message + "          <nbPersonTotal>"+r.getNbTotalPersonnes()+ "</nbPersonTotal>\n";
             for(int i=0; i<r.getListPersonnes().size(); i++){
                 message = message + "          <idPersonReq>"+r.getListPersonnes().get(i).getId()+ "</idPersonReq>\n";
             }
