@@ -97,8 +97,7 @@ public class XMLMissionHandler extends DefaultHandler {
               for(int y=0; y<listIdPersonsReq.size(); y++){
                   try {
                       r.addPerson(c.listePerson.get(listIdPersonsReq.get(y)));
-                      //System.out.println("Suppression "+listIdSkillsReq.get(i)+" "+y+ " : "+listIdPersonsReq.get(y));
-                      listIdPersonsReq.remove(y);
+                      
                   } catch (Exception ex) {
                       Logger.getLogger(XMLMissionHandler.class.getName()).log(Level.SEVERE, null, ex);
                   }
