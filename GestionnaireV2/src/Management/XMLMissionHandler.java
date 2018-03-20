@@ -36,7 +36,8 @@ public class XMLMissionHandler extends DefaultHandler {
     boolean bReq = false;
     boolean bSkillReq = false;
     boolean bPersonReq = false;
-    boolean bNb = false;
+    boolean bNbTotReq = false;
+    boolean bNbTotMission = false;
 
     String id;
     String name;
@@ -47,7 +48,8 @@ public class XMLMissionHandler extends DefaultHandler {
     String idReq;
     String idSkillReq;
     String idPersonReq;
-    String nbTotal;
+    String nbTotalReq;
+    String nbTotalMission;
     HashMap<String, List<String>> listNbTotal = new HashMap();
     ArrayList<String> listIdPersons = new ArrayList<>();
     ArrayList<Integer> listIdRequirements = new ArrayList<>();
@@ -81,8 +83,10 @@ public class XMLMissionHandler extends DefaultHandler {
             bPersonReq = true;
         } else if (qName.equalsIgnoreCase("idSkillReq")) {
             bSkillReq = true;
-        } else if (qName.equalsIgnoreCase("nbPersonTotal")) {
-            bNb = true;
+        } else if (qName.equalsIgnoreCase("nbPersonTotalReq")) {
+            bNbTotReq = true;
+        } else if (qName.equalsIgnoreCase("nbPersonOnMission")) {
+            bNbTotMission = true;
         }
     }
    
@@ -93,6 +97,7 @@ public class XMLMissionHandler extends DefaultHandler {
             try {
                 Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration), state);
                 m.setEtat(state);
+                m.setNbTotalPerson(Integer.parseInt(nbTotalMission));
                 c.addMission(m);
                 for (int i = 0; i < listIdPersons.size(); i++) {
                     m.addPerson(c.listePerson.get(listIdPersons.get(i)));
@@ -155,10 +160,13 @@ public class XMLMissionHandler extends DefaultHandler {
             idPersonReq = new String(ch, start, length);
             bPersonReq = false;
             listIdPersonsReq.get(idReq).add(idPersonReq);
-        } else if (bNb) {
-            nbTotal = new String(ch, start, length);
-            bNb = false;
-            listNbTotal.get(idReq).add(nbTotal);
+        } else if (bNbTotReq) {
+            nbTotalReq = new String(ch, start, length);
+            bNbTotReq = false;
+            listNbTotal.get(idReq).add(nbTotalReq);
+        } else if (bNbTotMission) {
+            nbTotalMission = new String(ch, start, length);
+            bNbTotMission = false;
         }
     }
 }

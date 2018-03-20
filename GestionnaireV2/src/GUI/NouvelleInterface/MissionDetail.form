@@ -66,8 +66,8 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanelLeftDetail" alignment="1" max="32767" attributes="0"/>
-              <Component id="jPanelRightDetail" alignment="1" pref="424" max="32767" attributes="0"/>
+              <Component id="jPanelLeftDetail" alignment="1" pref="426" max="32767" attributes="0"/>
+              <Component id="jPanelRightDetail" alignment="1" pref="426" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" pref="345" max="-2" attributes="0"/>
@@ -193,7 +193,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre de personne :"/>
+                <Property name="text" type="java.lang.String" value="Nombre de personnes :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelStateMission">
@@ -281,7 +281,7 @@
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jTextFieldNbPersonSkill" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxSkill" pref="160" max="32767" attributes="0"/>
+                                  <Component id="jComboBoxSkill" pref="154" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -320,7 +320,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Comp&#xe9;tences"/>
+                <Property name="text" type="java.lang.String" value="Comp&#xe9;tences :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelnbPeronSkill">
@@ -328,7 +328,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;p&gt;Nombre de Personne &lt;/p&gt; &lt;p&gt;     requises &lt;/p&gt;&lt;/html&gt;"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;p&gt;Nombre de personnes &lt;/p&gt; &lt;p&gt;     requises  :&lt;/p&gt;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldNbPersonSkill">
@@ -344,7 +344,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Personnes Attribu&#xe9;es"/>
+                <Property name="text" type="java.lang.String" value="Personnes Attribu&#xe9;es :"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">

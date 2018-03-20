@@ -98,9 +98,9 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         int elt = 0;
-        jListPerson = new javax.swing.JList<Person>();
+        jListPerson = new javax.swing.JList<>();
         DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<Skill>();
+        jComboBoxSkill = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -120,7 +120,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelDurationMission.setText("Durée :");
 
         jLabelNbPersonMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelNbPersonMission.setText("Nombre de personne :");
+        jLabelNbPersonMission.setText("Nombre de personnes :");
 
         jLabelStateMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelStateMission.setText("Etat de la mission :");
@@ -206,10 +206,10 @@ public class MissionDetail extends javax.swing.JPanel {
         jPanelRightDetail.setPreferredSize(new java.awt.Dimension(280, 280));
 
         jLabelSkill.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelSkill.setText("Compétences");
+        jLabelSkill.setText("Compétences :");
 
         jLabelnbPeronSkill.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelnbPeronSkill.setText("<html> <p>Nombre de Personne </p> <p>     requises </p></html>");
+        jLabelnbPeronSkill.setText("<html> <p>Nombre de personnes </p> <p>     requises  :</p></html>");
 
         HashMap<Integer, Requirement> requirementsListNb = myMission.getRequirements();
         Requirement requirement = requirementsListNb.get(1);
@@ -217,7 +217,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jTextFieldNbPersonSkill.setEditable(false);
 
         jLabelPerson.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelPerson.setText("Personnes Attribuées");
+        jLabelPerson.setText("Personnes Attribuées :");
 
         //Creation du model personne
         DefaultListModel<Person> modelPerson = new DefaultListModel();
@@ -277,7 +277,7 @@ public class MissionDetail extends javax.swing.JPanel {
                         .addGap(34, 34, 34)
                         .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldNbPersonSkill)
-                            .addComponent(jComboBoxSkill, 0, 160, Short.MAX_VALUE)))))
+                            .addComponent(jComboBoxSkill, 0, 154, Short.MAX_VALUE)))))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,8 +313,8 @@ public class MissionDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)

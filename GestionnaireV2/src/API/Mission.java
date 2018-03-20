@@ -193,7 +193,7 @@ public class Mission {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String StartDate = formatter.format(this.startDate);
         //TODO boucle de parcours pour affichage
-        String message = "<mission>\n     <id>" + idMission + "</id>\n     <name>" + missionName + "</name>\n     <startDate>" + StartDate + "</startDate>\n     <duration>" + missionDuration + "</duration>\n     <state>" + etat.toString() + "</state>\n     <persons_list>\n";
+        String message = "<mission>\n     <id>" + idMission + "</id>\n     <name>" + missionName + "</name>\n     <startDate>" + StartDate + "</startDate>\n     <duration>" + missionDuration + "</duration>\n     <state>" + etat.toString() + "</state>\n     <nbPersonOnMission>" + nbTotalPerson + "</nbPersonOnMission>\n     <persons_list>\n";
         
         Iterator personIterator = personOnMission.entrySet().iterator();
         
@@ -210,7 +210,7 @@ public class Mission {
             Requirement r = requirements.get(mapEntry.getKey());
             message = message + "          <idRequirement>"+r.getIdRequirement()+ "</idRequirement>\n";
             message = message + "          <idSkillReq>"+r.getRequiredSkill().getId()+ "</idSkillReq>\n";
-            message = message + "          <nbPersonTotal>"+r.getNbTotalPersonnes()+ "</nbPersonTotal>\n";
+            message = message + "          <nbPersonTotalReq>"+r.getNbTotalPersonnes()+ "</nbPersonTotalReq>\n";
             for(int i=0; i<r.getListPersonnes().size(); i++){
                 message = message + "          <idPersonReq>"+r.getListPersonnes().get(i).getId()+ "</idPersonReq>\n";
             }
