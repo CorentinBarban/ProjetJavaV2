@@ -40,6 +40,7 @@ public class home extends javax.swing.JFrame {
         jPanelHeader = new javax.swing.JPanel();
         jLabelTitle = new javax.swing.JLabel();
         jLabelReturn = new javax.swing.JLabel();
+        jLabelAdd = new javax.swing.JLabel();
         jPanelContainer = new javax.swing.JPanel();
         jPanelMenuLeft = new javax.swing.JPanel();
         jPanelMenuPerson = new javax.swing.JPanel();
@@ -63,7 +64,10 @@ public class home extends javax.swing.JFrame {
 
         jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
-        jLabelReturn.setText("Return");
+        jLabelReturn.setText("Retours");
+
+        jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
+        jLabelAdd.setText("Ajouter");
 
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
@@ -71,10 +75,12 @@ public class home extends javax.swing.JFrame {
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelReturn, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                .addComponent(jLabelReturn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(122, 122, 122)
                 .addComponent(jLabelTitle)
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addComponent(jLabelAdd)
+                .addGap(41, 41, 41))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,7 +88,8 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTitle)
-                    .addComponent(jLabelReturn))
+                    .addComponent(jLabelReturn)
+                    .addComponent(jLabelAdd))
                 .addContainerGap())
         );
 
@@ -363,6 +370,7 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabelAdd;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMission;
     private javax.swing.JLabel jLabelPerson;

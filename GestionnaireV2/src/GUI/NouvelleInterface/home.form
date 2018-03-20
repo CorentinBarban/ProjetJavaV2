@@ -75,10 +75,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelReturn" pref="103" max="32767" attributes="0"/>
+                  <Component id="jLabelReturn" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                   <Component id="jLabelTitle" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="289" max="32767" attributes="0"/>
+                  <EmptySpace pref="185" max="32767" attributes="0"/>
+                  <Component id="jLabelAdd" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -89,6 +91,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelReturn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelAdd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -115,7 +118,15 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/GUI/Images/ic_arrow_back_black_48dp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Return"/>
+            <Property name="text" type="java.lang.String" value="Retours"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelAdd">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/GUI/Images/ic_add_circle_black_24dp.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ajouter"/>
           </Properties>
         </Component>
       </SubComponents>
