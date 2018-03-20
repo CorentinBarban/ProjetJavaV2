@@ -98,9 +98,12 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         int elt = 0;
-        jListPerson = new javax.swing.JList<>();
+        jListPerson = new javax.swing.JList<Person>();
         DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<>();
+        jComboBoxSkill = new javax.swing.JComboBox<Skill>();
+        jPanelHeader2 = new javax.swing.JPanel();
+        jLabelTitle2 = new javax.swing.JLabel();
+        jLabelReturn2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -313,12 +316,43 @@ public class MissionDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanelHeader2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabelTitle2.setFont(new java.awt.Font("Roboto", 0, 40));
+        jLabelTitle2.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle2.setText("Accueil");
+
+        jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn2.setText("Retours");
+
+        javax.swing.GroupLayout jPanelHeader2Layout = new javax.swing.GroupLayout(jPanelHeader2);
+        jPanelHeader2.setLayout(jPanelHeader2Layout);
+        jPanelHeader2Layout.setHorizontalGroup(
+            jPanelHeader2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelHeader2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelReturn2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(245, 245, 245)
+                .addComponent(jLabelTitle2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelHeader2Layout.setVerticalGroup(
+            jPanelHeader2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeader2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelHeader2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTitle2)
+                    .addComponent(jLabelReturn2))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -329,13 +363,15 @@ public class MissionDetail extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(30, 30, 30))
+            .addComponent(jPanelHeader2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addComponent(jPanelHeader2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(54, 54, 54))
+                .addGap(27, 27, 27))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -369,17 +405,28 @@ public class MissionDetail extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<Skill> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
+    public javax.swing.JLabel jLabelAdd;
+    public javax.swing.JLabel jLabelAdd1;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
     private javax.swing.JLabel jLabelNameMission;
     private javax.swing.JLabel jLabelNbPersonMission;
     private javax.swing.JLabel jLabelPerson;
     private javax.swing.JLabel jLabelProgression;
+    public javax.swing.JLabel jLabelReturn;
+    public javax.swing.JLabel jLabelReturn1;
+    public javax.swing.JLabel jLabelReturn2;
     private javax.swing.JLabel jLabelSkill;
     private javax.swing.JLabel jLabelStateMission;
+    public javax.swing.JLabel jLabelTitle;
+    public javax.swing.JLabel jLabelTitle1;
+    public javax.swing.JLabel jLabelTitle2;
     private javax.swing.JLabel jLabelnbPeronSkill;
     private javax.swing.JList<Person> jListPerson;
     private javax.swing.JPanel jPanelContainerMission;
+    private javax.swing.JPanel jPanelHeader;
+    private javax.swing.JPanel jPanelHeader1;
+    private javax.swing.JPanel jPanelHeader2;
     private javax.swing.JPanel jPanelLeftDetail;
     private javax.swing.JPanel jPanelRightDetail;
     private javax.swing.JProgressBar jProgressBar1;

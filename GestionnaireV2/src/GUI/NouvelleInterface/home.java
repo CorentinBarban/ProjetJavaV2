@@ -25,7 +25,7 @@ public class home extends javax.swing.JFrame {
         loadData();
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        jLabelReturn.setVisible(false);
+        
     }
 
     /**
@@ -37,10 +37,6 @@ public class home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelHeader = new javax.swing.JPanel();
-        jLabelTitle = new javax.swing.JLabel();
-        jLabelReturn = new javax.swing.JLabel();
-        jLabelAdd = new javax.swing.JLabel();
         jPanelContainer = new javax.swing.JPanel();
         jPanelMenuLeft = new javax.swing.JPanel();
         jPanelMenuPerson = new javax.swing.JPanel();
@@ -55,43 +51,6 @@ public class home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arès");
-
-        jPanelHeader.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
-        jLabelTitle.setText("Accueil");
-
-        jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
-        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
-        jLabelReturn.setText("Retours");
-
-        jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
-        jLabelAdd.setText("Ajouter");
-
-        javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
-        jPanelHeader.setLayout(jPanelHeaderLayout);
-        jPanelHeaderLayout.setHorizontalGroup(
-            jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelHeaderLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelReturn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(122, 122, 122)
-                .addComponent(jLabelTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
-                .addComponent(jLabelAdd)
-                .addGap(41, 41, 41))
-        );
-        jPanelHeaderLayout.setVerticalGroup(
-            jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTitle)
-                    .addComponent(jLabelReturn)
-                    .addComponent(jLabelAdd))
-                .addContainerGap())
-        );
 
         jPanelContainer.setBackground(new java.awt.Color(246, 246, 246));
         jPanelContainer.setLayout(new java.awt.CardLayout());
@@ -234,17 +193,12 @@ public class home extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
+            .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -255,8 +209,6 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.add(new PersonList(myCompany));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
-        jLabelReturn.setVisible(true);
-        jLabelTitle.setText("Liste des Personnes");
         jPanelMenuPerson.setBackground(new java.awt.Color(30, 32, 44));
         jLabelPerson.setForeground(new java.awt.Color(254,254,254));
         jPanelMenuMission.setBackground(new java.awt.Color(49,51,66));
@@ -268,8 +220,6 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.add(new PersonList(myCompany));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
-        jLabelReturn.setVisible(true);
-        jLabelTitle.setText("Liste des Personnes");
         jPanelMenuPerson.setBackground(new java.awt.Color(30, 32, 44));
         jLabelPerson.setForeground(new java.awt.Color(254,254,254));
         jPanelMenuMission.setBackground(new java.awt.Color(49,51,66));
@@ -281,8 +231,6 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.add(new MissionList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
-        jLabelReturn.setVisible(true);
-        jLabelTitle.setText("Liste des Missions");
         jPanelMenuMission.setBackground(new java.awt.Color(30, 32, 44));
         jLabelMission.setForeground(new java.awt.Color(254,254,254));
         jPanelMenuPerson.setBackground(new java.awt.Color(49,51,66));
@@ -294,8 +242,6 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.add(new MissionList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
-        jLabelReturn.setVisible(true);
-        jLabelTitle.setText("Liste des Missions");
         jPanelMenuMission.setBackground(new java.awt.Color(30, 32, 44));
         jLabelMission.setForeground(new java.awt.Color(254,254,254));
         jPanelMenuPerson.setBackground(new java.awt.Color(49,51,66));
@@ -306,8 +252,6 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.removeAll();
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
-        jLabelReturn.setVisible(false);
-        jLabelTitle.setText("Accueil");
     }//GEN-LAST:event_jLabelLogoMouseReleased
     
     
@@ -370,17 +314,13 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelAdd;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMission;
     private javax.swing.JLabel jLabelPerson;
-    private javax.swing.JLabel jLabelReturn;
-    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     protected javax.swing.JPanel jPanelContainer;
-    private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelLogo;
     private javax.swing.JPanel jPanelMenuLeft;
     private javax.swing.JPanel jPanelMenuMission;
