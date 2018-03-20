@@ -17,16 +17,15 @@ import javax.swing.table.TableColumnModel;
  */
 public class MissionList extends javax.swing.JPanel {
 
-   
-
     /**
      * Creates new form MissionList
      */
     Company myCompany;
     home myFrame;
-    public MissionList(Company myCompany,home myFrame) {
-        this.myFrame=myFrame;
-        this.myCompany=myCompany;
+
+    public MissionList(Company myCompany, home myFrame) {
+        this.myFrame = myFrame;
+        this.myCompany = myCompany;
         initComponents();
     }
 
@@ -42,7 +41,7 @@ public class MissionList extends javax.swing.JPanel {
         jPanelHeader = new javax.swing.JPanel();
         jLabelTitle = new javax.swing.JLabel();
         jLabelReturn = new javax.swing.JLabel();
-        jLabelAdd = new javax.swing.JLabel();
+        jLabelAddMission = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         List<Mission> MissionList = new ArrayList<Mission>(myCompany.listeMission.values());
         jTableMission = new javax.swing.JTable();
@@ -59,10 +58,15 @@ public class MissionList extends javax.swing.JPanel {
         jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn.setText("Retours");
 
-        jLabelAdd.setBackground(java.awt.Color.lightGray);
-        jLabelAdd.setFont(new java.awt.Font("Roboto", 0, 20));
-        jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
-        jLabelAdd.setText("Ajouter");
+        jLabelAddMission.setBackground(java.awt.Color.lightGray);
+        jLabelAddMission.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelAddMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
+        jLabelAddMission.setText("Ajouter Mission");
+        jLabelAddMission.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelAddMissionMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
@@ -73,8 +77,8 @@ public class MissionList extends javax.swing.JPanel {
                 .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
                 .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(250, 250, 250)
-                .addComponent(jLabelAdd)
+                .addGap(214, 214, 214)
+                .addComponent(jLabelAddMission)
                 .addGap(41, 41, 41))
         );
         jPanelHeaderLayout.setVerticalGroup(
@@ -83,7 +87,7 @@ public class MissionList extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelReturn)
-                    .addComponent(jLabelAdd)
+                    .addComponent(jLabelAddMission)
                     .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -121,25 +125,31 @@ public class MissionList extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTableMissionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMissionMouseClicked
-        MissionTableModel model = (MissionTableModel)jTableMission.getModel();
+        MissionTableModel model = (MissionTableModel) jTableMission.getModel();
         int row = jTableMission.getSelectedRow();
         int col = jTableMission.columnAtPoint(evt.getPoint());
-        
-        
-        if(col == 4) { //Click sur Details 
-             Mission missionSelected = model.missionList.get(row);
-             MissionDetail md = new MissionDetail(missionSelected);
-             myFrame.jPanelContainer.removeAll();
-             myFrame.jPanelContainer.add(md);
-             myFrame.repaint();
-             myFrame.revalidate();
+
+        if (col == 4) { //Click sur Details 
+            Mission missionSelected = model.missionList.get(row);
+            MissionDetail md = new MissionDetail(missionSelected);
+            myFrame.jPanelContainer.removeAll();
+            myFrame.jPanelContainer.add(md);
+            myFrame.repaint();
+            myFrame.revalidate();
         }
-        
+
     }//GEN-LAST:event_jTableMissionMouseClicked
+
+    private void jLabelAddMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAddMissionMouseReleased
+        myFrame.jPanelContainer.removeAll();
+        myFrame.jPanelContainer.add(new AddMission(myCompany, myFrame));
+        myFrame.repaint();
+        myFrame.revalidate();
+    }//GEN-LAST:event_jLabelAddMissionMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelAdd;
+    private javax.swing.JLabel jLabelAddMission;
     private javax.swing.JLabel jLabelReturn;
     private javax.swing.JLabel jLabelTitle;
     private javax.swing.JPanel jPanelHeader;

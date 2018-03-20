@@ -405,27 +405,19 @@ public class MissionDetail extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<Skill> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
-    public javax.swing.JLabel jLabelAdd;
-    public javax.swing.JLabel jLabelAdd1;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
     private javax.swing.JLabel jLabelNameMission;
     private javax.swing.JLabel jLabelNbPersonMission;
     private javax.swing.JLabel jLabelPerson;
     private javax.swing.JLabel jLabelProgression;
-    public javax.swing.JLabel jLabelReturn;
-    public javax.swing.JLabel jLabelReturn1;
     public javax.swing.JLabel jLabelReturn2;
     private javax.swing.JLabel jLabelSkill;
     private javax.swing.JLabel jLabelStateMission;
-    public javax.swing.JLabel jLabelTitle;
-    public javax.swing.JLabel jLabelTitle1;
     public javax.swing.JLabel jLabelTitle2;
     private javax.swing.JLabel jLabelnbPeronSkill;
     private javax.swing.JList<Person> jListPerson;
     private javax.swing.JPanel jPanelContainerMission;
-    private javax.swing.JPanel jPanelHeader;
-    private javax.swing.JPanel jPanelHeader1;
     private javax.swing.JPanel jPanelHeader2;
     private javax.swing.JPanel jPanelLeftDetail;
     private javax.swing.JPanel jPanelRightDetail;
