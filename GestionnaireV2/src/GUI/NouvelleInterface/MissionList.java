@@ -56,7 +56,7 @@ public class MissionList extends javax.swing.JPanel {
 
         jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
-        jLabelReturn.setText("Retours");
+        jLabelReturn.setText("Retour");
 
         jLabelAddMission.setBackground(java.awt.Color.lightGray);
         jLabelAddMission.setFont(new java.awt.Font("Roboto", 0, 20));

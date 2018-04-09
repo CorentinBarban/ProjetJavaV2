@@ -23,7 +23,8 @@ public class Person {
     private String lastName;
     private Date dateOfHire;
     private HashMap<String,Skill> skillList;
-
+    private int nbProject;
+    
     /**
      * Constructeur d'une personne.
      *
@@ -39,7 +40,7 @@ public class Person {
         this.idPerson = id;
         this.lastName = ln;
         this.firstName = fn;
-
+        this.nbProject = 0;
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date hDate = formatter.parse(hd); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
@@ -141,6 +142,14 @@ public class Person {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date hDate = formatter.parse(dateOfHire);
         this.dateOfHire = hDate;
+    }
+
+    public int getNbProject() {
+        return nbProject;
+    }
+
+    public void setNbProject(int nbProject) {
+        this.nbProject = nbProject;
     }
     
     

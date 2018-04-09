@@ -12,6 +12,7 @@ package Management;
 import API.Company;
 import API.Mission;
 import API.Mission.Etat;
+import API.Person;
 import API.Requirement;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -100,7 +101,12 @@ public class XMLMissionHandler extends DefaultHandler {
                 m.setNbTotalPerson(Integer.parseInt(nbTotalMission));
                 c.addMission(m);
                 for (int i = 0; i < listIdPersons.size(); i++) {
+                    //Ajout de la personne sur la mission
                     m.addPerson(c.listePerson.get(listIdPersons.get(i)));
+                    
+                    //Incremente le nombre de projet de la personne
+                    Person p = c.listePerson.get(listIdPersons.get(i));
+                    p.setNbProject(p.getNbProject()+1);
                 }
                 listIdPersons.removeAll(listIdPersons);
                 int i =0;
