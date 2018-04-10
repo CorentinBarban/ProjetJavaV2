@@ -27,15 +27,6 @@ public class ManageMission implements ManageData {
     private static final String CSV_FILE_PATH = "liste_missions.csv";
     private static final String ARES_FILE_PATH = "liste_missions.ares";
     
-    public boolean checkNbPersonRequiredSkill(Requirement r){
-       Skill s = r.getRequiredSkill();
-       return true;
-    }
-    
-
-    public void skillCheck() {  // Cette classe doit vérifier si les compétences apportées par les personnes présentes sur la mission remplissent les besoins. Si c'est le cas, alors le type de la mission passe à "plannifié".
-
-    }
     /* LECTURE CSV SAVE
     @Override
     public void readData(Company c) {

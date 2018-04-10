@@ -39,7 +39,7 @@ public class XMLMissionHandler extends DefaultHandler {
     boolean bPersonReq = false;
     boolean bNbTotReq = false;
     boolean bNbTotMission = false;
-    boolean check = false; // Boolean permettant de savoir si toutes les infos de la mission sont renseignées
+    //boolean check = false; // Boolean permettant de savoir si toutes les infos de la mission sont renseignées
 
     String id;
     String name;
@@ -89,9 +89,7 @@ public class XMLMissionHandler extends DefaultHandler {
             bNbTotReq = true;
         } else if (qName.equalsIgnoreCase("nbPersonOnMission")) {
             bNbTotMission = true;
-        } else if (bId && bName && bDate && bDuration && bState && bPerson && bReq && bPersonReq && bSkillReq && bNbTotReq && bNbTotMission){
-            check = true;
-        }
+        } 
     }
    
     @Override
@@ -100,7 +98,6 @@ public class XMLMissionHandler extends DefaultHandler {
         if (qName.equalsIgnoreCase("mission")) {
             try {
                 Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration), state);
-                m.setEtat(state);
                 m.setNbTotalPerson(Integer.parseInt(nbTotalMission));
                 c.addMission(m);
                 for (int i = 0; i < listIdPersons.size(); i++) {
@@ -176,6 +173,8 @@ public class XMLMissionHandler extends DefaultHandler {
         } else if (bNbTotMission) {
             nbTotalMission = new String(ch, start, length);
             bNbTotMission = false;
-        }
+        }/* else if (id != null && name != null && startDate != null && duration != null && state != null && idPerson != null && idReq != null && idSkillReq != null && idPersonReq != null && nbTotalReq != null && nbTotalMission != null){
+            check = true;
+        } */
     }
 }
