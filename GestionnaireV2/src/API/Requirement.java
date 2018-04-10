@@ -48,7 +48,7 @@ public class Requirement {
     }
 
     /**
-     *Récupere l'id d'un besoin
+     * Récupere l'id d'un besoin
      * @param idRequirement ID d'un besoin
      */
     public void setIdRequirement(int idRequirement) {
@@ -71,7 +71,7 @@ public class Requirement {
      *
      * @return Le nombre de personne actuel sur le besoin
      */
-    public int getNbPersonnes(){
+    public int getNbPersonnesActuel(){
         return listPersonnes.size();
     }
     /**

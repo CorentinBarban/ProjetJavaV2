@@ -19,7 +19,6 @@ public class Mission {
      * Enumeration des différents état de la mission
      */
     public enum Etat {
-
         enPreparation, plannifiee, enCours
     }
 
@@ -30,7 +29,7 @@ public class Mission {
     private HashMap<String, Person> personOnMission;
     private Date startDate;
     private int missionDuration;
-    private Etat etat;
+    public Etat etat;
     private ManageMission manager = new ManageMission(); // Création d'un objet ManageMission permettant d'utiliser les méthodes de vérification de cette dernière. 
 
     /**
@@ -175,10 +174,20 @@ public class Mission {
         this.nbTotalPerson = nbTotalPerson;
     }
 
+    /**
+     * Getter des besoins de la mission
+     *
+     * @return requirements
+     */
     public HashMap<Integer, Requirement> getRequirements() {
         return this.requirements;
     }
-
+    
+    /**
+     * Getter liste des personnes sur la mission
+     *
+     * @return personOnMission
+     */
     public HashMap<String, Person> getPersonOnMission() {
         return this.personOnMission;
     }

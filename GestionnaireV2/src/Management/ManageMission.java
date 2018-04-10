@@ -31,6 +31,7 @@ public class ManageMission implements ManageData {
        Skill s = r.getRequiredSkill();
        return true;
     }
+    
 
     public void skillCheck() {  // Cette classe doit vérifier si les compétences apportées par les personnes présentes sur la mission remplissent les besoins. Si c'est le cas, alors le type de la mission passe à "plannifié".
 

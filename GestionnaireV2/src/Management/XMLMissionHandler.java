@@ -39,6 +39,7 @@ public class XMLMissionHandler extends DefaultHandler {
     boolean bPersonReq = false;
     boolean bNbTotReq = false;
     boolean bNbTotMission = false;
+    boolean check = false; // Boolean permettant de savoir si toutes les infos de la mission sont renseignées
 
     String id;
     String name;
@@ -88,6 +89,8 @@ public class XMLMissionHandler extends DefaultHandler {
             bNbTotReq = true;
         } else if (qName.equalsIgnoreCase("nbPersonOnMission")) {
             bNbTotMission = true;
+        } else if (bId && bName && bDate && bDuration && bState && bPerson && bReq && bPersonReq && bSkillReq && bNbTotReq && bNbTotMission){
+            check = true;
         }
     }
    

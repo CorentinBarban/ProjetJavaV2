@@ -17,14 +17,13 @@ import java.util.Set;
  */
 public class Company {
 
-   
     public final HashMap<String,Skill> listeSkill ;
     public final HashMap<String,Person> listePerson;
     public final HashMap<Integer,Mission> listeMission;
     public String companyName;
     
     public Company(String companyName){
-        this.companyName  =companyName;
+        this.companyName  = companyName;
         this.listeSkill   = new HashMap();
         this.listePerson  = new HashMap();
         this.listeMission = new HashMap();
