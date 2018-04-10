@@ -5,6 +5,7 @@
  */
 package GUI.NouvelleInterface;
 
+import API.Company;
 import API.Mission;
 import API.Person;
 import API.Requirement;
@@ -30,9 +31,12 @@ public class MissionDetail extends javax.swing.JPanel {
      * Creates new form MissionDetail
      */
     private Mission myMission;
-    
-    public MissionDetail(Mission myMission) {
+    private Company myCompany;
+    private home myFrame;
+    public MissionDetail(Mission myMission, Company myCompany , home myFrame) {
         this.myMission = myMission;
+        this.myCompany = myCompany;
+        this.myFrame = myFrame;
         initComponents();
         jTextFieldNameMission.setText(myMission.getMissionName());
         jFormattedTextFieldFireDate.setValue(myMission.getStartDate());
@@ -328,11 +332,16 @@ public class MissionDetail extends javax.swing.JPanel {
 
         jLabelTitle2.setFont(new java.awt.Font("Roboto", 0, 40));
         jLabelTitle2.setForeground(new java.awt.Color(48, 51, 58));
-        jLabelTitle2.setText("Accueil");
+        jLabelTitle2.setText("Détails de la mission");
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn2.setText("Retour");
+        jLabelReturn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelReturn2MouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelHeader2Layout = new javax.swing.GroupLayout(jPanelHeader2);
         jPanelHeader2.setLayout(jPanelHeader2Layout);
@@ -348,7 +357,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jPanelHeader2Layout.setVerticalGroup(
             jPanelHeader2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeader2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanelHeader2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabelTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelReturn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -369,7 +378,7 @@ public class MissionDetail extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(42, 42, 42)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(27, 27, 27))
         );
@@ -400,6 +409,13 @@ public class MissionDetail extends javax.swing.JPanel {
 
         jScrollPane1.setViewportView(jListPerson);
     }//GEN-LAST:event_jComboBoxSkillActionPerformed
+
+    private void jLabelReturn2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn2MouseReleased
+        myFrame.jPanelContainer.removeAll();
+        myFrame.jPanelContainer.add(new MissionList(myCompany,myFrame));
+        myFrame.repaint();
+        myFrame.revalidate();
+    }//GEN-LAST:event_jLabelReturn2MouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

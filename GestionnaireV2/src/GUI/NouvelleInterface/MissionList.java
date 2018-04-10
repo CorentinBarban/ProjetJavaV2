@@ -52,11 +52,16 @@ public class MissionList extends javax.swing.JPanel {
 
         jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
         jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
-        jLabelTitle.setText("Accueil");
+        jLabelTitle.setText("Liste des missions");
 
         jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn.setText("Retour");
+        jLabelReturn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelReturnMouseReleased(evt);
+            }
+        });
 
         jLabelAddMission.setBackground(java.awt.Color.lightGray);
         jLabelAddMission.setFont(new java.awt.Font("Roboto", 0, 20));
@@ -75,16 +80,16 @@ public class MissionList extends javax.swing.JPanel {
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
-                .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(229, 229, 229)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelAddMission)
                 .addGap(41, 41, 41))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelReturn)
                     .addComponent(jLabelAddMission)
@@ -112,7 +117,7 @@ public class MissionList extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +136,7 @@ public class MissionList extends javax.swing.JPanel {
 
         if (col == 4) { //Click sur Details 
             Mission missionSelected = model.missionList.get(row);
-            MissionDetail md = new MissionDetail(missionSelected);
+            MissionDetail md = new MissionDetail(missionSelected,myCompany,myFrame);
             myFrame.jPanelContainer.removeAll();
             myFrame.jPanelContainer.add(md);
             myFrame.repaint();
@@ -146,6 +151,12 @@ public class MissionList extends javax.swing.JPanel {
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelAddMissionMouseReleased
+
+    private void jLabelReturnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturnMouseReleased
+        myFrame.jPanelContainer.removeAll();
+        myFrame.repaint();
+        myFrame.revalidate();
+    }//GEN-LAST:event_jLabelReturnMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
