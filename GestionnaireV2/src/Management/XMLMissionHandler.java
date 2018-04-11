@@ -39,7 +39,7 @@ public class XMLMissionHandler extends DefaultHandler {
     boolean bPersonReq = false;
     boolean bNbTotReq = false;
     boolean bNbTotMission = false;
-    //boolean check = false; // Boolean permettant de savoir si toutes les infos de la mission sont renseignées
+    boolean check = false; // Boolean permettant de savoir si toutes les infos de la mission sont renseignées
 
     String id;
     String name;
@@ -116,6 +116,7 @@ public class XMLMissionHandler extends DefaultHandler {
                     for (int y = 0; y < current.size(); y++) {
                         r.addPerson(c.listePerson.get(current.get(y)));
                     }
+                    
                     m.addRequirement(r);
                     i++;
                 }
@@ -173,8 +174,8 @@ public class XMLMissionHandler extends DefaultHandler {
         } else if (bNbTotMission) {
             nbTotalMission = new String(ch, start, length);
             bNbTotMission = false;
-        }/* else if (id != null && name != null && startDate != null && duration != null && state != null && idPerson != null && idReq != null && idSkillReq != null && idPersonReq != null && nbTotalReq != null && nbTotalMission != null){
+        } else if (id != null && name != null && startDate != null && duration != null && state != null && idPerson != null && idReq != null && idSkillReq != null && idPersonReq != null && nbTotalReq != null && nbTotalMission != null){
             check = true;
-        } */
+        }
     }
 }
