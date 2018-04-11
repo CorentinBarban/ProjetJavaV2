@@ -23,7 +23,7 @@ public class Requirement {
     /**
      * Constructeur Requirement
      * @param id ID du besoin
-     * @param nbTotalPerson nombre total de personnes sur le besoin
+     * @param nbTotalPerson nombre total de personnes qui peuvent être sur le besoin
      */
     public Requirement(int id, int nbTotalPerson, Skill skill){
         this.idRequirement = id;
@@ -75,8 +75,8 @@ public class Requirement {
         return listPersonnes.size();
     }
     /**
-     * Ajout une personne à un besoin
-     * Le nombre de personne ne doit pas depasser le nombre total de personne
+     * Ajout d'une personne à un besoin
+     * Le nombre de personnes ne doit pas depasser le nombre total de personnes
      * @param p Personne
      * @throws Exception Out of bounds
      */
@@ -89,11 +89,5 @@ public class Requirement {
         }
         
     }
-    
-    @Override
-    public String toString(){ // To string servant à l'écriture dans le CSV
-        return idRequirement + ";";
-    }
-
     
 }
