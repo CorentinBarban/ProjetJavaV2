@@ -108,6 +108,7 @@ public class XMLMissionHandler extends DefaultHandler {
                     Person p = c.listePerson.get(listIdPersons.get(i));
                     p.setNbProject(p.getNbProject()+1);
                 }
+                
                 listIdPersons.removeAll(listIdPersons);
                 int i =0;
                 for (Map.Entry element : listIdPersonsReq.entrySet()) {
@@ -116,6 +117,7 @@ public class XMLMissionHandler extends DefaultHandler {
                     for (int y = 0; y < current.size(); y++) {
                         r.addPerson(c.listePerson.get(current.get(y)));
                     }
+                    System.out.println(r);
                     
                     m.addRequirement(r);
                     i++;

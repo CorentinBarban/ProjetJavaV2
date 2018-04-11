@@ -61,7 +61,7 @@ public class Requirement {
     
     /**
      *
-     * @return nbTotalPerson Le nombre maximum de personne sur le besoin
+     * @return nbTotalPerson Le nombre requis de personnes sur le besoin
      */
     public int getNbTotalPersonnes(){
         return nbTotalPerson;
@@ -69,7 +69,7 @@ public class Requirement {
     
     /**
      *
-     * @return Le nombre de personne actuel sur le besoin
+     * @return Le nombre de personnes actuel sur le besoin
      */
     public int getNbPersonnesActuel(){
         return listPersonnes.size();
@@ -83,11 +83,14 @@ public class Requirement {
     public void addPerson(Person p) throws Exception{
         if(this.listPersonnes.size() < nbTotalPerson ){
             this.listPersonnes.add(p);
-            
         }else{
             throw new Exception("Le nombre de personnes maximal est déjà atteint");
         }
         
+    }
+    
+    public String toString(){
+        return "Req : "+idRequirement+" "+nbTotalPerson+" "+requiredSkill.toString()+" "+listPersonnes.size();
     }
     
 }
