@@ -1,6 +1,5 @@
 package GUI.NouvelleInterface;
 
-
 import API.Skill;
 import java.util.Date;
 import java.util.List;
@@ -18,13 +17,21 @@ public class SkillToMissionTableModel extends AbstractTableModel {
         "Compétences", "Ajouter"
     };
     private final Class[] columnClass = new Class[]{
-       String.class, String.class
+        String.class, Boolean.class
     };
+
+    @Override
+    public boolean isCellEditable(int row, int col) {
+        if (col == 1) {
+            return true;
+        }
+        return false;
+    }
 
     public SkillToMissionTableModel(List<Skill> skillList) {
         this.skillList = skillList;
     }
-    
+
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
@@ -50,11 +57,10 @@ public class SkillToMissionTableModel extends AbstractTableModel {
         Skill row = skillList.get(rowIndex);
         if (0 == columnIndex) {
             return row.getSkillNameFr();
-        } 
-        else if (1 == columnIndex) {
-            return null;
+        } else if (1 == columnIndex) {
+            return true;
         }
         return null;
     }
+        
 }
- 
