@@ -196,10 +196,11 @@ public class Mission {
     public void verification(){
         int nb = 0;
         System.out.println("Vérification");
+        
 
         if (this.etat == Etat.enPreparation){
             System.out.println("Etat est bien en préparation");
-            System.out.println(personOnMission.size());
+            System.out.println("Nb de personnes sur mission :"+personOnMission.size());
             if(missionName != null && startDate != null && !personOnMission.isEmpty() && nbTotalPerson > 0 && !requirements.isEmpty()){// SI toutes les infos
                 System.out.println("Toutes les infos sont renseignées");
                 Set entrySet = requirements.entrySet();
@@ -208,14 +209,18 @@ public class Mission {
                 Iterator itPers = entrySet2.iterator();
                 
                 while (itReq.hasNext()) {
-                    Requirement r = requirements.get(itReq); // Récupération du besoin
+                     Map.Entry mapEntry = (Map.Entry) itReq.next();
+                     Requirement r = requirements.get(mapEntry.getKey());
+                    
                     int nbPersonActuel = r.getNbPersonnesActuel(); // Récupération du nombre de personnes actuellement sur le besoin
                     int nbPersonRequis = r.getNbTotalPersonnes(); // Récupération du nb de personnes requis
+                    System.out.println(nbPersonActuel+", "+nbPersonRequis);
                     
                     if(nbPersonActuel == nbPersonRequis){ // Si il y a le nb souhaité de personnes sur le besoin
                         
                         while (itPers.hasNext()){
-                            Person p = personOnMission.get(itPers); // Récupération de la personne
+                             Map.Entry mapEntryP = (Map.Entry) itPers.next();
+                            Person p = personOnMission.get(mapEntryP.getKey()); // Récupération de la personne
                             HashMap<String,Skill> skillList = p.getSkillList(); // Récupération des compétences de la personne
                             
                             if (skillList.containsValue(r.getRequiredSkill())){ // Si la personne possède la compétence requise par le besoin
