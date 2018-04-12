@@ -107,7 +107,7 @@
      <dateOfHire>19/12/2012</dateOfHire>
      <skills_list>
           <idSkill>A.5.</idSkill>
-          <idSkill>C.2.</idSkill>
+          <idSkill>A.4.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -250,7 +250,7 @@
      <dateOfHire>13/03/2006</dateOfHire>
      <skills_list>
           <idSkill>B.3.</idSkill>
-          <idSkill>C.3.</idSkill>
+          <idSkill>E.6.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -271,7 +271,7 @@
      <firstName>Ted</firstName>
      <dateOfHire>17/07/2007</dateOfHire>
      <skills_list>
-          <idSkill>E.7.</idSkill>
+          <idSkill>E.6.</idSkill>
           <idSkill>A.2.</idSkill>
           <idSkill>C.1.</idSkill>
           <idSkill>A.7.</idSkill>
@@ -285,7 +285,7 @@
      <firstName>Myron</firstName>
      <dateOfHire>28/09/2007</dateOfHire>
      <skills_list>
-          <idSkill>C.1.</idSkill>
+          <idSkill>E.6.</idSkill>
           <idSkill>A.5.</idSkill>
           <idSkill>C.2.</idSkill>
           <idSkill>A.7.</idSkill>
@@ -300,7 +300,7 @@
      <firstName>Hollis</firstName>
      <dateOfHire>22/10/2007</dateOfHire>
      <skills_list>
-          <idSkill>E.4.</idSkill>
+          <idSkill>E.6.</idSkill>
           <idSkill>C.2.</idSkill>
      </skills_list>
 </person>
@@ -323,7 +323,7 @@
      <firstName>Alvaro</firstName>
      <dateOfHire>19/11/2010</dateOfHire>
      <skills_list>
-          <idSkill>A.1.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>E.2.</idSkill>
           <idSkill>A.3.</idSkill>
           <idSkill>B.2.</idSkill>
@@ -338,7 +338,7 @@
      <firstName>Emanuel</firstName>
      <dateOfHire>06/01/2012</dateOfHire>
      <skills_list>
-          <idSkill>C.1.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>A.5.</idSkill>
           <idSkill>B.4.</idSkill>
           <idSkill>D.1.</idSkill>
@@ -352,7 +352,7 @@
      <firstName>Brandon</firstName>
      <dateOfHire>31/07/2012</dateOfHire>
      <skills_list>
-          <idSkill>A.1.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>E.1.</idSkill>
           <idSkill>A.6.</idSkill>
           <idSkill>E.8.</idSkill>

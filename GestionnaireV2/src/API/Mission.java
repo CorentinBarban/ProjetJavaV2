@@ -196,6 +196,15 @@ public class Mission {
     public void verification(){
         int nb = 0;
         System.out.println("Vérification :");
+        
+        switch(this.etat){
+            case enPreparation :
+                break;
+            case plannifiee:
+                break;
+            case enCours:
+                break;
+        }
 
         if (this.etat == Etat.enPreparation){
             
@@ -208,8 +217,6 @@ public class Mission {
                     
                     Set entrySet = requirements.entrySet(); // Création d'un itérateur sur la liste des besoins de la mission
                     Iterator itReq = entrySet.iterator();
-                    
-                    
                     
                     while (itReq.hasNext()) {
                         Map.Entry mapEntry = (Map.Entry) itReq.next();
@@ -226,16 +233,22 @@ public class Mission {
                             for(int i=0; i<listPerson.size();i++){
                                 Person p = listPerson.get(i);
                                 if(p.getSkillList().containsValue(r.getRequiredSkill())){ // Vérifie si la personne possède la compétence requise par le besoin
-                                    nb++;
+                                    nb++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée.
                                     System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
                                 } else {
                                     System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
                                 }
-                                
                             }
+                            
+                            if(nb == getNbTotalPerson()){
+                                System.out.println("La mission peut passer en plannifiée.");
+                            } else {
+                                System.out.println("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
+                            }
+                        } else {
+                            System.out.println("Il n'y a pas le nb de personnes souhaité sur le besoin.");
                         }
                     }
-                  
             } else {
                 System.out.println("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
             }
