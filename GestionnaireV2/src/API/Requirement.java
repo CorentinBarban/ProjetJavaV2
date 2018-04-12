@@ -7,7 +7,10 @@ package API;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -18,7 +21,7 @@ public class Requirement {
     private String description;
     private final int nbTotalPerson;
     private Skill requiredSkill;
-    private final List<Person> listPersonnes = new ArrayList<>();
+    private final ArrayList<Person> listPersonnes = new ArrayList<>();
     
     /**
      * Constructeur Requirement
@@ -55,7 +58,7 @@ public class Requirement {
         this.idRequirement = idRequirement;
     }
 
-    public List<Person> getListPersonnes() {
+    public ArrayList<Person> getListPersonnes() {
         return listPersonnes;
     }
     
@@ -82,7 +85,11 @@ public class Requirement {
      */
     public void addPerson(Person p) throws Exception{
         if(this.listPersonnes.size() < nbTotalPerson ){
-            this.listPersonnes.add(p);
+            //if(checkSkill(p)){
+                this.listPersonnes.add(p);
+            //} else {
+            //   throw new Exception("La personne ne possède pas la compétence correspondant à ce besoin"); 
+            //}
         }else{
             throw new Exception("Le nombre de personnes maximal est déjà atteint");
         }
@@ -93,4 +100,8 @@ public class Requirement {
         return "Req : "+idRequirement+" "+nbTotalPerson+" "+requiredSkill.toString()+" "+listPersonnes.size();
     }
     
+    public boolean checkSkill(Person p){ // Méthode permettant de vérifier si la personne en param possède la compétence requise
+        HashMap<String, Skill> liste = p.getSkillList();
+        return liste.containsValue(requiredSkill);
+    }
 }

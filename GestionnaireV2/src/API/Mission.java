@@ -209,8 +209,7 @@ public class Mission {
                     Set entrySet = requirements.entrySet(); // Création d'un itérateur sur la liste des besoins de la mission
                     Iterator itReq = entrySet.iterator();
                     
-                    Set entrySet2 = personOnMission.entrySet(); // Création d'un itérateur sur la liste des personnes actuellement sur la mission
-                    Iterator itPers = entrySet2.iterator();
+                    
                     
                     while (itReq.hasNext()) {
                         Map.Entry mapEntry = (Map.Entry) itReq.next();
@@ -218,30 +217,36 @@ public class Mission {
 
                         int nbPersonActuel = r.getNbPersonnesActuel(); // Récupération du nombre de personnes actuellement sur le besoin
                         int nbPersonRequis = r.getNbTotalPersonnes(); // Récupération du nb de personnes requis
-                        
+                        ArrayList<Person> listPerson = r.getListPersonnes();
 
                         if(nbPersonActuel == nbPersonRequis){ // Si il y a le nb souhaité de personnes sur le besoin
                         System.out.println("Le nombre de personnes requis sur le besoin "+r.getIdRequirement()+" est de : "+nbPersonRequis+", le nombre actuel est de : "+nbPersonActuel+". Passage à la suite.");
 
-                            while (itPers.hasNext()){
-                                Map.Entry mapEntryP = (Map.Entry) itPers.next();
-                                Person p = personOnMission.get((String)mapEntryP.getKey()); // Récupération de la personne
-                                HashMap<String,Skill> skillList = p.getSkillList(); // Récupération des compétences de la personne
-                                System.out.println("Personne "+p.getId()+" : ");
-
+                       
+                            for(int i=0; i<listPerson.size();i++){
+                                Person p = listPerson.get(i);
+                                if(p.getSkillList().containsValue(r.getRequiredSkill())){ // Vérifie si la personne possède la compétence requise par le besoin
+                                    nb++;
+                                    System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
+                                } else {
+                                    System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
+                                }
+                                
                             }
                         }
-                    }  
-                } else {
-                    System.out.println("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
-                }
+                    }
+                  
             } else {
-                System.out.println("Toutes les informations de la mission ne sont pas renseignées.");
+                System.out.println("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
             }
         } else {
-         System.out.println("La mission n'est pas en préparation.");   
+            System.out.println("Toutes les informations de la mission ne sont pas renseignées.");
         }
+    } else {
+        System.out.println("La mission n'est pas en préparation.");   
     }
+    }
+
 
     /**
      * Affichage de la mission selon ses attributs
