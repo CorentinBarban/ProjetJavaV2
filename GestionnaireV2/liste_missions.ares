@@ -6,7 +6,7 @@
      <name>Recherche de sujet</name>
      <startDate>01/09/2018</startDate>
      <duration>15</duration>
-     <state>plannifiee</state>
+     <state>enPreparation</state>
      <nbPersonOnMission>10</nbPersonOnMission>
      <persons_list>
           <idPerson>1</idPerson>
@@ -46,29 +46,28 @@
      <name>Ecrire la documentation</name>
      <startDate>12/08/2018</startDate>
      <duration>3</duration>
-     <state>enCours</state>
-     <nbPersonOnMission>9</nbPersonOnMission>
+     <state>enPreparation</state>
+     <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
-          <idPerson>1</idPerson>
+          <idPerson>11</idPerson>
           <idPerson>12</idPerson>
-          <idPerson>24</idPerson>
-          <idPerson>20</idPerson>
+          <idPerson>13</idPerson>
+          <idPerson>14</idPerson>
+          <idPerson>15</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>44</idPersonReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>20</idPersonReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>11</idPersonReq>
+          <idPersonReq>12</idPersonReq>
           <idRequirement>2</idRequirement>
           <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <nbPersonTotalReq>3</nbPersonTotalReq>
+          <idPersonReq>13</idPersonReq>
+          <idPersonReq>14</idPersonReq>
+          <idPersonReq>15</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
@@ -77,29 +76,28 @@
      <name>Test d'integration</name>
      <startDate>12/08/2018</startDate>
      <duration>3</duration>
-     <state>plannifiee</state>
-     <nbPersonOnMission>8</nbPersonOnMission>
+     <state>enPreparation</state>
+     <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
-          <idPerson>1</idPerson>
-          <idPerson>12</idPerson>
-          <idPerson>24</idPerson>
+          <idPerson>16</idPerson>
+          <idPerson>17</idPerson>
+          <idPerson>18</idPerson>
+          <idPerson>19</idPerson>
           <idPerson>20</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>44</idPersonReq>
-          <idPersonReq>1</idPersonReq>
+          <nbPersonTotalReq>3</nbPersonTotalReq>
+          <idPersonReq>17</idPersonReq>
+          <idPersonReq>18</idPersonReq>
           <idPersonReq>20</idPersonReq>
           <idRequirement>2</idRequirement>
           <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>16</idPersonReq>
+          <idPersonReq>19</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
@@ -111,26 +109,27 @@
      <state>enPreparation</state>
      <nbPersonOnMission>6</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
-          <idPerson>1</idPerson>
-          <idPerson>12</idPerson>
+          <idPerson>22</idPerson>
+          <idPerson>23</idPerson>
           <idPerson>24</idPerson>
-          <idPerson>20</idPerson>
+          <idPerson>25</idPerson>
+          <idPerson>26</idPerson>
+          <idPerson>21</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>44</idPersonReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>20</idPersonReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
+          <idPersonReq>21</idPersonReq>
+          <idPersonReq>22</idPersonReq>
+          <idPersonReq>23</idPersonReq>
+          <idPersonReq>24</idPersonReq>
           <idRequirement>2</idRequirement>
           <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>25</idPersonReq>
+          <idPersonReq>26</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
@@ -140,28 +139,18 @@
      <startDate>12/08/2018</startDate>
      <duration>20</duration>
      <state>enPreparation</state>
-     <nbPersonOnMission>12</nbPersonOnMission>
+     <nbPersonOnMission>2</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
-          <idPerson>1</idPerson>
-          <idPerson>12</idPerson>
-          <idPerson>24</idPerson>
-          <idPerson>20</idPerson>
+          <idPerson>27</idPerson>
+          <idPerson>28</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>44</idPersonReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>20</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>27</idPersonReq>
+          <idPersonReq>28</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
@@ -173,26 +162,28 @@
      <state>enPreparation</state>
      <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
-          <idPerson>1</idPerson>
-          <idPerson>12</idPerson>
-          <idPerson>24</idPerson>
-          <idPerson>20</idPerson>
+          <idPerson>33</idPerson>
+          <idPerson>34</idPerson>
+          <idPerson>30</idPerson>
+          <idPerson>31</idPerson>
+          <idPerson>32</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>44</idPersonReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>20</idPersonReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>30</idPersonReq>
           <idRequirement>2</idRequirement>
           <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>31</idPersonReq>
+          <idPersonReq>32</idPersonReq>
+          <idRequirement>3</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>33</idPersonReq>
+          <idPersonReq>34</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>

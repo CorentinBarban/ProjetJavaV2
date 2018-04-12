@@ -132,7 +132,7 @@
      <firstName>Lindsey</firstName>
      <dateOfHire>27/12/2012</dateOfHire>
      <skills_list>
-          <idSkill>E.4.</idSkill>
+          <idSkill>D.3.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
 </person>
@@ -150,7 +150,7 @@
      <firstName>Lyman</firstName>
      <dateOfHire>29/04/2013</dateOfHire>
      <skills_list>
-          <idSkill>D.9.</idSkill>
+          <idSkill>D.3.</idSkill>
           <idSkill>E.7.</idSkill>
           <idSkill>A.3.</idSkill>
           <idSkill>E.1.</idSkill>
@@ -164,7 +164,7 @@
      <firstName>Santo</firstName>
      <dateOfHire>10/06/2013</dateOfHire>
      <skills_list>
-          <idSkill>C.3.</idSkill>
+          <idSkill>C.4.</idSkill>
           <idSkill>A.6.</idSkill>
      </skills_list>
 </person>
@@ -174,7 +174,7 @@
      <firstName>Bernardo</firstName>
      <dateOfHire>26/05/2014</dateOfHire>
      <skills_list>
-          <idSkill>E.7.</idSkill>
+          <idSkill>C.4.</idSkill>
           <idSkill>E.4.</idSkill>
           <idSkill>B.2.</idSkill>
           <idSkill>A.8.</idSkill>
@@ -186,7 +186,7 @@
      <firstName>Millard</firstName>
      <dateOfHire>11/09/2014</dateOfHire>
      <skills_list>
-          <idSkill>E.1.</idSkill>
+          <idSkill>C.4.</idSkill>
           <idSkill>B.5.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
@@ -211,7 +211,7 @@
      <dateOfHire>01/12/2014</dateOfHire>
      <skills_list>
           <idSkill>D.1.</idSkill>
-          <idSkill>B.5.</idSkill>
+          <idSkill>B.2.</idSkill>
           <idSkill>D.4.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
@@ -238,7 +238,7 @@
      <dateOfHire>12/01/2016</dateOfHire>
      <skills_list>
           <idSkill>A.3.</idSkill>
-          <idSkill>A.5.</idSkill>
+          <idSkill>A.1.</idSkill>
           <idSkill>C.4.</idSkill>
           <idSkill>A.6.</idSkill>
      </skills_list>
@@ -249,7 +249,7 @@
      <firstName>Ollie</firstName>
      <dateOfHire>13/03/2006</dateOfHire>
      <skills_list>
-          <idSkill>B.3.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>E.6.</idSkill>
      </skills_list>
 </person>
@@ -364,7 +364,7 @@
      <firstName>Wilbur</firstName>
      <dateOfHire>22/01/2016</dateOfHire>
      <skills_list>
-          <idSkill>B.1.</idSkill>
+          <idSkill>B.2.</idSkill>
           <idSkill>B.4.</idSkill>
      </skills_list>
 </person>
@@ -379,7 +379,7 @@
           <idSkill>B.2.</idSkill>
           <idSkill>C.2.</idSkill>
           <idSkill>D.6.</idSkill>
-          <idSkill>E.9.</idSkill>
+          <idSkill>C.1.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -393,7 +393,7 @@
           <idSkill>D.4.</idSkill>
           <idSkill>D.5.</idSkill>
           <idSkill>A.8.</idSkill>
-          <idSkill>D.7.</idSkill>
+          <idSkill>C.1.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -404,6 +404,7 @@
      <skills_list>
           <idSkill>E.2.</idSkill>
           <idSkill>C.3.</idSkill>
+          <idSkill>C.1.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -413,6 +414,7 @@
      <dateOfHire>29/08/2016</dateOfHire>
      <skills_list>
           <idSkill>B.3.</idSkill>
+          <idSkill>C.1.</idSkill>
           <idSkill>C.3.</idSkill>
           <idSkill>D.2.</idSkill>
           <idSkill>A.6.</idSkill>
@@ -429,6 +431,7 @@
           <idSkill>B.2.</idSkill>
           <idSkill>C.2.</idSkill>
           <idSkill>D.3.</idSkill>
+          <idSkill>A.4.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -442,6 +445,7 @@
           <idSkill>A.1.</idSkill>
           <idSkill>A.3.</idSkill>
           <idSkill>B.2.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>B.5.</idSkill>
      </skills_list>
 </person>
@@ -452,6 +456,7 @@
      <dateOfHire>15/02/2007</dateOfHire>
      <skills_list>
           <idSkill>E.5.</idSkill>
+          <idSkill>E.7.</idSkill>
           <idSkill>D.7.</idSkill>
      </skills_list>
 </person>
@@ -464,6 +469,7 @@
           <idSkill>A.3.</idSkill>
           <idSkill>A.5.</idSkill>
           <idSkill>C.2.</idSkill>
+          <idSkill>E.7.</idSkill>
           <idSkill>B.3.</idSkill>
      </skills_list>
 </person>
@@ -490,7 +496,7 @@
           <idSkill>B.1.</idSkill>
           <idSkill>C.2.</idSkill>
           <idSkill>D.2.</idSkill>
-          <idSkill>B.5.</idSkill>
+          <idSkill>C.4.</idSkill>
      </skills_list>
 </person>
 <person>
@@ -504,7 +510,7 @@
           <idSkill>A.3.</idSkill>
           <idSkill>A.5.</idSkill>
           <idSkill>D.2.</idSkill>
-          <idSkill>A.6.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>D.4.</idSkill>
      </skills_list>
 </person>
@@ -515,7 +521,7 @@
      <dateOfHire>24/06/2009</dateOfHire>
      <skills_list>
           <idSkill>B.4.</idSkill>
-          <idSkill>A.6.</idSkill>
+          <idSkill>A.4.</idSkill>
           <idSkill>D.6.</idSkill>
      </skills_list>
 </person>
@@ -527,7 +533,7 @@
      <skills_list>
           <idSkill>A.2.</idSkill>
           <idSkill>C.2.</idSkill>
-          <idSkill>C.3.</idSkill>
+          <idSkill>A.3.</idSkill>
           <idSkill>D.5.</idSkill>
      </skills_list>
 </person>
@@ -537,7 +543,7 @@
      <firstName>Stanton</firstName>
      <dateOfHire>03/03/2010</dateOfHire>
      <skills_list>
-          <idSkill>A.5.</idSkill>
+          <idSkill>A.3.</idSkill>
           <idSkill>B.3.</idSkill>
           <idSkill>D.3.</idSkill>
      </skills_list>
