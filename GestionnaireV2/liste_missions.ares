@@ -7,28 +7,37 @@
      <startDate>01/09/2018</startDate>
      <duration>15</duration>
      <state>enPreparation</state>
-     <nbPersonOnMission>6</nbPersonOnMission>
+     <nbPersonOnMission>10</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
           <idPerson>1</idPerson>
-          <idPerson>12</idPerson>
-          <idPerson>24</idPerson>
-          <idPerson>20</idPerson>
+          <idPerson>2</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>4</idPerson>
+          <idPerson>5</idPerson>
+          <idPerson>6</idPerson>
+          <idPerson>7</idPerson>
+          <idPerson>8</idPerson>
+          <idPerson>9</idPerson>
+          <idPerson>10</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>44</idPersonReq>
+          <nbPersonTotalReq>6</nbPersonTotalReq>
           <idPersonReq>1</idPersonReq>
-          <idPersonReq>20</idPersonReq>
+          <idPersonReq>2</idPersonReq>
+          <idPersonReq>3</idPersonReq>
+          <idPersonReq>4</idPersonReq>
+          <idPersonReq>5</idPersonReq>
+          <idPersonReq>6</idPersonReq>
           <idRequirement>2</idRequirement>
           <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>10</nbPersonTotalReq>
-          <idPersonReq>1</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
+          <idPersonReq>7</idPersonReq>
+          <idPersonReq>8</idPersonReq>
+          <idPersonReq>9</idPersonReq>
+          <idPersonReq>10</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
