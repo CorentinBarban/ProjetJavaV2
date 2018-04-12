@@ -93,8 +93,7 @@ public class XMLMissionHandler extends DefaultHandler {
     }
    
     @Override
-    public void endElement(String uri,
-            String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("mission")) {
             try {
                 Mission m = new Mission(Integer.parseInt(id), name, startDate, Integer.parseInt(duration), state);
@@ -117,8 +116,6 @@ public class XMLMissionHandler extends DefaultHandler {
                     for (int y = 0; y < current.size(); y++) {
                         r.addPerson(c.listePerson.get(current.get(y)));
                     }
-                    System.out.println(r);
-                    
                     m.addRequirement(r);
                     i++;
                 }

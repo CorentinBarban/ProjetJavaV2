@@ -7,6 +7,8 @@ package API;
 
 import Management.ManageMission;
 import java.text.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -19,7 +21,7 @@ public class Mission {
      * Enumeration des différents état de la mission
      */
     public enum Etat {
-        enPreparation, plannifiee, enCours
+        enPreparation, plannifiee, enCours, terminee
     }
 
     private int idMission;
@@ -200,8 +202,7 @@ public class Mission {
         switch(this.etat){
             case enPreparation :
                 System.out.println("L'état de la mission est bien en préparation, passage à la suite.");
-                if(missionName != null && startDate != null && !personOnMission.isEmpty() && nbTotalPerson > 0 && !requirements.isEmpty()){// SI toutes les infos
-                    System.out.println("Toutes les informations de la mission sont renseignées, passage à la suite.");
+                if(infoRemplies()){// SI toutes les infos
 
                     if(personOnMission.size() == nbTotalPerson){ // Vérifie si le nombre total de personnes sur la mission est égal au nombre requis
                         System.out.println("Le nombre requis de personnes sur la mission est de "+personOnMission.size()+", le nombre de personnes actuel est de : "+nbTotalPerson+". Passage à la suite.");
@@ -220,40 +221,63 @@ public class Mission {
                             if(nbPersonActuel == nbPersonRequis){ // Si il y a le nb souhaité de personnes sur le besoin
                             System.out.println("Le nombre de personnes requis sur le besoin "+r.getIdRequirement()+" est de : "+nbPersonRequis+", le nombre actuel est de : "+nbPersonActuel+". Passage à la suite.");
 
-
                                 for(int i=0; i<listPerson.size();i++){
                                     Person p = listPerson.get(i);
-                                    if(p.getSkillList().containsValue(r.getRequiredSkill())){ // Vérifie si la personne possède la compétence requise par le besoin
-                                        nb++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée.
-                                        System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
-                                    } else {
-                                        System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
-                                    }
-                                }
-
-                                if(nb == getNbTotalPerson()){
-                                    System.out.println("La mission peut passer en plannifiée.");
-                                } else {
-                                    System.out.println("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
+                                    nb += checkSkill(p, r); // Vérifie si la personne possède la compétence requise par le besoin
                                 }
                             } else {
                                 System.out.println("Il n'y a pas le nb de personnes souhaité sur le besoin.");
                             }
                         }
+                        if(nb == getNbTotalPerson()){
+                            System.out.println("La mission peut passer en plannifiée.");
+                            this.etat = Etat.plannifiee;
+                        } else {
+                            System.out.println("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
+                        }
                     } else {
                         System.out.println("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
                     }
-                } else {
-                System.out.println("Toutes les informations de la mission ne sont pas renseignées.");
                 }
                 
                 break;
             case plannifiee:
+                System.out.println("Mission plannifiée.");
+                
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //Récupération de la date d'auj et conversion au format jj/mm/aaaa.
+                LocalDate localDate = LocalDate.now();
+                System.out.println(dtf.format(localDate));
+                Date dateAuj = java.sql.Date.valueOf(localDate); // Conversion d'un obj localdate a date.
+                
+                if (dateAuj.after(startDate)) {
+                    System.out.println("La date de début est passée. La mission devient en cours.");
+                    this.etat = Etat.enCours;
+                }
                 break;
                 
             case enCours:
                 break;
         }
+    }
+    
+    public boolean infoRemplies(){
+        if(missionName != null && startDate != null && !personOnMission.isEmpty() && nbTotalPerson > 0 && !requirements.isEmpty()){// SI toutes les infos
+            System.out.println("Toutes les informations de la mission sont renseignées, passage à la suite.");
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+ public int checkSkill(Person p, Requirement r){
+     int nb = 0;
+        if(p.getSkillList().containsValue(r.getRequiredSkill())){ 
+            nb++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée.
+            System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
+        } else {
+            System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
+        }
+        return nb;
     }
 
 
