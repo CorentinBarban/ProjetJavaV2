@@ -21,7 +21,7 @@ public class Requirement {
     private String description;
     private final int nbTotalPerson;
     private Skill requiredSkill;
-    private final ArrayList<Person> listPersonnes = new ArrayList<>();
+    private final List<Person> listPersonnes = new ArrayList<>();
     
     /**
      * Constructeur Requirement
@@ -58,7 +58,7 @@ public class Requirement {
         this.idRequirement = idRequirement;
     }
 
-    public ArrayList<Person> getListPersonnes() {
+    public List<Person> getListPersonnes() {
         return listPersonnes;
     }
     

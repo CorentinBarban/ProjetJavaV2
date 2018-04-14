@@ -216,7 +216,7 @@ public class Mission {
 
                             int nbPersonActuel = r.getNbPersonnesActuel(); // Récupération du nombre de personnes actuellement sur le besoin
                             int nbPersonRequis = r.getNbTotalPersonnes(); // Récupération du nb de personnes requis
-                            ArrayList<Person> listPerson = r.getListPersonnes();
+                            List<Person> listPerson = r.getListPersonnes();
 
                             if(nbPersonActuel == nbPersonRequis){ // Si il y a le nb souhaité de personnes sur le besoin
                             System.out.println("Le nombre de personnes requis sur le besoin "+r.getIdRequirement()+" est de : "+nbPersonRequis+", le nombre actuel est de : "+nbPersonActuel+". Passage à la suite.");
