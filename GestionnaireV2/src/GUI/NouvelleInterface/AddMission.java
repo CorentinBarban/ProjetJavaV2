@@ -458,7 +458,6 @@ public class AddMission extends javax.swing.JPanel {
         modelMySkill.remove(jListSkill.getSelectedIndex());
         //Suppression du model de la liste des models
         listModelPerson.remove(jListSkill.getSelectedIndex());
-        
     }//GEN-LAST:event_jButtonShiftRightSActionPerformed
 
     private void jButtonShiftLeftPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftLeftPActionPerformed

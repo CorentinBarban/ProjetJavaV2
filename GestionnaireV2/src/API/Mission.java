@@ -270,14 +270,14 @@ public class Mission {
     }
     
  public int checkSkill(Person p, Requirement r){
-     int nb = 0;
+     int nbCompetencesPossedees = 0;
         if(p.getSkillList().containsValue(r.getRequiredSkill())){ 
-            nb++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée.
+            nbCompetencesPossedees++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée.
             System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
         } else {
             System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
         }
-        return nb;
+        return nbCompetencesPossedees;
     }
 
 

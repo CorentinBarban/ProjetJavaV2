@@ -177,7 +177,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldNameMission" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldNameMission" alignment="0" pref="118" max="32767" attributes="0"/>
                           <Component id="jTextFieldDurationMission" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldNbPersonMission" alignment="0" max="32767" attributes="0"/>
                           <Component id="jFormattedTextFieldFireDate" alignment="0" max="32767" attributes="0"/>
@@ -506,11 +506,9 @@
                               <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                               <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButtonShiftLeftP" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButtonShiftRightP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
