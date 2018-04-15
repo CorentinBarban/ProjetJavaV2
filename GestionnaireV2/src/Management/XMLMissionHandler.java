@@ -6,7 +6,7 @@
 package Management;
 
 /**
- *
+ * Classe permettant la lecture d'un fichier XML de compétences.
  * @author MathieuSTIVANIN
  */
 import API.Company;
@@ -17,7 +17,6 @@ import API.Requirement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -58,10 +57,23 @@ public class XMLMissionHandler extends DefaultHandler {
     HashMap<String, List<String>> listIdPersonsReq = new HashMap();
     ArrayList<String> listIdSkillsReq = new ArrayList<>();
     Company c;
+    /**
+     * Constructeur de lecteur XML
+     * @param c l'entreprise concernée
+     */
 
     public XMLMissionHandler(Company c) {
         this.c = c;
     }
+    
+    /**
+     * Classe permettant de récupérer les balises présentes dans le fichier XML
+     * @param uri
+     * @param localName
+     * @param qName
+     * @param attributes
+     * @throws SAXException 
+     */
 
     @Override
     public void startElement(String uri,
@@ -91,7 +103,13 @@ public class XMLMissionHandler extends DefaultHandler {
             bNbTotMission = true;
         } 
     }
-   
+    /**
+     * Classe permettant de créer une mission avec les attributs récupérés à partir des balises existantes
+     * @param uri
+     * @param localName
+     * @param qName
+     * @throws SAXException 
+     */
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("mission")) {
@@ -129,6 +147,14 @@ public class XMLMissionHandler extends DefaultHandler {
             }
         }
     }
+    
+    /**
+     * Méthode permettant de récupérer les données contenues dans les balises existantes.
+     * @param ch
+     * @param start
+     * @param length
+     * @throws SAXException 
+     */
 
     @Override
     public void characters(char ch[], int start, int length) throws SAXException {

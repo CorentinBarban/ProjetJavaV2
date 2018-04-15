@@ -23,7 +23,7 @@ import javax.xml.parsers.SAXParserFactory;
 /**
  *
  * @author Mathieu Stivanin
- * Classe permettant de vérifier le bon déroulement des méthodes de Skill.
+ * Classe permettant la lecture et l'écriture des différentes compétences et de leurs données via XML
  */
 public class ManageSkill implements ManageData {
     

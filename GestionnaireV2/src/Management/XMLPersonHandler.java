@@ -5,14 +5,13 @@
  */
 package Management;
 
-/** 
- *
+/**
+ * Classe permettant la lecture d'un fichier XML de personnes.
  * @author MathieuSTIVANIN
  */
 
 import API.Company;
 import API.Person;
-import API.Skill;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -37,9 +36,23 @@ public class XMLPersonHandler extends DefaultHandler {
    ArrayList <String> listIdSkills = new ArrayList<>();
    Company c;
    
+   /**
+     * Constructeur de lecteur XML
+     * @param c l'entreprise concernée
+     */
+   
    public XMLPersonHandler(Company c){
        this.c = c;
    }
+   
+    /**
+     * Classe permettant de récupérer les balises présentes dans le fichier XML
+     * @param uri
+     * @param localName
+     * @param qName
+     * @param attributes
+     * @throws SAXException 
+     */
 
 
    @Override
@@ -58,6 +71,14 @@ public class XMLPersonHandler extends DefaultHandler {
          bSkill = true;
       }
    }
+   
+   /**
+     * Classe permettant de créer une personne avec les attributs récupérés à partir des balises existantes
+     * @param uri
+     * @param localName
+     * @param qName
+     * @throws SAXException 
+     */
 
    @Override
    public void endElement(String uri, 
@@ -75,6 +96,14 @@ public class XMLPersonHandler extends DefaultHandler {
          }
       }
    }
+   
+   /**
+     * Méthode permettant de récupérer les données contenues dans les balises existantes.
+     * @param ch
+     * @param start
+     * @param length
+     * @throws SAXException 
+     */
 
    @Override
    public void characters(char ch[], int start, int length) throws SAXException {

@@ -6,15 +6,12 @@
 package Management;
 
 /**
- *
+ * Classe permettant la lecture d'un fichier XML de missions.
  * @author MathieuSTIVANIN
  */
+
 import API.Company;
-import API.Person;
 import API.Skill;
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -30,11 +27,25 @@ public class XMLSkillHandler extends DefaultHandler {
    String nameFr;
    Company c;
    
+   /**
+     * Constructeur de lecteur XML
+     * @param c l'entreprise concernée
+     */
+   
    public XMLSkillHandler(Company c){
        this.c = c;
    }
 
+   /**
+     * Classe permettant de récupérer les balises présentes dans le fichier XML
+     * @param uri
+     * @param localName
+     * @param qName
+     * @param attributes
+     * @throws SAXException 
+     */
 
+   
    @Override
    public void startElement(String uri, 
    String localName, String qName, Attributes attributes) throws SAXException {
@@ -47,6 +58,14 @@ public class XMLSkillHandler extends DefaultHandler {
          bNameFr = true;
       }
    }
+   
+   /**
+     * Classe permettant de créer une compétence avec les attributs récupérés à partir des balises existantes
+     * @param uri
+     * @param localName
+     * @param qName
+     * @throws SAXException 
+     */
 
    @Override
    public void endElement(String uri, 
@@ -56,6 +75,14 @@ public class XMLSkillHandler extends DefaultHandler {
           c.addSkill(s);
       }
    }
+   
+   /**
+     * Méthode permettant de récupérer les données contenues dans les balises existantes.
+     * @param ch
+     * @param start
+     * @param length
+     * @throws SAXException 
+     */
 
    @Override
    public void characters(char ch[], int start, int length) throws SAXException {

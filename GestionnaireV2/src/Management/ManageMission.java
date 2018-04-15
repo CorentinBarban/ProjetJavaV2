@@ -19,8 +19,8 @@ import javax.xml.parsers.SAXParserFactory;
 
 /**
  *
- * @author Mathieu Stivanin Classe permettant de vérifier le bon déroulement des
- * méthodes de Mission.
+ * @author Mathieu Stivanin 
+ * Classe permettant la lecture et l'écriture des différentes missions et de leurs données via XML
  */
 public class ManageMission implements ManageData {
 
