@@ -131,6 +131,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTablePersonMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ArrayList&lt;Person&gt; PersonList = new ArrayList&lt;Person&gt;(myCompany.listePerson.values());"/>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTablePerson.setAutoCreateRowSorter(true);"/>

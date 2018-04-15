@@ -19,7 +19,7 @@ import java.util.Set;
 public class Requirement {
     private int idRequirement;
     private String description;
-    private final int nbTotalPerson;
+    private int nbTotalPerson;
     private Skill requiredSkill;
     private final List<Person> listPersonnes = new ArrayList<>();
     
@@ -32,6 +32,11 @@ public class Requirement {
         this.idRequirement = id;
         this.nbTotalPerson=nbTotalPerson;
         this.requiredSkill = skill;
+    }
+    
+    public Requirement(Skill skill){
+        this.requiredSkill = skill;
+        this.nbTotalPerson=0;
     }
     
     /**
@@ -69,6 +74,13 @@ public class Requirement {
     public int getNbTotalPersonnes(){
         return nbTotalPerson;
     }
+
+    
+    public void setNbTotalPerson(int nbTotalPerson) {
+        this.nbTotalPerson = nbTotalPerson;
+    }
+    
+    
     
     /**
      *
@@ -94,6 +106,20 @@ public class Requirement {
             throw new Exception("Le nombre de personnes maximal est déjà atteint");
         }
         
+    }
+    
+    public int getIndexPerson(Person p){
+        int index = 0;
+        
+        for (Person personne : listPersonnes) {
+            if(personne.equals(p)){
+                return index;
+            }else{
+                index ++;
+            }
+        }
+                
+        return index;
     }
     
     public String toString(){

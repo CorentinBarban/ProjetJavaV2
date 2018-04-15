@@ -5,6 +5,8 @@
  */
 package GUI.NouvelleInterface;
 
+import API.Company;
+import API.Person;
 import API.Requirement;
 import API.Skill;
 import java.util.HashMap;
@@ -22,7 +24,13 @@ public class PersonDetail extends javax.swing.JPanel {
     /**
      * Creates new form PersonDetail
      */
-    public PersonDetail() {
+    private Company myCompany;
+    private home myFrame;
+    private Person personSelected;
+    public PersonDetail(Person personSelected,Company myCompany,home myFrame) {
+        this.personSelected = personSelected;
+        this.myCompany=myCompany;
+        this.myFrame=myFrame;
         initComponents();
     }
 
@@ -77,18 +85,14 @@ public class PersonDetail extends javax.swing.JPanel {
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
-                        .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFirstName)
-                            .addComponent(jLabelLastName))
-                        .addGap(91, 91, 91)
-                        .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldLastName)
-                            .addComponent(jTextFieldFirstName)))
-                    .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
-                        .addComponent(jLabelHireDate)
-                        .addGap(51, 51, 51)
-                        .addComponent(jFormattedTextFieldHireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)))
+                    .addComponent(jLabelFirstName)
+                    .addComponent(jLabelLastName)
+                    .addComponent(jLabelHireDate))
+                .addGap(31, 31, 31)
+                .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                    .addComponent(jTextFieldFirstName)
+                    .addComponent(jFormattedTextFieldHireDate))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -127,19 +131,17 @@ public class PersonDetail extends javax.swing.JPanel {
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabelSkill)
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelOnMission)
+                    .addComponent(jLabelSkill))
                 .addGap(0, 239, Short.MAX_VALUE))
-            .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelOnMission)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jLabelSkill)
-                .addGap(102, 102, 102)
+                .addGap(106, 106, 106)
                 .addComponent(jLabelOnMission)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -163,7 +165,7 @@ public class PersonDetail extends javax.swing.JPanel {
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -173,35 +175,35 @@ public class PersonDetail extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
+                .addGap(12, 12, 12))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addContainerGap()
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(54, 54, 54))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
+            .addGap(0, 772, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 15, Short.MAX_VALUE)
+                    .addGap(0, 11, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+                    .addGap(0, 12, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
+            .addGap(0, 478, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 33, Short.MAX_VALUE)
+                    .addGap(0, 12, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 33, Short.MAX_VALUE)))
+                    .addGap(0, 12, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 

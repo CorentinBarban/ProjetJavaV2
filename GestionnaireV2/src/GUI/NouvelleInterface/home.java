@@ -206,7 +206,7 @@ public class home extends javax.swing.JFrame {
 
     private void jLabelPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPersonMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new PersonList(myCompany));
+        jPanelContainer.add(new PersonList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jPanelMenuPerson.setBackground(new java.awt.Color(30, 32, 44));
@@ -217,7 +217,7 @@ public class home extends javax.swing.JFrame {
 
     private void jPanelMenuPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMenuPersonMouseReleased
         jPanelContainer.removeAll();
-        jPanelContainer.add(new PersonList(myCompany));
+        jPanelContainer.add(new PersonList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
         jPanelMenuPerson.setBackground(new java.awt.Color(30, 32, 44));

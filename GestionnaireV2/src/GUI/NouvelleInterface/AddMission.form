@@ -62,8 +62,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelReturn2" min="-2" pref="123" max="-2" attributes="0"/>
-                  <EmptySpace pref="211" max="32767" attributes="0"/>
-                  <Component id="jLabelTitle2" pref="299" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabelTitle2" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -142,8 +142,8 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanelLeftDetail" alignment="1" pref="369" max="32767" attributes="0"/>
-              <Component id="jPanelRightDetail" alignment="1" pref="369" max="32767" attributes="0"/>
+              <Component id="jPanelLeftDetail" alignment="1" pref="371" max="32767" attributes="0"/>
+              <Component id="jPanelRightDetail" alignment="1" pref="371" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jSeparator2" max="32767" attributes="0"/>
@@ -179,9 +179,12 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTextFieldNameMission" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldDurationMission" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldNbPersonMission" alignment="0" max="32767" attributes="0"/>
                           <Component id="jFormattedTextFieldFireDate" alignment="0" max="32767" attributes="0"/>
                           <Component id="jComboBox1" pref="128" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jSpinnerNbPersonMission" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -205,17 +208,17 @@
                           <Component id="jLabelDurationMission" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldDurationMission" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelNbPersonMission" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldNbPersonMission" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jSpinnerNbPersonMission" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelStateMission" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -242,7 +245,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dur&#xe9;e :"/>
+                <Property name="text" type="java.lang.String" value="Dur&#xe9;e (en semaine) :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelNbPersonMission">
@@ -250,7 +253,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre de personnes :"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&#xa;&lt;p&gt;Nombre de personnes :&lt;/p&gt;&#xa;&lt;p&gt; sur la mission&lt;/p&gt;&#xa;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelStateMission">
@@ -265,14 +268,18 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldDurationMission">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldNbPersonMission">
-            </Component>
             <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldFireDate">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="3" type="1"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="DD/MM/AAAA"/>
               </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="jLabelFireDateMission"/>
+                </Property>
+              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
@@ -284,6 +291,13 @@
                   </StringArray>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="jSpinnerNbPersonMission">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
@@ -309,33 +323,45 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanelSkill" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPanelPerson" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="jLabelPerson" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="jLabelSkill" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanelSkill" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanelPerson" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSpinnerNbPerson" min="-2" pref="73" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabelPerson" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="90" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="jLabelSkill" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanelSkill" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSpinnerNbPerson" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabelPerson" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jPanelPerson" max="32767" attributes="0"/>
@@ -397,11 +423,11 @@
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="29" max="32767" attributes="0"/>
                                   <Component id="jButtonShiftLeftS" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButtonShiftRightS" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -423,6 +449,10 @@
                           <Connection code="mySkillModel" type="code"/>
                         </Property>
                         <Property name="selectionMode" type="int" value="0"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Curseur par d&#xe9;faut"/>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="1"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListSkillMouseReleased"/>
@@ -447,7 +477,14 @@
                           <Connection code="skillModelAV" type="code"/>
                         </Property>
                         <Property name="selectionMode" type="int" value="0"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Curseur par d&#xe9;faut"/>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="1"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListSkillAvailableMouseReleased"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jListSkillAvailable.setCellRenderer(new SkillRenderer());&#xa;&#xa;Set entrySetSAvailble = myCompany.listeSkill.entrySet();&#xa;Iterator it2 = entrySetSAvailble.iterator();&#xa;while (it2.hasNext()) {&#xa;    Map.Entry me2 = (Map.Entry)it2.next();&#xa;    skillModelAV.addElement(myCompany.listeSkill.get(me2.getKey()));&#xa;    &#xa;}"/>
                         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultListModel&lt;Skill&gt; skillModelAV = new DefaultListModel();"/>
@@ -459,6 +496,7 @@
                 <Component class="javax.swing.JButton" name="jButtonShiftLeftS">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShiftLeftSActionPerformed"/>
@@ -467,6 +505,7 @@
                 <Component class="javax.swing.JButton" name="jButtonShiftRightS">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShiftRightSActionPerformed"/>
@@ -503,14 +542,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="103" max="32767" attributes="0"/>
                               <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButtonShiftLeftP" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButtonShiftRightP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -532,8 +569,11 @@
                           <Connection code="personModel" type="code"/>
                         </Property>
                         <Property name="selectionMode" type="int" value="0"/>
-                        <Property name="enabled" type="boolean" value="false"/>
+                        <Property name="selectedIndex" type="int" value="1"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListPersonMouseReleased"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Person&gt; personModel = new DefaultListModel();"/>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Person&gt;"/>
@@ -554,9 +594,13 @@
                           <Connection code="personModelAV" type="code"/>
                         </Property>
                         <Property name="selectionMode" type="int" value="1"/>
+                        <Property name="selectedIndex" type="int" value="1"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListPersonAvailableMouseReleased"/>
+                      </Events>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jListPersonAvailable.setCellRenderer(new PersonRenderer());&#xa;&#xa;Set entrySetPAvailble = myCompany.listePerson.entrySet();&#xa;Iterator it = entrySetPAvailble.iterator();&#xa;while (it.hasNext()) {&#xa;    Map.Entry me = (Map.Entry)it.next();&#xa;    personModelAV.addElement(myCompany.listePerson.get(me.getKey()));&#xa;    &#xa;}"/>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jListPersonAvailable.setCellRenderer(new PersonRenderer());"/>
                         <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel&lt;Person&gt; personModelAV = new DefaultListModel();"/>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Person&gt;"/>
                       </AuxValues>
@@ -566,6 +610,7 @@
                 <Component class="javax.swing.JButton" name="jButtonShiftLeftP">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShiftLeftPActionPerformed"/>
@@ -574,6 +619,7 @@
                 <Component class="javax.swing.JButton" name="jButtonShiftRightP">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonShiftRightPActionPerformed"/>
@@ -581,6 +627,25 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nombre de personnes requises : "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="jSpinnerNbPerson">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="1" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSpinnerNbPersonStateChanged"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

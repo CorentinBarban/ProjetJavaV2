@@ -19,8 +19,10 @@ public class PersonList extends javax.swing.JPanel {
      * Creates new form PersonList
      */
     Company myCompany;
-    public PersonList(Company myCompany) {
+    home myFrame;
+    public PersonList(Company myCompany, home myFrame) {
         this.myCompany=myCompany;
+        this.myFrame=myFrame;
         initComponents();
     }
 
@@ -87,6 +89,11 @@ public class PersonList extends javax.swing.JPanel {
         PersonTableModel modelPerson = new PersonTableModel(PersonList);
         jTablePerson.setModel(modelPerson);
         jTablePerson.setAutoCreateRowSorter(true);
+        jTablePerson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablePersonMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTablePerson);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -104,6 +111,21 @@ public class PersonList extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTablePersonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePersonMouseClicked
+        PersonTableModel model = (PersonTableModel) jTablePerson.getModel();
+        int row = jTablePerson.getSelectedRow();
+        int col = jTablePerson.columnAtPoint(evt.getPoint());
+
+        if (col == 4) { //Click sur Details 
+            Person personSelected = model.personList.get(row);
+            PersonDetail pd = new PersonDetail(personSelected,myCompany,myFrame);
+            myFrame.jPanelContainer.removeAll();
+            myFrame.jPanelContainer.add(pd);
+            myFrame.repaint();
+            myFrame.revalidate();
+        }
+    }//GEN-LAST:event_jTablePersonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
