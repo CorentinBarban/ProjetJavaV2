@@ -105,7 +105,7 @@ public class XMLMissionHandler extends DefaultHandler {
                     
                     //Incremente le nombre de missions de la personne
                     Person p = c.listePerson.get(listIdPersons.get(i));
-                    p.setNbProject(p.getNbProject()+1);
+                    p.setNbMissions(p.getNbMissions()+1);
                 }
                 
                 listIdPersons.removeAll(listIdPersons);

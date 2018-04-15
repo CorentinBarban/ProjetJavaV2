@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
+ * Cette classe représente un besoin
  * @author MathieuSTIVANIN
  */
 public class Requirement {
@@ -57,13 +57,17 @@ public class Requirement {
     public void setIdRequirement(int idRequirement) {
         this.idRequirement = idRequirement;
     }
-
+    
+    /**
+     * Getter de la liste de personnes attribuées au besoin
+     * @return listPersonnes
+     */
     public List<Person> getListPersonnes() {
         return listPersonnes;
     }
     
     /**
-     *
+     * Getter du nombre requis de personnes sur le besoin
      * @return nbTotalPerson Le nombre requis de personnes sur le besoin
      */
     public int getNbTotalPersonnes(){
@@ -71,7 +75,7 @@ public class Requirement {
     }
     
     /**
-     *
+     * Getter du nombre de personnes actuel sur le besoin
      * @return Le nombre de personnes actuel sur le besoin
      */
     public int getNbPersonnesActuel(){
@@ -95,12 +99,13 @@ public class Requirement {
         }
         
     }
+    /**
+     * Méthode permettant de vérifier si la personne en param possède la compétence requise
+     * @param p la personne
+     * @return vrai ou faux
+     */
     
-    public String toString(){
-        return "Req : "+idRequirement+" "+nbTotalPerson+" "+requiredSkill.toString()+" "+listPersonnes.size();
-    }
-    
-    public boolean checkSkill(Person p){ // Méthode permettant de vérifier si la personne en param possède la compétence requise
+    public boolean checkSkill(Person p){
         HashMap<String, Skill> liste = p.getSkillList();
         return liste.containsValue(requiredSkill);
     }

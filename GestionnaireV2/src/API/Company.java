@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
+ * Cette classe représente une entreprise
  * @author Mathieu Stivanin
  */
 public class Company {
@@ -21,6 +21,11 @@ public class Company {
     public final HashMap<String,Person> listePerson;
     public final HashMap<Integer,Mission> listeMission;
     public String companyName;
+    
+    /**
+     * Constructeur d'une entreprise
+     * @param companyName représente le nom de l'entreprise
+     */
     
     public Company(String companyName){
         this.companyName  = companyName;

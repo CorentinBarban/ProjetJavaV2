@@ -12,8 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
- *
- * @author Mathieu Stivanin Cette classe représente une mission.
+ * Cette classe représente une mission.
+ * @author Mathieu Stivanin 
  */
 public class Mission {
 
@@ -194,7 +194,10 @@ public class Mission {
     public HashMap<String, Person> getPersonOnMission() {
         return this.personOnMission;
     }
-    
+    /**
+     * Méthode permettant de vérifier si la mission respecte les critères afin de changer d'état.
+     *
+     */
     public void verification(){
         int nb = 0;
         System.out.println("Vérification :");
@@ -260,6 +263,11 @@ public class Mission {
         }
     }
     
+    /**
+     * Méthode permettant de vérifier si toutes les informations de la mission sont renseignées
+     *
+     */
+    
     public boolean infoRemplies(){
         if(missionName != null && startDate != null && !personOnMission.isEmpty() && nbTotalPerson > 0 && !requirements.isEmpty()){// SI toutes les infos
             System.out.println("Toutes les informations de la mission sont renseignées, passage à la suite.");
@@ -269,10 +277,17 @@ public class Mission {
         }
     }
     
+    /**
+     * Méthode permettant de vérifier si la personne possède, dans ses compétences, la compétence requise par le besoin.
+     * @param p la personne
+     * @param r le besoin
+     * @return nbCompetencesPossedees le nombre de compétences possédées par la personne par rapport au besoin
+     */
+    
  public int checkSkill(Person p, Requirement r){
      int nbCompetencesPossedees = 0;
         if(p.getSkillList().containsValue(r.getRequiredSkill())){ 
-            nbCompetencesPossedees++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée.
+            nbCompetencesPossedees++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée. Est utilisé dans vérification.
             System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
         } else {
             System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
@@ -284,7 +299,7 @@ public class Mission {
     /**
      * Affichage de la mission selon ses attributs
      *
-     * @return Retourn sous le format XML la mission
+     * @return Retour sous le format XML la mission
      */
     @Override
     public String toString() {
