@@ -14,8 +14,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
@@ -30,22 +28,13 @@ public class AddMission extends javax.swing.JPanel {
      */
     private Company myCompany;
     private home myFrame;
-    //Liste de personnes selectionnés sur une compétence
-    private LinkedHashMap<Skill, DefaultListModel<Person>> listModelPerson = new LinkedHashMap();
-    //Liste de personnes disponible sur une compétence
-    private LinkedHashMap<Skill, DefaultListModel<Person>> listModelPersonAvailable = new LinkedHashMap();
-    //Liste du nombre de personnes max sur une comptétence
-    private LinkedHashMap<Skill, Integer> nbPersonBySkill = new LinkedHashMap<>();
-    //Liste de besoins de la mission en fonction des compétences
-    private LinkedHashMap<Skill, Requirement> requirementBySkill = new LinkedHashMap<>();
+    private LinkedHashMap<Skill,DefaultListModel<Person>> listModelPerson = new LinkedHashMap();
     
-    private int idRequirement = 1;
-
     public AddMission(Company myCompany, home myFrame) {
-        this.myCompany = myCompany;
-        this.myFrame = myFrame;
+        
+        this.myCompany=myCompany;
+        this.myFrame=myFrame;
         initComponents();
-
     }
 
     /**
@@ -69,9 +58,9 @@ public class AddMission extends javax.swing.JPanel {
         jLabelStateMission = new javax.swing.JLabel();
         jTextFieldNameMission = new javax.swing.JTextField();
         jTextFieldDurationMission = new javax.swing.JTextField();
+        jTextFieldNbPersonMission = new javax.swing.JTextField();
         jFormattedTextFieldFireDate = new javax.swing.JFormattedTextField();
         jComboBox1 = new javax.swing.JComboBox();
-        jSpinnerNbPersonMission = new javax.swing.JSpinner();
         jSeparator2 = new javax.swing.JSeparator();
         jPanelRightDetail = new javax.swing.JPanel();
         jLabelSkill = new javax.swing.JLabel();
@@ -93,8 +82,6 @@ public class AddMission extends javax.swing.JPanel {
         jListPersonAvailable = new javax.swing.JList<Person>();
         jButtonShiftLeftP = new javax.swing.JButton();
         jButtonShiftRightP = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jSpinnerNbPerson = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(246, 246, 246));
@@ -121,8 +108,8 @@ public class AddMission extends javax.swing.JPanel {
             .addGroup(jPanelHeader2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelReturn2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                .addComponent(jLabelTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                 .addGap(157, 157, 157))
         );
         jPanelHeader2Layout.setVerticalGroup(
@@ -148,21 +135,18 @@ public class AddMission extends javax.swing.JPanel {
         jLabelFireDateMission.setText("Date de début :");
 
         jLabelDurationMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelDurationMission.setText("Durée (en semaine) :");
+        jLabelDurationMission.setText("Durée :");
 
         jLabelNbPersonMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelNbPersonMission.setText("<html>\n\n<p>Nombre de personnes :</p>\n<p> sur la mission</p>\n\n</html>");
+        jLabelNbPersonMission.setText("Nombre de personnes :");
 
         jLabelStateMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelStateMission.setText("Etat de la mission :");
 
         jFormattedTextFieldFireDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
-        jFormattedTextFieldFireDate.setToolTipText("DD/MM/AAAA");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "En préparation", "En cours", "Planifiée" }));
         jComboBox1.setEnabled(false);
-
-        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
@@ -171,7 +155,7 @@ public class AddMission extends javax.swing.JPanel {
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelNbPersonMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNbPersonMission)
                     .addComponent(jLabelStateMission)
                     .addComponent(jLabelDurationMission)
                     .addComponent(jLabelFireDateMission)
@@ -180,11 +164,9 @@ public class AddMission extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNameMission)
                     .addComponent(jTextFieldDurationMission)
+                    .addComponent(jTextFieldNbPersonMission)
                     .addComponent(jFormattedTextFieldFireDate)
-                    .addComponent(jComboBox1, 0, 128, Short.MAX_VALUE)
-                    .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
-                        .addComponent(jSpinnerNbPersonMission, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jComboBox1, 0, 128, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -202,18 +184,16 @@ public class AddMission extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDurationMission)
                     .addComponent(jTextFieldDurationMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGap(30, 30, 30)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNbPersonMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinnerNbPersonMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNbPersonMission)
+                    .addComponent(jTextFieldNbPersonMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelStateMission)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
-
-        jFormattedTextFieldFireDate.getAccessibleContext().setAccessibleParent(jLabelFireDateMission);
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -232,8 +212,6 @@ public class AddMission extends javax.swing.JPanel {
         jListSkill.setModel(mySkillModel);
         jListSkill.setCellRenderer(new SkillRenderer());
         jListSkill.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jListSkill.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jListSkill.setSelectedIndex(1);
         jListSkill.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jListSkillMouseReleased(evt);
@@ -244,13 +222,6 @@ public class AddMission extends javax.swing.JPanel {
         DefaultListModel<Skill> skillModelAV = new DefaultListModel();
         jListSkillAvailable.setModel(skillModelAV);
         jListSkillAvailable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jListSkillAvailable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jListSkillAvailable.setSelectedIndex(1);
-        jListSkillAvailable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jListSkillAvailableMouseReleased(evt);
-            }
-        });
         jScrollPane2.setViewportView(jListSkillAvailable);
         jListSkillAvailable.setCellRenderer(new SkillRenderer());
 
@@ -263,7 +234,6 @@ public class AddMission extends javax.swing.JPanel {
         }
 
         jButtonShiftLeftS.setText("<<");
-        jButtonShiftLeftS.setEnabled(false);
         jButtonShiftLeftS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShiftLeftSActionPerformed(evt);
@@ -271,7 +241,6 @@ public class AddMission extends javax.swing.JPanel {
         });
 
         jButtonShiftRightS.setText(">>");
-        jButtonShiftRightS.setEnabled(false);
         jButtonShiftRightS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShiftRightSActionPerformed(evt);
@@ -303,11 +272,11 @@ public class AddMission extends javax.swing.JPanel {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSkillLayout.createSequentialGroup()
-                        .addContainerGap(29, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonShiftLeftS)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonShiftRightS)
-                        .addGap(0, 22, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -316,27 +285,23 @@ public class AddMission extends javax.swing.JPanel {
         jListPerson.setModel(personModel);
         jListPerson.setCellRenderer(new PersonRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jListPerson.setSelectedIndex(1);
-        jListPerson.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jListPersonMouseReleased(evt);
-            }
-        });
+        jListPerson.setEnabled(false);
         jScrollPane3.setViewportView(jListPerson);
 
         jListPersonAvailable.setModel(personModelAV);
         jListPersonAvailable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        jListPersonAvailable.setSelectedIndex(1);
-        jListPersonAvailable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jListPersonAvailableMouseReleased(evt);
-            }
-        });
         jScrollPane4.setViewportView(jListPersonAvailable);
         jListPersonAvailable.setCellRenderer(new PersonRenderer());
 
+        Set entrySetPAvailble = myCompany.listePerson.entrySet();
+        Iterator it = entrySetPAvailble.iterator();
+        while (it.hasNext()) {
+            Map.Entry me = (Map.Entry)it.next();
+            personModelAV.addElement(myCompany.listePerson.get(me.getKey()));
+
+        }
+
         jButtonShiftLeftP.setText("<<");
-        jButtonShiftLeftP.setEnabled(false);
         jButtonShiftLeftP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShiftLeftPActionPerformed(evt);
@@ -344,7 +309,6 @@ public class AddMission extends javax.swing.JPanel {
         });
 
         jButtonShiftRightP.setText(">>");
-        jButtonShiftRightP.setEnabled(false);
         jButtonShiftRightP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonShiftRightPActionPerformed(evt);
@@ -371,34 +335,21 @@ public class AddMission extends javax.swing.JPanel {
             .addGroup(jPanelPersonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonShiftLeftP)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonShiftRightP)))
+                        .addComponent(jButtonShiftRightP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Nombre de personnes requises : ");
-
-        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(0), null, Integer.valueOf(1)));
-        jSpinnerNbPerson.setEnabled(false);
-        jSpinnerNbPerson.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSpinnerNbPersonStateChanged(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
         jPanelRightDetailLayout.setHorizontalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabelSkill)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,26 +357,21 @@ public class AddMission extends javax.swing.JPanel {
                     .addComponent(jPanelPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSpinnerNbPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabelPerson))
-                        .addContainerGap(90, Short.MAX_VALUE))))
+                        .addComponent(jLabelPerson)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanelRightDetailLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabelSkill)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRightDetailLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(52, 52, 52)
                 .addComponent(jLabelSkill)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelSkill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jSpinnerNbPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelPerson)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -446,8 +392,8 @@ public class AddMission extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)
@@ -484,7 +430,7 @@ public class AddMission extends javax.swing.JPanel {
 
     private void jLabelReturn2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn2MouseReleased
         myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new MissionList(myCompany, myFrame));
+        myFrame.jPanelContainer.add(new MissionList(myCompany,myFrame));
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn2MouseReleased
@@ -498,16 +444,9 @@ public class AddMission extends javax.swing.JPanel {
         System.out.println(jListSkillAvailable.getSelectedIndex());
         Skill skillSelected = modelAvailableSkill.getElementAt(jListSkillAvailable.getSelectedIndex());
         System.out.println(jListSkillAvailable.getSelectedIndex());
-
-        //Creation du besoin avec la competence associée
-        requirementBySkill.put(skillSelected, new Requirement(idRequirement, 0, skillSelected));
-        idRequirement++;
-        
-        //Ajout du model de personne sur la compétence ajoutée
-        listModelPerson.put(skillSelected, new DefaultListModel<>());
+        listModelPerson.put(skillSelected,new DefaultListModel<>());
         //Suppression dans la liste de droite
         modelAvailableSkill.remove(jListSkillAvailable.getSelectedIndex());
-        jButtonShiftLeftS.setEnabled(false);
     }//GEN-LAST:event_jButtonShiftLeftSActionPerformed
 
     private void jButtonShiftRightSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftRightSActionPerformed
@@ -519,113 +458,32 @@ public class AddMission extends javax.swing.JPanel {
         modelMySkill.remove(jListSkill.getSelectedIndex());
         //Suppression du model de la liste des models
         listModelPerson.remove(jListSkill.getSelectedIndex());
-
+        
     }//GEN-LAST:event_jButtonShiftRightSActionPerformed
 
     private void jButtonShiftLeftPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftLeftPActionPerformed
         DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
         DefaultListModel<Person> modelAvailablePerson = (DefaultListModel<Person>) jListPersonAvailable.getModel();
-        DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListSkill.getModel();
-
-        //Ajout de la personne dans le model 
         modelMyPerson.addElement(jListPersonAvailable.getSelectedValue());
-
-        //Recuperation de la competence selectionée
-        Skill skillSelected = modelMySkill.getElementAt(jListSkill.getSelectedIndex());
-        //Recupereation du besoin selectioné
-        Requirement r = requirementBySkill.get(skillSelected);
-        //Ajout de la personne sur le besoin
-        try {
-            r.addPerson(modelAvailablePerson.getElementAt(jListPersonAvailable.getSelectedIndex()));
-        } catch (Exception ex) {
-            Logger.getLogger(AddMission.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        jButtonShiftLeftP.setEnabled(false);
+        modelAvailablePerson.remove(jListPersonAvailable.getSelectedIndex());
     }//GEN-LAST:event_jButtonShiftLeftPActionPerformed
 
     private void jButtonShiftRightPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftRightPActionPerformed
         DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
         DefaultListModel<Person> modelAvailablePerson = (DefaultListModel<Person>) jListPersonAvailable.getModel();
-        DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListSkill.getModel();
-        
-        //Recuperation de la competence selectionée
-        Skill skillSelected = modelMySkill.getElementAt(jListSkill.getSelectedIndex());
-        //Recupereation du besoin selectioné
-        Requirement r = requirementBySkill.get(skillSelected);
-        //Suppression de la personne sur le besoin
-        Person p = modelMyPerson.getElementAt(jListPerson.getSelectedIndex());
-        r.getListPersonnes().remove(r.getIndexPerson(p));
-        
-        //Suppression de la person du model
+        modelAvailablePerson.addElement(jListPerson.getSelectedValue());
         modelMyPerson.remove(jListPerson.getSelectedIndex());
     }//GEN-LAST:event_jButtonShiftRightPActionPerformed
 
-    
-    
     private void jListSkillMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillMouseReleased
-        //Recuperation de la personne selectionnée
-        JList<Skill> theListSkill = (JList) evt.getSource();
+
+        JList<Skill> theListSkill = (JList)evt.getSource();
         int index = theListSkill.locationToIndex(evt.getPoint());
         Skill skillSelected = theListSkill.getModel().getElementAt(index);
-        //Recuperation de la liste des personnes sur la competence séléctionnée
         DefaultListModel<Person> mymodel = listModelPerson.get(skillSelected);
-
-        Requirement r = requirementBySkill.get(skillSelected);
-        jSpinnerNbPerson.setValue(r.getNbTotalPersonnes());
-        jSpinnerNbPerson.setEnabled(true);
         jListPerson.setModel(mymodel);
-        jButtonShiftLeftP.setEnabled(true);
         
-        
-        //Gestion de liste des personnes sur la liste de personnes disponible
-        
-        //Creation du model
-        DefaultListModel<Person> modelPersonAvailable = new DefaultListModel();
-        //Ajout des personnes possedant la skill au model
-        for (Map.Entry<String,Person > entrySet : myCompany.listePerson.entrySet()) {
-            Person p = entrySet.getValue();
-            for (Map.Entry<String, Skill > entrySet1 : p.getSkillList().entrySet()) {
-                Skill s = entrySet1.getValue();
-                if(s.equals(skillSelected)){
-                    modelPersonAvailable.addElement(p);
-                }
-            } 
-        }
-        
-        jListPersonAvailable.setModel(modelPersonAvailable);
-        
-        //Liaison entre le model et la compétence selectionnée
-        listModelPersonAvailable.put(skillSelected,modelPersonAvailable);
-
     }//GEN-LAST:event_jListSkillMouseReleased
-
-    private void jListSkillAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillAvailableMouseReleased
-        jButtonShiftLeftS.setEnabled(true);
-    }//GEN-LAST:event_jListSkillAvailableMouseReleased
-
-    private void jListPersonAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonAvailableMouseReleased
-        DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
-
-        if ((Integer) jSpinnerNbPerson.getValue() == 0) {
-            jButtonShiftLeftP.setEnabled(false);
-        } else if (modelMyPerson.getSize() < (Integer) jSpinnerNbPerson.getValue()) {
-            jButtonShiftLeftP.setEnabled(true);
-        }
-
-    }//GEN-LAST:event_jListPersonAvailableMouseReleased
-
-    private void jListPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonMouseReleased
-        jButtonShiftLeftP.setEnabled(false);
-        jButtonShiftRightP.setEnabled(true);
-    }//GEN-LAST:event_jListPersonMouseReleased
-
-    private void jSpinnerNbPersonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerNbPersonStateChanged
-
-        Skill skillSelected = jListSkill.getSelectedValue();
-        Requirement r = requirementBySkill.get(skillSelected);
-        r.setNbTotalPerson((Integer) jSpinnerNbPerson.getValue());
-
-    }//GEN-LAST:event_jSpinnerNbPersonStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -636,7 +494,6 @@ public class AddMission extends javax.swing.JPanel {
     private javax.swing.JButton jButtonShiftRightS;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
     private javax.swing.JLabel jLabelNameMission;
@@ -661,9 +518,8 @@ public class AddMission extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSpinner jSpinnerNbPerson;
-    private javax.swing.JSpinner jSpinnerNbPersonMission;
     private javax.swing.JTextField jTextFieldDurationMission;
     private javax.swing.JTextField jTextFieldNameMission;
+    private javax.swing.JTextField jTextFieldNbPersonMission;
     // End of variables declaration//GEN-END:variables
 }

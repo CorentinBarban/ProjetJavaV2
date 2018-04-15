@@ -73,7 +73,7 @@ public class PersonToMissionTableModel extends AbstractTableModel {
         } else if (1 == columnIndex) {
             return row.getFirstName();
         } else if (2 == columnIndex) {
-            return row.getNbProject();
+            return row.getNbMissions();
         } else if (3 == columnIndex) {
              return false;
         } 

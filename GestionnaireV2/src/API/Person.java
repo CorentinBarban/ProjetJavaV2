@@ -14,7 +14,8 @@ import java.util.Map;
 import java.util.Iterator;
 
 /**
- * @author Mathieu Stivanin Cette classe représente une personne.
+ * Cette classe représente une personne.
+ * @author Mathieu Stivanin 
  */
 public class Person {
 
@@ -23,7 +24,7 @@ public class Person {
     private String lastName;
     private Date dateOfHire;
     private HashMap<String,Skill> skillList;
-    private int nbProject;
+    private int nbMissions;
     
     /**
      * Constructeur d'une personne.
@@ -40,7 +41,7 @@ public class Person {
         this.idPerson = id;
         this.lastName = ln;
         this.firstName = fn;
-        this.nbProject = 0;
+        this.nbMissions = 0;
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date hDate = formatter.parse(hd); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
@@ -137,19 +138,35 @@ public class Person {
     public Date getDateOfHire() {
         return dateOfHire;
     }
+    
+    /**
+     * Setter de la date d'embauche
+     * @param dateOfHire
+     * @throws ParseException 
+     */
 
     public void setDateOfHire(String dateOfHire) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date hDate = formatter.parse(dateOfHire);
         this.dateOfHire = hDate;
     }
+    
+    /**
+     * Getter du nombre de missions
+     * @return nbMissions le nombre de missions sur lesquelles travaille la personne
+     */
 
-    public int getNbProject() {
-        return nbProject;
+    public int getNbMissions() {
+        return nbMissions;
     }
+    
+    /**
+     * Setter du nombre de missions
+     * @param nbMissions nombre de missions sur lesquelles travaille la personne
+     */
 
-    public void setNbProject(int nbProject) {
-        this.nbProject = nbProject;
+    public void setNbMissions(int nbMissions) {
+        this.nbMissions = nbMissions;
     }
     
     
