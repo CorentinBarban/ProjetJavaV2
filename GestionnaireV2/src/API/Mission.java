@@ -39,24 +39,45 @@ public class Mission {
      * Constructeur d'une mission
      *
      * @param id représente l'id de la mission
-     * @param n représente le nom de la mission
-     * @param sd représente la date de début de la mission
+     * @param missionName représente le nom de la mission
+     * @param startDate représente la date de début de la mission
      * @param md représente la durée de la mission
      * @param state represente l'état de la mission
      * @throws ParseException Erreur sur le format de la date
      */
-    public Mission(int id, String n, String sd, int md, Etat state) throws ParseException {
+    public Mission(int id, String missionName, String startDate, int missionDuration, Etat state) throws ParseException {
         this.idMission = id;
-        this.missionName = n;
+        this.missionName = missionName;
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date sDate = formatter.parse(sd);// Conversion du texte en date selon le format vu au dessus
+        Date sDate = formatter.parse(startDate);// Conversion du texte en date selon le format vu au dessus
         this.startDate = sDate;
-        this.missionDuration = md;
+        this.missionDuration = missionDuration;
         this.etat = state;
         this.personOnMission = new HashMap();
         this.requirements = new HashMap();
     }
-
+    
+    /**
+     * Constructeur d'une mission
+     *
+     * @param id représente l'id de la mission
+     * @param missionName représente le nom de la mission
+     * @param startDate représente la date de début de la mission
+     * @param md représente la durée de la mission
+     * @param state represente l'état de la mission
+     * @throws ParseException Erreur sur le format de la date
+     */
+    public Mission(String missionName, String startDate, int missionDuration, Etat state) throws ParseException {
+        this.missionName = missionName;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date sDate = formatter.parse(startDate);// Conversion du texte en date selon le format vu au dessus
+        this.startDate = sDate;
+        this.missionDuration = missionDuration;
+        this.etat = state;
+        this.personOnMission = new HashMap();
+        this.requirements = new HashMap();
+    }
+    
     /**
      * Getter de l'état de la mission
      *
