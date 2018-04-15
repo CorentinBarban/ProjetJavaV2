@@ -38,6 +38,7 @@ public class home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelContainer = new javax.swing.JPanel();
+        jPanelLogo2 = new javax.swing.JPanel();
         jPanelMenuLeft = new javax.swing.JPanel();
         jPanelMenuPerson = new javax.swing.JPanel();
         jLabelPerson = new javax.swing.JLabel();
@@ -46,14 +47,25 @@ public class home extends javax.swing.JFrame {
         jPanelLogo = new javax.swing.JPanel();
         jLabelLogo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arès");
 
         jPanelContainer.setBackground(new java.awt.Color(246, 246, 246));
         jPanelContainer.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout jPanelLogo2Layout = new javax.swing.GroupLayout(jPanelLogo2);
+        jPanelLogo2.setLayout(jPanelLogo2Layout);
+        jPanelLogo2Layout.setHorizontalGroup(
+            jPanelLogo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 557, Short.MAX_VALUE)
+        );
+        jPanelLogo2Layout.setVerticalGroup(
+            jPanelLogo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 537, Short.MAX_VALUE)
+        );
+
+        jPanelContainer.add(jPanelLogo2, "card2");
 
         jPanelMenuLeft.setBackground(new java.awt.Color(49, 51, 66));
 
@@ -175,14 +187,8 @@ public class home extends javax.swing.JFrame {
                 .addComponent(jPanelMenuPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanelMenuMission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -193,7 +199,7 @@ public class home extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenuLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE))
+                .addComponent(jPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -317,11 +323,10 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMission;
     private javax.swing.JLabel jLabelPerson;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     protected javax.swing.JPanel jPanelContainer;
     private javax.swing.JPanel jPanelLogo;
+    private javax.swing.JPanel jPanelLogo2;
     private javax.swing.JPanel jPanelMenuLeft;
     private javax.swing.JPanel jPanelMenuMission;
     private javax.swing.JPanel jPanelMenuPerson;
