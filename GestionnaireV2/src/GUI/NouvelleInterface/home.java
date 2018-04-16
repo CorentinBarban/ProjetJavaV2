@@ -25,7 +25,10 @@ public class home extends javax.swing.JFrame {
         loadData();
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
+        jPanelContainer.removeAll();
+        jPanelContainer.add(new MissionList(myCompany,this));
+        jPanelContainer.repaint();
+        jPanelContainer.revalidate();
     }
 
     /**
@@ -256,6 +259,7 @@ public class home extends javax.swing.JFrame {
 
     private void jLabelLogoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogoMouseReleased
         jPanelContainer.removeAll();
+        jPanelContainer.add(new MissionList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
     }//GEN-LAST:event_jLabelLogoMouseReleased
