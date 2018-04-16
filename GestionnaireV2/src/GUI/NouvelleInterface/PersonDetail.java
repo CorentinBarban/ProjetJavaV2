@@ -65,7 +65,7 @@ public class PersonDetail extends javax.swing.JPanel {
         jLabelSkill = new javax.swing.JLabel();
         jLabelOnMission = new javax.swing.JLabel();
         DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<>();
+        jComboBoxSkill = new javax.swing.JComboBox<Skill>();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -229,21 +229,21 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelContainerMissionLayout.setHorizontalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
-                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -278,7 +278,7 @@ public class PersonDetail extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(579, 579, 579))
+                .addContainerGap(472, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(109, 109, 109)
@@ -313,20 +313,11 @@ public class PersonDetail extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelHireDate;
     private javax.swing.JLabel jLabelLastName;
     private javax.swing.JLabel jLabelOnMission;
-    public javax.swing.JLabel jLabelReturn2;
-    public javax.swing.JLabel jLabelReturn3;
-    public javax.swing.JLabel jLabelReturn4;
-    private javax.swing.JLabel jLabelReturn5;
+    public javax.swing.JLabel jLabelReturn5;
     private javax.swing.JLabel jLabelSkill;
-    public javax.swing.JLabel jLabelTitle2;
-    public javax.swing.JLabel jLabelTitle3;
-    public javax.swing.JLabel jLabelTitle4;
-    private javax.swing.JLabel jLabelTitle5;
+    public javax.swing.JLabel jLabelTitle5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelContainerMission;
-    private javax.swing.JPanel jPanelHeader2;
-    private javax.swing.JPanel jPanelHeader3;
-    private javax.swing.JPanel jPanelHeader4;
     private javax.swing.JPanel jPanelHeader5;
     private javax.swing.JPanel jPanelLeftDetail;
     private javax.swing.JPanel jPanelRightDetail;

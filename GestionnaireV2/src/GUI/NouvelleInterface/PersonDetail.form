@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanelHeader5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="579" max="-2" attributes="0"/>
+              <EmptySpace pref="472" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
@@ -158,23 +158,23 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanelLeftDetail" pref="321" max="32767" attributes="0"/>
+                      <Component id="jPanelLeftDetail" pref="329" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanelRightDetail" pref="348" max="32767" attributes="0"/>
+                      <Component id="jPanelRightDetail" pref="356" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanelLeftDetail" alignment="1" pref="496" max="32767" attributes="0"/>
-                  <Component id="jPanelRightDetail" alignment="1" pref="496" max="32767" attributes="0"/>
+                  <Component id="jPanelLeftDetail" alignment="1" pref="394" max="32767" attributes="0"/>
+                  <Component id="jPanelRightDetail" alignment="1" pref="394" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="345" max="-2" attributes="0"/>
-                      <EmptySpace pref="135" max="32767" attributes="0"/>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
