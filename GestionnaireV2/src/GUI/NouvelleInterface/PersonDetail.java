@@ -7,13 +7,14 @@ package GUI.NouvelleInterface;
 
 import API.Company;
 import API.Person;
-import API.Requirement;
 import API.Skill;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -32,6 +33,10 @@ public class PersonDetail extends javax.swing.JPanel {
         this.myCompany=myCompany;
         this.myFrame=myFrame;
         initComponents();
+        
+        jTextFieldLastName.setText(this.personSelected.getLastName());
+        jTextFieldFirstName.setText(this.personSelected.getFirstName());
+        jFormattedTextFieldHireDate.setValue(this.personSelected.getDateOfHire());
     }
 
     /**
@@ -43,6 +48,9 @@ public class PersonDetail extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelHeader5 = new javax.swing.JPanel();
+        jLabelTitle5 = new javax.swing.JLabel();
+        jLabelReturn5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanelContainerMission = new javax.swing.JPanel();
         jPanelLeftDetail = new javax.swing.JPanel();
@@ -56,8 +64,46 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelRightDetail = new javax.swing.JPanel();
         jLabelSkill = new javax.swing.JLabel();
         jLabelOnMission = new javax.swing.JLabel();
+        DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
+        jComboBoxSkill = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(246, 246, 246));
+
+        jPanelHeader5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabelTitle5.setFont(new java.awt.Font("Roboto", 0, 40));
+        jLabelTitle5.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle5.setText("Détails de la personne");
+
+        jLabelReturn5.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelReturn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn5.setText("Retour");
+        jLabelReturn5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelReturn5MouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelHeader5Layout = new javax.swing.GroupLayout(jPanelHeader5);
+        jPanelHeader5.setLayout(jPanelHeader5Layout);
+        jPanelHeader5Layout.setHorizontalGroup(
+            jPanelHeader5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelHeader5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelReturn5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addComponent(jLabelTitle5, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                .addGap(178, 178, 178))
+        );
+        jPanelHeader5Layout.setVerticalGroup(
+            jPanelHeader5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeader5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelHeader5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabelTitle5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelReturn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
 
         jPanel2.setBackground(new java.awt.Color(246, 246, 246));
 
@@ -76,7 +122,13 @@ public class PersonDetail extends javax.swing.JPanel {
         jLabelFirstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelFirstName.setText("Prénom :");
 
+        jTextFieldLastName.setEditable(false);
+
+        jTextFieldFirstName.setEditable(false);
+
+        jFormattedTextFieldHireDate.setEditable(false);
         jFormattedTextFieldHireDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
+        jFormattedTextFieldHireDate.setEditable(false);
 
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
@@ -90,7 +142,7 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jLabelHireDate))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                     .addComponent(jTextFieldFirstName)
                     .addComponent(jFormattedTextFieldHireDate))
                 .addContainerGap())
@@ -125,6 +177,27 @@ public class PersonDetail extends javax.swing.JPanel {
         jLabelOnMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelOnMission.setText("Sur Missions :");
 
+        jComboBoxSkill.setMaximumRowCount(20);
+        jComboBoxSkill.setModel(skillModel);
+        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
+
+        HashMap<String,Skill> mySkillList= personSelected.getSkillList();
+
+        Set entrySetSkill = mySkillList.entrySet();
+        Iterator itSkill = entrySetSkill.iterator();
+
+        while (itSkill.hasNext()) {
+
+            Map.Entry me = (Map.Entry)itSkill.next();
+            Skill myskill = mySkillList.get(me.getKey());
+            skillModel.addElement(myskill);
+        }
+        jComboBoxSkill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSkillActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
         jPanelRightDetailLayout.setHorizontalGroup(
@@ -133,15 +206,20 @@ public class PersonDetail extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelOnMission)
-                    .addComponent(jLabelSkill))
-                .addGap(0, 239, Short.MAX_VALUE))
+                    .addGroup(jPanelRightDetailLayout.createSequentialGroup()
+                        .addComponent(jLabelSkill)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxSkill, 0, 154, Short.MAX_VALUE)))
+                .addGap(70, 70, 70))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabelSkill)
-                .addGap(106, 106, 106)
+                .addGap(71, 71, 71)
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelSkill)
+                    .addComponent(jComboBoxSkill, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100)
                 .addComponent(jLabelOnMission)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -160,12 +238,12 @@ public class PersonDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -189,34 +267,67 @@ public class PersonDetail extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addComponent(jPanelHeader5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 11, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 12, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelHeader5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(579, 579, 579))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 12, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 12, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabelReturn5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn5MouseReleased
+        myFrame.jPanelContainer.removeAll();
+        myFrame.jPanelContainer.add(new PersonList(myCompany,myFrame));
+        myFrame.repaint();
+        myFrame.revalidate();
+    }//GEN-LAST:event_jLabelReturn5MouseReleased
+
+    private void jComboBoxSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSkillActionPerformed
+        //Recuperer l'id de l'element selectioné
+        int elt = jComboBoxSkill.getSelectedIndex();
+        //Creation du model de skill
+        DefaultListModel<Skill> modelSkill = new DefaultListModel();
+        // Recuperer les skills
+        HashMap<String, Skill> skillList = personSelected.getSkillList();
+        
+        //jScrollPane1.setViewportView(modelSkill);
+    }//GEN-LAST:event_jComboBoxSkillActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<Skill> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
     private javax.swing.JLabel jLabelFirstName;
     private javax.swing.JLabel jLabelHireDate;
     private javax.swing.JLabel jLabelLastName;
     private javax.swing.JLabel jLabelOnMission;
+    public javax.swing.JLabel jLabelReturn2;
+    public javax.swing.JLabel jLabelReturn3;
+    public javax.swing.JLabel jLabelReturn4;
+    private javax.swing.JLabel jLabelReturn5;
     private javax.swing.JLabel jLabelSkill;
+    public javax.swing.JLabel jLabelTitle2;
+    public javax.swing.JLabel jLabelTitle3;
+    public javax.swing.JLabel jLabelTitle4;
+    private javax.swing.JLabel jLabelTitle5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelContainerMission;
+    private javax.swing.JPanel jPanelHeader2;
+    private javax.swing.JPanel jPanelHeader3;
+    private javax.swing.JPanel jPanelHeader4;
+    private javax.swing.JPanel jPanelHeader5;
     private javax.swing.JPanel jPanelLeftDetail;
     private javax.swing.JPanel jPanelRightDetail;
     private javax.swing.JSeparator jSeparator2;

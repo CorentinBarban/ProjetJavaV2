@@ -18,7 +18,6 @@ import java.util.Map;
 import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 
 /**
