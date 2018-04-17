@@ -21,33 +21,21 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanelHeader2" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jButtonDelete" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButtonEdit" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jPanelContainerMission" max="32767" attributes="0"/>
-              </Group>
+              <Component id="jPanelContainerMission" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
+          <Component id="jPanelHeader2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanelHeader2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="jPanelContainerMission" max="32767" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtonEdit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtonDelete" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,8 +68,8 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanelLeftDetail" alignment="1" pref="437" max="32767" attributes="0"/>
-              <Component id="jPanelRightDetail" alignment="1" pref="437" max="32767" attributes="0"/>
+              <Component id="jPanelLeftDetail" alignment="1" pref="421" max="32767" attributes="0"/>
+              <Component id="jPanelRightDetail" alignment="1" pref="421" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" pref="345" max="-2" attributes="0"/>
@@ -172,7 +160,7 @@
                               <Component id="jProgressBar1" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -350,7 +338,7 @@
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="HashMap&lt;Integer, Requirement&gt; requirementsListNb = myMission.getRequirements();&#xa;Requirement requirement = requirementsListNb.get(1);&#xa;if(requirement == null){&#xa;    jTextFieldNbPersonSkill.setText(&quot;0&quot;);&#xa;}else{&#xa;    jTextFieldNbPersonSkill.setText(&quot;&quot;+requirement.getNbTotalPersonnes());&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="HashMap&lt;Integer, Requirement&gt; requirementsListNb = myMission.getRequirements();&#xa;Requirement requirement = requirementsListNb.get(1);&#xa;jTextFieldNbPersonSkill.setText(&quot;&quot;+requirement.getNbTotalPersonnes());"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelPerson">
@@ -370,14 +358,14 @@
               <SubComponents>
                 <Component class="javax.swing.JList" name="jListPerson">
                   <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());&#xa;jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);&#xa;&#xa;if(personList !=null){&#xa;    Iterator it = personList.iterator();&#xa;    for (Person personList1 : personList) {&#xa;        modelPerson.addElement(personList1);&#xa;    }&#xa;}">
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());&#xa;jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);&#xa;&#xa;Iterator it = personList.iterator();&#xa;for (Person personList1 : personList) {&#xa;    modelPerson.addElement(personList1);&#xa;}">
                       <Connection code="modelPerson" type="code"/>
                     </Property>
                     <Property name="selectionMode" type="int" value="0"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="int elt = 0;"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Creation du model personne&#xa;DefaultListModel&lt;Person&gt; modelPerson = new DefaultListModel();&#xa;&#xa;// Recuperer les personnes sur un besoins&#xa;HashMap&lt;Integer, Requirement&gt; requirementsList = myMission.getRequirements();&#xa;Requirement requirementSelected = requirementsList.get(elt+1);&#xa;List&lt;Person&gt; personList = null;&#xa;if(requirementSelected != null){&#xa;   personList = requirementSelected.getListPersonnes();&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Creation du model personne&#xa;DefaultListModel&lt;Person&gt; modelPerson = new DefaultListModel();&#xa;&#xa;// Recuperer les personnes sur un besoins&#xa;HashMap&lt;Integer, Requirement&gt; requirementsList = myMission.getRequirements();&#xa;Requirement requirementSelected = requirementsList.get(elt+1);&#xa;&#xa;List&lt;Person&gt; personList = requirementSelected.getListPersonnes();"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Person&gt;"/>
                   </AuxValues>
                 </Component>
@@ -469,18 +457,5 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButtonEdit">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Modifier"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButtonDelete">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Supprimer"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDeleteActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

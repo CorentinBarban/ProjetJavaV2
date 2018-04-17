@@ -10,7 +10,6 @@ import API.Mission;
 import API.Person;
 import API.Requirement;
 import API.Skill;
-import Management.ManageMission;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -108,8 +107,6 @@ public class MissionDetail extends javax.swing.JPanel {
         jPanelHeader2 = new javax.swing.JPanel();
         jLabelTitle2 = new javax.swing.JLabel();
         jLabelReturn2 = new javax.swing.JLabel();
-        jButtonEdit = new javax.swing.JButton();
-        jButtonDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -205,7 +202,7 @@ public class MissionDetail extends javax.swing.JPanel {
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -222,11 +219,7 @@ public class MissionDetail extends javax.swing.JPanel {
 
         HashMap<Integer, Requirement> requirementsListNb = myMission.getRequirements();
         Requirement requirement = requirementsListNb.get(1);
-        if(requirement == null){
-            jTextFieldNbPersonSkill.setText("0");
-        }else{
-            jTextFieldNbPersonSkill.setText(""+requirement.getNbTotalPersonnes());
-        }
+        jTextFieldNbPersonSkill.setText(""+requirement.getNbTotalPersonnes());
         jTextFieldNbPersonSkill.setEditable(false);
 
         jLabelPerson.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -238,19 +231,15 @@ public class MissionDetail extends javax.swing.JPanel {
         // Recuperer les personnes sur un besoins
         HashMap<Integer, Requirement> requirementsList = myMission.getRequirements();
         Requirement requirementSelected = requirementsList.get(elt+1);
-        List<Person> personList = null;
-        if(requirementSelected != null){
-            personList = requirementSelected.getListPersonnes();
-        }
+
+        List<Person> personList = requirementSelected.getListPersonnes();
         jListPerson.setModel(modelPerson);
         jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        if(personList !=null){
-            Iterator it = personList.iterator();
-            for (Person personList1 : personList) {
-                modelPerson.addElement(personList1);
-            }
+        Iterator it = personList.iterator();
+        for (Person personList1 : personList) {
+            modelPerson.addElement(personList1);
         }
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jListPerson);
@@ -330,8 +319,8 @@ public class MissionDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -374,41 +363,23 @@ public class MissionDetail extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jButtonEdit.setText("Modifier");
-
-        jButtonDelete.setText("Supprimer");
-        jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDeleteActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelHeader2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonEdit))
-                    .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(30, 30, 30))
+            .addComponent(jPanelHeader2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(42, 42, 42)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonEdit)
-                    .addComponent(jButtonDelete))
-                .addGap(13, 13, 13))
+                .addGap(27, 27, 27))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -445,22 +416,8 @@ public class MissionDetail extends javax.swing.JPanel {
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn2MouseReleased
 
-    private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
-        myCompany.listeMission.remove(myCompany.getKeyFromValue(myCompany.listeMission, myMission));
-        
-        Management.ManageMission mm = new ManageMission();
-        mm.writeData(myCompany);
-        mm.readData(myCompany);
-        myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new MissionList(myCompany,myFrame));
-        myFrame.repaint();
-        myFrame.revalidate();
-    }//GEN-LAST:event_jButtonDeleteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonDelete;
-    private javax.swing.JButton jButtonEdit;
     private javax.swing.JComboBox<Skill> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabelDurationMission;

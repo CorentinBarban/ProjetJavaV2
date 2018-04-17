@@ -123,7 +123,6 @@ public class XMLMissionHandler extends DefaultHandler {
                     m.addPerson(p);
                     //Incremente le nombre de missions de la personne
                     p.setNbMissions(p.getNbMissions()+1);
-                    p.addMission(m);
                 }
                 
                 listIdPersons.removeAll(listIdPersons);

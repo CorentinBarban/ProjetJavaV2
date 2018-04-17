@@ -6,7 +6,6 @@
 package GUI.NouvelleInterface;
 
 import API.Company;
-import API.Mission;
 import API.Person;
 import API.Skill;
 import java.util.HashMap;
@@ -65,10 +64,8 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelRightDetail = new javax.swing.JPanel();
         jLabelSkill = new javax.swing.JLabel();
         jLabelOnMission = new javax.swing.JLabel();
-        DefaultComboBoxModel<Mission> missionModel = new DefaultComboBoxModel();
-        jComboBoxMission = new javax.swing.JComboBox<>();
         DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
-        jComboBoxSkill1 = new javax.swing.JComboBox<>();
+        jComboBoxSkill = new javax.swing.JComboBox<Skill>();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -180,30 +177,9 @@ public class PersonDetail extends javax.swing.JPanel {
         jLabelOnMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelOnMission.setText("Sur Missions :");
 
-        jComboBoxMission.setMaximumRowCount(20);
-        jComboBoxMission.setModel(missionModel);
-        jComboBoxMission.setRenderer(new GUI.NouvelleInterface.MissionRenderer());
-
-        HashMap<Integer,Mission> myMissionList= personSelected.getMissionList();
-
-        Set entrySetMission = myMissionList.entrySet();
-        Iterator itMission = entrySetMission.iterator();
-
-        while (itMission.hasNext()) {
-
-            Map.Entry me = (Map.Entry)itMission.next();
-            Mission myMission = myMissionList.get(me.getKey());
-            missionModel.addElement(myMission);
-        }
-        jComboBoxMission.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxMissionActionPerformed(evt);
-            }
-        });
-
-        jComboBoxSkill1.setMaximumRowCount(20);
-        jComboBoxSkill1.setModel(skillModel);
-        jComboBoxSkill1.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
+        jComboBoxSkill.setMaximumRowCount(20);
+        jComboBoxSkill.setModel(skillModel);
+        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
 
         HashMap<String,Skill> mySkillList= personSelected.getSkillList();
 
@@ -211,13 +187,14 @@ public class PersonDetail extends javax.swing.JPanel {
         Iterator itSkill = entrySetSkill.iterator();
 
         while (itSkill.hasNext()) {
+
             Map.Entry me = (Map.Entry)itSkill.next();
             Skill myskill = mySkillList.get(me.getKey());
             skillModel.addElement(myskill);
         }
-        jComboBoxSkill1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxSkill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxSkill1ActionPerformed(evt);
+                jComboBoxSkillActionPerformed(evt);
             }
         });
 
@@ -228,15 +205,12 @@ public class PersonDetail extends javax.swing.JPanel {
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                        .addComponent(jLabelOnMission)
-                        .addGap(27, 27, 27)
-                        .addComponent(jComboBoxMission, 0, 162, Short.MAX_VALUE))
+                    .addComponent(jLabelOnMission)
                     .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                         .addComponent(jLabelSkill)
-                        .addGap(25, 25, 25)
-                        .addComponent(jComboBoxSkill1, 0, 162, Short.MAX_VALUE)))
-                .addGap(60, 60, 60))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxSkill, 0, 154, Short.MAX_VALUE)))
+                .addGap(70, 70, 70))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,12 +218,10 @@ public class PersonDetail extends javax.swing.JPanel {
                 .addGap(71, 71, 71)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelSkill)
-                    .addComponent(jComboBoxSkill1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(93, 93, 93)
-                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelOnMission)
-                    .addComponent(jComboBoxMission, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(175, Short.MAX_VALUE))
+                    .addComponent(jComboBoxSkill, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100)
+                .addComponent(jLabelOnMission)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelContainerMissionLayout = new javax.swing.GroupLayout(jPanelContainerMission);
@@ -266,8 +238,8 @@ public class PersonDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,25 +294,20 @@ public class PersonDetail extends javax.swing.JPanel {
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn5MouseReleased
 
-    private void jComboBoxSkill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSkill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxSkill1ActionPerformed
-
-    private void jComboBoxMissionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMissionActionPerformed
+    private void jComboBoxSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSkillActionPerformed
         //Recuperer l'id de l'element selectioné
-        int elt = jComboBoxMission.getSelectedIndex();
+        int elt = jComboBoxSkill.getSelectedIndex();
         //Creation du model de skill
         DefaultListModel<Skill> modelSkill = new DefaultListModel();
         // Recuperer les skills
         HashMap<String, Skill> skillList = personSelected.getSkillList();
-
+        
         //jScrollPane1.setViewportView(modelSkill);
-    }//GEN-LAST:event_jComboBoxMissionActionPerformed
+    }//GEN-LAST:event_jComboBoxSkillActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<Mission> jComboBoxMission;
-    private javax.swing.JComboBox<Skill> jComboBoxSkill1;
+    private javax.swing.JComboBox<Skill> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
     private javax.swing.JLabel jLabelFirstName;
     private javax.swing.JLabel jLabelHireDate;

@@ -27,16 +27,13 @@ public class XMLPersonHandler extends DefaultHandler {
    boolean bId = false;
    boolean bDate = false;
    boolean bSkill = false;
-   boolean bMission = false;
    
    String id;
    String fName;
    String lName;
    String date;
    String idSkill;
-   int idMission;
    ArrayList <String> listIdSkills = new ArrayList<>();
-    ArrayList<Integer> listIdMissions = new ArrayList<>();
    Company c;
    
    /**
@@ -72,8 +69,6 @@ public class XMLPersonHandler extends DefaultHandler {
          bDate = true;
       } else if (qName.equalsIgnoreCase("idSkill")) {
          bSkill = true;
-      } else if (qName.equalsIgnoreCase("idMission")){
-          bMission = true;
       }
    }
    
@@ -131,10 +126,6 @@ public class XMLPersonHandler extends DefaultHandler {
         idSkill = new String(ch, start, length);
         bSkill = false;
         listIdSkills.add(idSkill);
-      } else if (bMission) {
-        idMission = Integer.parseInt(new String(ch, start, length));
-        bMission = false;
-        listIdMissions.add(idMission);
       }
    }
 }
