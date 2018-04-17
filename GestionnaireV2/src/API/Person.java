@@ -24,6 +24,7 @@ public class Person {
     private String lastName;
     private Date dateOfHire;
     private HashMap<String,Skill> skillList;
+    private HashMap<Integer,Mission> missionList;
     private int nbMissions;
     
     /**
@@ -46,6 +47,7 @@ public class Person {
         Date hDate = formatter.parse(hd); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
         skillList=new HashMap();
+        missionList = new HashMap<>();
     }
 
     /**
@@ -61,6 +63,7 @@ public class Person {
         Date hDate = new Date(); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
         skillList=new HashMap();
+        missionList = new HashMap<>();
     }
 
     /**
@@ -75,6 +78,18 @@ public class Person {
             e.printStackTrace();
         }
         
+    }
+    /**
+     * Assignation de mission(s) à la personne
+     *
+     * @param m représente la mission à assigner
+     */
+    public void addMission(Mission m){
+        try{
+            this.missionList.put(m.getIdMission(),m);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     /**
      * Getter de l'identifiant
@@ -189,12 +204,34 @@ public class Person {
             Map.Entry mapEntry = (Map.Entry) skillIterator.next();
             message = message + "          <idSkill>"+mapEntry.getKey() + "</idSkill>\n";
 	}
-        message = message + "     </skills_list>\n</person>\n";
+        message = message + "     </skills_list>\n     <missions_list>\n";
+        
+        Iterator missionIterator = missionList.entrySet().iterator();
+        
+        while (missionIterator.hasNext()) {
+            Map.Entry mapEntry = (Map.Entry) missionIterator.next();
+            message = message + "          <idMission>"+mapEntry.getKey() + "</idMission>\n";
+	}
+        message = message + "     </missions_list>\n</person>\n";
+        
         return message;
     }
+    /**
+     * Getter de la liste de compétences
+     * @return skillList la liste de compétences
+     */
 
     public HashMap<String, Skill> getSkillList() {
         return skillList;
+    }
+    
+    /**
+     * Getter de la liste de missions
+     * @return missionList la liste de missions
+     */
+
+    public HashMap<Integer, Mission> getMissionList() {
+        return missionList;
     }
 
 }

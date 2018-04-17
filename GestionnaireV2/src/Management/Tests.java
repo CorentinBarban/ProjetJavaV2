@@ -24,8 +24,8 @@ public class Tests {
         ms.readData(c1);
         mp.readData(c1);
         mm.readData(c1);
-        c1.listeMission.get(1).verification();
-        mm.writeData(c1);
+        System.out.println(c1.listePerson);
+        mp.writeData(c1);
     }
             
 }

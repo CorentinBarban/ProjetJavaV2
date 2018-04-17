@@ -169,8 +169,8 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanelLeftDetail" alignment="1" pref="394" max="32767" attributes="0"/>
-                  <Component id="jPanelRightDetail" alignment="1" pref="394" max="32767" attributes="0"/>
+                  <Component id="jPanelLeftDetail" alignment="1" pref="399" max="32767" attributes="0"/>
+                  <Component id="jPanelRightDetail" alignment="1" pref="399" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="345" max="-2" attributes="0"/>
@@ -305,14 +305,18 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelOnMission" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabelOnMission" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxMission" pref="162" max="32767" attributes="0"/>
+                              </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabelSkill" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxSkill" pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxSkill1" pref="162" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -322,11 +326,14 @@
                           <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelSkill" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBoxSkill" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jComboBoxSkill1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="jLabelOnMission" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelOnMission" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxMission" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="175" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -348,7 +355,24 @@
                     <Property name="text" type="java.lang.String" value="Sur Missions :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBoxSkill">
+                <Component class="javax.swing.JComboBox" name="jComboBoxMission">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" value="20"/>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="missionModel" type="code"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxMissionActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;&gt;()"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultComboBoxModel&lt;Mission&gt; missionModel = new DefaultComboBoxModel();"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxMission.setRenderer(new GUI.NouvelleInterface.MissionRenderer());&#xa;&#xa;HashMap&lt;Integer,Mission&gt; myMissionList= personSelected.getMissionList();&#xa;&#xa;&#xa;Set entrySetMission = myMissionList.entrySet();&#xa;Iterator itMission = entrySetMission.iterator();&#xa;&#xa;while (itMission.hasNext()) {&#xa;   &#xa;    Map.Entry me = (Map.Entry)itMission.next();&#xa;    Mission myMission = myMissionList.get(me.getKey());&#xa;    missionModel.addElement(myMission); &#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Mission&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jComboBoxSkill1">
                   <Properties>
                     <Property name="maximumRowCount" type="int" value="20"/>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -356,11 +380,11 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxSkillActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxSkill1ActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultComboBoxModel&lt;Skill&gt; skillModel = new DefaultComboBoxModel();"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());&#xa;&#xa;HashMap&lt;String,Skill&gt; mySkillList= personSelected.getSkillList();&#xa;&#xa;&#xa;Set entrySetSkill = mySkillList.entrySet();&#xa;Iterator itSkill = entrySetSkill.iterator();&#xa;&#xa;while (itSkill.hasNext()) {&#xa;   &#xa;    Map.Entry me = (Map.Entry)itSkill.next();&#xa;    Skill myskill = mySkillList.get(me.getKey());&#xa;    skillModel.addElement(myskill); &#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxSkill1.setRenderer(new GUI.NouvelleInterface.SkillRenderer());&#xa;&#xa;HashMap&lt;String,Skill&gt; mySkillList= personSelected.getSkillList();&#xa;&#xa;&#xa;Set entrySetSkill = mySkillList.entrySet();&#xa;Iterator itSkill = entrySetSkill.iterator();&#xa;&#xa;while (itSkill.hasNext()) {&#xa;    Map.Entry me = (Map.Entry)itSkill.next();&#xa;    Skill myskill = mySkillList.get(me.getKey());&#xa;    skillModel.addElement(myskill); &#xa;}"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Skill&gt;"/>
                   </AuxValues>
                 </Component>

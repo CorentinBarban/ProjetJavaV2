@@ -119,11 +119,11 @@ public class XMLMissionHandler extends DefaultHandler {
                 c.addMission(m);
                 for (int i = 0; i < listIdPersons.size(); i++) {
                     //Ajout de la personne sur la mission
-                    m.addPerson(c.listePerson.get(listIdPersons.get(i)));
-                    
-                    //Incremente le nombre de missions de la personne
                     Person p = c.listePerson.get(listIdPersons.get(i));
+                    m.addPerson(p);
+                    //Incremente le nombre de missions de la personne
                     p.setNbMissions(p.getNbMissions()+1);
+                    p.addMission(m);
                 }
                 
                 listIdPersons.removeAll(listIdPersons);
