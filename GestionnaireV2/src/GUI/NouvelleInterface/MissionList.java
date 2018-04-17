@@ -52,6 +52,7 @@ public class MissionList extends javax.swing.JPanel {
         jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
         jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
         jLabelTitle.setText("Liste des missions");
+        jLabelTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabelAddMission.setBackground(java.awt.Color.lightGray);
         jLabelAddMission.setFont(new java.awt.Font("Roboto", 0, 20));
@@ -68,8 +69,8 @@ public class MissionList extends javax.swing.JPanel {
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelTitle)
+                .addContainerGap(329, Short.MAX_VALUE)
+                .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(201, 201, 201)
                 .addComponent(jLabelAddMission)
                 .addGap(41, 41, 41))
@@ -81,7 +82,7 @@ public class MissionList extends javax.swing.JPanel {
                 .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAddMission)
                     .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setWheelScrollingEnabled(false);
@@ -104,7 +105,7 @@ public class MissionList extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

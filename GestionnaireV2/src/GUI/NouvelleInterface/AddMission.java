@@ -556,7 +556,7 @@ public class AddMission extends javax.swing.JPanel {
         //Ajout de la personne sur le besoin
         try {
             r.addPerson(modelAvailablePerson.getElementAt(jListPersonAvailable.getSelectedIndex()));
-            
+
         } catch (Exception ex) {
             Logger.getLogger(AddMission.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -597,7 +597,12 @@ public class AddMission extends javax.swing.JPanel {
 
         Requirement r = requirementBySkill.get(skillSelected);
         jSpinnerNbPerson.setValue(r.getNbTotalPersonnes());
-        jSpinnerNbPerson.setEnabled(true);
+        if ((Integer) jSpinnerNbPersonMission.getValue() != 0) {
+            jSpinnerNbPerson.setEnabled(true);
+        } else {
+            jSpinnerNbPerson.setEnabled(false);
+        }
+
         jButtonShiftRightS.setEnabled(true);
         jListPerson.setModel(mymodel);
 
@@ -628,7 +633,7 @@ public class AddMission extends javax.swing.JPanel {
 
     private void jListPersonAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonAvailableMouseReleased
         DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
- 
+
         if ((Integer) jSpinnerNbPerson.getValue() == 0) {
             jButtonShiftLeftP.setEnabled(false);
         } else if (modelMyPerson.getSize() < (Integer) jSpinnerNbPerson.getValue()) {
@@ -643,10 +648,22 @@ public class AddMission extends javax.swing.JPanel {
     }//GEN-LAST:event_jListPersonMouseReleased
 
     private void jSpinnerNbPersonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerNbPersonStateChanged
-
+        int nbPersons = (Integer) jSpinnerNbPersonMission.getValue();
+        int nbPersonsTmp = 0;
         Skill skillSelected = jListSkill.getSelectedValue();
         Requirement r = requirementBySkill.get(skillSelected);
         r.setNbTotalPerson((Integer) jSpinnerNbPerson.getValue());
+
+        for (Map.Entry<Skill, Requirement> entrySet : requirementBySkill.entrySet()) {
+            Requirement req = entrySet.getValue();
+            nbPersonsTmp += req.getNbTotalPersonnes();
+        }
+
+        if (nbPersonsTmp >= nbPersons) {
+            jSpinnerNbPerson.setEnabled(false);
+        } else {
+            jSpinnerNbPerson.setEnabled(true);
+        }
 
         if ((Integer) jSpinnerNbPerson.getValue() > 0) {
             jButtonShiftLeftP.setEnabled(true);
@@ -672,21 +689,20 @@ public class AddMission extends javax.swing.JPanel {
 
             for (Map.Entry<Skill, Requirement> entrySet : requirementBySkill.entrySet()) {
                 Requirement r = entrySet.getValue();
-                //A revoir la boucle !!
-                for(int i = 0 ; i< r.getListPersonnes().size(); i++){//Parcours des personne sur le besoins
-                    if( m != null && !m.getPersonOnMission().containsValue(r.getListPersonnes().get(i))){
-                        m.getPersonOnMission().put(r.getListPersonnes().get(i).getFirstName(), r.getListPersonnes().get(i));
+                for (int i = 0; i < r.getListPersonnes().size(); i++) {//Parcours des personne sur le besoins
+                    if (m != null && !m.getPersonOnMission().containsValue(r.getListPersonnes().get(i))) {
+                        m.getPersonOnMission().put(r.getListPersonnes().get(i).getId(), r.getListPersonnes().get(i));
                     }
                 }
                 m.addRequirement(r);
             }
-            
+
             m.setNbTotalPerson(nbPerson);
             myCompany.addMission(m);
             //Sauvegarde des données dans le fichier liste_mission.ares
             Management.ManageMission mm = new ManageMission();
             mm.writeData(myCompany);
-            
+
             // En renvoi vers le details de la mission
             myFrame.jPanelContainer.removeAll();
             myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame));

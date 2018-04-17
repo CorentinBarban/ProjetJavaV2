@@ -22,7 +22,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanelHeader" max="32767" attributes="0"/>
-          <Component id="jScrollPane1" pref="768" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -48,8 +48,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabelTitle" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="329" max="32767" attributes="0"/>
+                  <Component id="jLabelTitle" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
                   <Component id="jLabelAddMission" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -64,7 +64,7 @@
                       <Component id="jLabelAddMission" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelTitle" alignment="3" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -79,6 +79,7 @@
               <Color blue="3a" green="33" red="30" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Liste des missions"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelAddMission">

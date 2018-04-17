@@ -199,75 +199,14 @@
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
           <nbPersonTotalReq>1</nbPersonTotalReq>
           <idPersonReq>48</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
+          <idSkillReq>E.3.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>45</idPersonReq>
           <idPersonReq>42</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
-     <id>0</id>
-     <name>test2</name>
-     <startDate>02/06/2019</startDate>
-     <duration>3</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>3</nbPersonOnMission>
-     <persons_list>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>27</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>3</nbPersonTotalReq>
-          <idPersonReq>99</idPersonReq>
-          <idPersonReq>53</idPersonReq>
-          <idRequirement>3</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>0</nbPersonTotalReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
-     <id>0</id>
-     <name>cqssqc</name>
-     <startDate>06/03/2018</startDate>
-     <duration>3</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>3</nbPersonOnMission>
-     <persons_list>
-          <idPerson>Barban</idPerson>
-          <idPerson>Norbert</idPerson>
-          <idPerson>Efren</idPerson>
-          <idPerson>Hollis</idPerson>
-          <idPerson>Greg</idPerson>
-          <idPerson>August</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.7.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>48</idPersonReq>
-          <idPersonReq>26</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>D.10.</idSkillReq>
-          <nbPersonTotalReq>3</nbPersonTotalReq>
-          <idPersonReq>49</idPersonReq>
-          <idPersonReq>53</idPersonReq>
-          <idRequirement>3</idRequirement>
-          <idSkillReq>C.2.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>5</idPersonReq>
-          <idPersonReq>6</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
