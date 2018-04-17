@@ -627,7 +627,7 @@ public class AddMission extends javax.swing.JPanel {
 
     private void jListPersonAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonAvailableMouseReleased
         DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
-
+ 
         if ((Integer) jSpinnerNbPerson.getValue() == 0) {
             jButtonShiftLeftP.setEnabled(false);
         } else if (modelMyPerson.getSize() < (Integer) jSpinnerNbPerson.getValue()) {
