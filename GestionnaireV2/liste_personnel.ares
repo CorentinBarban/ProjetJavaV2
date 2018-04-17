@@ -112,6 +112,13 @@
      <firstName>Barban</firstName>
      <dateOfHire>06/09/1996</dateOfHire>
      <skills_list>
+         <idSkill>E.6.</idSkill>
+          <idSkill>D.10.</idSkill>
+          <idSkill>B.1.</idSkill>
+          <idSkill>B.3.</idSkill>
+          <idSkill>D.2.</idSkill>
+          <idSkill>D.4.</idSkill>
+          <idSkill>E.9.</idSkill>
      </skills_list>
      <missions_list>
      </missions_list>
@@ -130,21 +137,18 @@
      </missions_list>
 </person>
 <person>
-     <id>98</id>
-     <lastName>Test2</lastName>
-     <firstName>Write</firstName>
-     <dateOfHire>06/09/1996</dateOfHire>
-     <skills_list>
-     </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
-<person>
      <id>54</id>
      <lastName>Mathieu</lastName>
      <firstName>Stivanin</firstName>
      <dateOfHire>15/12/1998</dateOfHire>
      <skills_list>
+         <idSkill>E.6.</idSkill>
+          <idSkill>D.10.</idSkill>
+          <idSkill>B.1.</idSkill>
+          <idSkill>B.3.</idSkill>
+          <idSkill>D.2.</idSkill>
+          <idSkill>D.4.</idSkill>
+          <idSkill>E.9.</idSkill>
      </skills_list>
      <missions_list>
      </missions_list>
@@ -168,6 +172,13 @@
      <firstName>Write</firstName>
      <dateOfHire>06/09/1997</dateOfHire>
      <skills_list>
+         <idSkill>E.6.</idSkill>
+          <idSkill>D.10.</idSkill>
+          <idSkill>B.1.</idSkill>
+          <idSkill>B.3.</idSkill>
+          <idSkill>D.2.</idSkill>
+          <idSkill>D.4.</idSkill>
+          <idSkill>E.9.</idSkill>
      </skills_list>
      <missions_list>
      </missions_list>

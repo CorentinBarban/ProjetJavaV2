@@ -187,4 +187,45 @@
           </requirement>
      </requirements_list>
 </mission>
+<mission>
+     <id>0</id>
+     <name>Rédaction de la Javadoc</name>
+     <startDate>06/07/2018</startDate>
+     <duration>2</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>0</nbPersonOnMission>
+     <persons_list>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>B.1.</idSkillReq>
+          <nbPersonTotalReq>10</nbPersonTotalReq>
+          <idPersonReq>46</idPersonReq>
+          <idPersonReq>47</idPersonReq>
+          <idPersonReq>49</idPersonReq>
+          <idPersonReq>50</idPersonReq>
+          <idPersonReq>53</idPersonReq>
+          <idPersonReq>54</idPersonReq>
+          <idPersonReq>99</idPersonReq>
+          <idPersonReq>30</idPersonReq>
+          <idPersonReq>35</idPersonReq>
+          <idPersonReq>39</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>B.5.</idSkillReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
+          <idPersonReq>12</idPersonReq>
+          <idPersonReq>15</idPersonReq>
+          <idPersonReq>26</idPersonReq>
+          <idPersonReq>29</idPersonReq>
+          <idRequirement>3</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
+          <idPersonReq>44</idPersonReq>
+          <idPersonReq>45</idPersonReq>
+          <idPersonReq>46</idPersonReq>
+          <idPersonReq>49</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
 </list>
