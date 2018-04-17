@@ -556,6 +556,7 @@ public class AddMission extends javax.swing.JPanel {
         //Ajout de la personne sur le besoin
         try {
             r.addPerson(modelAvailablePerson.getElementAt(jListPersonAvailable.getSelectedIndex()));
+            
         } catch (Exception ex) {
             Logger.getLogger(AddMission.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -673,6 +674,8 @@ public class AddMission extends javax.swing.JPanel {
                 Requirement r = entrySet.getValue();
                 m.addRequirement(r);
             }
+            
+            m.setNbTotalPerson(nbPerson);
             myCompany.addMission(m);
             //Sauvegarde des données dans le fichier liste_mission.ares
             Management.ManageMission mm = new ManageMission();
