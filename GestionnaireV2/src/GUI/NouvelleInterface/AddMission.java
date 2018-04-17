@@ -672,6 +672,12 @@ public class AddMission extends javax.swing.JPanel {
 
             for (Map.Entry<Skill, Requirement> entrySet : requirementBySkill.entrySet()) {
                 Requirement r = entrySet.getValue();
+                //A revoir la boucle !!
+                for(int i = 0 ; i<= r.getListPersonnes().size(); i++){//Parcours des personne sur le besoins
+                    if(!m.getPersonOnMission().containsValue(r.getListPersonnes().get(i))){
+                        m.getPersonOnMission().put(r.getListPersonnes().get(i).getFirstName(), r.getListPersonnes().get(i));
+                    }
+                }
                 m.addRequirement(r);
             }
             

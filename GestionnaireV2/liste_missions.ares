@@ -187,4 +187,27 @@
           </requirement>
      </requirements_list>
 </mission>
+<mission>
+     <id>0</id>
+     <name>test2</name>
+     <startDate>06/09/2018</startDate>
+     <duration>3</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>0</nbPersonOnMission>
+     <persons_list>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>48</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>E.3.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>45</idPersonReq>
+          <idPersonReq>42</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
 </list>
