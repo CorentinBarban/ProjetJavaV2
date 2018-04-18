@@ -143,21 +143,6 @@
      </skills_list>
  </person>
 <person>
-     <id>99</id>
-     <lastName>Test</lastName>
-     <firstName>Write</firstName>
-     <dateOfHire>06/09/1997</dateOfHire>
-     <skills_list>
-          <idSkill>E.6.</idSkill>
-          <idSkill>D.10.</idSkill>
-          <idSkill>B.1.</idSkill>
-          <idSkill>B.3.</idSkill>
-          <idSkill>D.2.</idSkill>
-          <idSkill>D.4.</idSkill>
-          <idSkill>E.9.</idSkill>
-     </skills_list>
- </person>
-<person>
      <id>12</id>
      <lastName>Shumer</lastName>
      <firstName>Lyman</firstName>

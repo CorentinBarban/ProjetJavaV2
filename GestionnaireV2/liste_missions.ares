@@ -243,23 +243,4 @@
           </requirement>
      </requirements_list>
 </mission>
-<mission>
-     <id>0</id>
-     <name>Test3</name>
-     <startDate>06/08/2018</startDate>
-     <duration>3</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>1</nbPersonOnMission>
-     <persons_list>
-          <idPerson>3</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>5</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>1</nbPersonTotalReq>
-          <idPersonReq>3</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
 </list>

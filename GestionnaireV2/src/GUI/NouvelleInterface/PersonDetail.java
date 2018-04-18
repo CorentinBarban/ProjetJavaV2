@@ -9,6 +9,8 @@ import API.Company;
 import API.Mission;
 import API.Person;
 import API.Skill;
+import Management.ManageMission;
+import Management.ManagePerson;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -69,6 +71,7 @@ public class PersonDetail extends javax.swing.JPanel {
         jComboBoxSkill = new javax.swing.JComboBox<>();
         DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
         jComboBoxSkill1 = new javax.swing.JComboBox<>();
+        jButtonSupprimer = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -145,7 +148,7 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jLabelHireDate))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                     .addComponent(jTextFieldFirstName)
                     .addComponent(jFormattedTextFieldHireDate))
                 .addContainerGap())
@@ -175,10 +178,10 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelRightDetail.setPreferredSize(new java.awt.Dimension(280, 280));
 
         jLabelSkill.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelSkill.setText("Compétences");
+        jLabelSkill.setText("Compétences : ");
 
         jLabelOnMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelOnMission.setText("Sur Missions :");
+        jLabelOnMission.setText("Missions attribuées :");
 
         jComboBoxSkill.setMaximumRowCount(20);
         jComboBoxSkill.setModel(missionModel);
@@ -230,35 +233,28 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelRightDetailLayout.setHorizontalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelSkill)
+                    .addComponent(jLabelOnMission))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                        .addComponent(jLabelOnMission)
-                        .addGap(27, 27, 27)
-                        .addComponent(jComboBoxSkill, 0, 154, Short.MAX_VALUE))
-                    .addComponent(jLabelSkill))
-                .addGap(60, 60, 60))
-            .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                    .addGap(134, 134, 134)
                     .addComponent(jComboBoxSkill1, 0, 154, Short.MAX_VALUE)
-                    .addGap(60, 60, 60)))
+                    .addComponent(jComboBoxSkill, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabelSkill)
-                .addGap(99, 99, 99)
+                .addGap(48, 48, 48)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelOnMission)
                     .addComponent(jComboBoxSkill, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(175, Short.MAX_VALUE))
-            .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                    .addGap(81, 81, 81)
+                .addGap(113, 113, 113)
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxSkill1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(288, Short.MAX_VALUE)))
+                    .addComponent(jLabelSkill))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelContainerMissionLayout = new javax.swing.GroupLayout(jPanelContainerMission);
@@ -275,13 +271,20 @@ public class PersonDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jButtonSupprimer.setText("Supprimer");
+        jButtonSupprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupprimerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -289,15 +292,22 @@ public class PersonDetail extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButtonSupprimer)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(12, 12, 12))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonSupprimer)
+                .addGap(9, 9, 9))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -315,7 +325,7 @@ public class PersonDetail extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(498, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(109, 109, 109)
@@ -346,8 +356,22 @@ public class PersonDetail extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxSkill1ActionPerformed
 
+    private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
+        if(personSelected.getNbMissions() == 0){ // SI la personne a des missions attribuées
+            myCompany.listePerson.remove(myCompany.getKeyFromValue(myCompany.listePerson, personSelected));
+        }
+        
+        Management.ManagePerson mp = new ManagePerson();
+        mp.writeData(myCompany);
+        mp.readData(myCompany);
+        myFrame.jPanelContainer.removeAll();
+        myFrame.jPanelContainer.add(new PersonList(myCompany,myFrame));
+        myFrame.repaint();
+        myFrame.revalidate();    }//GEN-LAST:event_jButtonSupprimerActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonSupprimer;
     private javax.swing.JComboBox<Mission> jComboBoxSkill;
     private javax.swing.JComboBox<Skill> jComboBoxSkill1;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
