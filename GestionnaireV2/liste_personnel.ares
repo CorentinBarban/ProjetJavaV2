@@ -10,9 +10,7 @@
           <idSkill>E.6.</idSkill>
           <idSkill>A.4.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>45</id>
      <lastName>Muckler</lastName>
@@ -25,9 +23,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>C.4.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>46</id>
      <lastName>Ed</lastName>
@@ -41,9 +37,7 @@
           <idSkill>D.5.</idSkill>
           <idSkill>D.6.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>47</id>
      <lastName>Gerrish</lastName>
@@ -56,9 +50,7 @@
           <idSkill>D.3.</idSkill>
           <idSkill>D.4.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>48</id>
      <lastName>Defrancisco</lastName>
@@ -69,9 +61,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>A.6.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>49</id>
      <lastName>Novinger</lastName>
@@ -86,9 +76,7 @@
           <idSkill>D.4.</idSkill>
           <idSkill>E.9.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>50</id>
      <lastName>Roosa</lastName>
@@ -103,16 +91,14 @@
           <idSkill>A.8.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>53</id>
      <lastName>Corentin</lastName>
      <firstName>Barban</firstName>
      <dateOfHire>06/09/1996</dateOfHire>
      <skills_list>
-         <idSkill>E.6.</idSkill>
+          <idSkill>E.6.</idSkill>
           <idSkill>D.10.</idSkill>
           <idSkill>B.1.</idSkill>
           <idSkill>B.3.</idSkill>
@@ -120,9 +106,7 @@
           <idSkill>D.4.</idSkill>
           <idSkill>E.9.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>10</id>
      <lastName>Sanburn</lastName>
@@ -132,17 +116,14 @@
           <idSkill>A.5.</idSkill>
           <idSkill>A.4.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>54</id>
      <lastName>Mathieu</lastName>
      <firstName>Stivanin</firstName>
      <dateOfHire>15/12/1998</dateOfHire>
      <skills_list>
-         <idSkill>E.6.</idSkill>
+          <idSkill>E.6.</idSkill>
           <idSkill>D.10.</idSkill>
           <idSkill>B.1.</idSkill>
           <idSkill>B.3.</idSkill>
@@ -150,9 +131,7 @@
           <idSkill>D.4.</idSkill>
           <idSkill>E.9.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>11</id>
      <lastName>Arnaiz</lastName>
@@ -162,17 +141,14 @@
           <idSkill>D.3.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>2</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>99</id>
      <lastName>Test</lastName>
      <firstName>Write</firstName>
      <dateOfHire>06/09/1997</dateOfHire>
      <skills_list>
-         <idSkill>E.6.</idSkill>
+          <idSkill>E.6.</idSkill>
           <idSkill>D.10.</idSkill>
           <idSkill>B.1.</idSkill>
           <idSkill>B.3.</idSkill>
@@ -180,9 +156,7 @@
           <idSkill>D.4.</idSkill>
           <idSkill>E.9.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>12</id>
      <lastName>Shumer</lastName>
@@ -196,10 +170,7 @@
           <idSkill>B.5.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>2</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>13</id>
      <lastName>Abrahamson</lastName>
@@ -209,10 +180,7 @@
           <idSkill>C.4.</idSkill>
           <idSkill>A.6.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>2</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>14</id>
      <lastName>Besmer</lastName>
@@ -224,10 +192,7 @@
           <idSkill>C.4.</idSkill>
           <idSkill>A.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>2</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>15</id>
      <lastName>Ery</lastName>
@@ -238,10 +203,7 @@
           <idSkill>B.5.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>2</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>16</id>
      <lastName>Nau</lastName>
@@ -254,10 +216,7 @@
           <idSkill>C.4.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>3</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>17</id>
      <lastName>Grgurich</lastName>
@@ -269,10 +228,7 @@
           <idSkill>D.4.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>3</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>18</id>
      <lastName>Hannett</lastName>
@@ -287,10 +243,7 @@
           <idSkill>D.2.</idSkill>
           <idSkill>D.6.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>3</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>19</id>
      <lastName>Stobierski</lastName>
@@ -302,10 +255,7 @@
           <idSkill>C.4.</idSkill>
           <idSkill>A.6.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>3</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>1</id>
      <lastName>Galasso</lastName>
@@ -315,10 +265,7 @@
           <idSkill>E.6.</idSkill>
           <idSkill>A.4.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>2</id>
      <lastName>Seastrunk</lastName>
@@ -330,10 +277,7 @@
           <idSkill>D.10.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>3</id>
      <lastName>Luat</lastName>
@@ -347,10 +291,7 @@
           <idSkill>D.5.</idSkill>
           <idSkill>E.9.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>4</id>
      <lastName>Quaife</lastName>
@@ -365,10 +306,7 @@
           <idSkill>D.7.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>5</id>
      <lastName>Syres</lastName>
@@ -378,10 +316,7 @@
           <idSkill>E.6.</idSkill>
           <idSkill>C.2.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>6</id>
      <lastName>Tebeest</lastName>
@@ -394,10 +329,7 @@
           <idSkill>E.9.</idSkill>
           <idSkill>D.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>7</id>
      <lastName>Callum</lastName>
@@ -412,10 +344,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>C.3.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>8</id>
      <lastName>Ferrill</lastName>
@@ -429,10 +358,7 @@
           <idSkill>D.3.</idSkill>
           <idSkill>D.4.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>9</id>
      <lastName>Aufmuth</lastName>
@@ -444,10 +370,7 @@
           <idSkill>A.6.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>1</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>20</id>
      <lastName>Pommier</lastName>
@@ -457,10 +380,7 @@
           <idSkill>B.2.</idSkill>
           <idSkill>B.4.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>3</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>21</id>
      <lastName>Objio</lastName>
@@ -474,10 +394,7 @@
           <idSkill>C.2.</idSkill>
           <idSkill>D.6.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>4</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>22</id>
      <lastName>Petermeier</lastName>
@@ -491,10 +408,7 @@
           <idSkill>D.5.</idSkill>
           <idSkill>A.8.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>4</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>23</id>
      <lastName>Eveler</lastName>
@@ -505,10 +419,7 @@
           <idSkill>C.1.</idSkill>
           <idSkill>C.3.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>4</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>24</id>
      <lastName>Natwick</lastName>
@@ -521,10 +432,7 @@
           <idSkill>D.2.</idSkill>
           <idSkill>A.6.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>4</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>25</id>
      <lastName>Elsbree</lastName>
@@ -538,10 +446,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>D.3.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>4</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>26</id>
      <lastName>Seaburn</lastName>
@@ -556,10 +461,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>B.5.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>4</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>27</id>
      <lastName>Tulipano</lastName>
@@ -570,10 +472,7 @@
           <idSkill>E.5.</idSkill>
           <idSkill>D.7.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>5</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>28</id>
      <lastName>Schachte</lastName>
@@ -586,10 +485,7 @@
           <idSkill>C.2.</idSkill>
           <idSkill>B.3.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>5</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>29</id>
      <lastName>Ebach</lastName>
@@ -601,9 +497,7 @@
           <idSkill>A.8.</idSkill>
           <idSkill>D.6.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>30</id>
      <lastName>Melen</lastName>
@@ -617,10 +511,7 @@
           <idSkill>D.2.</idSkill>
           <idSkill>C.4.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>6</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>31</id>
      <lastName>Pratte</lastName>
@@ -635,10 +526,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>D.4.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>6</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>32</id>
      <lastName>Budak</lastName>
@@ -649,10 +537,7 @@
           <idSkill>A.4.</idSkill>
           <idSkill>D.6.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>6</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>33</id>
      <lastName>Riesenberger</lastName>
@@ -664,10 +549,7 @@
           <idSkill>C.2.</idSkill>
           <idSkill>D.5.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>6</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>34</id>
      <lastName>Supnet</lastName>
@@ -678,10 +560,7 @@
           <idSkill>B.3.</idSkill>
           <idSkill>D.3.</idSkill>
      </skills_list>
-     <missions_list>
-          <idMission>6</idMission>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>35</id>
      <lastName>Martie</lastName>
@@ -692,9 +571,7 @@
           <idSkill>E.2.</idSkill>
           <idSkill>B.1.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>36</id>
      <lastName>McManaman</lastName>
@@ -704,9 +581,7 @@
           <idSkill>A.2.</idSkill>
           <idSkill>A.4.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>37</id>
      <lastName>Kroening</lastName>
@@ -720,9 +595,7 @@
           <idSkill>D.5.</idSkill>
           <idSkill>E.9.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>38</id>
      <lastName>Saalwaechter</lastName>
@@ -735,9 +608,7 @@
           <idSkill>C.1.</idSkill>
           <idSkill>D.5.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>39</id>
      <lastName>Sanner</lastName>
@@ -752,9 +623,7 @@
           <idSkill>A.7.</idSkill>
           <idSkill>D.5.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>40</id>
      <lastName>Bromer</lastName>
@@ -767,9 +636,7 @@
           <idSkill>B.5.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>41</id>
      <lastName>Viehweg</lastName>
@@ -782,9 +649,7 @@
           <idSkill>A.7.</idSkill>
           <idSkill>D.3.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>42</id>
      <lastName>Jaro</lastName>
@@ -799,9 +664,7 @@
           <idSkill>A.8.</idSkill>
           <idSkill>E.8.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 <person>
      <id>43</id>
      <lastName>Cumings</lastName>
@@ -812,7 +675,5 @@
           <idSkill>C.2.</idSkill>
           <idSkill>D.7.</idSkill>
      </skills_list>
-     <missions_list>
-     </missions_list>
-</person>
+ </person>
 </list>

@@ -199,14 +199,66 @@
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.7.</idSkillReq>
+          <idSkillReq>E.6.</idSkillReq>
           <nbPersonTotalReq>1</nbPersonTotalReq>
           <idPersonReq>48</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>E.3.</idSkillReq>
+          <idSkillReq>A.4.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>45</idPersonReq>
           <idPersonReq>42</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>0</id>
+     <name>Terminer le projet java</name>
+     <startDate>06/09/2018</startDate>
+     <duration>2</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>5</nbPersonOnMission>
+     <persons_list>
+          <idPerson>33</idPerson>
+          <idPerson>12</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>26</idPerson>
+          <idPerson>7</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>3</idPersonReq>
+          <idPersonReq>33</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>7</idPersonReq>
+          <idRequirement>3</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>26</idPersonReq>
+          <idPersonReq>12</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>0</id>
+     <name>Test3</name>
+     <startDate>06/08/2018</startDate>
+     <duration>3</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>1</nbPersonOnMission>
+     <persons_list>
+          <idPerson>3</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>5</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>3</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
