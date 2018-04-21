@@ -188,7 +188,7 @@
      </requirements_list>
 </mission>
 <mission>
-     <id>0</id>
+     <id>7</id>
      <name>test2</name>
      <startDate>06/09/2018</startDate>
      <duration>3</duration>
@@ -211,16 +211,15 @@
      </requirements_list>
 </mission>
 <mission>
-     <id>0</id>
-     <name>Terminer le projet java</name>
+     <id>8</id>
+     <name>Terminer le projet Java</name>
      <startDate>06/09/2018</startDate>
-     <duration>2</duration>
+     <duration>3</duration>
      <state>enPreparation</state>
      <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
-          <idPerson>33</idPerson>
-          <idPerson>12</idPerson>
-          <idPerson>3</idPerson>
+          <idPerson>44</idPerson>
+          <idPerson>46</idPerson>
           <idPerson>26</idPerson>
           <idPerson>7</idPerson>
      </persons_list>
@@ -228,18 +227,14 @@
           <requirement>
           <idRequirement>1</idRequirement>
           <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>3</idPersonReq>
-          <idPersonReq>33</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <nbPersonTotalReq>3</nbPersonTotalReq>
           <idPersonReq>7</idPersonReq>
+          <idPersonReq>44</idPersonReq>
           <idRequirement>3</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>A.4.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>26</idPersonReq>
-          <idPersonReq>12</idPersonReq>
+          <idPersonReq>46</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>

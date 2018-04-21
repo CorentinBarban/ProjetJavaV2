@@ -59,8 +59,7 @@ public class Mission {
     
     /**
      * Constructeur d'une mission
-     *
-     * @param id représente l'id de la mission
+     * 
      * @param missionName représente le nom de la mission
      * @param startDate représente la date de début de la mission
      * @param md représente la durée de la mission

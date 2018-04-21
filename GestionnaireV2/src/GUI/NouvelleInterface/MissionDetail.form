@@ -387,16 +387,16 @@
               <Properties>
                 <Property name="maximumRowCount" type="int" value="20"/>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="skillModel" type="code"/>
+                  <Connection code="requirementModel" type="code"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxSkillActionPerformed"/>
               </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultComboBoxModel&lt;Skill&gt; skillModel = new DefaultComboBoxModel();"/>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());&#xa;&#xa;HashMap&lt;Integer,Requirement&gt; mySkillList= myMission.getRequirements();&#xa;&#xa;&#xa;Set entrySetSkill = mySkillList.entrySet();&#xa;Iterator itSkill = entrySetSkill.iterator();&#xa;&#xa;while (itSkill.hasNext()) {&#xa;   &#xa;    Map.Entry me = (Map.Entry)itSkill.next();&#xa;    Skill myskill = mySkillList.get(me.getKey()).getRequiredSkill();&#xa;    skillModel.addElement(myskill); &#xa;}"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Skill&gt;"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultComboBoxModel&lt;Requirement&gt; requirementModel = new DefaultComboBoxModel();"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.requirementRenderer());&#xa;&#xa;HashMap&lt;Integer,Requirement&gt; myRequirementList= myMission.getRequirements();&#xa;&#xa;&#xa;Set entrySetRequirement = myRequirementList.entrySet();&#xa;Iterator itRequirement = entrySetRequirement.iterator();&#xa;&#xa;while (itRequirement.hasNext()) {&#xa;   &#xa;    Map.Entry me = (Map.Entry)itRequirement.next();&#xa;    Requirement myRequirement = myRequirementList.get(me.getKey());&#xa;    requirementModel.addElement(myRequirement); &#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Requirement&gt;"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -473,6 +473,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Modifier"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEditActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonDelete">
       <Properties>

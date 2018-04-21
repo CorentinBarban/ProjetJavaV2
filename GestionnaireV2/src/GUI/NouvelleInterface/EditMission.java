@@ -11,27 +11,33 @@ import API.Person;
 import API.Requirement;
 import API.Skill;
 import Management.ManageMission;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.ListModel;
 
 /**
  *
  * @author corentin
  */
-public class AddMission extends javax.swing.JPanel {
+public class EditMission extends javax.swing.JPanel {
 
     /**
-     * Creates new form AddMission
+     * Creates new form EditMission
      */
     private Company myCompany;
     private home myFrame;
+    private Mission myMission;
     //Liste de personnes selectionnés sur une compétence
     private LinkedHashMap<Skill, DefaultListModel<Person>> listModelPerson = new LinkedHashMap();
     //Liste de personnes disponible sur une compétence
@@ -43,11 +49,13 @@ public class AddMission extends javax.swing.JPanel {
 
     private int idRequirement = 1;
 
-    public AddMission(Company myCompany, home myFrame) {
+    public EditMission(Mission myMission, Company myCompany, home myFrame) {
         this.myCompany = myCompany;
         this.myFrame = myFrame;
+        this.myMission = myMission;
         initComponents();
-
+        initLinkedHashmap(myCompany, myMission, listModelPerson, nbPersonBySkill, requirementBySkill);
+        initValues(myMission);
     }
 
     /**
@@ -105,7 +113,7 @@ public class AddMission extends javax.swing.JPanel {
 
         jLabelTitle2.setFont(new java.awt.Font("Roboto", 0, 40));
         jLabelTitle2.setForeground(new java.awt.Color(48, 51, 58));
-        jLabelTitle2.setText("Ajouter une mission");
+        jLabelTitle2.setText("Modifier une mission");
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
@@ -187,7 +195,7 @@ public class AddMission extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNameMission)
-                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                     .addComponent(jComboBox1, 0, 128, Short.MAX_VALUE)
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -222,8 +230,6 @@ public class AddMission extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jFormattedTextFieldFireDate.getAccessibleContext().setAccessibleParent(jLabelFireDateMission);
-
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -239,8 +245,8 @@ public class AddMission extends javax.swing.JPanel {
         jPanelSkill.setBackground(java.awt.Color.white);
 
         jListSkill.setModel(mySkillModel);
-        jListSkill.setCellRenderer(new SkillRenderer());
         jListSkill.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListSkill.setCellRenderer(new SkillRenderer());
         jListSkill.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jListSkill.setSelectedIndex(1);
         jListSkill.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -423,7 +429,7 @@ public class AddMission extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinnerNbPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabelPerson))
-                        .addContainerGap(90, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,7 +458,7 @@ public class AddMission extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelContainerMissionLayout.setVerticalGroup(
@@ -500,10 +506,58 @@ public class AddMission extends javax.swing.JPanel {
 
     private void jLabelReturn2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn2MouseReleased
         myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new MissionList(myCompany, myFrame));
+        myFrame.jPanelContainer.add(new MissionDetail(myMission, myCompany, myFrame));
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn2MouseReleased
+
+    private void jListSkillMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillMouseReleased
+        //Recuperation de la personne selectionnée
+        JList<Skill> theListSkill = (JList) evt.getSource();
+        int index = theListSkill.locationToIndex(evt.getPoint());
+        Skill skillSelected = theListSkill.getModel().getElementAt(index);
+        //Recuperation de la liste des personnes sur la competence séléctionnée
+        DefaultListModel<Person> mymodel = listModelPerson.get(skillSelected);
+
+        Requirement r = requirementBySkill.get(skillSelected);
+        jSpinnerNbPerson.setValue(r.getNbTotalPersonnes());
+        if ((Integer) jSpinnerNbPersonMission.getValue() != 0) {
+            jSpinnerNbPerson.setEnabled(true);
+        } else {
+            jSpinnerNbPerson.setEnabled(false);
+        }
+        
+        if ((Integer) jSpinnerNbPersonMission.getValue() <= r.getListPersonnes().size()) {
+            jButtonShiftLeftP.setEnabled(true);
+        } else {
+            jButtonShiftLeftP.setEnabled(false);
+        }
+        jButtonShiftRightS.setEnabled(true);
+        jListPerson.setModel(mymodel);
+
+        //Gestion de liste des personnes sur la liste de personnes disponible
+        //Creation du model
+        DefaultListModel<Person> modelPersonAvailable = new DefaultListModel();
+        //Ajout des personnes possedant la skill au model
+        for (Map.Entry<String, Person> entrySet : myCompany.listePerson.entrySet()) {
+            Person p = entrySet.getValue();
+            for (Map.Entry<String, Skill> entrySet1 : p.getSkillList().entrySet()) {
+                Skill s = entrySet1.getValue();
+                if (s.equals(skillSelected) && !mymodel.contains(p)) {
+                    modelPersonAvailable.addElement(p);
+                }
+            }
+        }
+
+        jListPersonAvailable.setModel(modelPersonAvailable);
+
+        //Liaison entre le model et la compétence selectionnée
+        listModelPersonAvailable.put(skillSelected, modelPersonAvailable);
+    }//GEN-LAST:event_jListSkillMouseReleased
+
+    private void jListSkillAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillAvailableMouseReleased
+        jButtonShiftLeftS.setEnabled(true);
+    }//GEN-LAST:event_jListSkillAvailableMouseReleased
 
     private void jButtonShiftLeftSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftLeftSActionPerformed
         DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListSkill.getModel();
@@ -539,15 +593,29 @@ public class AddMission extends javax.swing.JPanel {
         listModelPerson.remove(jListSkill.getSelectedIndex());
 
         jButtonShiftRightS.setEnabled(false);
-
     }//GEN-LAST:event_jButtonShiftRightSActionPerformed
+
+    private void jListPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonMouseReleased
+        jButtonShiftLeftP.setEnabled(false);
+        jButtonShiftRightP.setEnabled(true);
+    }//GEN-LAST:event_jListPersonMouseReleased
+
+    private void jListPersonAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonAvailableMouseReleased
+        DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
+
+        if ((Integer) jSpinnerNbPerson.getValue() == 0) {
+            jButtonShiftLeftP.setEnabled(false);
+        } else if (modelMyPerson.getSize() < (Integer) jSpinnerNbPerson.getValue()) {
+            jButtonShiftLeftP.setEnabled(true);
+        }
+    }//GEN-LAST:event_jListPersonAvailableMouseReleased
 
     private void jButtonShiftLeftPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShiftLeftPActionPerformed
         DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
         DefaultListModel<Person> modelAvailablePerson = (DefaultListModel<Person>) jListPersonAvailable.getModel();
         DefaultListModel<Skill> modelMySkill = (DefaultListModel<Skill>) jListSkill.getModel();
 
-        //Ajout de la personne dans le model 
+        //Ajout de la personne dans le model
         modelMyPerson.addElement(jListPersonAvailable.getSelectedValue());
 
         //Recuperation de la competence selectionée
@@ -584,69 +652,7 @@ public class AddMission extends javax.swing.JPanel {
         //Suppression de la personne au model
         modelMyPerson.remove(jListPerson.getSelectedIndex());
 
-
     }//GEN-LAST:event_jButtonShiftRightPActionPerformed
-
-
-    private void jListSkillMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillMouseReleased
-        //Recuperation de la personne selectionnée
-        JList<Skill> theListSkill = (JList) evt.getSource();
-        int index = theListSkill.locationToIndex(evt.getPoint());
-        Skill skillSelected = theListSkill.getModel().getElementAt(index);
-        //Recuperation de la liste des personnes sur la competence séléctionnée
-        DefaultListModel<Person> mymodel = listModelPerson.get(skillSelected);
-
-        Requirement r = requirementBySkill.get(skillSelected);
-        jSpinnerNbPerson.setValue(r.getNbTotalPersonnes());
-        if ((Integer) jSpinnerNbPersonMission.getValue() != 0) {
-            jSpinnerNbPerson.setEnabled(true);
-        } else {
-            jSpinnerNbPerson.setEnabled(false);
-        }
-
-        jButtonShiftRightS.setEnabled(true);
-        jListPerson.setModel(mymodel);
-
-        //Gestion de liste des personnes sur la liste de personnes disponible
-        //Creation du model
-        DefaultListModel<Person> modelPersonAvailable = new DefaultListModel();
-        //Ajout des personnes possedant la skill au model
-        for (Map.Entry<String, Person> entrySet : myCompany.listePerson.entrySet()) {
-            Person p = entrySet.getValue();
-            for (Map.Entry<String, Skill> entrySet1 : p.getSkillList().entrySet()) {
-                Skill s = entrySet1.getValue();
-                if (s.equals(skillSelected) && !mymodel.contains(p)) {
-                    modelPersonAvailable.addElement(p);
-                }
-            }
-        }
-
-        jListPersonAvailable.setModel(modelPersonAvailable);
-
-        //Liaison entre le model et la compétence selectionnée
-        listModelPersonAvailable.put(skillSelected, modelPersonAvailable);
-
-    }//GEN-LAST:event_jListSkillMouseReleased
-
-    private void jListSkillAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillAvailableMouseReleased
-        jButtonShiftLeftS.setEnabled(true);
-    }//GEN-LAST:event_jListSkillAvailableMouseReleased
-
-    private void jListPersonAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonAvailableMouseReleased
-        DefaultListModel<Person> modelMyPerson = (DefaultListModel<Person>) jListPerson.getModel();
-
-        if ((Integer) jSpinnerNbPerson.getValue() == 0) {
-            jButtonShiftLeftP.setEnabled(false);
-        } else if (modelMyPerson.getSize() < (Integer) jSpinnerNbPerson.getValue()) {
-            jButtonShiftLeftP.setEnabled(true);
-        }
-
-    }//GEN-LAST:event_jListPersonAvailableMouseReleased
-
-    private void jListPersonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPersonMouseReleased
-        jButtonShiftLeftP.setEnabled(false);
-        jButtonShiftRightP.setEnabled(true);
-    }//GEN-LAST:event_jListPersonMouseReleased
 
     private void jSpinnerNbPersonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerNbPersonStateChanged
         int nbPersons = (Integer) jSpinnerNbPersonMission.getValue();
@@ -674,6 +680,12 @@ public class AddMission extends javax.swing.JPanel {
     }//GEN-LAST:event_jSpinnerNbPersonStateChanged
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
+        myCompany.listeMission.remove(myCompany.getKeyFromValue(myCompany.listeMission, myMission));
+
+        Management.ManageMission mm = new ManageMission();
+        mm.writeData(myCompany);
+        mm.readData(myCompany);
+
         String name = jTextFieldNameMission.getText();
         String startDate = jFormattedTextFieldFireDate.getText();
         int duration = (Integer) jSpinnerDurationMission.getValue();
@@ -683,7 +695,7 @@ public class AddMission extends javax.swing.JPanel {
         //Creation de la mission
         if (name != "" && startDate != "" && "" + duration != "" && "" + nbPerson != "") {
             try {
-                m = new Mission(myCompany.listeMission.size()+1,name, startDate, duration, state);
+                m = new Mission(myCompany.listeMission.size() + 1, name, startDate, duration, state);
             } catch (ParseException ex) {
                 Logger.getLogger(AddMission.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -699,20 +711,68 @@ public class AddMission extends javax.swing.JPanel {
             }
 
             m.setNbTotalPerson(nbPerson);
+
             myCompany.addMission(m);
             //Sauvegarde des données dans le fichier liste_mission.ares
-            Management.ManageMission mm = new ManageMission();
             mm.writeData(myCompany);
-
+            mm.readData(myCompany);
             // En renvoi vers le details de la mission
             myFrame.jPanelContainer.removeAll();
             myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame));
             myFrame.repaint();
             myFrame.revalidate();
         }
-
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    public void initLinkedHashmap(Company myCompany,
+            Mission myMission,
+            LinkedHashMap<Skill, DefaultListModel<Person>> listModelPerson,
+            LinkedHashMap<Skill, Integer> nbPersonBySkill,
+            LinkedHashMap<Skill, Requirement> requirementBySkill) {
+
+        HashMap<String, Skill> listeSkill = myCompany.listeSkill;
+        DefaultListModel<Skill> modelSkillOnM = new DefaultListModel();
+        DefaultListModel<Skill> modelSkillA = (DefaultListModel<Skill>) jListSkillAvailable.getModel();
+
+        //Ajout dans la liste des competences requises sur la missions
+        for (Map.Entry<Integer, Requirement> entrySet : myMission.getRequirements().entrySet()) {
+            Requirement r = entrySet.getValue();
+            Skill myskill = r.getRequiredSkill();
+            requirementBySkill.put(myskill, r);
+            modelSkillOnM.addElement(myskill);
+            int index = modelSkillA.indexOf(myskill);
+            modelSkillA.remove(index);
+            listModelPerson.put(myskill, new DefaultListModel<>());
+
+            DefaultListModel<Person> modelPersonOnM = listModelPerson.get(myskill);
+            List<Person> personList = r.getListPersonnes();
+            for (Person personList1 : personList) {
+                modelPersonOnM.addElement(personList1);
+            }
+        }
+
+        jListSkill.setModel(modelSkillOnM);
+
+    }
+
+    public void initValues(Mission myMission) {
+        jTextFieldNameMission.setText(myMission.getMissionName());
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String strDate = dateFormat.format(myMission.getStartDate());
+        jFormattedTextFieldFireDate.setText(strDate);
+        jSpinnerDurationMission.setValue(myMission.getMissionDuration());
+        jSpinnerNbPersonMission.setValue(myMission.getNbTotalPerson());
+        int index = 0;
+
+        if (myMission.getEtat() == Mission.Etat.enPreparation) {
+            index = 0;
+        } else if (myMission.getEtat() == Mission.Etat.enCours) {
+            index = 1;
+        } else {
+            index = 2;
+        }
+        jComboBox1.setSelectedIndex(index);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonShiftLeftP;

@@ -103,8 +103,8 @@ public class MissionDetail extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         int elt = 0;
         jListPerson = new javax.swing.JList<Person>();
-        DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<Skill>();
+        DefaultComboBoxModel<Requirement> requirementModel = new DefaultComboBoxModel();
+        jComboBoxSkill = new javax.swing.JComboBox<Requirement>();
         jPanelHeader2 = new javax.swing.JPanel();
         jLabelTitle2 = new javax.swing.JLabel();
         jLabelReturn2 = new javax.swing.JLabel();
@@ -256,19 +256,19 @@ public class MissionDetail extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jListPerson);
 
         jComboBoxSkill.setMaximumRowCount(20);
-        jComboBoxSkill.setModel(skillModel);
-        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
+        jComboBoxSkill.setModel(requirementModel);
+        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.requirementRenderer());
 
-        HashMap<Integer,Requirement> mySkillList= myMission.getRequirements();
+        HashMap<Integer,Requirement> myRequirementList= myMission.getRequirements();
 
-        Set entrySetSkill = mySkillList.entrySet();
-        Iterator itSkill = entrySetSkill.iterator();
+        Set entrySetRequirement = myRequirementList.entrySet();
+        Iterator itRequirement = entrySetRequirement.iterator();
 
-        while (itSkill.hasNext()) {
+        while (itRequirement.hasNext()) {
 
-            Map.Entry me = (Map.Entry)itSkill.next();
-            Skill myskill = mySkillList.get(me.getKey()).getRequiredSkill();
-            skillModel.addElement(myskill);
+            Map.Entry me = (Map.Entry)itRequirement.next();
+            Requirement myRequirement = myRequirementList.get(me.getKey());
+            requirementModel.addElement(myRequirement);
         }
         jComboBoxSkill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,6 +375,11 @@ public class MissionDetail extends javax.swing.JPanel {
         );
 
         jButtonEdit.setText("Modifier");
+        jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditActionPerformed(evt);
+            }
+        });
 
         jButtonDelete.setText("Supprimer");
         jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -420,8 +425,8 @@ public class MissionDetail extends javax.swing.JPanel {
         // Recuperer les personnes sur un besoins
         HashMap<Integer, Requirement> requirementsList = myMission.getRequirements();
 
-        Requirement requirementSelected = requirementsList.get(elt+1);
-
+        Requirement requirementSelected = jComboBoxSkill.getItemAt(elt);
+        
         List<Person> personList = requirementSelected.getListPersonnes();
         int nbPerson = requirementSelected.getNbTotalPersonnes();
         jTextFieldNbPersonSkill.setText(""+nbPerson);
@@ -430,10 +435,12 @@ public class MissionDetail extends javax.swing.JPanel {
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         Iterator it = personList.iterator();
-
-        for (Person personList1 : personList) {
-            modelPerson.addElement(personList1);
+        if(!personList.isEmpty() || personList != null ){
+            for (Person personList1 : personList) {
+                 modelPerson.addElement(personList1);
+            }
         }
+        
 
         jScrollPane1.setViewportView(jListPerson);
     }//GEN-LAST:event_jComboBoxSkillActionPerformed
@@ -457,11 +464,18 @@ public class MissionDetail extends javax.swing.JPanel {
         myFrame.revalidate();
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
+    private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
+        myFrame.jPanelContainer.removeAll();
+        myFrame.jPanelContainer.add(new EditMission(myMission,myCompany,myFrame));
+        myFrame.repaint();
+        myFrame.revalidate();
+    }//GEN-LAST:event_jButtonEditActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDelete;
     private javax.swing.JButton jButtonEdit;
-    private javax.swing.JComboBox<Skill> jComboBoxSkill;
+    private javax.swing.JComboBox<Requirement> jComboBoxSkill;
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
