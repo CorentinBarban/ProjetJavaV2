@@ -14,6 +14,8 @@ import Management.ManageMission;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -548,7 +550,7 @@ public class EditMission extends javax.swing.JPanel {
                 }
             }
         }
-
+        sortModel(modelPersonAvailable);
         jListPersonAvailable.setModel(modelPersonAvailable);
 
         //Liaison entre le model et la compétence selectionnée
@@ -649,6 +651,7 @@ public class EditMission extends javax.swing.JPanel {
 
         // Ajout de la personne à la liste de personne disponible
         modelAvailablePerson.addElement(jListPerson.getSelectedValue());
+        sortModel(modelAvailablePerson);
         //Suppression de la personne au model
         modelMyPerson.remove(jListPerson.getSelectedIndex());
 
@@ -773,7 +776,20 @@ public class EditMission extends javax.swing.JPanel {
         }
         jComboBox1.setSelectedIndex(index);
     }
-
+    
+    
+    private void sortModel(DefaultListModel model) {
+        ArrayList<Person> list = new ArrayList<>();
+        for (int i = 0; i < model.size(); i++) {
+            list.add((Person) model.get(i));
+        }
+        Collections.sort(list);
+        model.removeAllElements();
+        for (Person s : list) {
+            model.addElement(s);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonShiftLeftP;
     private javax.swing.JButton jButtonShiftLeftS;

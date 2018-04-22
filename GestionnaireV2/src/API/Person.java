@@ -17,7 +17,7 @@ import java.util.Iterator;
  * Cette classe représente une personne.
  * @author Mathieu Stivanin 
  */
-public class Person {
+public class Person implements Comparable<Person>{
 
     private int idPerson;
     private String firstName;
@@ -202,4 +202,11 @@ public class Person {
     public HashMap<String, Skill> getSkillList() {
         return skillList;
     }
+
+    @Override
+    public int compareTo(Person p) {
+        int compareMission=((Person)p).getNbMissions();
+
+        return this.getNbMissions()-compareMission;
+    }   
 }

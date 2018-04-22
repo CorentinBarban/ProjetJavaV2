@@ -12,8 +12,11 @@ import API.Requirement;
 import API.Skill;
 import Management.ManageMission;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -581,6 +584,7 @@ public class AddMission extends javax.swing.JPanel {
 
         // Ajout de la personne à la liste de personne disponible
         modelAvailablePerson.addElement(jListPerson.getSelectedValue());
+        sortModel(modelAvailablePerson);
         //Suppression de la personne au model
         modelMyPerson.remove(jListPerson.getSelectedIndex());
 
@@ -620,7 +624,8 @@ public class AddMission extends javax.swing.JPanel {
                 }
             }
         }
-
+        
+        sortModel(modelPersonAvailable);
         jListPersonAvailable.setModel(modelPersonAvailable);
 
         //Liaison entre le model et la compétence selectionnée
@@ -683,7 +688,7 @@ public class AddMission extends javax.swing.JPanel {
         //Creation de la mission
         if (name != "" && startDate != "" && "" + duration != "" && "" + nbPerson != "") {
             try {
-                m = new Mission(myCompany.listeMission.size()+1,name, startDate, duration, state);
+                m = new Mission(myCompany.listeMission.size() + 1, name, startDate, duration, state);
             } catch (ParseException ex) {
                 Logger.getLogger(AddMission.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -713,6 +718,17 @@ public class AddMission extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    private void sortModel(DefaultListModel model) {
+        ArrayList<Person> list = new ArrayList<>();
+        for (int i = 0; i < model.size(); i++) {
+            list.add((Person) model.get(i));
+        }
+        Collections.sort(list);
+        model.removeAllElements();
+        for (Person s : list) {
+            model.addElement(s);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonShiftLeftP;
