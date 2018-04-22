@@ -8,7 +8,9 @@ package GUI.NouvelleInterface;
 import API.Company;
 import API.Mission;
 import API.Person;
+import API.Requirement;
 import API.Skill;
+import GUI.NouvelleInterface.SkillRenderer;
 import Management.ManageMission;
 import Management.ManagePerson;
 import java.util.HashMap;
@@ -31,12 +33,13 @@ public class PersonDetail extends javax.swing.JPanel {
     private Company myCompany;
     private home myFrame;
     private Person personSelected;
-    public PersonDetail(Person personSelected,Company myCompany,home myFrame) {
+
+    public PersonDetail(Person personSelected, Company myCompany, home myFrame) {
         this.personSelected = personSelected;
-        this.myCompany=myCompany;
-        this.myFrame=myFrame;
+        this.myCompany = myCompany;
+        this.myFrame = myFrame;
         initComponents();
-        
+
         jTextFieldLastName.setText(this.personSelected.getLastName());
         jTextFieldFirstName.setText(this.personSelected.getFirstName());
         jFormattedTextFieldHireDate.setValue(this.personSelected.getDateOfHire());
@@ -51,6 +54,8 @@ public class PersonDetail extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jPanelHeader5 = new javax.swing.JPanel();
         jLabelTitle5 = new javax.swing.JLabel();
         jLabelReturn5 = new javax.swing.JLabel();
@@ -67,11 +72,20 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelRightDetail = new javax.swing.JPanel();
         jLabelSkill = new javax.swing.JLabel();
         jLabelOnMission = new javax.swing.JLabel();
-        DefaultComboBoxModel<Mission> missionModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<>();
-        DefaultComboBoxModel<Skill> skillModel = new DefaultComboBoxModel();
-        jComboBoxSkill1 = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        DefaultListModel<Skill> skillModel = new DefaultListModel<Skill>();
+        jListSkill = new javax.swing.JList<Skill>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        DefaultListModel<Mission> missionModel = new DefaultListModel<Mission>();
+        jListMission = new javax.swing.JList<Mission>();
         jButtonSupprimer = new javax.swing.JButton();
+
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -148,7 +162,7 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jLabelHireDate))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(jTextFieldLastName)
                     .addComponent(jTextFieldFirstName)
                     .addComponent(jFormattedTextFieldHireDate))
                 .addContainerGap())
@@ -156,7 +170,7 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelLeftDetailLayout.setVerticalGroup(
             jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(107, 107, 107)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLastName)
                     .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -168,7 +182,7 @@ public class PersonDetail extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelHireDate)
                     .addComponent(jFormattedTextFieldHireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -183,33 +197,8 @@ public class PersonDetail extends javax.swing.JPanel {
         jLabelOnMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelOnMission.setText("Missions attribuées :");
 
-        jComboBoxSkill.setMaximumRowCount(20);
-        jComboBoxSkill.setModel(missionModel);
-        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.MissionRenderer());
-
-        HashMap<Integer,Mission> myMissionList= myCompany.listeMission;
-
-        Set entrySetMission = myMissionList.entrySet();
-        Iterator itMission = entrySetMission.iterator();
-
-        while (itMission.hasNext()) {
-
-            Map.Entry me = (Map.Entry)itMission.next();
-            Mission myMission = myMissionList.get(me.getKey());
-
-            if(myMission.getPersonOnMission().containsValue(personSelected)){
-                missionModel.addElement(myMission);
-            }
-        }
-        jComboBoxSkill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxSkillActionPerformed(evt);
-            }
-        });
-
-        jComboBoxSkill1.setMaximumRowCount(20);
-        jComboBoxSkill1.setModel(skillModel);
-        jComboBoxSkill1.setRenderer(new GUI.NouvelleInterface.SkillRenderer());
+        jListSkill.setModel(skillModel);
+        jListSkill.setCellRenderer(new SkillRenderer());
 
         HashMap<String,Skill> mySkillList= personSelected.getSkillList();
 
@@ -222,39 +211,45 @@ public class PersonDetail extends javax.swing.JPanel {
             Skill myskill = mySkillList.get(me.getKey());
             skillModel.addElement(myskill);
         }
-        jComboBoxSkill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxSkill1ActionPerformed(evt);
+        jListSkill.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListSkill.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jListSkillMouseReleased(evt);
             }
         });
+        jScrollPane2.setViewportView(jListSkill);
+
+        jListMission.setModel(missionModel);
+        jListMission.setCellRenderer(new MissionRenderer());
+        jListMission.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(jListMission);
 
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
         jPanelRightDetailLayout.setHorizontalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelSkill)
-                    .addComponent(jLabelOnMission))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxSkill1, 0, 154, Short.MAX_VALUE)
-                    .addComponent(jComboBoxSkill, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(60, 60, 60))
+                    .addComponent(jLabelOnMission)
+                    .addComponent(jLabelSkill))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(37, 37, 37))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(76, 76, 76)
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSkill)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelOnMission)
-                    .addComponent(jComboBoxSkill, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(113, 113, 113)
-                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxSkill1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSkill))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanelContainerMissionLayout = new javax.swing.GroupLayout(jPanelContainerMission);
@@ -262,21 +257,21 @@ public class PersonDetail extends javax.swing.JPanel {
         jPanelContainerMissionLayout.setHorizontalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
-                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSeparator2)
+                .addGap(32, 32, 32))
         );
 
         jButtonSupprimer.setText("Supprimer");
@@ -293,12 +288,11 @@ public class PersonDetail extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButtonSupprimer)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12))))
+                        .addGap(0, 644, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,44 +330,54 @@ public class PersonDetail extends javax.swing.JPanel {
 
     private void jLabelReturn5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn5MouseReleased
         myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new PersonList(myCompany,myFrame));
+        myFrame.jPanelContainer.add(new PersonList(myCompany, myFrame));
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn5MouseReleased
 
-    private void jComboBoxSkillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSkillActionPerformed
-        //Recuperer l'id de l'element selectioné
-        int elt = jComboBoxSkill.getSelectedIndex();
-        //Creation du model de skill
-        DefaultListModel<Skill> modelSkill = new DefaultListModel();
-        // Recuperer les skills
-        HashMap<String, Skill> skillList = personSelected.getSkillList();
-        
-        //jScrollPane1.setViewportView(modelSkill);
-    }//GEN-LAST:event_jComboBoxSkillActionPerformed
-
-    private void jComboBoxSkill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSkill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxSkill1ActionPerformed
-
     private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
-        if(personSelected.getNbMissions() == 0){ // SI la personne a des missions attribuées
+        if (personSelected.getNbMissions() == 0) { // SI la personne n'a pas de mission attribuée
             myCompany.listePerson.remove(myCompany.getKeyFromValue(myCompany.listePerson, personSelected));
         }
-        
+
         Management.ManagePerson mp = new ManagePerson();
         mp.writeData(myCompany);
         mp.readData(myCompany);
         myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new PersonList(myCompany,myFrame));
+        myFrame.jPanelContainer.add(new PersonList(myCompany, myFrame));
         myFrame.repaint();
         myFrame.revalidate();    }//GEN-LAST:event_jButtonSupprimerActionPerformed
+
+    private void jListSkillMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillMouseReleased
+
+        Skill skillSelected = jListSkill.getSelectedValue();
+        DefaultListModel<Mission> modelMission = (DefaultListModel<Mission>) jListMission.getModel();
+        
+        modelMission.removeAllElements();
+        for (Map.Entry<Integer, Mission> entrySetM : myCompany.listeMission.entrySet()) { //Pour chaque mission
+            Integer key = entrySetM.getKey();
+            Mission m = entrySetM.getValue();
+
+            HashMap<Integer, Requirement> listRequirement = m.getRequirements();
+
+            if (m.getPersonOnMission().containsValue(personSelected)) { // SI la personne participe à la mission
+
+                for (Map.Entry<Integer, Requirement> entrySetR : listRequirement.entrySet()) {
+                    Integer keyR = entrySetR.getKey();
+                    Requirement r = entrySetR.getValue();
+                    if (r.getListPersonnes().contains(personSelected) && skillSelected.equals(r.getRequiredSkill())) { // on l'ajoute
+                        modelMission.addElement(m);
+                    }
+                }
+            }
+
+        }
+
+    }//GEN-LAST:event_jListSkillMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSupprimer;
-    private javax.swing.JComboBox<Mission> jComboBoxSkill;
-    private javax.swing.JComboBox<Skill> jComboBoxSkill1;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
     private javax.swing.JLabel jLabelFirstName;
     private javax.swing.JLabel jLabelHireDate;
@@ -382,11 +386,17 @@ public class PersonDetail extends javax.swing.JPanel {
     public javax.swing.JLabel jLabelReturn5;
     private javax.swing.JLabel jLabelSkill;
     public javax.swing.JLabel jLabelTitle5;
+    private javax.swing.JList jList1;
+    private javax.swing.JList<Mission> jListMission;
+    private javax.swing.JList<Skill> jListSkill;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelContainerMission;
     private javax.swing.JPanel jPanelHeader5;
     private javax.swing.JPanel jPanelLeftDetail;
     private javax.swing.JPanel jPanelRightDetail;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextFieldFirstName;
     private javax.swing.JTextField jTextFieldLastName;
