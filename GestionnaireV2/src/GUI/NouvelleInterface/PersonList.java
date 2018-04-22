@@ -54,6 +54,11 @@ public class PersonList extends javax.swing.JPanel {
         jLabelAdd.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
         jLabelAdd.setText("Ajouter Personne");
+        jLabelAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabelAddMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
@@ -109,7 +114,7 @@ public class PersonList extends javax.swing.JPanel {
         int row = jTablePerson.getSelectedRow();
         int col = jTablePerson.columnAtPoint(evt.getPoint());
 
-        if (col == 4) { //Click sur Details 
+        if (col == 3) { //Click sur Details 
             Person personSelected = model.personList.get(row);
             PersonDetail pd = new PersonDetail(personSelected,myCompany,myFrame);
             myFrame.jPanelContainer.removeAll();
@@ -118,6 +123,13 @@ public class PersonList extends javax.swing.JPanel {
             myFrame.revalidate();
         }
     }//GEN-LAST:event_jTablePersonMouseClicked
+
+    private void jLabelAddMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAddMouseReleased
+            myFrame.jPanelContainer.removeAll();
+            myFrame.jPanelContainer.add(new AddPerson(myCompany,myFrame));
+            myFrame.repaint();
+            myFrame.revalidate();
+    }//GEN-LAST:event_jLabelAddMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

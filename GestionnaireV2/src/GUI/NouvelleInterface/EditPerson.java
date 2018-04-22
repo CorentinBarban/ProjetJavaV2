@@ -6,36 +6,40 @@
 package GUI.NouvelleInterface;
 
 import API.Company;
-import API.Mission;
 import API.Person;
 import API.Skill;
 import Management.ManagePerson;
+import static java.lang.Integer.parseInt;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 
 /**
  *
- * @author MathieuSTIVANIN
+ * @author corentin
  */
-public class AddPerson extends javax.swing.JPanel {
-
-    private Company myCompany;
-    private home myFrame;
+public class EditPerson extends javax.swing.JPanel {
 
     /**
-     * Creates new form AddPerson
+     * Creates new form EditPerson
      */
-    public AddPerson(Company myCompany, home myFrame) {
+    private Company myCompany;
+    private home myFrame;
+    private Person person;
+
+    public EditPerson(Person person, Company myCompany, home myFrame) {
         this.myCompany = myCompany;
         this.myFrame = myFrame;
+        this.person = person;
         initComponents();
+        initInformation(person);
     }
 
     /**
@@ -73,14 +77,13 @@ public class AddPerson extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(246, 246, 246));
-        setPreferredSize(new java.awt.Dimension(808, 583));
 
         jPanelHeader.setBackground(new java.awt.Color(255, 255, 255));
         jPanelHeader.setPreferredSize(new java.awt.Dimension(808, 583));
 
         jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
         jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
-        jLabelTitle.setText("Ajouter une personne");
+        jLabelTitle.setText("Modifier une personne");
 
         jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
@@ -98,8 +101,8 @@ public class AddPerson extends javax.swing.JPanel {
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
-                .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                 .addGap(157, 157, 157))
         );
         jPanelHeaderLayout.setVerticalGroup(
@@ -152,7 +155,7 @@ public class AddPerson extends javax.swing.JPanel {
         jPanelLeftDetailLayout.setVerticalGroup(
             jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
-                .addGap(179, 179, 179)
+                .addGap(152, 152, 152)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLastName)
                     .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,13 +229,13 @@ public class AddPerson extends javax.swing.JPanel {
             jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPersonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonShiftLeftS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonShiftRightS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelPersonLayout.setVerticalGroup(
@@ -242,7 +245,7 @@ public class AddPerson extends javax.swing.JPanel {
                 .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPersonLayout.createSequentialGroup()
                         .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                             .addComponent(jScrollPane3))
                         .addGap(52, 52, 52))
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
@@ -271,7 +274,7 @@ public class AddPerson extends javax.swing.JPanel {
                     .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabelPerson)
-                        .addContainerGap(347, Short.MAX_VALUE))))
+                        .addContainerGap(269, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRightDetailLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonSubmit)
@@ -301,7 +304,7 @@ public class AddPerson extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -314,8 +317,8 @@ public class AddPerson extends javax.swing.JPanel {
                         .addGap(36, 36, 36))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
-                            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE))
+                            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
                         .addContainerGap())))
         );
 
@@ -323,7 +326,7 @@ public class AddPerson extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -370,41 +373,61 @@ public class AddPerson extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonShiftRightSActionPerformed
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
+    
         DefaultListModel<Skill> modelSkill = (DefaultListModel<Skill>) jListSkill.getModel();
-
+        
         String firstName = jTextFieldFirstName.getText();
         String lastName = jTextFieldLastName.getText();
         String hireDate = jFormattedTextFieldHireDate.getText();
-        Person p = null;
-
+        
         if (!firstName.isEmpty() && !lastName.isEmpty() && !hireDate.isEmpty()) {
+            
+            person.setFirstName(firstName);
+            person.setLastName(lastName);
             try {
-                p = new Person(myCompany.listePerson.size() + 1, lastName, firstName, hireDate);
+                person.setDateOfHire(hireDate);
             } catch (ParseException ex) {
-                Logger.getLogger(AddPerson.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(EditPerson.class.getName()).log(Level.SEVERE, null, ex);
             }
-
             if (!modelSkill.isEmpty()) {
                 for (int i = 0; i < modelSkill.getSize(); i++) {
-                    p.addSkill(modelSkill.elementAt(i));
+                    if(!person.getSkillList().containsValue(modelSkill.elementAt(i))){
+                        person.addSkill(modelSkill.elementAt(i));
+                    }
                 }
             }
-            myCompany.addPerson(p);
             Management.ManagePerson mp = new ManagePerson();
             mp.writeData(myCompany);
             mp.readData(myCompany);
 
             myFrame.jPanelContainer.removeAll();
-            myFrame.jPanelContainer.add(new PersonDetail(p, myCompany, myFrame));
+            myFrame.jPanelContainer.add(new PersonDetail(person, myCompany, myFrame));
             myFrame.repaint();
             myFrame.revalidate();
 
         }
 
-
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    public void initInformation(Person person) {
+        jTextFieldFirstName.setText(person.getFirstName());
+        jTextFieldLastName.setText(person.getLastName());
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String strDate = dateFormat.format(person.getDateOfHire());
+        jFormattedTextFieldHireDate.setText(strDate);
+        
+        DefaultListModel<Skill> modelSkill = (DefaultListModel<Skill>) jListSkill.getModel();
+        HashMap<String, Skill> myskillList = person.getSkillList();
+        
+        if (!myskillList.isEmpty()) {
+            for (Map.Entry<String, Skill> entrySet : myskillList.entrySet()) {
+                String idSkill = entrySet.getKey();
+                Skill skill = entrySet.getValue();
+                modelSkill.addElement(skill);
+            }
+        }
 
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonShiftLeftS;
     private javax.swing.JButton jButtonShiftRightS;

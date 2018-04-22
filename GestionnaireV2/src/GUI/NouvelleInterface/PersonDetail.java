@@ -79,6 +79,7 @@ public class PersonDetail extends javax.swing.JPanel {
         DefaultListModel<Mission> missionModel = new DefaultListModel<Mission>();
         jListMission = new javax.swing.JList<Mission>();
         jButtonSupprimer = new javax.swing.JButton();
+        jButtonEdit = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -162,7 +163,7 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jLabelHireDate))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldLastName)
+                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                     .addComponent(jTextFieldFirstName)
                     .addComponent(jFormattedTextFieldHireDate))
                 .addContainerGap())
@@ -281,6 +282,13 @@ public class PersonDetail extends javax.swing.JPanel {
             }
         });
 
+        jButtonEdit.setText("Modifier");
+        jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -291,7 +299,8 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButtonSupprimer)
-                        .addGap(0, 644, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonEdit)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -300,7 +309,9 @@ public class PersonDetail extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSupprimer)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSupprimer)
+                    .addComponent(jButtonEdit))
                 .addGap(9, 9, 9))
         );
 
@@ -375,8 +386,16 @@ public class PersonDetail extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jListSkillMouseReleased
 
+    private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
+        myFrame.jPanelContainer.removeAll();
+        myFrame.jPanelContainer.add(new EditPerson(personSelected,myCompany, myFrame));
+        myFrame.repaint();
+        myFrame.revalidate();
+    }//GEN-LAST:event_jButtonEditActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonEdit;
     private javax.swing.JButton jButtonSupprimer;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
     private javax.swing.JLabel jLabelFirstName;

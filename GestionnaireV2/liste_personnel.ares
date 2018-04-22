@@ -60,6 +60,7 @@
           <idSkill>E.7.</idSkill>
           <idSkill>A.4.</idSkill>
           <idSkill>A.6.</idSkill>
+          <idSkill>D.5.</idSkill>
      </skills_list>
  </person>
 <person>
@@ -93,18 +94,14 @@
      </skills_list>
  </person>
 <person>
-     <id>53</id>
-     <lastName>Corentin</lastName>
-     <firstName>Barban</firstName>
-     <dateOfHire>06/09/1996</dateOfHire>
+     <id>52</id>
+     <lastName>Barban</lastName>
+     <firstName>Corentin</firstName>
+     <dateOfHire>24/04/2018</dateOfHire>
      <skills_list>
-          <idSkill>E.6.</idSkill>
-          <idSkill>D.10.</idSkill>
-          <idSkill>B.1.</idSkill>
-          <idSkill>B.3.</idSkill>
-          <idSkill>D.2.</idSkill>
-          <idSkill>D.4.</idSkill>
-          <idSkill>E.9.</idSkill>
+          <idSkill>E.5.</idSkill>
+          <idSkill>A.2.</idSkill>
+          <idSkill>D.5.</idSkill>
      </skills_list>
  </person>
 <person>

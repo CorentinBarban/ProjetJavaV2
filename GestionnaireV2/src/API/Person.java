@@ -30,20 +30,20 @@ public class Person {
      * Constructeur d'une personne.
      *
      * @param id représente son identifiant
-     * @param ln représente son nom
-     * @param fn représente son prénom
-     * @param hd représente sa date d'entrée dans l'entreprise, au format
+     * @param lastName représente son nom
+     * @param firstName représente son prénom
+     * @param dateOfHire représente sa date d'entrée dans l'entreprise, au format
      * jj/mm/aaaa
      * @throws ParseException afin de retourner une exception si erreur lors du
      * formatage du texte en date
      */
-    public Person(int id, String ln, String fn, String hd) throws ParseException {
+    public Person(int id, String lastName, String firstName, String dateOfHire) throws ParseException {
         this.idPerson = id;
-        this.lastName = ln;
-        this.firstName = fn;
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.nbMissions = 0;
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date hDate = formatter.parse(hd); // Conversion du texte en date selon le format vu au dessus
+        Date hDate = formatter.parse(dateOfHire); // Conversion du texte en date selon le format vu au dessus
         this.dateOfHire = hDate;
         skillList=new HashMap();
     }

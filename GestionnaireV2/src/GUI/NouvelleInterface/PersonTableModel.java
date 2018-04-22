@@ -23,10 +23,10 @@ public class PersonTableModel extends AbstractTableModel {
     public final List<Person> personList;
 
     private final String[] columnNames = new String[]{
-        "Nom", "Prénom", "Date d'embauche", "Compétences", "Details"
+        "Nom", "Prénom", "Date d'embauche", "Details"
     };
     private final Class[] columnClass = new Class[]{
-        String.class, String.class, Date.class, Skill.class , String.class
+        String.class, String.class, Date.class, String.class
     };
 
     public PersonTableModel(List<Person> personList) {
@@ -64,12 +64,6 @@ public class PersonTableModel extends AbstractTableModel {
         } else if (2 == columnIndex) {
             return row.getDateOfHire();
         } else if (3 == columnIndex) {
-            // Besoin d'afficher le nom Fr du skill, et non le toString()
-            List<Skill> skillsList = new ArrayList<Skill>(row.getSkillList().values());
-            for (int i=0;i<skillsList.size();i++){
-                return skillsList.get(i).getSkillNameFr();
-            }
-        } else if (4 == columnIndex) {
             return "Détails";
         }
         return null;
