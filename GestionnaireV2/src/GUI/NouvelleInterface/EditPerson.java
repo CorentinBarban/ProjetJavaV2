@@ -6,7 +6,9 @@
 package GUI.NouvelleInterface;
 
 import API.Company;
+import API.Mission;
 import API.Person;
+import API.Requirement;
 import API.Skill;
 import Management.ManagePerson;
 import static java.lang.Integer.parseInt;
@@ -367,9 +369,29 @@ public class EditPerson extends javax.swing.JPanel {
         DefaultListModel<Skill> skillAvailable = (DefaultListModel<Skill>) jListSkillAvailable.getModel();
         DefaultListModel<Skill> mySkills = (DefaultListModel<Skill>) jListSkill.getModel();
         Skill skillSelected = jListSkill.getSelectedValue();
-        skillAvailable.addElement(skillSelected);
-        mySkills.remove(jListSkill.getSelectedIndex());
-        jButtonShiftRightS.setEnabled(false);
+        boolean bool = false;
+        
+        for (Map.Entry<Integer, Mission> entrySetM : myCompany.listeMission.entrySet()) { //Pour chaque mission
+            Integer key = entrySetM.getKey();
+            Mission m = entrySetM.getValue();
+
+            HashMap<Integer, Requirement> listRequirement = m.getRequirements();
+
+            if (m.getPersonOnMission().containsValue(person)) { // SI la personne participe à la mission
+                for (Map.Entry<Integer, Requirement> entrySetR : listRequirement.entrySet()) {
+                    Integer keyR = entrySetR.getKey();
+                    Requirement r = entrySetR.getValue();
+                    
+                    if (r.getListPersonnes().contains(person) && skillSelected.equals(r.getRequiredSkill())) { // Si la personne est dans les requirements et que la compétence sélectionnée se situe dans le req
+                        System.out.println("Skill :"+skillSelected.getSkillNameFr()+" , Req : "+r.getIdRequirement());
+                    } else {
+                        skillAvailable.addElement(skillSelected);
+                        mySkills.remove(jListSkill.getSelectedIndex());
+                        jButtonShiftRightS.setEnabled(false);
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_jButtonShiftRightSActionPerformed
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
