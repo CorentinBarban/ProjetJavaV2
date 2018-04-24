@@ -51,7 +51,7 @@ class ProgressCellRenderer extends JProgressBar implements TableCellRenderer {
                 setBackground(Color.white);
                 break;
             default:
-                case terminee:
+            case terminee:
                 setValue(100);
                 setForeground(new Color(0,204,0));
                 setBackground(Color.white);

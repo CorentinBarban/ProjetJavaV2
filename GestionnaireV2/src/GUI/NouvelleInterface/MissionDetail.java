@@ -30,6 +30,7 @@ public class MissionDetail extends javax.swing.JPanel {
     /**
      * Creates new form MissionDetail
      */
+    
     private Mission myMission;
     private Company myCompany;
     private home myFrame;
@@ -66,6 +67,11 @@ public class MissionDetail extends javax.swing.JPanel {
                 jProgressBar1.setForeground(new Color(229,255,204));
                 jProgressBar1.setBackground(Color.white);
                 break;
+            case terminee:
+                jProgressBar1.setValue(100);
+                jProgressBar1.setForeground(new Color(0,204,0));
+                jProgressBar1.setBackground(Color.white);
+                break;
             default:
                 break;
         }
@@ -94,6 +100,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabelProgression = new javax.swing.JLabel();
         jFormattedTextFieldFireDate = new javax.swing.JFormattedTextField();
+        jLabelInfo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanelRightDetail = new javax.swing.JPanel();
         jLabelSkill = new javax.swing.JLabel();
@@ -102,9 +109,9 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         int elt = 0;
-        jListPerson = new javax.swing.JList<Person>();
+        jListPerson = new javax.swing.JList<>();
         DefaultComboBoxModel<Requirement> requirementModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<Requirement>();
+        jComboBoxSkill = new javax.swing.JComboBox<>();
         jPanelHeader2 = new javax.swing.JPanel();
         jLabelTitle2 = new javax.swing.JLabel();
         jLabelReturn2 = new javax.swing.JLabel();
@@ -148,6 +155,8 @@ public class MissionDetail extends javax.swing.JPanel {
         jFormattedTextFieldFireDate.setEditable(false);
         jFormattedTextFieldFireDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
 
+        jLabelInfo.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
         jPanelLeftDetailLayout.setHorizontalGroup(
@@ -158,7 +167,7 @@ public class MissionDetail extends javax.swing.JPanel {
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addComponent(jLabelProgression)
                         .addGap(18, 18, 18)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelNbPersonMission)
@@ -172,7 +181,10 @@ public class MissionDetail extends javax.swing.JPanel {
                             .addComponent(jTextFieldDurationMission)
                             .addComponent(jTextFieldStateMission)
                             .addComponent(jTextFieldNbPersonMission)
-                            .addComponent(jFormattedTextFieldFireDate))))
+                            .addComponent(jFormattedTextFieldFireDate)))
+                    .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
+                        .addComponent(jLabelInfo)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -205,7 +217,8 @@ public class MissionDetail extends javax.swing.JPanel {
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelInfo))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -330,8 +343,8 @@ public class MissionDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,7 +453,6 @@ public class MissionDetail extends javax.swing.JPanel {
                  modelPerson.addElement(personList1);
             }
         }
-        
 
         jScrollPane1.setViewportView(jListPerson);
     }//GEN-LAST:event_jComboBoxSkillActionPerformed
@@ -479,6 +491,7 @@ public class MissionDetail extends javax.swing.JPanel {
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabelDurationMission;
     private javax.swing.JLabel jLabelFireDateMission;
+    private javax.swing.JLabel jLabelInfo;
     private javax.swing.JLabel jLabelNameMission;
     private javax.swing.JLabel jLabelNbPersonMission;
     private javax.swing.JLabel jLabelPerson;

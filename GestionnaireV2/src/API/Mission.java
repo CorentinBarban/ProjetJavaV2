@@ -218,7 +218,7 @@ public class Mission {
      * Méthode permettant de vérifier si la mission respecte les critères afin de changer d'état.
      *
      */
-    public void verification(){
+    public void verification() throws Exception{
         int nb = 0;
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //Récupération de la date d'auj et conversion au format jj/mm/aaaa.
         LocalDate localDate = LocalDate.now();
@@ -233,11 +233,9 @@ public class Mission {
         
         switch(this.etat){
             case enPreparation :
-                System.out.println("L'état de la mission est bien en préparation, passage à la suite.");
                 if(infoRemplies()){// SI toutes les infos
 
                     if(personOnMission.size() == nbTotalPerson){ // Vérifie si le nombre total de personnes sur la mission est égal au nombre requis
-                        System.out.println("Le nombre requis de personnes sur la mission est de "+personOnMission.size()+", le nombre de personnes actuel est de : "+nbTotalPerson+". Passage à la suite.");
 
                         Set entrySet = requirements.entrySet(); // Création d'un itérateur sur la liste des besoins de la mission
                         Iterator itReq = entrySet.iterator();
@@ -251,43 +249,38 @@ public class Mission {
                             List<Person> listPerson = r.getListPersonnes();
 
                             if(nbPersonActuel == nbPersonRequis){ // Si il y a le nb souhaité de personnes sur le besoin
-                            System.out.println("Le nombre de personnes requis sur le besoin "+r.getIdRequirement()+" est de : "+nbPersonRequis+", le nombre actuel est de : "+nbPersonActuel+". Passage à la suite.");
 
                                 for(int i=0; i<listPerson.size();i++){
                                     Person p = listPerson.get(i);
                                     nb += checkSkill(p, r); // Vérifie si la personne possède la compétence requise par le besoin
                                 }
                             } else {
-                                System.out.println("Il n'y a pas le nb de personnes souhaité sur le besoin.");
+                                throw new Exception("Il n'y a pas le nb de personnes souhaité sur le besoin.");
                             }
                         }
                         if(nb == getNbTotalPerson()){
-                            System.out.println("La mission peut passer en plannifiée.");
                             this.etat = Etat.plannifiee;
                         } else {
-                            System.out.println("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
+                           throw new Exception("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
                         }
                     } else {
-                        System.out.println("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
+                        throw new Exception("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
                     }
+                } else {
+                    throw new Exception ("Toutes les informations ne sont pas renseignées.");
                 }
                 
                 if (dateAuj.after(endDate)) {
-                    System.out.println("La date de fin est passée. La mission est terminée.");
                     this.etat = Etat.terminee;
                 }
                 
                 break;
-            case plannifiee:
-                System.out.println("Mission plannifiée.");
-                
+            case plannifiee:                
                 if (dateAuj.after(startDate)) {
-                    System.out.println("La date de début est passée. La mission devient en cours.");
                     this.etat = Etat.enCours;
                 }
                 
                 if (dateAuj.after(endDate)) {
-                    System.out.println("La date de fin est passée. La mission est terminée.");
                     this.etat = Etat.terminee;
                 }
                 break;
@@ -295,7 +288,6 @@ public class Mission {
             case enCours:
                 
                 if (dateAuj.after(endDate)) {
-                    System.out.println("La date de fin est passée. La mission est terminée.");
                     this.etat = Etat.terminee;
                 }
                 break;
