@@ -220,6 +220,15 @@ public class Mission {
      */
     public void verification(){
         int nb = 0;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //Récupération de la date d'auj et conversion au format jj/mm/aaaa.
+        LocalDate localDate = LocalDate.now();
+        System.out.println(dtf.format(localDate));
+        Date dateAuj = java.sql.Date.valueOf(localDate); // Conversion d'un obj localdate a date.
+        Date endDate;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(startDate);
+        calendar.add(Calendar.DAY_OF_YEAR, (missionDuration*7));
+        endDate = calendar.getTime();
         System.out.println("Vérification :");
         
         switch(this.etat){
@@ -263,22 +272,32 @@ public class Mission {
                     }
                 }
                 
+                if (dateAuj.after(endDate)) {
+                    System.out.println("La date de fin est passée. La mission est terminée.");
+                    this.etat = Etat.terminee;
+                }
+                
                 break;
             case plannifiee:
                 System.out.println("Mission plannifiée.");
-                
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //Récupération de la date d'auj et conversion au format jj/mm/aaaa.
-                LocalDate localDate = LocalDate.now();
-                System.out.println(dtf.format(localDate));
-                Date dateAuj = java.sql.Date.valueOf(localDate); // Conversion d'un obj localdate a date.
                 
                 if (dateAuj.after(startDate)) {
                     System.out.println("La date de début est passée. La mission devient en cours.");
                     this.etat = Etat.enCours;
                 }
+                
+                if (dateAuj.after(endDate)) {
+                    System.out.println("La date de fin est passée. La mission est terminée.");
+                    this.etat = Etat.terminee;
+                }
                 break;
                 
             case enCours:
+                
+                if (dateAuj.after(endDate)) {
+                    System.out.println("La date de fin est passée. La mission est terminée.");
+                    this.etat = Etat.terminee;
+                }
                 break;
         }
     }
