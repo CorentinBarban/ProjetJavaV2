@@ -36,6 +36,7 @@ public class AddPerson extends javax.swing.JPanel {
         this.myCompany = myCompany;
         this.myFrame = myFrame;
         initComponents();
+        jLabelErr.setText("");
     }
 
     /**
@@ -63,13 +64,14 @@ public class AddPerson extends javax.swing.JPanel {
         jPanelPerson = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> mySkillModel = new DefaultListModel<Skill>();
-        jListSkill = new javax.swing.JList<Skill>();
+        jListSkill = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> skillModel = new DefaultListModel<Skill>();
-        jListSkillAvailable = new javax.swing.JList<Skill>();
+        jListSkillAvailable = new javax.swing.JList<>();
         jButtonShiftLeftS = new javax.swing.JButton();
         jButtonShiftRightS = new javax.swing.JButton();
         jButtonSubmit = new javax.swing.JButton();
+        jLabelErr = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(246, 246, 246));
@@ -146,7 +148,7 @@ public class AddPerson extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldLastName)
                     .addComponent(jTextFieldFirstName)
-                    .addComponent(jFormattedTextFieldHireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
+                    .addComponent(jFormattedTextFieldHireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -260,6 +262,8 @@ public class AddPerson extends javax.swing.JPanel {
             }
         });
 
+        jLabelErr.setForeground(new java.awt.Color(255, 51, 0));
+
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
         jPanelRightDetailLayout.setHorizontalGroup(
@@ -273,7 +277,9 @@ public class AddPerson extends javax.swing.JPanel {
                         .addComponent(jLabelPerson)
                         .addContainerGap(347, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRightDetailLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(243, Short.MAX_VALUE)
+                .addComponent(jLabelErr)
+                .addGap(103, 103, 103)
                 .addComponent(jButtonSubmit)
                 .addContainerGap())
         );
@@ -285,7 +291,9 @@ public class AddPerson extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSubmit))
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSubmit)
+                    .addComponent(jLabelErr)))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -301,7 +309,7 @@ public class AddPerson extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -314,8 +322,8 @@ public class AddPerson extends javax.swing.JPanel {
                         .addGap(36, 36, 36))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
-                            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE))
+                            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
+                            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE))
                         .addContainerGap())))
         );
 
@@ -381,7 +389,7 @@ public class AddPerson extends javax.swing.JPanel {
             try {
                 p = new Person(myCompany.listePerson.size() + 1, lastName, firstName, hireDate);
             } catch (ParseException ex) {
-                Logger.getLogger(AddPerson.class.getName()).log(Level.SEVERE, null, ex);
+                jLabelErr.setText("Erreur : La personne n'a pas pu être créée. ("+ex.getMessage()+")");
             }
 
             if (!modelSkill.isEmpty()) {
@@ -399,6 +407,8 @@ public class AddPerson extends javax.swing.JPanel {
             myFrame.repaint();
             myFrame.revalidate();
 
+        } else {
+            jLabelErr.setText("Erreur : Toutes les informations doivent être renseignées.");
         }
 
 
@@ -410,6 +420,7 @@ public class AddPerson extends javax.swing.JPanel {
     private javax.swing.JButton jButtonShiftRightS;
     private javax.swing.JButton jButtonSubmit;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
+    private javax.swing.JLabel jLabelErr;
     private javax.swing.JLabel jLabelFirstName;
     private javax.swing.JLabel jLabelHireDate;
     private javax.swing.JLabel jLabelLastName;

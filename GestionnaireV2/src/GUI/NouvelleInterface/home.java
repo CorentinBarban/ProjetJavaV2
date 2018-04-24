@@ -260,8 +260,13 @@ public class home extends javax.swing.JFrame {
     private void jLabelLogoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogoMouseReleased
         jPanelContainer.removeAll();
         jPanelContainer.add(new MissionList(myCompany,this));
+        jPanelMenuMission.setBackground(new java.awt.Color(30, 32, 44));
+        jLabelMission.setForeground(new java.awt.Color(254,254,254));
+        jPanelMenuPerson.setBackground(new java.awt.Color(49,51,66));
+        jLabelPerson.setForeground(new java.awt.Color(153, 156, 163));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
+        
     }//GEN-LAST:event_jLabelLogoMouseReleased
     
     

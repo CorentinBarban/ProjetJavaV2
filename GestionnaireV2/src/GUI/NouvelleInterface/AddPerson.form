@@ -124,7 +124,7 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanelRightDetail" pref="460" max="32767" attributes="0"/>
+                  <Component id="jPanelRightDetail" pref="442" max="32767" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -140,8 +140,8 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanelRightDetail" pref="451" max="32767" attributes="0"/>
-                              <Component id="jPanelLeftDetail" pref="451" max="32767" attributes="0"/>
+                              <Component id="jPanelRightDetail" pref="441" max="32767" attributes="0"/>
+                              <Component id="jPanelLeftDetail" pref="441" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -175,7 +175,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTextFieldLastName" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldFirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jFormattedTextFieldHireDate" alignment="0" pref="142" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextFieldHireDate" alignment="0" pref="132" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -267,7 +267,9 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="243" max="32767" attributes="0"/>
+                      <Component id="jLabelErr" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                       <Component id="jButtonSubmit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -281,7 +283,10 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jPanelPerson" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonSubmit" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButtonSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelErr" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -423,6 +428,13 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubmitActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelErr">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="33" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

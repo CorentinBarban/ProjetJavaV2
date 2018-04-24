@@ -42,6 +42,7 @@ public class EditPerson extends javax.swing.JPanel {
         this.person = person;
         initComponents();
         initInformation(person);
+        jLabelErr.setText("");
     }
 
     /**
@@ -69,13 +70,14 @@ public class EditPerson extends javax.swing.JPanel {
         jPanelPerson = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> mySkillModel = new DefaultListModel<Skill>();
-        jListSkill = new javax.swing.JList<Skill>();
+        jListSkill = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> skillModel = new DefaultListModel<Skill>();
-        jListSkillAvailable = new javax.swing.JList<Skill>();
+        jListSkillAvailable = new javax.swing.JList<>();
         jButtonShiftLeftS = new javax.swing.JButton();
         jButtonShiftRightS = new javax.swing.JButton();
         jButtonSubmit = new javax.swing.JButton();
+        jLabelErr = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(246, 246, 246));
@@ -151,7 +153,7 @@ public class EditPerson extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldLastName)
                     .addComponent(jTextFieldFirstName)
-                    .addComponent(jFormattedTextFieldHireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
+                    .addComponent(jFormattedTextFieldHireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -247,7 +249,7 @@ public class EditPerson extends javax.swing.JPanel {
                 .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPersonLayout.createSequentialGroup()
                         .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                             .addComponent(jScrollPane3))
                         .addGap(52, 52, 52))
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
@@ -265,6 +267,9 @@ public class EditPerson extends javax.swing.JPanel {
             }
         });
 
+        jLabelErr.setForeground(new java.awt.Color(255, 51, 0));
+        jLabelErr.setText("Test");
+
         javax.swing.GroupLayout jPanelRightDetailLayout = new javax.swing.GroupLayout(jPanelRightDetail);
         jPanelRightDetail.setLayout(jPanelRightDetailLayout);
         jPanelRightDetailLayout.setHorizontalGroup(
@@ -276,9 +281,11 @@ public class EditPerson extends javax.swing.JPanel {
                     .addGroup(jPanelRightDetailLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabelPerson)
-                        .addContainerGap(269, Short.MAX_VALUE))))
+                        .addContainerGap(264, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRightDetailLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelErr)
+                .addGap(47, 47, 47)
                 .addComponent(jButtonSubmit)
                 .addContainerGap())
         );
@@ -290,7 +297,9 @@ public class EditPerson extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSubmit))
+                .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSubmit)
+                    .addComponent(jLabelErr)))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -328,7 +337,7 @@ public class EditPerson extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -427,6 +436,9 @@ public class EditPerson extends javax.swing.JPanel {
             myFrame.repaint();
             myFrame.revalidate();
 
+        } else {
+            jLabelErr.setText("Erreur : Toutes les informations doivent être renseignées.");
+
         }
 
     }//GEN-LAST:event_jButtonSubmitActionPerformed
@@ -455,6 +467,7 @@ public class EditPerson extends javax.swing.JPanel {
     private javax.swing.JButton jButtonShiftRightS;
     private javax.swing.JButton jButtonSubmit;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
+    private javax.swing.JLabel jLabelErr;
     private javax.swing.JLabel jLabelFirstName;
     private javax.swing.JLabel jLabelHireDate;
     private javax.swing.JLabel jLabelLastName;

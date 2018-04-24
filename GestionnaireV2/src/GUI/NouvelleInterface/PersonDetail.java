@@ -43,6 +43,7 @@ public class PersonDetail extends javax.swing.JPanel {
         jTextFieldLastName.setText(this.personSelected.getLastName());
         jTextFieldFirstName.setText(this.personSelected.getFirstName());
         jFormattedTextFieldHireDate.setValue(this.personSelected.getDateOfHire());
+        jLabelErr.setText("");
     }
 
     /**
@@ -74,12 +75,13 @@ public class PersonDetail extends javax.swing.JPanel {
         jLabelOnMission = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> skillModel = new DefaultListModel<Skill>();
-        jListSkill = new javax.swing.JList<Skill>();
+        jListSkill = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         DefaultListModel<Mission> missionModel = new DefaultListModel<Mission>();
-        jListMission = new javax.swing.JList<Mission>();
+        jListMission = new javax.swing.JList<>();
         jButtonSupprimer = new javax.swing.JButton();
         jButtonEdit = new javax.swing.JButton();
+        jLabelErr = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -163,7 +165,7 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jLabelHireDate))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                     .addComponent(jTextFieldFirstName)
                     .addComponent(jFormattedTextFieldHireDate))
                 .addContainerGap())
@@ -289,6 +291,8 @@ public class PersonDetail extends javax.swing.JPanel {
             }
         });
 
+        jLabelErr.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -299,6 +303,8 @@ public class PersonDetail extends javax.swing.JPanel {
                     .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButtonSupprimer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelErr)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonEdit)))
                 .addContainerGap())
@@ -311,7 +317,8 @@ public class PersonDetail extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSupprimer)
-                    .addComponent(jButtonEdit))
+                    .addComponent(jButtonEdit)
+                    .addComponent(jLabelErr))
                 .addGap(9, 9, 9))
         );
 
@@ -349,6 +356,8 @@ public class PersonDetail extends javax.swing.JPanel {
     private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
         if (personSelected.getNbMissions() == 0) { // SI la personne n'a pas de mission attribuée
             myCompany.listePerson.remove(myCompany.getKeyFromValue(myCompany.listePerson, personSelected));
+        } else {
+            jLabelErr.setText("Erreur : Impossible de supprimer une personne tant qu'elle a des missions attribuées.");
         }
 
         Management.ManagePerson mp = new ManagePerson();
@@ -381,9 +390,7 @@ public class PersonDetail extends javax.swing.JPanel {
                     }
                 }
             }
-
         }
-
     }//GEN-LAST:event_jListSkillMouseReleased
 
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
@@ -398,6 +405,7 @@ public class PersonDetail extends javax.swing.JPanel {
     private javax.swing.JButton jButtonEdit;
     private javax.swing.JButton jButtonSupprimer;
     private javax.swing.JFormattedTextField jFormattedTextFieldHireDate;
+    private javax.swing.JLabel jLabelErr;
     private javax.swing.JLabel jLabelFirstName;
     private javax.swing.JLabel jLabelHireDate;
     private javax.swing.JLabel jLabelLastName;
