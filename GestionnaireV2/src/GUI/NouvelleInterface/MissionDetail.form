@@ -104,13 +104,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelInfo" min="-2" pref="301" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabelProgression" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                              <Component id="jProgressBar1" pref="197" max="32767" attributes="0"/>
+                              <Component id="jProgressBar1" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -128,10 +129,6 @@
                                   <Component id="jTextFieldNbPersonMission" max="32767" attributes="0"/>
                                   <Component id="jFormattedTextFieldFireDate" max="32767" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabelInfo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -176,8 +173,8 @@
                               <Component id="jProgressBar1" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
-                      <Component id="jLabelInfo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabelInfo" pref="18" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

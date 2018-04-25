@@ -46,48 +46,7 @@ public class MissionDetail extends javax.swing.JPanel {
         this.myCompany = myCompany;
         this.myFrame = myFrame;
         initComponents();
-        jTextFieldNameMission.setText(myMission.getMissionName());
-        jFormattedTextFieldFireDate.setValue(myMission.getStartDate());
-        jTextFieldDurationMission.setText(""+myMission.getMissionDuration());
-        jTextFieldNbPersonMission.setText(""+myMission.getNbTotalPerson());
-        jLabelInfo.setText(exception);
-        jProgressBar1.setBorderPainted(true);
-        jProgressBar1.setStringPainted(true);
-        jProgressBar1.setBorder(new javax.swing.border.LineBorder(Color.lightGray));
-        jProgressBar1.setUI(new BasicProgressBarUI() {
-            protected Color getSelectionBackground() { return Color.black; }
-            protected Color getSelectionForeground() { return Color.black; }
-        });
-        switch(myMission.getEtat()){
-            case enPreparation:
-                jProgressBar1.setValue(25);
-                jProgressBar1.setForeground(new Color(255,102,102));
-                jProgressBar1.setBackground(Color.white);
-                etat = "En Préparation";
-                break;
-            case plannifiee:
-                jProgressBar1.setValue(50);
-                jProgressBar1.setForeground(new Color(255,255,153));
-                jProgressBar1.setBackground(Color.white);
-                etat = "Plannifiée";
-                break;
-            case enCours:
-                jProgressBar1.setValue(75);
-                jProgressBar1.setForeground(new Color(229,255,204));
-                jProgressBar1.setBackground(Color.white);
-                etat = "En Cours";
-                break;
-            case terminee:
-                jProgressBar1.setValue(100);
-                jProgressBar1.setForeground(new Color(0,204,0));
-                jProgressBar1.setBackground(Color.white);
-                etat = "Terminée";
-                break;
-            default:
-                break;
-        }
-        
-                jTextFieldStateMission.setText(etat);
+        initValue(myMission);
 
     }
     
@@ -101,45 +60,9 @@ public class MissionDetail extends javax.swing.JPanel {
         jFormattedTextFieldFireDate.setValue(myMission.getStartDate());
         jTextFieldDurationMission.setText(""+myMission.getMissionDuration());
         jTextFieldNbPersonMission.setText(""+myMission.getNbTotalPerson());
-        
+        initValue(myMission);
         jLabelInfo.setText(exception);
-        jProgressBar1.setBorderPainted(true);
-        jProgressBar1.setStringPainted(true);
-        jProgressBar1.setBorder(new javax.swing.border.LineBorder(Color.lightGray));
-        jProgressBar1.setUI(new BasicProgressBarUI() {
-            protected Color getSelectionBackground() { return Color.black; }
-            protected Color getSelectionForeground() { return Color.black; }
-        });
-        switch(myMission.getEtat()){
-            case enPreparation:
-                jProgressBar1.setValue(25);
-                jProgressBar1.setForeground(new Color(255,102,102));
-                jProgressBar1.setBackground(Color.white);
-                etat = "En Préparation";
-                break;
-            case plannifiee:
-                jProgressBar1.setValue(50);
-                jProgressBar1.setForeground(new Color(255,255,153));
-                jProgressBar1.setBackground(Color.white);
-                etat = "Plannifiée";
-                break;
-            case enCours:
-                jProgressBar1.setValue(75);
-                jProgressBar1.setForeground(new Color(229,255,204));
-                jProgressBar1.setBackground(Color.white);
-                etat = "En Cours";
-                break;
-            case terminee:
-                jProgressBar1.setValue(100);
-                jProgressBar1.setForeground(new Color(0,204,0));
-                jProgressBar1.setBackground(Color.white);
-                etat = "Terminée";
-                break;
-            default:
-                break;
-        }
         
-        jTextFieldStateMission.setText(etat);
     }
 
     /**
@@ -229,10 +152,11 @@ public class MissionDetail extends javax.swing.JPanel {
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addComponent(jLabelProgression)
                         .addGap(18, 18, 18)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelNbPersonMission)
@@ -246,10 +170,7 @@ public class MissionDetail extends javax.swing.JPanel {
                             .addComponent(jTextFieldDurationMission)
                             .addComponent(jTextFieldStateMission)
                             .addComponent(jTextFieldNbPersonMission)
-                            .addComponent(jFormattedTextFieldFireDate)))
-                    .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
-                        .addComponent(jLabelInfo)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jFormattedTextFieldFireDate))))
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -282,8 +203,8 @@ public class MissionDetail extends javax.swing.JPanel {
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jLabelInfo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -547,7 +468,46 @@ public class MissionDetail extends javax.swing.JPanel {
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jButtonEditActionPerformed
-
+    
+    private void initValue(Mission myMission){
+        jProgressBar1.setBorderPainted(true);
+        jProgressBar1.setStringPainted(true);
+        jProgressBar1.setBorder(new javax.swing.border.LineBorder(Color.lightGray));
+        jProgressBar1.setUI(new BasicProgressBarUI() {
+            protected Color getSelectionBackground() { return Color.black; }
+            protected Color getSelectionForeground() { return Color.black; }
+        });
+        switch(myMission.getEtat()){
+            case enPreparation:
+                jProgressBar1.setValue(25);
+                jProgressBar1.setForeground(new Color(255,102,102));
+                jProgressBar1.setBackground(Color.white);
+                etat = "En Préparation";
+                break;
+            case plannifiee:
+                jProgressBar1.setValue(50);
+                jProgressBar1.setForeground(new Color(255,255,153));
+                jProgressBar1.setBackground(Color.white);
+                etat = "Plannifiée";
+                break;
+            case enCours:
+                jProgressBar1.setValue(75);
+                jProgressBar1.setForeground(new Color(229,255,204));
+                jProgressBar1.setBackground(Color.white);
+                etat = "En Cours";
+                break;
+            case terminee:
+                jProgressBar1.setValue(100);
+                jProgressBar1.setForeground(new Color(0,204,0));
+                jProgressBar1.setBackground(Color.white);
+                etat = "Terminée";
+                break;
+            default:
+                break;
+        }
+        
+        jTextFieldStateMission.setText(etat);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDelete;
