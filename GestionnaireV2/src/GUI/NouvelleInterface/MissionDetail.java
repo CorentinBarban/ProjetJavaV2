@@ -47,7 +47,6 @@ public class MissionDetail extends javax.swing.JPanel {
         this.myFrame = myFrame;
         initComponents();
         initValue(myMission);
-
     }
     
     public MissionDetail(Mission myMission, Company myCompany , home myFrame,String exception) {

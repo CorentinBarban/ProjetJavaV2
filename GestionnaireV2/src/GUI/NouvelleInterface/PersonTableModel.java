@@ -6,11 +6,7 @@
 package GUI.NouvelleInterface;
 
 import API.Person;
-import API.Skill;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -57,14 +53,17 @@ public class PersonTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Person row = personList.get(rowIndex);
-        if (0 == columnIndex) {
-            return row.getLastName();
-        } else if (1 == columnIndex) {
-            return row.getFirstName();
-        } else if (2 == columnIndex) {
-            return row.getDateOfHire();
-        } else if (3 == columnIndex) {
-            return "Détails";
+        switch (columnIndex) {
+            case 0:
+                return row.getLastName();
+            case 1:
+                return row.getFirstName();
+            case 2:
+                return row.getDateOfHire();
+            case 3:
+                return "Détails";
+            default:
+                break;
         }
         return null;
     }    

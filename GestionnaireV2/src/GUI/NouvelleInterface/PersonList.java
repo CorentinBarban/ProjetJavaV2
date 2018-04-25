@@ -8,6 +8,11 @@ package GUI.NouvelleInterface;
 import API.Company;
 import API.Person;
 import java.util.ArrayList;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -85,7 +90,7 @@ public class PersonList extends javax.swing.JPanel {
 
         PersonTableModel modelPerson = new PersonTableModel(PersonList);
         jTablePerson.setModel(modelPerson);
-        jTablePerson.setAutoCreateRowSorter(true);
+        jTablePerson.setAutoCreateRowSorter(false);
         jTablePerson.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTablePersonMouseClicked(evt);
