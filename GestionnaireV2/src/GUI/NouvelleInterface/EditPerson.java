@@ -351,13 +351,37 @@ public class EditPerson extends javax.swing.JPanel {
 
     private void jLabelReturnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturnMouseReleased
         myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new MissionList(myCompany, myFrame));
+        myFrame.jPanelContainer.add(new PersonDetail(person,myCompany, myFrame));
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturnMouseReleased
 
     private void jListSkillMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillMouseReleased
+        Skill skillSelected = jListSkill.getSelectedValue();
         jButtonShiftRightS.setEnabled(true);
+        for (Map.Entry<Integer, Mission> entrySetM : myCompany.listeMission.entrySet()) { //Pour chaque mission
+            Integer key = entrySetM.getKey();
+            Mission m = entrySetM.getValue();
+
+            HashMap<Integer, Requirement> listRequirement = m.getRequirements();
+
+            if (m.getPersonOnMission().containsValue(person)) { // SI la personne participe à la mission
+                for (Map.Entry<Integer, Requirement> entrySetR : listRequirement.entrySet()) {
+                    Integer keyR = entrySetR.getKey();
+                    Requirement r = entrySetR.getValue();
+                    
+                    if (r.getListPersonnes().contains(person) && skillSelected.equals(r.getRequiredSkill())) { // Si la personne est dans les requirements et que la compétence sélectionnée se situe dans le req
+                        jButtonShiftRightS.setEnabled(false);
+                        jLabelErr.setText("La compétence est attribuée sur la mission "+ m.getMissionName());
+                        break;
+                    }else{
+                        jButtonShiftRightS.setEnabled(true);
+                        jLabelErr.setText("");
+                    }
+                }
+            }
+            
+        }
     }//GEN-LAST:event_jListSkillMouseReleased
 
     private void jListSkillAvailableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListSkillAvailableMouseReleased
@@ -378,29 +402,10 @@ public class EditPerson extends javax.swing.JPanel {
         DefaultListModel<Skill> skillAvailable = (DefaultListModel<Skill>) jListSkillAvailable.getModel();
         DefaultListModel<Skill> mySkills = (DefaultListModel<Skill>) jListSkill.getModel();
         Skill skillSelected = jListSkill.getSelectedValue();
-        boolean bool = false;
-        
-        for (Map.Entry<Integer, Mission> entrySetM : myCompany.listeMission.entrySet()) { //Pour chaque mission
-            Integer key = entrySetM.getKey();
-            Mission m = entrySetM.getValue();
-
-            HashMap<Integer, Requirement> listRequirement = m.getRequirements();
-
-            if (m.getPersonOnMission().containsValue(person)) { // SI la personne participe à la mission
-                for (Map.Entry<Integer, Requirement> entrySetR : listRequirement.entrySet()) {
-                    Integer keyR = entrySetR.getKey();
-                    Requirement r = entrySetR.getValue();
-                    
-                    if (r.getListPersonnes().contains(person) && skillSelected.equals(r.getRequiredSkill())) { // Si la personne est dans les requirements et que la compétence sélectionnée se situe dans le req
-                        System.out.println("Skill :"+skillSelected.getSkillNameFr()+" , Req : "+r.getIdRequirement());
-                    } else {
-                        skillAvailable.addElement(skillSelected);
-                        mySkills.remove(jListSkill.getSelectedIndex());
-                        jButtonShiftRightS.setEnabled(false);
-                    }
-                }
-            }
-        }
+        skillAvailable.addElement(skillSelected);
+        mySkills.remove(jListSkill.getSelectedIndex());
+        jButtonShiftRightS.setEnabled(false);
+       
     }//GEN-LAST:event_jButtonShiftRightSActionPerformed
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
