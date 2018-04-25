@@ -372,7 +372,7 @@ public class EditPerson extends javax.swing.JPanel {
                     
                     if (r.getListPersonnes().contains(person) && skillSelected.equals(r.getRequiredSkill())) { // Si la personne est dans les requirements et que la compétence sélectionnée se situe dans le req
                         jButtonShiftRightS.setEnabled(false);
-                        jLabelErr.setText("La compétence est attribuée sur la mission "+ m.getMissionName());
+                        jLabelErr.setText("La compétence est attribuée sur la mission "+ m.getMissionName()+", impossible de l'enlever");
                         break;
                     }else{
                         jButtonShiftRightS.setEnabled(true);

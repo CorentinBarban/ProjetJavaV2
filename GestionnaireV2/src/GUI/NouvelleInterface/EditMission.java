@@ -91,18 +91,18 @@ public class EditMission extends javax.swing.JPanel {
         jPanelSkill = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> mySkillModel = new DefaultListModel();
-        jListSkill = new javax.swing.JList<>();
+        jListSkill = new javax.swing.JList<Skill>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListSkillAvailable = new javax.swing.JList<>();
+        jListSkillAvailable = new javax.swing.JList<Skill>();
         jButtonShiftLeftS = new javax.swing.JButton();
         jButtonShiftRightS = new javax.swing.JButton();
         jPanelPerson = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         DefaultListModel<Person> personModel = new DefaultListModel();
-        jListPerson = new javax.swing.JList<>();
+        jListPerson = new javax.swing.JList<Person>();
         jScrollPane4 = new javax.swing.JScrollPane();
         DefaultListModel<Person> personModelAV = new DefaultListModel();
-        jListPersonAvailable = new javax.swing.JList<>();
+        jListPersonAvailable = new javax.swing.JList<Person>();
         jButtonShiftLeftP = new javax.swing.JButton();
         jButtonShiftRightP = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -179,9 +179,9 @@ public class EditMission extends javax.swing.JPanel {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "En préparation", "En cours", "Planifiée", "Terminée" }));
         jComboBox1.setEnabled(false);
 
-        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 
-        jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
@@ -198,7 +198,7 @@ public class EditMission extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNameMission)
-                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                     .addComponent(jComboBox1, 0, 87, Short.MAX_VALUE)
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -402,7 +402,7 @@ public class EditMission extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("<html>  <p>Nombre total de personnes :</p> <p> requis pour le besoin</p>  </html>");
 
-        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(1, 0, null, 1));
+        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(0), null, Integer.valueOf(1)));
         jSpinnerNbPerson.setEnabled(false);
         jSpinnerNbPerson.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -456,7 +456,7 @@ public class EditMission extends javax.swing.JPanel {
         jPanelContainerMissionLayout.setHorizontalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
-                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -465,8 +465,8 @@ public class EditMission extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)

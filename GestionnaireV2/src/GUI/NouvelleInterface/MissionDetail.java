@@ -174,9 +174,9 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         int elt = 0;
-        jListPerson = new javax.swing.JList<>();
+        jListPerson = new javax.swing.JList<Person>();
         DefaultComboBoxModel<Requirement> requirementModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<>();
+        jComboBoxSkill = new javax.swing.JComboBox<Requirement>();
         jPanelHeader2 = new javax.swing.JPanel();
         jLabelTitle2 = new javax.swing.JLabel();
         jLabelReturn2 = new javax.swing.JLabel();
@@ -232,7 +232,7 @@ public class MissionDetail extends javax.swing.JPanel {
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addComponent(jLabelProgression)
                         .addGap(18, 18, 18)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelNbPersonMission)
@@ -282,7 +282,7 @@ public class MissionDetail extends javax.swing.JPanel {
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jLabelInfo))
         );
 
@@ -412,8 +412,8 @@ public class MissionDetail extends javax.swing.JPanel {
             .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSeparator2)
+                .addContainerGap())
         );
 
         jPanelHeader2.setBackground(new java.awt.Color(255, 255, 255));
