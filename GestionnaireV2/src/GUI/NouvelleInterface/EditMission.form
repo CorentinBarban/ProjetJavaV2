@@ -183,7 +183,7 @@
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTextFieldNameMission" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jFormattedTextFieldFireDate" alignment="0" pref="87" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextFieldFireDate" alignment="0" pref="97" max="32767" attributes="0"/>
                           <Component id="jComboBox1" alignment="0" pref="87" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">

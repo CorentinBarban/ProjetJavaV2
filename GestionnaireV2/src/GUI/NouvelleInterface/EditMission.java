@@ -49,7 +49,7 @@ public class EditMission extends javax.swing.JPanel {
     //Liste de besoins de la mission en fonction des compétences
     private LinkedHashMap<Skill, Requirement> requirementBySkill = new LinkedHashMap<>();
 
-    private int idRequirement = 1;
+    
 
     public EditMission(Mission myMission, Company myCompany, home myFrame) {
         this.myCompany = myCompany;
@@ -578,8 +578,8 @@ public class EditMission extends javax.swing.JPanel {
         System.out.println(jListSkillAvailable.getSelectedIndex());
 
         //Creation du besoin avec la competence associée
-        requirementBySkill.put(skillSelected, new Requirement(idRequirement, 0, skillSelected));
-        idRequirement++;
+        requirementBySkill.put(skillSelected, new Requirement(requirementBySkill.size()+1, 0, skillSelected));
+        
 
         //Ajout du model de personne sur la compétence ajoutée
         listModelPerson.put(skillSelected, new DefaultListModel<>());
@@ -689,52 +689,54 @@ public class EditMission extends javax.swing.JPanel {
     }//GEN-LAST:event_jSpinnerNbPersonStateChanged
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
-        myCompany.listeMission.remove(myCompany.getKeyFromValue(myCompany.listeMission, myMission));
+        //myCompany.listeMission.remove(myCompany.getKeyFromValue(myCompany.listeMission, myMission));
 
         Management.ManageMission mm = new ManageMission();
-        mm.writeData(myCompany);
-        mm.readData(myCompany);
-
+        
         String name = jTextFieldNameMission.getText();
         String startDate = jFormattedTextFieldFireDate.getText();
         int duration = (Integer) jSpinnerDurationMission.getValue();
         int nbPerson = (Integer) jSpinnerNbPersonMission.getValue();
         Mission.Etat state = Mission.Etat.enPreparation;
-        Mission m = null;
+        
         //Creation de la mission
         if (name != "" && startDate != "" && "" + duration != "" && nbPerson >=0) {
             try {
-                m = new Mission(myCompany.listeMission.size() + 1, name, startDate, duration, state);
+                myMission.setStartDate(startDate);
             } catch (ParseException ex) {
-                Logger.getLogger(AddMission.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(EditMission.class.getName()).log(Level.SEVERE, null, ex);
             }
+            myMission.setMissionDuration(duration);
+            myMission.setEtat(state);
 
             for (Map.Entry<Skill, Requirement> entrySet : requirementBySkill.entrySet()) {
                 Requirement r = entrySet.getValue();
                 for (int i = 0; i < r.getListPersonnes().size(); i++) {//Parcours des personne sur le besoins
-                    if (m != null && !m.getPersonOnMission().containsValue(r.getListPersonnes().get(i))) {
-                        m.getPersonOnMission().put(r.getListPersonnes().get(i).getId(), r.getListPersonnes().get(i));
+                    if (!myMission.getPersonOnMission().containsValue(r.getListPersonnes().get(i))) {
+                        myMission.getPersonOnMission().put(r.getListPersonnes().get(i).getId(), r.getListPersonnes().get(i));
                     }
                 }
-                m.addRequirement(r);
+                myMission.addRequirement(r);
             }
 
-            m.setNbTotalPerson(nbPerson);
+            myMission.setNbTotalPerson(nbPerson);
 
-            myCompany.addMission(m);
+            myCompany.addMission(myMission);
             
             //Sauvegarde des données dans le fichier liste_mission.ares
-            mm.writeData(myCompany);
+            
             try{
                 mm.readData(myCompany);
-                myFrame.jPanelContainer.removeAll();
-                myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame));
+                mm.writeData(myCompany);
             } catch (Exception e){
                 myFrame.jPanelContainer.removeAll();
-                myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame,e.getMessage()));
+                myFrame.jPanelContainer.add(new MissionDetail(myMission, myCompany, myFrame,e.getMessage()));
+                myFrame.repaint();
+                myFrame.revalidate();
             }
             // En renvoi vers le details de la mission
-            
+            myFrame.jPanelContainer.removeAll();
+            myFrame.jPanelContainer.add(new MissionDetail(myMission, myCompany, myFrame));
             myFrame.repaint();
             myFrame.revalidate();
         } else {
