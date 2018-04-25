@@ -89,7 +89,7 @@ public class MissionList extends javax.swing.JPanel {
 
         MissionTableModel modelMission = new MissionTableModel(MissionList);
         jTableMission.setModel(modelMission);
-        jTableMission.setAutoCreateRowSorter(true);
+        jTableMission.setAutoCreateRowSorter(false);
         ProgressCellRenderer pcr = new ProgressCellRenderer();
         TableColumnModel tcm = jTableMission.getColumnModel();
         tcm.getColumn(3).setCellRenderer(pcr);
