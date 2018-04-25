@@ -25,15 +25,14 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jLabelErr" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabelErr" pref="171" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="503" max="-2" attributes="0"/>
                       <Component id="jButtonSubmit" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPanelContainerMission" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jPanelContainerMission" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,10 +42,10 @@
               <Component id="jPanelHeader2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="jPanelContainerMission" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtonSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelErr" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jButtonSubmit" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelErr" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
           </Group>
@@ -136,11 +135,11 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanelLeftDetail" min="-2" pref="298" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jSeparator2" min="-2" pref="6" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanelRightDetail" pref="401" max="32767" attributes="0"/>
+                  <Component id="jPanelLeftDetail" pref="303" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSeparator2" min="-2" pref="8" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanelRightDetail" pref="384" max="32767" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -173,22 +172,22 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelNbPersonMission" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelStateMission" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelDurationMission" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabelDurationMission" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabelFireDateMission" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelNameMission" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelNbPersonMission" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabelStateMission" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jComboBox1" alignment="0" pref="134" max="32767" attributes="0"/>
-                          <Component id="jFormattedTextFieldFireDate" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldNameMission" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jTextFieldNameMission" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextFieldFireDate" alignment="1" max="32767" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jSpinnerNbPersonMission" alignment="0" pref="70" max="32767" attributes="0"/>
                               <Component id="jSpinnerDurationMission" alignment="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="jComboBox1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -343,7 +342,7 @@
                                   </Group>
                                   <Component id="jLabelPerson" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="129" max="32767" attributes="0"/>
+                              <EmptySpace pref="112" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
