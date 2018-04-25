@@ -56,10 +56,7 @@ public class MissionDetail extends javax.swing.JPanel {
         this.myFrame = myFrame;
         this.exception = exception;
         initComponents();
-        jTextFieldNameMission.setText(myMission.getMissionName());
-        jFormattedTextFieldFireDate.setValue(myMission.getStartDate());
-        jTextFieldDurationMission.setText(""+myMission.getMissionDuration());
-        jTextFieldNbPersonMission.setText(""+myMission.getNbTotalPerson());
+        
         initValue(myMission);
         jLabelInfo.setText(exception);
         
@@ -470,6 +467,10 @@ public class MissionDetail extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonEditActionPerformed
     
     private void initValue(Mission myMission){
+        jTextFieldNameMission.setText(myMission.getMissionName());
+        jFormattedTextFieldFireDate.setValue(myMission.getStartDate());
+        jTextFieldDurationMission.setText(""+myMission.getMissionDuration());
+        jTextFieldNbPersonMission.setText(""+myMission.getNbTotalPerson());
         jProgressBar1.setBorderPainted(true);
         jProgressBar1.setStringPainted(true);
         jProgressBar1.setBorder(new javax.swing.border.LineBorder(Color.lightGray));
