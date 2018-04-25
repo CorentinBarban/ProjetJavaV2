@@ -169,19 +169,26 @@ public class EditMission extends javax.swing.JPanel {
         jLabelStateMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelStateMission.setText("Etat de la mission :");
 
+        jTextFieldNameMission.setMaximumSize(new java.awt.Dimension(2147483647, 200));
+
         try {
             jFormattedTextFieldFireDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         jFormattedTextFieldFireDate.setToolTipText("dd/MM/AAAA");
+        jFormattedTextFieldFireDate.setMaximumSize(new java.awt.Dimension(2147483647, 200));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "En préparation", "En cours", "Planifiée", "Terminée" }));
         jComboBox1.setEnabled(false);
+        jComboBox1.setMaximumSize(new java.awt.Dimension(32767, 200));
 
         jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 
         jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+
+        jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
@@ -196,13 +203,17 @@ public class EditMission extends javax.swing.JPanel {
                     .addComponent(jLabelNbPersonMission)
                     .addComponent(jLabelStateMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
-                .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextFieldNameMission)
-                    .addComponent(jFormattedTextFieldFireDate)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSpinnerNbPersonMission, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                        .addComponent(jSpinnerDurationMission))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextFieldNameMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
+                        .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSpinnerNbPersonMission, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                            .addComponent(jSpinnerDurationMission, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanelLeftDetailLayout.setVerticalGroup(
@@ -228,11 +239,12 @@ public class EditMission extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelStateMission)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator2)
+                .addContainerGap())
         );
-
-        jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         jPanelRightDetail.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRightDetail.setPreferredSize(new java.awt.Dimension(280, 280));
@@ -387,8 +399,8 @@ public class EditMission extends javax.swing.JPanel {
             .addGroup(jPanelPersonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane3)
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
                         .addComponent(jButtonShiftLeftP)
                         .addGap(18, 18, 18)
@@ -429,7 +441,7 @@ public class EditMission extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinnerNbPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabelPerson))
-                        .addContainerGap(112, Short.MAX_VALUE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanelRightDetailLayout.setVerticalGroup(
             jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,21 +466,15 @@ public class EditMission extends javax.swing.JPanel {
         jPanelContainerMissionLayout.setHorizontalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
-                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-            .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator2)
-                .addGap(13, 13, 13))
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
         );
 
         jButtonSubmit.setText("Valider");
