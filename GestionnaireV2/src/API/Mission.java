@@ -229,7 +229,6 @@ public class Mission {
         calendar.setTime(startDate);
         calendar.add(Calendar.DAY_OF_YEAR, (missionDuration*7));
         endDate = calendar.getTime();
-        System.out.println("Vérification :");
         
         switch(this.etat){
             case enPreparation :
@@ -301,7 +300,6 @@ public class Mission {
     
     public boolean infoRemplies(){
         if(missionName != null && startDate != null && !personOnMission.isEmpty() && nbTotalPerson > 0 && !requirements.isEmpty()){// SI toutes les infos
-            System.out.println("Toutes les informations de la mission sont renseignées, passage à la suite.");
             return true;
         } else {
             return false;
@@ -319,9 +317,6 @@ public class Mission {
      int nbCompetencesPossedees = 0;
         if(p.getSkillList().containsValue(r.getRequiredSkill())){ 
             nbCompetencesPossedees++; // Augmentation du compteur de nombre de personnes remplissant le besoin auquel elle est affectée. Est utilisé dans vérification.
-            System.out.println("La personne "+p.getId()+" possède la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
-        } else {
-            System.out.println("La personne "+p.getId()+" ne possède pas la compétence '"+r.getRequiredSkill().getSkillNameFr()+"' du besoin "+r.getIdRequirement());
         }
         return nbCompetencesPossedees;
     }

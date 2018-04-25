@@ -2,145 +2,6 @@
 <!DOCTYPE mission SYSTEM "mission.ares">
 <list>
 <mission>
-     <id>3</id>
-     <name>Test d'integration</name>
-     <startDate>12/08/2018</startDate>
-     <duration>3</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>5</nbPersonOnMission>
-     <persons_list>
-          <idPerson>16</idPerson>
-          <idPerson>17</idPerson>
-          <idPerson>18</idPerson>
-          <idPerson>19</idPerson>
-          <idPerson>20</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>3</nbPersonTotalReq>
-          <idPersonReq>17</idPersonReq>
-          <idPersonReq>18</idPersonReq>
-          <idPersonReq>20</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>16</idPersonReq>
-          <idPersonReq>19</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
-     <id>4</id>
-     <name>Schéma UML</name>
-     <startDate>12/08/2018</startDate>
-     <duration>8</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>6</nbPersonOnMission>
-     <persons_list>
-          <idPerson>22</idPerson>
-          <idPerson>23</idPerson>
-          <idPerson>24</idPerson>
-          <idPerson>25</idPerson>
-          <idPerson>26</idPerson>
-          <idPerson>21</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>4</nbPersonTotalReq>
-          <idPersonReq>21</idPersonReq>
-          <idPersonReq>22</idPersonReq>
-          <idPersonReq>23</idPersonReq>
-          <idPersonReq>24</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>25</idPersonReq>
-          <idPersonReq>26</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
-     <id>5</id>
-     <name>Recherche de projet innovant</name>
-     <startDate>12/08/2018</startDate>
-     <duration>20</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>2</nbPersonOnMission>
-     <persons_list>
-          <idPerson>27</idPerson>
-          <idPerson>28</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>27</idPersonReq>
-          <idPersonReq>28</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
-     <id>6</id>
-     <name>Réalisation du cahier des charges</name>
-     <startDate>12/08/2018</startDate>
-     <duration>31</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>5</nbPersonOnMission>
-     <persons_list>
-          <idPerson>33</idPerson>
-          <idPerson>34</idPerson>
-          <idPerson>30</idPerson>
-          <idPerson>31</idPerson>
-          <idPerson>32</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>1</nbPersonTotalReq>
-          <idPersonReq>30</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>31</idPersonReq>
-          <idPersonReq>32</idPersonReq>
-          <idRequirement>3</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>33</idPersonReq>
-          <idPersonReq>34</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
-     <id>7</id>
-     <name>test2</name>
-     <startDate>06/09/2018</startDate>
-     <duration>3</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>0</nbPersonOnMission>
-     <persons_list>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>1</nbPersonTotalReq>
-          <idPersonReq>48</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>45</idPersonReq>
-          <idPersonReq>42</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
      <id>8</id>
      <name>Terminer le projet Java</name>
      <startDate>06/09/2018</startDate>
@@ -209,12 +70,12 @@
      </requirements_list>
 </mission>
 <mission>
-     <id>8</id>
+     <id>9</id>
      <name>Ecrire la documentation</name>
      <startDate>12/01/2018</startDate>
-     <duration>3</duration>
+     <duration>1</duration>
      <state>enPreparation</state>
-     <nbPersonOnMission>5</nbPersonOnMission>
+     <nbPersonOnMission>0</nbPersonOnMission>
      <persons_list>
           <idPerson>11</idPerson>
           <idPerson>12</idPerson>
@@ -235,6 +96,96 @@
           <idPersonReq>13</idPersonReq>
           <idPersonReq>14</idPersonReq>
           <idPersonReq>15</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>9</id>
+     <name>Parser le XML</name>
+     <startDate>12/08/2018</startDate>
+     <duration>8</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>0</nbPersonOnMission>
+     <persons_list>
+          <idPerson>22</idPerson>
+          <idPerson>23</idPerson>
+          <idPerson>24</idPerson>
+          <idPerson>25</idPerson>
+          <idPerson>26</idPerson>
+          <idPerson>21</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
+          <idPersonReq>21</idPersonReq>
+          <idPersonReq>22</idPersonReq>
+          <idPersonReq>23</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>25</idPersonReq>
+          <idPersonReq>26</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>6</id>
+     <name>Régler les bugs test</name>
+     <startDate>06/09/2018</startDate>
+     <duration>3</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>0</nbPersonOnMission>
+     <persons_list>
+          <idPerson>45</idPerson>
+          <idPerson>48</idPerson>
+          <idPerson>42</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>48</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>45</idPersonReq>
+          <idPersonReq>42</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>6</id>
+     <name>Schéma UML</name>
+     <startDate>12/08/2018</startDate>
+     <duration>8</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>23</nbPersonOnMission>
+     <persons_list>
+          <idPerson>22</idPerson>
+          <idPerson>23</idPerson>
+          <idPerson>24</idPerson>
+          <idPerson>25</idPerson>
+          <idPerson>26</idPerson>
+          <idPerson>21</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.6.</idSkillReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
+          <idPersonReq>21</idPersonReq>
+          <idPersonReq>22</idPersonReq>
+          <idPersonReq>23</idPersonReq>
+          <idPersonReq>24</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>A.4.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>25</idPersonReq>
+          <idPersonReq>26</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>

@@ -139,7 +139,6 @@ public class XMLMissionHandler extends DefaultHandler {
                 listIdRequirements.clear();
                 listIdPersonsReq.clear();
                 listNbTotal.clear();
-                m.verification();
             } catch (ParseException ex) {
                 Logger.getLogger(XMLPersonHandler.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {

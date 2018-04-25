@@ -91,23 +91,24 @@ public class EditMission extends javax.swing.JPanel {
         jPanelSkill = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> mySkillModel = new DefaultListModel();
-        jListSkill = new javax.swing.JList<Skill>();
+        jListSkill = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListSkillAvailable = new javax.swing.JList<Skill>();
+        jListSkillAvailable = new javax.swing.JList<>();
         jButtonShiftLeftS = new javax.swing.JButton();
         jButtonShiftRightS = new javax.swing.JButton();
         jPanelPerson = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         DefaultListModel<Person> personModel = new DefaultListModel();
-        jListPerson = new javax.swing.JList<Person>();
+        jListPerson = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         DefaultListModel<Person> personModelAV = new DefaultListModel();
-        jListPersonAvailable = new javax.swing.JList<Person>();
+        jListPersonAvailable = new javax.swing.JList<>();
         jButtonShiftLeftP = new javax.swing.JButton();
         jButtonShiftRightP = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSpinnerNbPerson = new javax.swing.JSpinner();
         jButtonSubmit = new javax.swing.JButton();
+        jLabelErr = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -163,7 +164,7 @@ public class EditMission extends javax.swing.JPanel {
         jLabelDurationMission.setText("Durée (en semaines) :");
 
         jLabelNbPersonMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelNbPersonMission.setText("<html>\n\n<p>Nombre de personnes :</p>\n<p> sur la mission</p>\n\n</html>");
+        jLabelNbPersonMission.setText("<html>  <p>Nombre total de personnes :</p> <p>  requis</p>  </html>");
 
         jLabelStateMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelStateMission.setText("Etat de la mission :");
@@ -175,12 +176,12 @@ public class EditMission extends javax.swing.JPanel {
         }
         jFormattedTextFieldFireDate.setToolTipText("dd/MM/AAAA");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "En préparation", "En cours", "Planifiée" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "En préparation", "En cours", "Planifiée", "Terminée" }));
         jComboBox1.setEnabled(false);
 
-        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+        jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         javax.swing.GroupLayout jPanelLeftDetailLayout = new javax.swing.GroupLayout(jPanelLeftDetail);
         jPanelLeftDetail.setLayout(jPanelLeftDetailLayout);
@@ -197,8 +198,8 @@ public class EditMission extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNameMission)
-                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, 128, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextFieldFireDate, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, 87, Short.MAX_VALUE)
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSpinnerNbPersonMission, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
@@ -320,11 +321,11 @@ public class EditMission extends javax.swing.JPanel {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelSkillLayout.createSequentialGroup()
-                        .addContainerGap(28, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonShiftLeftS)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonShiftRightS)
-                        .addGap(0, 22, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -391,7 +392,6 @@ public class EditMission extends javax.swing.JPanel {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                         .addComponent(jButtonShiftLeftP)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonShiftRightP)
@@ -400,9 +400,9 @@ public class EditMission extends javax.swing.JPanel {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Nombre de personnes requises : ");
+        jLabel1.setText("<html>  <p>Nombre total de personnes :</p> <p> requis pour le besoin</p>  </html>");
 
-        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(1, 0, null, 1));
         jSpinnerNbPerson.setEnabled(false);
         jSpinnerNbPerson.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -427,7 +427,7 @@ public class EditMission extends javax.swing.JPanel {
                         .addGap(10, 10, 10)
                         .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelRightDetailLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinnerNbPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabelPerson))
@@ -442,7 +442,7 @@ public class EditMission extends javax.swing.JPanel {
                 .addComponent(jPanelSkill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelRightDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSpinnerNbPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelPerson)
@@ -465,8 +465,8 @@ public class EditMission extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)
@@ -480,6 +480,8 @@ public class EditMission extends javax.swing.JPanel {
             }
         });
 
+        jLabelErr.setForeground(new java.awt.Color(255, 0, 51));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -490,6 +492,8 @@ public class EditMission extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabelErr)
+                        .addGap(18, 18, 18)
                         .addComponent(jButtonSubmit))
                     .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
@@ -501,7 +505,9 @@ public class EditMission extends javax.swing.JPanel {
                 .addGap(40, 40, 40)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(30, 30, 30)
-                .addComponent(jButtonSubmit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSubmit)
+                    .addComponent(jLabelErr))
                 .addGap(13, 13, 13))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -696,7 +702,7 @@ public class EditMission extends javax.swing.JPanel {
         Mission.Etat state = Mission.Etat.enPreparation;
         Mission m = null;
         //Creation de la mission
-        if (name != "" && startDate != "" && "" + duration != "" && "" + nbPerson != "") {
+        if (name != "" && startDate != "" && "" + duration != "" && nbPerson >=0) {
             try {
                 m = new Mission(myCompany.listeMission.size() + 1, name, startDate, duration, state);
             } catch (ParseException ex) {
@@ -716,14 +722,23 @@ public class EditMission extends javax.swing.JPanel {
             m.setNbTotalPerson(nbPerson);
 
             myCompany.addMission(m);
+            
             //Sauvegarde des données dans le fichier liste_mission.ares
             mm.writeData(myCompany);
-            mm.readData(myCompany);
+            try{
+                mm.readData(myCompany);
+                myFrame.jPanelContainer.removeAll();
+                myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame));
+            } catch (Exception e){
+                myFrame.jPanelContainer.removeAll();
+                myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame,e.getMessage()));
+            }
             // En renvoi vers le details de la mission
-            myFrame.jPanelContainer.removeAll();
-            myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame));
+            
             myFrame.repaint();
             myFrame.revalidate();
+        } else {
+            jLabelErr.setText("Erreur : Toutes les informations doivent être renseignées.");
         }
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
@@ -800,6 +815,7 @@ public class EditMission extends javax.swing.JPanel {
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDurationMission;
+    private javax.swing.JLabel jLabelErr;
     private javax.swing.JLabel jLabelFireDateMission;
     private javax.swing.JLabel jLabelNameMission;
     private javax.swing.JLabel jLabelNbPersonMission;

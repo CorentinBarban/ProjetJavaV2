@@ -62,7 +62,6 @@ public class ManageMission implements ManageData {
          XMLMissionHandler userhandler = new XMLMissionHandler(c);
          saxParser.parse(inputFile, userhandler);     
       } catch (Exception e) {
-         e.printStackTrace();
       }    
     }
 

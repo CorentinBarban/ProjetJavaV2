@@ -124,13 +124,19 @@ public class MissionList extends javax.swing.JPanel {
 
         if (col == 4) { //Click sur Details 
             Mission missionSelected = model.missionList.get(row);
-            MissionDetail md = new MissionDetail(missionSelected,myCompany,myFrame);
-            myFrame.jPanelContainer.removeAll();
-            myFrame.jPanelContainer.add(md);
+            try{
+                missionSelected.verification();
+                MissionDetail md = new MissionDetail(missionSelected,myCompany,myFrame);
+                myFrame.jPanelContainer.removeAll();
+                myFrame.jPanelContainer.add(md);
+            } catch (Exception e){
+                MissionDetail md = new MissionDetail(missionSelected,myCompany,myFrame,e.getMessage());
+                myFrame.jPanelContainer.removeAll();
+                myFrame.jPanelContainer.add(md);
+            }
             myFrame.repaint();
             myFrame.revalidate();
         }
-
     }//GEN-LAST:event_jTableMissionMouseClicked
 
     private void jLabelAddMissionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAddMissionMouseReleased
