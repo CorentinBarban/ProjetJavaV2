@@ -148,7 +148,7 @@ public class MissionDetail extends javax.swing.JPanel {
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                     .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                         .addComponent(jLabelProgression)
                         .addGap(18, 18, 18)
