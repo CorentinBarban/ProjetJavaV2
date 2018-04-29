@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
 import API.Company;
 import API.Mission;
@@ -91,18 +91,18 @@ public class EditMission extends javax.swing.JPanel {
         jPanelSkill = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DefaultListModel<Skill> mySkillModel = new DefaultListModel();
-        jListSkill = new javax.swing.JList<Skill>();
+        jListSkill = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListSkillAvailable = new javax.swing.JList<Skill>();
+        jListSkillAvailable = new javax.swing.JList<>();
         jButtonShiftLeftS = new javax.swing.JButton();
         jButtonShiftRightS = new javax.swing.JButton();
         jPanelPerson = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         DefaultListModel<Person> personModel = new DefaultListModel();
-        jListPerson = new javax.swing.JList<Person>();
+        jListPerson = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         DefaultListModel<Person> personModelAV = new DefaultListModel();
-        jListPersonAvailable = new javax.swing.JList<Person>();
+        jListPersonAvailable = new javax.swing.JList<>();
         jButtonShiftLeftP = new javax.swing.JButton();
         jButtonShiftRightP = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -183,14 +183,14 @@ public class EditMission extends javax.swing.JPanel {
         jComboBox1.setEnabled(false);
         jComboBox1.setMaximumSize(new java.awt.Dimension(32767, 200));
 
-        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jSpinnerNbPersonMission.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinnerNbPersonMissionStateChanged(evt);
             }
         });
 
-        jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+        jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -417,7 +417,7 @@ public class EditMission extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("<html>  <p>Nombre total de personnes :</p> <p> requis pour le besoin</p>  </html>");
 
-        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerNbPerson.setModel(new javax.swing.SpinnerNumberModel(1, 0, null, 1));
         jSpinnerNbPerson.setEnabled(false);
         jSpinnerNbPerson.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {

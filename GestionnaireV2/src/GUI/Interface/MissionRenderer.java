@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
-import API.Requirement;
+import API.Mission;
 import API.Skill;
 import java.awt.Color;
 import java.awt.Component;
@@ -15,14 +15,24 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author corentin
+ * @author MathieuSTIVANIN
  */
-public class requirementRenderer extends JLabel implements ListCellRenderer<Requirement> {
+public class MissionRenderer extends JLabel implements ListCellRenderer<Mission> {
+
+    public MissionRenderer() {
+        setOpaque(true);
+        setHorizontalAlignment(JLabel.LEFT);
+        setBackground(Color.LIGHT_GRAY);
+    }
 
     @Override
-    public Component getListCellRendererComponent(JList<? extends Requirement> list, Requirement requirementList, int index, boolean isSelected, boolean cellHasFocus) {
-        this.setText(requirementList.getRequiredSkill().getSkillNameFr());
-        
+    public Component getListCellRendererComponent(JList<? extends Mission> list, Mission m, int index, boolean isSelected, boolean cellHasFocus) {
+
+        try {
+            this.setText(m.getMissionName());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         if (isSelected) {
             setBackground(Color.LIGHT_GRAY);
             setForeground(Color.BLACK);            
@@ -30,8 +40,6 @@ public class requirementRenderer extends JLabel implements ListCellRenderer<Requ
             setBackground(Color.WHITE);
             setForeground(Color.BLACK);
         }
-        
         return this;
     }
-    
 }

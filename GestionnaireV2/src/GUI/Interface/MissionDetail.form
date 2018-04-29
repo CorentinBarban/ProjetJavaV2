@@ -379,7 +379,7 @@
               <SubComponents>
                 <Component class="javax.swing.JList" name="jListPerson">
                   <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());&#xa;jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);&#xa;&#xa;if(personList !=null){&#xa;    Iterator it = personList.iterator();&#xa;    for (Person personList1 : personList) {&#xa;        modelPerson.addElement(personList1);&#xa;    }&#xa;}">
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="jListPerson.setCellRenderer(new GUI.Interface.PersonRenderer());&#xa;jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);&#xa;&#xa;if(personList !=null){&#xa;    Iterator it = personList.iterator();&#xa;    for (Person personList1 : personList) {&#xa;        modelPerson.addElement(personList1);&#xa;    }&#xa;}">
                       <Connection code="modelPerson" type="code"/>
                     </Property>
                     <Property name="selectionMode" type="int" value="0"/>
@@ -404,7 +404,7 @@
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultComboBoxModel&lt;Requirement&gt; requirementModel = new DefaultComboBoxModel();"/>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.requirementRenderer());&#xa;&#xa;HashMap&lt;Integer,Requirement&gt; myRequirementList= myMission.getRequirements();&#xa;&#xa;&#xa;Set entrySetRequirement = myRequirementList.entrySet();&#xa;Iterator itRequirement = entrySetRequirement.iterator();&#xa;&#xa;while (itRequirement.hasNext()) {&#xa;   &#xa;    Map.Entry me = (Map.Entry)itRequirement.next();&#xa;    Requirement myRequirement = myRequirementList.get(me.getKey());&#xa;    requirementModel.addElement(myRequirement); &#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jComboBoxSkill.setRenderer(new GUI.Interface.requirementRenderer());&#xa;&#xa;HashMap&lt;Integer,Requirement&gt; myRequirementList= myMission.getRequirements();&#xa;&#xa;&#xa;Set entrySetRequirement = myRequirementList.entrySet();&#xa;Iterator itRequirement = entrySetRequirement.iterator();&#xa;&#xa;while (itRequirement.hasNext()) {&#xa;   &#xa;    Map.Entry me = (Map.Entry)itRequirement.next();&#xa;    Requirement myRequirement = myRequirementList.get(me.getKey());&#xa;    requirementModel.addElement(myRequirement); &#xa;}"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Requirement&gt;"/>
               </AuxValues>
             </Component>

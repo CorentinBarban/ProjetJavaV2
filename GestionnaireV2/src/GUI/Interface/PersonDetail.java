@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
 import API.Company;
 import API.Mission;
 import API.Person;
 import API.Requirement;
 import API.Skill;
-import GUI.NouvelleInterface.SkillRenderer;
+import GUI.Interface.SkillRenderer;
 import Management.ManageMission;
 import Management.ManagePerson;
 import java.util.HashMap;

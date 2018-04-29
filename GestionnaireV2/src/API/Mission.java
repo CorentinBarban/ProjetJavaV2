@@ -41,7 +41,7 @@ public class Mission {
      * @param id représente l'id de la mission
      * @param missionName représente le nom de la mission
      * @param startDate représente la date de début de la mission
-     * @param md représente la durée de la mission
+     * @param missionDuration représente la durée de la mission
      * @param state represente l'état de la mission
      * @throws ParseException Erreur sur le format de la date
      */
@@ -62,7 +62,7 @@ public class Mission {
      * 
      * @param missionName représente le nom de la mission
      * @param startDate représente la date de début de la mission
-     * @param md représente la durée de la mission
+     * @param missionDuration représente la durée de la mission
      * @param state represente l'état de la mission
      * @throws ParseException Erreur sur le format de la date
      */
@@ -216,7 +216,7 @@ public class Mission {
     }
     /**
      * Méthode permettant de vérifier si la mission respecte les critères afin de changer d'état.
-     *
+     * @throws Exception le message a afficher sur l'interface
      */
     public void verification() throws Exception{
         int nb = 0;
@@ -254,7 +254,7 @@ public class Mission {
                                     nb += checkSkill(p, r); // Vérifie si la personne possède la compétence requise par le besoin
                                 }
                             } else {
-                                throw new Exception("Il n'y a pas le nb de personnes souhaité sur le besoin.");
+                                throw new Exception("Il n'y a pas le nombre de personnes souhaité sur le besoin.");
                             }
                         }
                         if(nb == getNbTotalPerson()){
@@ -263,7 +263,7 @@ public class Mission {
                            throw new Exception("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
                         }
                     } else {
-                        throw new Exception("Le nb total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
+                        throw new Exception("Le nombre total de personnes actuellement sur la mission ne correspond pas au nombre requis.");
                     }
                 } else {
                     throw new Exception ("Toutes les informations ne sont pas renseignées.");

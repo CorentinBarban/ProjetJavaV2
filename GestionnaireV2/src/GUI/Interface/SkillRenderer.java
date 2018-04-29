@@ -3,33 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
-import API.Mission;
 import API.Skill;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author MathieuSTIVANIN
+ * @author corentin
  */
-public class MissionRenderer extends JLabel implements ListCellRenderer<Mission> {
+public class SkillRenderer extends JLabel implements ListCellRenderer<Skill> {
 
-    public MissionRenderer() {
+    public SkillRenderer() {
         setOpaque(true);
         setHorizontalAlignment(JLabel.LEFT);
         setBackground(Color.LIGHT_GRAY);
     }
 
     @Override
-    public Component getListCellRendererComponent(JList<? extends Mission> list, Mission m, int index, boolean isSelected, boolean cellHasFocus) {
+    public Component getListCellRendererComponent(JList<? extends Skill> list, Skill skillList, int index, boolean isSelected, boolean cellHasFocus) {
 
         try {
-            this.setText(m.getMissionName());
+            this.setText(skillList.getSkillNameFr());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

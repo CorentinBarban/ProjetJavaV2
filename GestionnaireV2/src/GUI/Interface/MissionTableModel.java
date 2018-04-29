@@ -1,4 +1,4 @@
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
 import API.Mission;
 import API.Mission.Etat;

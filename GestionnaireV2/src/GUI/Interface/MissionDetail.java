@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
 import API.Company;
 import API.Mission;
@@ -238,7 +238,7 @@ public class MissionDetail extends javax.swing.JPanel {
             personList = requirementSelected.getListPersonnes();
         }
         jListPerson.setModel(modelPerson);
-        jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());
+        jListPerson.setCellRenderer(new GUI.Interface.PersonRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         if(personList !=null){
@@ -252,7 +252,7 @@ public class MissionDetail extends javax.swing.JPanel {
 
         jComboBoxSkill.setMaximumRowCount(20);
         jComboBoxSkill.setModel(requirementModel);
-        jComboBoxSkill.setRenderer(new GUI.NouvelleInterface.requirementRenderer());
+        jComboBoxSkill.setRenderer(new GUI.Interface.requirementRenderer());
 
         HashMap<Integer,Requirement> myRequirementList= myMission.getRequirements();
 
@@ -426,7 +426,7 @@ public class MissionDetail extends javax.swing.JPanel {
         int nbPerson = requirementSelected.getNbTotalPersonnes();
         jTextFieldNbPersonSkill.setText(""+nbPerson);
         jListPerson.setModel(modelPerson);
-        jListPerson.setCellRenderer(new GUI.NouvelleInterface.PersonRenderer());
+        jListPerson.setCellRenderer(new GUI.Interface.PersonRenderer());
         jListPerson.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         Iterator it = personList.iterator();

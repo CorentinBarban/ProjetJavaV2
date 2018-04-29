@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.NouvelleInterface;
+package GUI.Interface;
 
+import API.Requirement;
 import API.Skill;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
@@ -19,22 +17,12 @@ import javax.swing.ListCellRenderer;
  *
  * @author corentin
  */
-public class SkillRenderer extends JLabel implements ListCellRenderer<Skill> {
-
-    public SkillRenderer() {
-        setOpaque(true);
-        setHorizontalAlignment(JLabel.LEFT);
-        setBackground(Color.LIGHT_GRAY);
-    }
+public class requirementRenderer extends JLabel implements ListCellRenderer<Requirement> {
 
     @Override
-    public Component getListCellRendererComponent(JList<? extends Skill> list, Skill skillList, int index, boolean isSelected, boolean cellHasFocus) {
-
-        try {
-            this.setText(skillList.getSkillNameFr());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    public Component getListCellRendererComponent(JList<? extends Requirement> list, Requirement requirementList, int index, boolean isSelected, boolean cellHasFocus) {
+        this.setText(requirementList.getRequiredSkill().getSkillNameFr());
+        
         if (isSelected) {
             setBackground(Color.LIGHT_GRAY);
             setForeground(Color.BLACK);            
@@ -42,6 +30,8 @@ public class SkillRenderer extends JLabel implements ListCellRenderer<Skill> {
             setBackground(Color.WHITE);
             setForeground(Color.BLACK);
         }
+        
         return this;
     }
+    
 }
