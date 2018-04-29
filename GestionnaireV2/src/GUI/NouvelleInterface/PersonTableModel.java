@@ -61,7 +61,7 @@ public class PersonTableModel extends AbstractTableModel {
             case 2:
                 return row.getDateOfHire();
             case 3:
-                return "Détails";
+                return "<html><i><u><b style='color:blue'>Détails</b></u></i></html>";
             default:
                 break;
         }

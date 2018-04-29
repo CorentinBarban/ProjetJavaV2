@@ -53,6 +53,7 @@ public class home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arès");
+        setMinimumSize(new java.awt.Dimension(1000, 700));
 
         jPanelContainer.setBackground(new java.awt.Color(246, 246, 246));
         jPanelContainer.setLayout(new java.awt.CardLayout());

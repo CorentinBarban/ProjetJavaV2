@@ -101,6 +101,7 @@ public class AddMission extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jSpinnerNbPerson = new javax.swing.JSpinner();
         jButtonSubmit = new javax.swing.JButton();
+        jLabelErr = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(246, 246, 246));
 
@@ -172,6 +173,11 @@ public class AddMission extends javax.swing.JPanel {
         jComboBox1.setEnabled(false);
 
         jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerNbPersonMission.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerNbPersonMissionStateChanged(evt);
+            }
+        });
 
         jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
@@ -473,6 +479,9 @@ public class AddMission extends javax.swing.JPanel {
             }
         });
 
+        jLabelErr.setBackground(new java.awt.Color(246, 246, 246));
+        jLabelErr.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -483,6 +492,8 @@ public class AddMission extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabelErr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonSubmit))
                     .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
@@ -493,8 +504,10 @@ public class AddMission extends javax.swing.JPanel {
                 .addComponent(jPanelHeader2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(jPanelContainerMission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30)
-                .addComponent(jButtonSubmit)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSubmit)
+                    .addComponent(jLabelErr))
                 .addGap(13, 13, 13))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -716,6 +729,19 @@ public class AddMission extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    private void jSpinnerNbPersonMissionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerNbPersonMissionStateChanged
+        int nbPersonActual=0;
+        for (Map.Entry<Skill,Integer> entrySet : nbPersonBySkill.entrySet()) {
+            System.out.println(entrySet.getValue());
+            nbPersonActual+= entrySet.getValue();
+        }
+        
+        if(nbPersonActual > (Integer)jSpinnerNbPersonMission.getValue()){
+            jSpinnerNbPersonMission.setValue((Integer)jSpinnerNbPersonMission.getValue() +1);
+            jLabelErr.setText("Impossible, veuillez enlever des personnes");
+        }
+    }//GEN-LAST:event_jSpinnerNbPersonMissionStateChanged
+
     private void sortModel(DefaultListModel model) {
         ArrayList<Person> list = new ArrayList<>();
         for (int i = 0; i < model.size(); i++) {
@@ -738,6 +764,7 @@ public class AddMission extends javax.swing.JPanel {
     private javax.swing.JFormattedTextField jFormattedTextFieldFireDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelDurationMission;
+    private javax.swing.JLabel jLabelErr;
     private javax.swing.JLabel jLabelFireDateMission;
     private javax.swing.JLabel jLabelNameMission;
     private javax.swing.JLabel jLabelNbPersonMission;

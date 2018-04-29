@@ -184,6 +184,11 @@ public class EditMission extends javax.swing.JPanel {
         jComboBox1.setMaximumSize(new java.awt.Dimension(32767, 200));
 
         jSpinnerNbPersonMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerNbPersonMission.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerNbPersonMissionStateChanged(evt);
+            }
+        });
 
         jSpinnerDurationMission.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
@@ -744,6 +749,20 @@ public class EditMission extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    private void jSpinnerNbPersonMissionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerNbPersonMissionStateChanged
+        
+        int nbPersonActual=0;
+        for (Map.Entry<Skill,Integer> entrySet : nbPersonBySkill.entrySet()) {
+            System.out.println(entrySet.getValue());
+            nbPersonActual+= entrySet.getValue();
+        }
+        
+        if(nbPersonActual > (Integer)jSpinnerNbPersonMission.getValue()){
+            jSpinnerNbPersonMission.setValue((Integer)jSpinnerNbPersonMission.getValue() +1);
+            jLabelErr.setText("Impossible, veuillez enlever des personnes");
+        }
+    }//GEN-LAST:event_jSpinnerNbPersonMissionStateChanged
+
     public void initLinkedHashmap(Company myCompany,
             Mission myMission,
             LinkedHashMap<Skill, DefaultListModel<Person>> listModelPerson,
@@ -759,6 +778,7 @@ public class EditMission extends javax.swing.JPanel {
             Requirement r = entrySet.getValue();
             Skill myskill = r.getRequiredSkill();
             requirementBySkill.put(myskill, r);
+            nbPersonBySkill.put(myskill,r.getNbPersonnesActuel());
             modelSkillOnM.addElement(myskill);
             int index = modelSkillA.indexOf(myskill);
             modelSkillA.remove(index);

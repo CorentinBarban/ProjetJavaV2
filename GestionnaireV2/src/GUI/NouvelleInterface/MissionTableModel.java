@@ -58,7 +58,7 @@ public class MissionTableModel extends AbstractTableModel {
             return row.getEtat();
         }
         else if (4 == columnIndex) {
-            return "Détails";
+            return "<html><i><u><b style='color:blue'>Détails</b></u></i></html>";
         }
         return null;
     }

@@ -2,35 +2,39 @@
 <!DOCTYPE mission SYSTEM "mission.ares">
 <list>
 <mission>
-     <id>8</id>
-     <name>Terminer le projet Java</name>
-     <startDate>06/09/2018</startDate>
-     <duration>3</duration>
+     <id>6</id>
+     <name>Terminer le projet java</name>
+     <startDate>25/04/2018</startDate>
+     <duration>2</duration>
      <state>enPreparation</state>
      <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
-          <idPerson>44</idPerson>
-          <idPerson>46</idPerson>
-          <idPerson>26</idPerson>
-          <idPerson>7</idPerson>
+          <idPerson>3</idPerson>
+          <idPerson>27</idPerson>
+          <idPerson>52</idPerson>
+          <idPerson>42</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
-          <nbPersonTotalReq>3</nbPersonTotalReq>
-          <idPersonReq>7</idPersonReq>
-          <idPersonReq>44</idPersonReq>
-          <idRequirement>3</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>27</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>C.1.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
-          <idPersonReq>26</idPersonReq>
-          <idPersonReq>46</idPersonReq>
+          <idPersonReq>42</idPersonReq>
+          <idPersonReq>3</idPersonReq>
+          <idRequirement>4</idRequirement>
+          <idSkillReq>D.5.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>52</idPersonReq>
+          <idPersonReq>3</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
 <mission>
-     <id>8</id>
+     <id>5</id>
      <name>Recherche de sujet</name>
      <startDate>01/01/2018</startDate>
      <duration>15</duration>
@@ -51,7 +55,7 @@
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
           <nbPersonTotalReq>6</nbPersonTotalReq>
           <idPersonReq>1</idPersonReq>
           <idPersonReq>2</idPersonReq>
@@ -60,7 +64,7 @@
           <idPersonReq>5</idPersonReq>
           <idPersonReq>6</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
+          <idSkillReq>C.1.</idSkillReq>
           <nbPersonTotalReq>4</nbPersonTotalReq>
           <idPersonReq>7</idPersonReq>
           <idPersonReq>8</idPersonReq>
@@ -70,69 +74,73 @@
      </requirements_list>
 </mission>
 <mission>
-     <id>9</id>
+     <id>4</id>
      <name>Ecrire la documentation</name>
      <startDate>12/01/2018</startDate>
      <duration>1</duration>
      <state>enPreparation</state>
-     <nbPersonOnMission>0</nbPersonOnMission>
+     <nbPersonOnMission>10</nbPersonOnMission>
      <persons_list>
           <idPerson>11</idPerson>
           <idPerson>12</idPerson>
           <idPerson>13</idPerson>
           <idPerson>14</idPerson>
+          <idPerson>3</idPerson>
           <idPerson>15</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>11</idPersonReq>
           <idPersonReq>12</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>3</nbPersonTotalReq>
+          <idSkillReq>C.1.</idSkillReq>
+          <nbPersonTotalReq>4</nbPersonTotalReq>
           <idPersonReq>13</idPersonReq>
           <idPersonReq>14</idPersonReq>
           <idPersonReq>15</idPersonReq>
+          <idPersonReq>3</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
 <mission>
-     <id>9</id>
+     <id>3</id>
      <name>Parser le XML</name>
      <startDate>12/08/2018</startDate>
      <duration>8</duration>
      <state>enPreparation</state>
-     <nbPersonOnMission>0</nbPersonOnMission>
+     <nbPersonOnMission>7</nbPersonOnMission>
      <persons_list>
           <idPerson>22</idPerson>
           <idPerson>23</idPerson>
           <idPerson>24</idPerson>
           <idPerson>25</idPerson>
+          <idPerson>3</idPerson>
           <idPerson>26</idPerson>
           <idPerson>21</idPerson>
      </persons_list>
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
           <nbPersonTotalReq>4</nbPersonTotalReq>
           <idPersonReq>21</idPersonReq>
           <idPersonReq>22</idPersonReq>
           <idPersonReq>23</idPersonReq>
           <idPersonReq>24</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
-          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idSkillReq>C.1.</idSkillReq>
+          <nbPersonTotalReq>3</nbPersonTotalReq>
           <idPersonReq>25</idPersonReq>
           <idPersonReq>26</idPersonReq>
+          <idPersonReq>3</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
 <mission>
-     <id>6</id>
+     <id>2</id>
      <name>Régler les bugs test</name>
      <startDate>06/09/2018</startDate>
      <duration>3</duration>
@@ -146,11 +154,11 @@
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
           <nbPersonTotalReq>1</nbPersonTotalReq>
           <idPersonReq>48</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
+          <idSkillReq>C.1.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>45</idPersonReq>
           <idPersonReq>42</idPersonReq>
@@ -158,7 +166,7 @@
      </requirements_list>
 </mission>
 <mission>
-     <id>6</id>
+     <id>1</id>
      <name>Schéma UML</name>
      <startDate>12/08/2018</startDate>
      <duration>8</duration>
@@ -175,14 +183,14 @@
      <requirements_list>
           <requirement>
           <idRequirement>1</idRequirement>
-          <idSkillReq>E.6.</idSkillReq>
+          <idSkillReq>E.7.</idSkillReq>
           <nbPersonTotalReq>4</nbPersonTotalReq>
           <idPersonReq>21</idPersonReq>
           <idPersonReq>22</idPersonReq>
           <idPersonReq>23</idPersonReq>
           <idPersonReq>24</idPersonReq>
           <idRequirement>2</idRequirement>
-          <idSkillReq>A.4.</idSkillReq>
+          <idSkillReq>C.1.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>25</idPersonReq>
           <idPersonReq>26</idPersonReq>

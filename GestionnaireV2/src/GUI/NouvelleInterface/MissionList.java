@@ -69,9 +69,9 @@ public class MissionList extends javax.swing.JPanel {
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
-                .addContainerGap(329, Short.MAX_VALUE)
+                .addGap(329, 329, 329)
                 .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(201, 201, 201)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(jLabelAddMission)
                 .addGap(41, 41, 41))
         );

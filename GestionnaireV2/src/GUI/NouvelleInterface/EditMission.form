@@ -305,6 +305,9 @@
                   <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSpinnerNbPersonMissionStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerDurationMission">
               <Properties>

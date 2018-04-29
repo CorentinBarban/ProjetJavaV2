@@ -22,7 +22,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanelHeader" max="32767" attributes="0"/>
-          <Component id="jScrollPane1" pref="790" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -47,9 +47,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="329" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
                   <Component id="jLabelTitle" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+                  <EmptySpace pref="201" max="32767" attributes="0"/>
                   <Component id="jLabelAdd" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
