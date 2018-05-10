@@ -290,7 +290,7 @@ public class home extends javax.swing.JFrame {
         // Réafecter tous les projets aux bonnes personnes
         ManageData mMission = new ManageMission();
         mMission.readData(myCompany);
-        
+        myCompany.displayMissions();
         //Mise a jours des missions
         HashMap<Integer,Mission> listeMission = myCompany.listeMission;
         for (Map.Entry<Integer, Mission> entrySet : listeMission.entrySet()) {

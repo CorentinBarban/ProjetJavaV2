@@ -720,10 +720,12 @@ public class AddMission extends javax.swing.JPanel {
             //Sauvegarde des données dans le fichier liste_mission.ares
             Management.ManageMission mm = new ManageMission();
             mm.writeData(myCompany);
-            mm.readData(myCompany);
+            //mm.readData(myCompany);
             // En renvoi vers le details de la mission
             myFrame.jPanelContainer.removeAll();
             myFrame.jPanelContainer.add(new MissionDetail(m, myCompany, myFrame));
+            
+            mm.readData(myCompany);
             myFrame.repaint();
             myFrame.revalidate();
         }

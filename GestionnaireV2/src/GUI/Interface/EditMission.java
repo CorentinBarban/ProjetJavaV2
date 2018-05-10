@@ -710,6 +710,7 @@ public class EditMission extends javax.swing.JPanel {
         
         //Creation de la mission
         if (!name.isEmpty() && !startDate.isEmpty() && "" + duration != "" && nbPerson >=0) {
+            myMission.setMissionName(name);
             try {
                 myMission.setStartDate(startDate);
             } catch (ParseException ex) {
