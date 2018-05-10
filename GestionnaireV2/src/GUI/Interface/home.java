@@ -29,6 +29,7 @@ public class home extends javax.swing.JFrame {
         jPanelContainer.add(new MissionList(myCompany,this));
         jPanelContainer.repaint();
         jPanelContainer.revalidate();
+        loadData();
     }
 
     /**

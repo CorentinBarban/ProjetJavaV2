@@ -200,7 +200,7 @@ public class MissionDetail extends javax.swing.JPanel {
                         .addGap(41, 41, 41)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
+                .addComponent(jLabelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
@@ -325,8 +325,8 @@ public class MissionDetail extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)
@@ -341,7 +341,7 @@ public class MissionDetail extends javax.swing.JPanel {
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back_icon.png"))); // NOI18N
         jLabelReturn2.setText("Retour");
         jLabelReturn2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {

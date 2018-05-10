@@ -120,7 +120,7 @@ public class EditMission extends javax.swing.JPanel {
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back_icon.png"))); // NOI18N
         jLabelReturn2.setText("Retour");
         jLabelReturn2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -245,7 +245,7 @@ public class EditMission extends javax.swing.JPanel {
                 .addGroup(jPanelLeftDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelStateMission)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(jPanelLeftDetailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)
@@ -405,8 +405,8 @@ public class EditMission extends javax.swing.JPanel {
             .addGroup(jPanelPersonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4)
-                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
                         .addComponent(jButtonShiftLeftP)
                         .addGap(18, 18, 18)
@@ -479,8 +479,8 @@ public class EditMission extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
         jButtonSubmit.setText("Valider");

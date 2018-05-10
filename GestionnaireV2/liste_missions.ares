@@ -198,4 +198,69 @@
           </requirement>
      </requirements_list>
 </mission>
+<mission>
+     <id>7</id>
+     <name>Test de mission</name>
+     <startDate>06/09/2018</startDate>
+     <duration>5</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>2</nbPersonOnMission>
+     <persons_list>
+          <idPerson>45</idPerson>
+          <idPerson>52</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>45</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>C.1.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>52</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>8</id>
+     <name>Test</name>
+     <startDate>06/09/2018</startDate>
+     <duration>4</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>1</nbPersonOnMission>
+     <persons_list>
+          <idPerson>27</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>27</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>9</id>
+     <name>Kendrick Lamar est le meilleur rappeur au monde</name>
+     <startDate>07/06/2018</startDate>
+     <duration>1</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>2</nbPersonOnMission>
+     <persons_list>
+          <idPerson>38</idPerson>
+          <idPerson>50</idPerson>
+          <idPerson>43</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>38</idPersonReq>
+          <idPersonReq>43</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
 </list>

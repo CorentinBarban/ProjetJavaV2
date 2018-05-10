@@ -100,7 +100,7 @@ public class PersonDetail extends javax.swing.JPanel {
 
         jLabelReturn5.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelReturn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back_icon.png"))); // NOI18N
         jLabelReturn5.setText("Retour");
         jLabelReturn5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -338,7 +338,7 @@ public class PersonDetail extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addContainerGap(521, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(109, 109, 109)

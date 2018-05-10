@@ -59,7 +59,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanelHeader5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="498" max="32767" attributes="0"/>
+              <EmptySpace pref="521" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
@@ -128,7 +128,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/GUI/Images/ic_arrow_back_black_48dp.png"/>
+              <Image iconType="3" name="/GUI/Images/back_icon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Retour"/>
           </Properties>

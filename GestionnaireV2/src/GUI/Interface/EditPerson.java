@@ -91,7 +91,7 @@ public class EditPerson extends javax.swing.JPanel {
 
         jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back_icon.png"))); // NOI18N
         jLabelReturn.setText("Retour");
         jLabelReturn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {

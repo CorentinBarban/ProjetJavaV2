@@ -114,7 +114,7 @@ public class AddMission extends javax.swing.JPanel {
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
         jLabelReturn2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
+        jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/back_icon.png"))); // NOI18N
         jLabelReturn2.setText("Retour");
         jLabelReturn2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -392,7 +392,6 @@ public class AddMission extends javax.swing.JPanel {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanelPersonLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonShiftLeftP)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonShiftRightP)
@@ -466,8 +465,8 @@ public class AddMission extends javax.swing.JPanel {
         );
         jPanelContainerMissionLayout.setVerticalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, Short.MAX_VALUE)
-            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+            .addComponent(jPanelRightDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)
@@ -699,7 +698,7 @@ public class AddMission extends javax.swing.JPanel {
         Mission.Etat state = Mission.Etat.enPreparation;
         Mission m = null;
         //Creation de la mission
-        if (name != "" && startDate != "" && "" + duration != "" && "" + nbPerson != "") {
+        if (!name.isEmpty() && !startDate.isEmpty() && ""+duration != "" && "" + nbPerson != "") {
             try {
                 m = new Mission(myCompany.listeMission.size() + 1, name, startDate, duration, state);
             } catch (ParseException ex) {
