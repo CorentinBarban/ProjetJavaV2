@@ -120,7 +120,7 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelFireDateMission.setText("Date de début :");
 
         jLabelDurationMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelDurationMission.setText("Durée :");
+        jLabelDurationMission.setText("Durée (en semaines) :");
 
         jLabelNbPersonMission.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelNbPersonMission.setText("Nombre de personnes total requis :");

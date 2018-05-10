@@ -17,7 +17,7 @@ public class MissionTableModel extends AbstractTableModel {
     public final List<Mission> missionList;
 
     private final String[] columnNames = new String[]{
-        "Nom", "Date de début", "Durée", "Avancement", "Details"
+        "Nom", "Date de début", "Durée (en semaines)", "Avancement", "Details"
     };
     private final Class[] columnClass = new Class[]{
        String.class, Date.class, Integer.class, Etat.class,String.class

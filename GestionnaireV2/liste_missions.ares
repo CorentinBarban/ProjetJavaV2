@@ -42,35 +42,6 @@
      </requirements_list>
 </mission>
 <mission>
-     <id>8</id>
-     <name>Test</name>
-     <startDate>06/09/2018</startDate>
-     <duration>4</duration>
-     <state>enPreparation</state>
-     <nbPersonOnMission>4</nbPersonOnMission>
-     <persons_list>
-          <idPerson>12</idPerson>
-          <idPerson>26</idPerson>
-          <idPerson>27</idPerson>
-          <idPerson>29</idPerson>
-          <idPerson>42</idPerson>
-     </persons_list>
-     <requirements_list>
-          <requirement>
-          <idRequirement>1</idRequirement>
-          <idSkillReq>E.7.</idSkillReq>
-          <nbPersonTotalReq>1</nbPersonTotalReq>
-          <idPersonReq>27</idPersonReq>
-          <idRequirement>2</idRequirement>
-          <idSkillReq>B.5.</idSkillReq>
-          <nbPersonTotalReq>3</nbPersonTotalReq>
-          <idPersonReq>12</idPersonReq>
-          <idPersonReq>29</idPersonReq>
-          <idPersonReq>26</idPersonReq>
-          </requirement>
-     </requirements_list>
-</mission>
-<mission>
      <id>11</id>
      <name>Attribution des personnes</name>
      <startDate>06/09/2018</startDate>
@@ -97,6 +68,32 @@
           <idPersonReq>49</idPersonReq>
           <idPersonReq>37</idPersonReq>
           <idPersonReq>38</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>3</id>
+     <name>Compression du projet au format ZIP</name>
+     <startDate>17/08/2018</startDate>
+     <duration>4</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>3</nbPersonOnMission>
+     <persons_list>
+          <idPerson>49</idPerson>
+          <idPerson>17</idPerson>
+          <idPerson>8</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>D.10.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>49</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>D.1.</idSkillReq>
+          <nbPersonTotalReq>2</nbPersonTotalReq>
+          <idPersonReq>17</idPersonReq>
+          <idPersonReq>8</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
