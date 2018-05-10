@@ -6,10 +6,15 @@
 package GUI.Interface;
 
 import API.Company;
+import API.Mission;
 import Management.ManageData;
 import Management.ManageMission;
 import Management.ManagePerson;
 import Management.ManageSkill;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -281,14 +286,22 @@ public class home extends javax.swing.JFrame {
         //Recharger les personnes en premier
         ManageData mPerson = new ManagePerson();
         mPerson.readData(myCompany);
-        //myCompany.displayPerson();
-
-
-        //myCompany.displaySkills();
 
         // Réafecter tous les projets aux bonnes personnes
         ManageData mMission = new ManageMission();
         mMission.readData(myCompany);
+        
+        //Mise a jours des missions
+        HashMap<Integer,Mission> listeMission = myCompany.listeMission;
+        for (Map.Entry<Integer, Mission> entrySet : listeMission.entrySet()) {
+            Integer key = entrySet.getKey();
+            Mission m = entrySet.getValue();
+            try {
+                m.verification();
+            } catch (Exception ex) {
+                Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         //myCompany.displayMissions();
         //myCompany.displayPerson();
 
