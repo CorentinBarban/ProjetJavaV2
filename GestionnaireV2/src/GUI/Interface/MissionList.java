@@ -9,7 +9,11 @@ import API.Company;
 import API.Mission;
 import Management.ManageMission;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.TableColumnModel;
 
 /**
@@ -27,6 +31,7 @@ public class MissionList extends javax.swing.JPanel {
     public MissionList(Company myCompany, home myFrame) {
         this.myFrame = myFrame;
         this.myCompany = myCompany;
+        verificationMissions();
         initComponents();
     }
 
@@ -157,4 +162,20 @@ public class MissionList extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableMission;
     // End of variables declaration//GEN-END:variables
+
+    private void verificationMissions() {
+        for (int i=0; i<myCompany.listeMission.size(); i++){
+            Iterator it = myCompany.listeMission.entrySet().iterator();
+        
+            while (it.hasNext()) {
+                Map.Entry mapEntry = (Map.Entry) it.next();
+                Mission m = (Mission) mapEntry.getValue();
+                try {
+                    m.verification();
+                } catch (Exception ex) {
+                    Logger.getLogger(MissionList.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
 }

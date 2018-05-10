@@ -446,6 +446,7 @@ public class MissionDetail extends javax.swing.JPanel {
     private void jLabelReturn2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn2MouseReleased
         myFrame.jPanelContainer.removeAll();
         myFrame.jPanelContainer.add(new MissionList(myCompany,myFrame));   
+        
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn2MouseReleased
