@@ -112,13 +112,14 @@ public class EditMission extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(246, 246, 246));
 
-        jPanelHeader2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelHeader2.setBackground(new java.awt.Color(101, 105, 138));
 
         jLabelTitle2.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle2.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle2.setText("Modifier une mission");
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelReturn2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn2.setText("Retour");
         jLabelReturn2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -471,9 +472,9 @@ public class EditMission extends javax.swing.JPanel {
         jPanelContainerMissionLayout.setHorizontalGroup(
             jPanelContainerMissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContainerMissionLayout.createSequentialGroup()
-                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                .addComponent(jPanelLeftDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addComponent(jPanelRightDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelContainerMissionLayout.setVerticalGroup(

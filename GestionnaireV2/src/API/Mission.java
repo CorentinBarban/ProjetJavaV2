@@ -260,7 +260,7 @@ public class Mission {
                         if(nb == getNbTotalPerson()){
                             this.etat = Etat.plannifiee;
                         } else {
-                           throw new Exception("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nb ne la possédant pas : "+(getNbTotalPerson()-nb));
+                           throw new Exception("Nombre de personnes possédant la compétence requise par le besoin : "+nb+", nombre ne la possédant pas : "+(getNbTotalPerson()-nb));
                         }
                     } else {
                         throw new Exception("Le nombre total de personnes actuellement sur la mission ne correspond pas au nombre requis.");

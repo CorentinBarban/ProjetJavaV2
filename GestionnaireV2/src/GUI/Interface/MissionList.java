@@ -47,15 +47,17 @@ public class MissionList extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(246, 246, 246));
 
-        jPanelHeader.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelHeader.setBackground(new java.awt.Color(101, 105, 138));
+        jPanelHeader.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle.setText("Liste des missions");
         jLabelTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabelAddMission.setBackground(java.awt.Color.lightGray);
         jLabelAddMission.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelAddMission.setForeground(new java.awt.Color(255, 255, 255));
         jLabelAddMission.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
         jLabelAddMission.setText("Ajouter Mission");
         jLabelAddMission.addMouseListener(new java.awt.event.MouseAdapter() {

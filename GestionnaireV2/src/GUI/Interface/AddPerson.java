@@ -77,14 +77,15 @@ public class AddPerson extends javax.swing.JPanel {
         setBackground(new java.awt.Color(246, 246, 246));
         setPreferredSize(new java.awt.Dimension(808, 583));
 
-        jPanelHeader.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelHeader.setBackground(new java.awt.Color(101, 105, 138));
         jPanelHeader.setPreferredSize(new java.awt.Dimension(808, 583));
 
         jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle.setText("Ajouter une personne");
 
         jLabelReturn.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelReturn.setForeground(new java.awt.Color(255, 255, 255));
         jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn.setText("Retour");
         jLabelReturn.addMouseListener(new java.awt.event.MouseAdapter() {

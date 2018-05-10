@@ -49,14 +49,15 @@ public class PersonList extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(246, 246, 246));
 
-        jPanelHeader.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelHeader.setBackground(new java.awt.Color(101, 105, 138));
 
         jLabelTitle.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle.setText("Liste des personnes");
 
         jLabelAdd.setBackground(java.awt.Color.lightGray);
         jLabelAdd.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelAdd.setForeground(new java.awt.Color(255, 255, 255));
         jLabelAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_add_circle_black_24dp.png"))); // NOI18N
         jLabelAdd.setText("Ajouter Personne");
         jLabelAdd.addMouseListener(new java.awt.event.MouseAdapter() {

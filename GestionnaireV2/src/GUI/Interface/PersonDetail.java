@@ -92,13 +92,14 @@ public class PersonDetail extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(246, 246, 246));
 
-        jPanelHeader5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelHeader5.setBackground(new java.awt.Color(101, 105, 138));
 
         jLabelTitle5.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle5.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle5.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle5.setText("Détails de la personne");
 
         jLabelReturn5.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelReturn5.setForeground(new java.awt.Color(255, 255, 255));
         jLabelReturn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn5.setText("Retour");
         jLabelReturn5.addMouseListener(new java.awt.event.MouseAdapter() {

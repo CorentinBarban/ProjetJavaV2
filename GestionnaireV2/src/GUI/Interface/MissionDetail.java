@@ -93,9 +93,9 @@ public class MissionDetail extends javax.swing.JPanel {
         jLabelPerson = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         int elt = 0;
-        jListPerson = new javax.swing.JList<Person>();
+        jListPerson = new javax.swing.JList<>();
         DefaultComboBoxModel<Requirement> requirementModel = new DefaultComboBoxModel();
-        jComboBoxSkill = new javax.swing.JComboBox<Requirement>();
+        jComboBoxSkill = new javax.swing.JComboBox<>();
         jPanelHeader2 = new javax.swing.JPanel();
         jLabelTitle2 = new javax.swing.JLabel();
         jLabelReturn2 = new javax.swing.JLabel();
@@ -333,13 +333,14 @@ public class MissionDetail extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanelHeader2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelHeader2.setBackground(new java.awt.Color(101, 105, 138));
 
         jLabelTitle2.setFont(new java.awt.Font("Roboto", 0, 40));
-        jLabelTitle2.setForeground(new java.awt.Color(48, 51, 58));
+        jLabelTitle2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle2.setText("Détails de la mission");
 
         jLabelReturn2.setFont(new java.awt.Font("Roboto", 0, 20));
+        jLabelReturn2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelReturn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/ic_arrow_back_black_48dp.png"))); // NOI18N
         jLabelReturn2.setText("Retour");
         jLabelReturn2.addMouseListener(new java.awt.event.MouseAdapter() {
