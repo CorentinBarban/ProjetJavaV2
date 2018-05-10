@@ -47,10 +47,13 @@ public class MissionDetail extends javax.swing.JPanel {
         this.myFrame = myFrame;
         initComponents();
         initValue(myMission);
+        jLabelInfo.setText(exception);
+
     }
     
-    public MissionDetail(Mission myMission, Company myCompany , home myFrame,String exception) {
+    public MissionDetail(Mission myMission, Company myCompany , home myFrame, String exception) {
         this.myMission = myMission;
+
         this.myCompany = myCompany;
         this.myFrame = myFrame;
         this.exception = exception;

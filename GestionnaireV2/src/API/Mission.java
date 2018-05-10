@@ -254,7 +254,7 @@ public class Mission {
                                     nb += checkSkill(p, r); // Vérifie si la personne possède la compétence requise par le besoin
                                 }
                             } else {
-                                throw new Exception("Il n'y a pas le nombre de personnes souhaité sur le besoin.");
+                                throw new Exception("Le nombre total de personnes souhaitées sur un besoin n'est pas respecté.");
                             }
                         }
                         if(nb == getNbTotalPerson()){
