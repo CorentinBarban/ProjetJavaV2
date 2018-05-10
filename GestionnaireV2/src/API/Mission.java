@@ -239,7 +239,7 @@ public class Mission {
                         Set entrySet = requirements.entrySet(); // Création d'un itérateur sur la liste des besoins de la mission
                         Iterator itReq = entrySet.iterator();
 
-                        while (itReq.hasNext()) {
+                        while (itReq.hasNext()) {   
                             Map.Entry mapEntry = (Map.Entry) itReq.next();
                             Requirement r = requirements.get((Integer)mapEntry.getKey());
 

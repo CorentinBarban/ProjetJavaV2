@@ -709,7 +709,7 @@ public class EditMission extends javax.swing.JPanel {
         Mission.Etat state = Mission.Etat.enPreparation;
         
         //Creation de la mission
-        if (name != "" && startDate != "" && "" + duration != "" && nbPerson >=0) {
+        if (!name.isEmpty() && !startDate.isEmpty() && "" + duration != "" && nbPerson >=0) {
             try {
                 myMission.setStartDate(startDate);
             } catch (ParseException ex) {
