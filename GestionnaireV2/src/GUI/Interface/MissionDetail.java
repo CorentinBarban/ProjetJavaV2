@@ -441,12 +441,8 @@ public class MissionDetail extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBoxSkillActionPerformed
 
     private void jLabelReturn2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReturn2MouseReleased
-        ManageMission mm = new ManageMission();
-        mm.readData(myCompany);
-        
         myFrame.jPanelContainer.removeAll();
-        myFrame.jPanelContainer.add(new MissionList(myCompany,myFrame));
-        
+        myFrame.jPanelContainer.add(new MissionList(myCompany,myFrame));   
         myFrame.repaint();
         myFrame.revalidate();
     }//GEN-LAST:event_jLabelReturn2MouseReleased

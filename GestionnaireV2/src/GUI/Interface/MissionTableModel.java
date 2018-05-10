@@ -4,6 +4,8 @@ import API.Mission;
 import API.Mission.Etat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -48,6 +50,7 @@ public class MissionTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Mission row = missionList.get(rowIndex);
+          
         if (0 == columnIndex) {
             return row.getMissionName();
         } else if (1 == columnIndex) {

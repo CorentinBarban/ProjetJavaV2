@@ -6,7 +6,7 @@
      <name>Terminer le projet java</name>
      <startDate>25/04/2018</startDate>
      <duration>1</duration>
-     <state>enPreparation</state>
+     <state>terminee</state>
      <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
           <idPerson>3</idPerson>
@@ -227,7 +227,7 @@
      <name>Test</name>
      <startDate>06/09/2018</startDate>
      <duration>4</duration>
-     <state>enPreparation</state>
+     <state>plannifiee</state>
      <nbPersonOnMission>1</nbPersonOnMission>
      <persons_list>
           <idPerson>27</idPerson>
@@ -260,6 +260,54 @@
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>38</idPersonReq>
           <idPersonReq>43</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>10</id>
+     <name>TEst2</name>
+     <startDate>06/09/2018</startDate>
+     <duration>2</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>3</nbPersonOnMission>
+     <persons_list>
+          <idPerson>12</idPerson>
+          <idPerson>37</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>12</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>C.1.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>37</idPersonReq>
+          </requirement>
+     </requirements_list>
+</mission>
+<mission>
+     <id>11</id>
+     <name>Test2</name>
+     <startDate>06/09/2018</startDate>
+     <duration>2</duration>
+     <state>enPreparation</state>
+     <nbPersonOnMission>3</nbPersonOnMission>
+     <persons_list>
+          <idPerson>2</idPerson>
+          <idPerson>46</idPerson>
+     </persons_list>
+     <requirements_list>
+          <requirement>
+          <idRequirement>1</idRequirement>
+          <idSkillReq>E.7.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>2</idPersonReq>
+          <idRequirement>2</idRequirement>
+          <idSkillReq>C.1.</idSkillReq>
+          <nbPersonTotalReq>1</nbPersonTotalReq>
+          <idPersonReq>46</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>

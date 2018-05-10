@@ -7,6 +7,7 @@ package GUI.Interface;
 
 import API.Company;
 import API.Mission;
+import Management.ManageMission;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.TableColumnModel;
