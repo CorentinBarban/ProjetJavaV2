@@ -5,12 +5,13 @@
      <id>6</id>
      <name>Terminer le projet java</name>
      <startDate>25/04/2018</startDate>
-     <duration>2</duration>
+     <duration>1</duration>
      <state>enPreparation</state>
      <nbPersonOnMission>5</nbPersonOnMission>
      <persons_list>
           <idPerson>3</idPerson>
           <idPerson>27</idPerson>
+          <idPerson>39</idPerson>
           <idPerson>52</idPerson>
           <idPerson>42</idPerson>
      </persons_list>
@@ -29,7 +30,7 @@
           <idSkillReq>D.5.</idSkillReq>
           <nbPersonTotalReq>2</nbPersonTotalReq>
           <idPersonReq>52</idPersonReq>
-          <idPersonReq>3</idPersonReq>
+          <idPersonReq>39</idPersonReq>
           </requirement>
      </requirements_list>
 </mission>
