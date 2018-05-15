@@ -163,6 +163,9 @@ public class MissionList extends javax.swing.JPanel {
     private javax.swing.JTable jTableMission;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Méthode permettant de rafraîchir la liste des missions afin qu'elles affichent les bonnes informations
+     */
     private void verificationMissions() {
         for (int i=0; i<myCompany.listeMission.size(); i++){
             Iterator it = myCompany.listeMission.entrySet().iterator();
